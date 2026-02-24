@@ -1,0 +1,23 @@
+{\noindent \xiaosi 中文摘要\par }
+{\noindent \textrm {ABSTRACT}\par }
+\contentsline {chapter}{\numberline {第一章}绪论}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}研究背景与意义}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}腿臂协同控制的研究现状}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}基于零空间分解的腿臂协同控制}{3}{subsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.1.1}方法起源}{3}{subsubsection.1.2.1.1}%
+\contentsline {subsubsection}{\numberline {1.2.1.2}数学定义}{3}{subsubsection.1.2.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1.3}方法优势与局限性分析}{5}{subsubsection.1.2.1.3}%
+\contentsline {subsection}{\numberline {1.2.2}基于分层二次规划的腿臂协同控制}{6}{subsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.1}方法起源}{6}{subsubsection.1.2.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2.2}数学定义}{6}{subsubsection.1.2.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.3}方法优势与局限性分析}{7}{subsubsection.1.2.2.3}%
+\contentsline {subsection}{\numberline {1.2.3}基于强化学习的腿臂协同控制}{8}{subsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.3.1}基础原理}{8}{subsubsection.1.2.3.1}%
+\contentsline {subsubsection}{\numberline {1.2.3.2}方法优势与局限性分析}{9}{subsubsection.1.2.3.2}%
+\contentsline {subsection}{\numberline {1.2.4}基于模仿学习的腿臂协同控制}{11}{subsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.4.1}基础原理}{11}{subsubsection.1.2.4.1}%
+\contentsline {paragraph}{1）行为克隆（Behavior Cloning, BC）}{11}{paragraph*.13}%
+\contentsline {paragraph}{2）对抗式模仿学习（Adversarial Imitation Learning）}{11}{paragraph*.14}%
+\contentsline {paragraph}{3）生成式运动先验（Generative Motion Prior）}{12}{paragraph*.15}%
+\contentsline {subsubsection}{\numberline {1.2.4.2}典型技术路线与方法特征分析}{12}{subsubsection.1.2.4.2}%
+\contentsline {section}{\numberline {1.3}本文研究内容及章节安排}{14}{section.1.3}%
