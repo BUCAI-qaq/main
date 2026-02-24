@@ -2985,45 +2985,33 @@
     <bcf:citekey order="10" intorder="5">yulearning</bcf:citekey>
     <bcf:citekey order="10" intorder="6">abdolhosseini2019learning</bcf:citekey>
     <bcf:citekey order="11" intorder="1">Liegeois1977</bcf:citekey>
-    <bcf:citekey order="11" intorder="2">Nakamura1987</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Siciliano1991</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Khatib2004</bcf:citekey>
-    <bcf:citekey order="13" intorder="2">Sentis2007</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Nakamura1987</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Siciliano1991</bcf:citekey>
     <bcf:citekey order="14" intorder="1">Khatib1987</bcf:citekey>
     <bcf:citekey order="14" intorder="2">Khatib2004</bcf:citekey>
     <bcf:citekey order="15" intorder="1">Sentis2007</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">ott2015prioritized</bcf:citekey>
-    <bcf:citekey order="16" intorder="2">Herzog2016</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">Mansard2009</bcf:citekey>
-    <bcf:citekey order="17" intorder="2">Escande2014</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Mansard2009</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">Escande2014</bcf:citekey>
     <bcf:citekey order="18" intorder="1">Righetti2011</bcf:citekey>
-    <bcf:citekey order="18" intorder="2">Herzog2016</bcf:citekey>
     <bcf:citekey order="19" intorder="1">Herzog2016</bcf:citekey>
-    <bcf:citekey order="19" intorder="2">Escande2014</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">Herzog2016</bcf:citekey>
-    <bcf:citekey order="20" intorder="2">Righetti2011</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">Gu2024HumanoidGym</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">Xie2025PBHC</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">Zhang2024WoCoCo</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">Fu2024HumanPlus</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">Zhang2024WoCoCo</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">Gu2024HumanoidGym</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">Zhang2024WoCoCo</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">Gu2024HumanoidGym</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">AMP</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">Kim2019</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Paredes2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Siekmann2021AllGaits</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Gu2024HumanoidGym</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">Siekmann2021AllGaits</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">Xie2025PBHC</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">Zhang2024WoCoCo</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">Fu2024HumanPlus</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">Argall2009LfD</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">Pomerleau1989ALVINN</bcf:citekey>
+    <bcf:citekey order="29" intorder="2">Bain1995BC</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">Ho2016GAIL</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">AMP</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">ASE</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">MOE</bcf:citekey>
     <bcf:citekey order="34" intorder="1">MVAE</bcf:citekey>
     <bcf:citekey order="35" intorder="1">AMP</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">ASE</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">MOE</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">MVAE</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">AMP</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">ASE</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">MVAE</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">MOE</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">MVAE</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

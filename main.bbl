@@ -4090,6 +4090,53 @@
       \range{pages}{6}
       \keyw{Siciliano1991}
     \endentry
+    \entry{Khatib1987}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a1ed48939870abd896792330bc735967}{%
+           family={Khatib},
+           familyi={K\bibinitperiod},
+           given={Oussama},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=a1ed48939870abd896792330bc735967}{%
+           family={Khatib},
+           familyi={K\bibinitperiod},
+           given={Oussama},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{a1ed48939870abd896792330bc735967}
+      \strng{fullhash}{a1ed48939870abd896792330bc735967}
+      \strng{bibnamehash}{a1ed48939870abd896792330bc735967}
+      \strng{authorbibnamehash}{a1ed48939870abd896792330bc735967}
+      \strng{authornamehash}{a1ed48939870abd896792330bc735967}
+      \strng{authorfullhash}{a1ed48939870abd896792330bc735967}
+      \strng{nameabibnamehash}{a1ed48939870abd896792330bc735967}
+      \strng{nameanamehash}{a1ed48939870abd896792330bc735967}
+      \strng{nameafullhash}{a1ed48939870abd896792330bc735967}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal on Robotics and Automation}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{1}
+      \field{title}{A Unified Approach for Motion and Force Control of Robot Manipulators: The Operational Space Formulation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{3}
+      \field{year}{1987}
+      \field{dateera}{ce}
+      \field{pages}{43\bibrangedash 53}
+      \range{pages}{11}
+      \keyw{Khatib1987}
+    \endentry
     \entry{Khatib2004}{article}{}
       \name{author}{4}{}{%
         {{hash=a1ed48939870abd896792330bc735967}{%
@@ -4212,209 +4259,6 @@
       \field{year}{2007}
       \field{dateera}{ce}
       \keyw{Sentis2007}
-    \endentry
-    \entry{Khatib1987}{article}{}
-      \name{author}{1}{}{%
-        {{hash=a1ed48939870abd896792330bc735967}{%
-           family={Khatib},
-           familyi={K\bibinitperiod},
-           given={Oussama},
-           giveni={O\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=a1ed48939870abd896792330bc735967}{%
-           family={Khatib},
-           familyi={K\bibinitperiod},
-           given={Oussama},
-           giveni={O\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{a1ed48939870abd896792330bc735967}
-      \strng{fullhash}{a1ed48939870abd896792330bc735967}
-      \strng{bibnamehash}{a1ed48939870abd896792330bc735967}
-      \strng{authorbibnamehash}{a1ed48939870abd896792330bc735967}
-      \strng{authornamehash}{a1ed48939870abd896792330bc735967}
-      \strng{authorfullhash}{a1ed48939870abd896792330bc735967}
-      \strng{nameabibnamehash}{a1ed48939870abd896792330bc735967}
-      \strng{nameanamehash}{a1ed48939870abd896792330bc735967}
-      \strng{nameafullhash}{a1ed48939870abd896792330bc735967}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Journal on Robotics and Automation}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{1}
-      \field{title}{A Unified Approach for Motion and Force Control of Robot Manipulators: The Operational Space Formulation}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{3}
-      \field{year}{1987}
-      \field{dateera}{ce}
-      \field{pages}{43\bibrangedash 53}
-      \range{pages}{11}
-      \keyw{Khatib1987}
-    \endentry
-    \entry{ott2015prioritized}{article}{}
-      \name{author}{3}{}{%
-        {{hash=072f37ba92f403643041990a77bf51cd}{%
-           family={Ott},
-           familyi={O\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=192e6bba744379f054f94b52ebac73eb}{%
-           family={Dietrich},
-           familyi={D\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=981c1908f25f6ea913cfa7dc801d386c}{%
-           family={Albu-Schäffer},
-           familyi={A\bibinithyphendelim S\bibinitperiod},
-           given={Alin},
-           giveni={A\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=072f37ba92f403643041990a77bf51cd}{%
-           family={Ott},
-           familyi={O\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=192e6bba744379f054f94b52ebac73eb}{%
-           family={Dietrich},
-           familyi={D\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=981c1908f25f6ea913cfa7dc801d386c}{%
-           family={Albu-Schäffer},
-           familyi={A\bibinithyphendelim S\bibinitperiod},
-           given={Alin},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{fullhash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{bibnamehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{authorbibnamehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{authornamehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{authorfullhash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{nameabibnamehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{nameanamehash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \strng{nameafullhash}{ce850c57b7cb5368bb8a1d6805061f81}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Automatica}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Prioritized multi-task compliance control of redundant manipulators}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{53}
-      \field{year}{2015}
-      \field{dateera}{ce}
-      \field{pages}{416\bibrangedash 423}
-      \range{pages}{8}
-      \keyw{ott2015prioritized}
-    \endentry
-    \entry{Herzog2016}{article}{}
-      \name{author}{5}{}{%
-        {{hash=a12fa9cc10543b60828000fe1c57d5d5}{%
-           family={Herzog},
-           familyi={H\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=562700fdec5dbbc9dd1c31ac507161e4}{%
-           family={Rotella},
-           familyi={R\bibinitperiod},
-           given={Nicholas},
-           giveni={N\bibinitperiod}}}%
-        {{hash=f22b6f712ab3e07fb90701fbdb0dbe20}{%
-           family={Mason},
-           familyi={M\bibinitperiod},
-           given={Sean},
-           giveni={S\bibinitperiod}}}%
-        {{hash=147fd8225f25d53a449425c4559622e5}{%
-           family={Schaal},
-           familyi={S\bibinitperiod},
-           given={Stefan},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c0a98749aef4c780bef5785bffb7b324}{%
-           family={Righetti},
-           familyi={R\bibinitperiod},
-           given={Ludovic},
-           giveni={L\bibinitperiod}}}%
-      }
-      \name{namea}{5}{}{%
-        {{hash=a12fa9cc10543b60828000fe1c57d5d5}{%
-           family={Herzog},
-           familyi={H\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=562700fdec5dbbc9dd1c31ac507161e4}{%
-           family={Rotella},
-           familyi={R\bibinitperiod},
-           given={Nicholas},
-           giveni={N\bibinitperiod}}}%
-        {{hash=f22b6f712ab3e07fb90701fbdb0dbe20}{%
-           family={Mason},
-           familyi={M\bibinitperiod},
-           given={Sean},
-           giveni={S\bibinitperiod}}}%
-        {{hash=147fd8225f25d53a449425c4559622e5}{%
-           family={Schaal},
-           familyi={S\bibinitperiod},
-           given={Stefan},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c0a98749aef4c780bef5785bffb7b324}{%
-           family={Righetti},
-           familyi={R\bibinitperiod},
-           given={Ludovic},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{fullhash}{ea818f91756edc384b00852160bae02e}
-      \strng{bibnamehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{authorbibnamehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{authornamehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{authorfullhash}{ea818f91756edc384b00852160bae02e}
-      \strng{nameabibnamehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{nameanamehash}{0a14064f34d63375b17b59e4144492f1}
-      \strng{nameafullhash}{ea818f91756edc384b00852160bae02e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Autonomous Robots}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{3}
-      \field{title}{Momentum Control with Hierarchical Inverse Dynamics on a Torque-Controlled Humanoid}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{40}
-      \field{year}{2016}
-      \field{dateera}{ce}
-      \field{pages}{473\bibrangedash 491}
-      \range{pages}{19}
-      \keyw{Herzog2016}
     \endentry
     \entry{Mansard2009}{article}{}
       \name{author}{3}{}{%
@@ -4624,6 +4468,93 @@
       \field{pages}{1085\bibrangedash 1090}
       \range{pages}{6}
       \keyw{Righetti2011}
+    \endentry
+    \entry{Herzog2016}{article}{}
+      \name{author}{5}{}{%
+        {{hash=a12fa9cc10543b60828000fe1c57d5d5}{%
+           family={Herzog},
+           familyi={H\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=562700fdec5dbbc9dd1c31ac507161e4}{%
+           family={Rotella},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f22b6f712ab3e07fb90701fbdb0dbe20}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+        {{hash=147fd8225f25d53a449425c4559622e5}{%
+           family={Schaal},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c0a98749aef4c780bef5785bffb7b324}{%
+           family={Righetti},
+           familyi={R\bibinitperiod},
+           given={Ludovic},
+           giveni={L\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=a12fa9cc10543b60828000fe1c57d5d5}{%
+           family={Herzog},
+           familyi={H\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=562700fdec5dbbc9dd1c31ac507161e4}{%
+           family={Rotella},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f22b6f712ab3e07fb90701fbdb0dbe20}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+        {{hash=147fd8225f25d53a449425c4559622e5}{%
+           family={Schaal},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c0a98749aef4c780bef5785bffb7b324}{%
+           family={Righetti},
+           familyi={R\bibinitperiod},
+           given={Ludovic},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{fullhash}{ea818f91756edc384b00852160bae02e}
+      \strng{bibnamehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{authorbibnamehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{authornamehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{authorfullhash}{ea818f91756edc384b00852160bae02e}
+      \strng{nameabibnamehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{nameanamehash}{0a14064f34d63375b17b59e4144492f1}
+      \strng{nameafullhash}{ea818f91756edc384b00852160bae02e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autonomous Robots}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{3}
+      \field{title}{Momentum Control with Hierarchical Inverse Dynamics on a Torque-Controlled Humanoid}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{40}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{473\bibrangedash 491}
+      \range{pages}{19}
+      \keyw{Herzog2016}
     \endentry
     \entry{Siekmann2021AllGaits}{article}{}
       \name{author}{2}{}{%
@@ -4886,6 +4817,225 @@
       \field{dateera}{ce}
       \keyw{Fu2024HumanPlus}
     \endentry
+    \entry{Argall2009LfD}{article}{}
+      \name{author}{4}{}{%
+        {{hash=499e57899fea89034e5a58497cacb35c}{%
+           family={Argall},
+           familyi={A\bibinitperiod},
+           given={Brenna\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=aa8fa5d2aeb75e54ef50a01069e9b942}{%
+           family={Chernova},
+           familyi={C\bibinitperiod},
+           given={Sonia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=108bc6e5f71a32699fcf07b7e8957310}{%
+           family={Veloso},
+           familyi={V\bibinitperiod},
+           given={Manuela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e97486e5f4c73e1832b83012fc314bbb}{%
+           family={Browning},
+           familyi={B\bibinitperiod},
+           given={Brett},
+           giveni={B\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=499e57899fea89034e5a58497cacb35c}{%
+           family={Argall},
+           familyi={A\bibinitperiod},
+           given={Brenna\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=aa8fa5d2aeb75e54ef50a01069e9b942}{%
+           family={Chernova},
+           familyi={C\bibinitperiod},
+           given={Sonia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=108bc6e5f71a32699fcf07b7e8957310}{%
+           family={Veloso},
+           familyi={V\bibinitperiod},
+           given={Manuela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e97486e5f4c73e1832b83012fc314bbb}{%
+           family={Browning},
+           familyi={B\bibinitperiod},
+           given={Brett},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{fullhash}{1292bdc8336854145f2ee318f6f677a4}
+      \strng{bibnamehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{authorbibnamehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{authornamehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{authorfullhash}{1292bdc8336854145f2ee318f6f677a4}
+      \strng{nameabibnamehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{nameanamehash}{ead3190e08c16e3c15645f2573d8c344}
+      \strng{nameafullhash}{1292bdc8336854145f2ee318f6f677a4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Robotics and Autonomous Systems}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{5}
+      \field{title}{A Survey of Robot Learning from Demonstration}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{57}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{pages}{469\bibrangedash 483}
+      \range{pages}{15}
+      \keyw{Argall2009LfD}
+    \endentry
+    \entry{Pomerleau1989ALVINN}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=4e5f05606e47b1676579799cf7e84220}{%
+           family={Pomerleau},
+           familyi={P\bibinitperiod},
+           given={Dean\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=4e5f05606e47b1676579799cf7e84220}{%
+           family={Pomerleau},
+           familyi={P\bibinitperiod},
+           given={Dean\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{fullhash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{bibnamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authorbibnamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authornamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{authorfullhash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{nameabibnamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{nameanamehash}{4e5f05606e47b1676579799cf7e84220}
+      \strng{nameafullhash}{4e5f05606e47b1676579799cf7e84220}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{ALVINN: An Autonomous Land Vehicle in a Neural Network}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \keyw{Pomerleau1989ALVINN}
+    \endentry
+    \entry{Bain1995BC}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=d187b931e51c091ba3ecc0dd9ef65f88}{%
+           family={Bain},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=d187b931e51c091ba3ecc0dd9ef65f88}{%
+           family={Bain},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Cambridge}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{fullhash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{bibnamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{authorbibnamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{authornamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{authorfullhash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{nameabibnamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{nameanamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \strng{nameafullhash}{d187b931e51c091ba3ecc0dd9ef65f88}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Experiments in Imitation Learning}
+      \field{type}{phdthesis}
+      \field{usera}{D}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \keyw{Bain1995BC}
+    \endentry
+    \entry{Ho2016GAIL}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2ac2ca10b22e4d13af1767e87495412f}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=160929a7e6ceecdf3f7c9a13abd5ea35}{%
+           family={Ermon},
+           familyi={E\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=2ac2ca10b22e4d13af1767e87495412f}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=160929a7e6ceecdf3f7c9a13abd5ea35}{%
+           family={Ermon},
+           familyi={E\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{fullhash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{bibnamehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{authorbibnamehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{authornamehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{authorfullhash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{nameabibnamehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{nameanamehash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \strng{nameafullhash}{d2c2729ff759e9862fc32bdfb994a71c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Generative Adversarial Imitation Learning}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \keyw{Ho2016GAIL}
+    \endentry
     \entry{AMP}{article}{}
       \name{author}{4}{}{%
         {{hash=eaf6d025c486d283ccc7c617f05b7214}{%
@@ -4962,87 +5112,6 @@
       \field{pages}{1\bibrangedash 15}
       \range{pages}{15}
       \keyw{AMP}
-    \endentry
-    \entry{MVAE}{article}{}
-      \name{author}{4}{}{%
-        {{hash=7f0dccad0fd6c03a4787fa48ae29abd2}{%
-           family={Ling},
-           familyi={L\bibinitperiod},
-           given={Hung\bibnamedelima Yu},
-           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=41355d3b97a4023e0af836cd8528446e}{%
-           family={Zinno},
-           familyi={Z\bibinitperiod},
-           given={Fabio},
-           giveni={F\bibinitperiod}}}%
-        {{hash=3206510e3cfe1ba63cb80dd0c0b009af}{%
-           family={Cheng},
-           familyi={C\bibinitperiod},
-           given={George},
-           giveni={G\bibinitperiod}}}%
-        {{hash=89e5c0706d9dcf1522f3cacbbc21d55a}{%
-           family={Panne},
-           familyi={P\bibinitperiod},
-           given={Michiel},
-           giveni={M\bibinitperiod},
-           prefix={van\bibnamedelima de},
-           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
-      }
-      \name{namea}{4}{}{%
-        {{hash=7f0dccad0fd6c03a4787fa48ae29abd2}{%
-           family={Ling},
-           familyi={L\bibinitperiod},
-           given={Hung\bibnamedelima Yu},
-           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=41355d3b97a4023e0af836cd8528446e}{%
-           family={Zinno},
-           familyi={Z\bibinitperiod},
-           given={Fabio},
-           giveni={F\bibinitperiod}}}%
-        {{hash=3206510e3cfe1ba63cb80dd0c0b009af}{%
-           family={Cheng},
-           familyi={C\bibinitperiod},
-           given={George},
-           giveni={G\bibinitperiod}}}%
-        {{hash=89e5c0706d9dcf1522f3cacbbc21d55a}{%
-           family={Panne},
-           familyi={P\bibinitperiod},
-           given={Michiel},
-           giveni={M\bibinitperiod},
-           prefix={van\bibnamedelima de},
-           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{fullhash}{8db12f5728340d2e257c5b4142ea060d}
-      \strng{bibnamehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{authorbibnamehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{authornamehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{authorfullhash}{8db12f5728340d2e257c5b4142ea060d}
-      \strng{nameabibnamehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{nameanamehash}{7060bd990d2960dada89b96c1e039868}
-      \strng{nameafullhash}{8db12f5728340d2e257c5b4142ea060d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{ACM Transactions on Graphics}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{4}
-      \field{title}{Character Controllers Using Motion VAEs}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{39}
-      \field{year}{2020}
-      \field{dateera}{ce}
-      \field{pages}{40:1\bibrangedash 40:12}
-      \range{pages}{-1}
-      \keyw{MVAE}
     \endentry
     \entry{ASE}{article}{}
       \name{author}{5}{}{%
@@ -5244,7 +5313,90 @@
       \field{dateera}{ce}
       \keyw{MOE}
     \endentry
+    \entry{MVAE}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7f0dccad0fd6c03a4787fa48ae29abd2}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Hung\bibnamedelima Yu},
+           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=41355d3b97a4023e0af836cd8528446e}{%
+           family={Zinno},
+           familyi={Z\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3206510e3cfe1ba63cb80dd0c0b009af}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=89e5c0706d9dcf1522f3cacbbc21d55a}{%
+           family={Panne},
+           familyi={P\bibinitperiod},
+           given={Michiel},
+           giveni={M\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=7f0dccad0fd6c03a4787fa48ae29abd2}{%
+           family={Ling},
+           familyi={L\bibinitperiod},
+           given={Hung\bibnamedelima Yu},
+           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=41355d3b97a4023e0af836cd8528446e}{%
+           family={Zinno},
+           familyi={Z\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3206510e3cfe1ba63cb80dd0c0b009af}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=89e5c0706d9dcf1522f3cacbbc21d55a}{%
+           family={Panne},
+           familyi={P\bibinitperiod},
+           given={Michiel},
+           giveni={M\bibinitperiod},
+           prefix={van\bibnamedelima de},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{fullhash}{8db12f5728340d2e257c5b4142ea060d}
+      \strng{bibnamehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{authorbibnamehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{authornamehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{authorfullhash}{8db12f5728340d2e257c5b4142ea060d}
+      \strng{nameabibnamehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{nameanamehash}{7060bd990d2960dada89b96c1e039868}
+      \strng{nameafullhash}{8db12f5728340d2e257c5b4142ea060d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Graphics}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Character Controllers Using Motion VAEs}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{39}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{40:1\bibrangedash 40:12}
+      \range{pages}{-1}
+      \keyw{MVAE}
+    \endentry
   \enddatalist
+  \missing{Kim2019}
+  \missing{Paredes2023}
 \endrefsection
 \endinput
 
