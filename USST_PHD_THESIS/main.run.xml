@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>main.bcf</file>
@@ -85,6 +85,8 @@
     <requires type="editable">
       <file>ref/refs.bib</file>
       <file>ref/chapter1.bib</file>
+      <file>ref/chapter2.bib</file>
+      <file>ref/chapter3.bib</file>
     </requires>
   </external>
 </requests>

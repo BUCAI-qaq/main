@@ -2933,6 +2933,8 @@
   <bcf:bibdata section="0">
     <bcf:datasource type="file" datatype="bibtex" glob="false">ref/refs.bib</bcf:datasource>
     <bcf:datasource type="file" datatype="bibtex" glob="false">ref/chapter1.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">ref/chapter2.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">ref/chapter3.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">russakovsky2015imagenet</bcf:citekey>
@@ -2984,34 +2986,71 @@
     <bcf:citekey order="10" intorder="4">clegg2018learning</bcf:citekey>
     <bcf:citekey order="10" intorder="5">yulearning</bcf:citekey>
     <bcf:citekey order="10" intorder="6">abdolhosseini2019learning</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Liegeois1977</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Nakamura1987</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Siciliano1991</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Khatib1987</bcf:citekey>
-    <bcf:citekey order="14" intorder="2">Khatib2004</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">Sentis2007</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">Mansard2009</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">Escande2014</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">Righetti2011</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">Herzog2016</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">Kim2019</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">Paredes2023</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">Gu2024HumanoidGym</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">Siekmann2021AllGaits</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">Xie2025PBHC</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">Zhang2024WoCoCo</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">Fu2024HumanPlus</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">Argall2009LfD</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">Pomerleau1989ALVINN</bcf:citekey>
-    <bcf:citekey order="29" intorder="2">Bain1995BC</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">Ho2016GAIL</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">AMP</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">ASE</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">MOE</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">MVAE</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">AMP</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">MVAE</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Kato1976WABOT</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Kaneko2004HRP2</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Sakagami2002ASIMO</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Raibert1986Legged</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">Nelson2012PETMAN</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Kuindersma2016Atlas</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">Agility2023Digit</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">Tesla2023Optimus</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">BostonDynamics2024Atlas</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">FigureAI2024</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">1X2024NeoGamma</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Fu2014SensoryReflex</bcf:citekey>
+    <bcf:citekey order="22" intorder="2">Hou2014FlexibleDrive</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Xu2011ImprovedZMP</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">Unitree2024G1</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">EngineAI2024SE01</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">UBTECH2024WalkerS2</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">UBTECH2024Tienkung</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">Fourier2024GR1</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">Liegeois1977</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">Nakamura1987</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">Siciliano1991</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">Khatib1987</bcf:citekey>
+    <bcf:citekey order="32" intorder="2">Khatib2004</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">Sentis2007</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">Mansard2009</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">Escande2014</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">Righetti2011</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">Herzog2016</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">Kim2019</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">Paredes2023</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">Siekmann2021AllGaits</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">Gu2024HumanoidGym</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Siekmann2021AllGaits</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Xie2025PBHC</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">Zhang2024WoCoCo</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Fu2024HumanPlus</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">Argall2009LfD</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">Pomerleau1989ALVINN</bcf:citekey>
+    <bcf:citekey order="47" intorder="2">Bain1995BC</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">Ho2016GAIL</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">AMP</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">ASE</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">MOE</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">MVAE</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">AMP</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">MVAE</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">fu2024mobile</bcf:citekey>
+    <bcf:citekey order="55" intorder="2">he2024learning</bcf:citekey>
+    <bcf:citekey order="55" intorder="3">butepage2020imitating</bcf:citekey>
+    <bcf:citekey order="55" intorder="4">kulic2016anthropomorphic</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">chi2024universal</bcf:citekey>
+    <bcf:citekey order="56" intorder="2">bahl2022human</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">ishiguro2020bilateral</bcf:citekey>
+    <bcf:citekey order="57" intorder="2">ramos2018humanoid</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">kim2009stable</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">peng2018deepmimic</bcf:citekey>
+    <bcf:citekey order="59" intorder="2">peng2021amp</bcf:citekey>
+    <bcf:citekey order="59" intorder="3">won2020scalable</bcf:citekey>
+    <bcf:citekey order="59" intorder="4">luo2023perpetual</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">bohez2022imitate</bcf:citekey>
+    <bcf:citekey order="60" intorder="2">tang2024humanmimic</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">koenemann2014real</bcf:citekey>
+    <bcf:citekey order="61" intorder="2">arduengo2021human</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">osqp</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

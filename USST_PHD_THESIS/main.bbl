@@ -846,6 +846,7 @@
       \strng{nameabibnamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
       \strng{nameanamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
       \strng{nameafullhash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \field{extraname}{1}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -3943,6 +3944,1037 @@
       \range{pages}{10}
       \keyw{abdolhosseini2019learning}
     \endentry
+    \entry{Kato1976WABOT}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=eb78f718f2e2b08e3bc0e0111222fd78}{%
+           family={Kato},
+           familyi={K\bibinitperiod},
+           given={Ichiro},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f13834f10cf0b8c25b937526606fffea}{%
+           family={Takanishi},
+           familyi={T\bibinitperiod},
+           given={Atsuo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=eb78f718f2e2b08e3bc0e0111222fd78}{%
+           family={Kato},
+           familyi={K\bibinitperiod},
+           given={Ichiro},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f13834f10cf0b8c25b937526606fffea}{%
+           family={Takanishi},
+           familyi={T\bibinitperiod},
+           given={Atsuo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{fullhash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{bibnamehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{authorbibnamehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{authornamehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{authorfullhash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{nameabibnamehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{nameanamehash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \strng{nameafullhash}{e2e9d0f2fb3b14ab132dd35a47dea1e3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 6th International Symposium on Industrial Robots}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Development of WABOT-1: The First Anthropomorphic Robot}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1976}
+      \field{dateera}{ce}
+      \keyw{Kato1976WABOT}
+    \endentry
+    \entry{Kaneko2004HRP2}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=da7f1f09e8e61b2ee70df6838eb6fa67}{%
+           family={Kaneko},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3267c3ce0a3b9326637a42bc9c2706b1}{%
+           family={Kanehiro},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2eef7c0e6258a41786c9906e7fb5e66c}{%
+           family={Kajita},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=84479f705338209cab5f5a718b79bc3b}{%
+           family={Yokoyama},
+           familyi={Y\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a602ddc578275f31d94a4c88e0377799}{%
+           family={Akachi},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ccf20b01fc86b996670f7090245aab31}{%
+           family={Isozumi},
+           familyi={I\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \name{namea}{6}{}{%
+        {{hash=da7f1f09e8e61b2ee70df6838eb6fa67}{%
+           family={Kaneko},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3267c3ce0a3b9326637a42bc9c2706b1}{%
+           family={Kanehiro},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2eef7c0e6258a41786c9906e7fb5e66c}{%
+           family={Kajita},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=84479f705338209cab5f5a718b79bc3b}{%
+           family={Yokoyama},
+           familyi={Y\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a602ddc578275f31d94a4c88e0377799}{%
+           family={Akachi},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ccf20b01fc86b996670f7090245aab31}{%
+           family={Isozumi},
+           familyi={I\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{fullhash}{bbb3784a16747429d7466af8f943a5a5}
+      \strng{bibnamehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{authorbibnamehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{authornamehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{authorfullhash}{bbb3784a16747429d7466af8f943a5a5}
+      \strng{nameabibnamehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{nameanamehash}{ffbeebdbb55cbb33434902ad8decc326}
+      \strng{nameafullhash}{bbb3784a16747429d7466af8f943a5a5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Humanoid Robot HRP-2}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{pages}{1083\bibrangedash 1090}
+      \range{pages}{8}
+      \keyw{Kaneko2004HRP2}
+    \endentry
+    \entry{Sakagami2002ASIMO}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=3f85eb433ff9039ec35c05b6cd3bcd7a}{%
+           family={Sakagami},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=58b1c57c871e748e06b05c3830a530d5}{%
+           family={Watanabe},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a094b6fb464fbd22e01dac8c902d1501}{%
+           family={Aoyama},
+           familyi={A\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9963aa39a30fb47b3e037fce48a476a8}{%
+           family={Matsunaga},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fca91e13167d7657f1ba4c7abb8871fb}{%
+           family={Higaki},
+           familyi={H\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2c1739fed931ab6ba300cffd1a3a8462}{%
+           family={Fujimura},
+           familyi={F\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{namea}{6}{}{%
+        {{hash=3f85eb433ff9039ec35c05b6cd3bcd7a}{%
+           family={Sakagami},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=58b1c57c871e748e06b05c3830a530d5}{%
+           family={Watanabe},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a094b6fb464fbd22e01dac8c902d1501}{%
+           family={Aoyama},
+           familyi={A\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9963aa39a30fb47b3e037fce48a476a8}{%
+           family={Matsunaga},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fca91e13167d7657f1ba4c7abb8871fb}{%
+           family={Higaki},
+           familyi={H\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2c1739fed931ab6ba300cffd1a3a8462}{%
+           family={Fujimura},
+           familyi={F\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{fullhash}{e69ce8083748cebba99e58bcf73409e0}
+      \strng{bibnamehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{authorbibnamehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{authornamehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{authorfullhash}{e69ce8083748cebba99e58bcf73409e0}
+      \strng{nameabibnamehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{nameanamehash}{8538b117ed59067ddb6d44d5be92195f}
+      \strng{nameafullhash}{e69ce8083748cebba99e58bcf73409e0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{The Intelligent ASIMO: System Overview and Integration}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{pages}{2478\bibrangedash 2483}
+      \range{pages}{6}
+      \keyw{Sakagami2002ASIMO}
+    \endentry
+    \entry{Raibert1986Legged}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e3a6d1fa7658c92031b383b683d5d6d8}{%
+           family={Raibert},
+           familyi={R\bibinitperiod},
+           given={Marc\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=e3a6d1fa7658c92031b383b683d5d6d8}{%
+           family={Raibert},
+           familyi={R\bibinitperiod},
+           given={Marc\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{fullhash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{bibnamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{authorbibnamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{authornamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{authorfullhash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{nameabibnamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{nameanamehash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \strng{nameafullhash}{e3a6d1fa7658c92031b383b683d5d6d8}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Legged Robots That Balance}
+      \field{usera}{M}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{1986}
+      \field{dateera}{ce}
+      \keyw{Raibert1986Legged}
+    \endentry
+    \entry{Nelson2012PETMAN}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b07b2d7ff1170511c54da98ee5da23ab}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d5789ed47d47560049733ff317fc2232}{%
+           family={Saunders},
+           familyi={S\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b258a43edb208938e823bc3e90dab06}{%
+           family={Playter},
+           familyi={P\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=b07b2d7ff1170511c54da98ee5da23ab}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d5789ed47d47560049733ff317fc2232}{%
+           family={Saunders},
+           familyi={S\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b258a43edb208938e823bc3e90dab06}{%
+           family={Playter},
+           familyi={P\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{fullhash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{bibnamehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{authorbibnamehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{authornamehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{authorfullhash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{nameabibnamehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{nameanamehash}{7dddccebb34adc3200eb9595311c914d}
+      \strng{nameafullhash}{7dddccebb34adc3200eb9595311c914d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{PETMAN: A Humanoid Robot for Testing Chemical Protective Clothing}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{2209\bibrangedash 2216}
+      \range{pages}{8}
+      \keyw{Nelson2012PETMAN}
+    \endentry
+    \entry{Kuindersma2016Atlas}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=bbd7bd96ccb206e155a5549198cd794a}{%
+           family={Kuindersma},
+           familyi={K\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=93359059eb1f8a7007814d5083ced153}{%
+           family={Deits},
+           familyi={D\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d2b7d8a293940a32efd2b5763a37f8ec}{%
+           family={Fallon},
+           familyi={F\bibinitperiod},
+           given={Maurice},
+           giveni={M\bibinitperiod}}}%
+      }
+      \true{morenamea}
+      \name{namea}{3}{}{%
+        {{hash=bbd7bd96ccb206e155a5549198cd794a}{%
+           family={Kuindersma},
+           familyi={K\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=93359059eb1f8a7007814d5083ced153}{%
+           family={Deits},
+           familyi={D\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d2b7d8a293940a32efd2b5763a37f8ec}{%
+           family={Fallon},
+           familyi={F\bibinitperiod},
+           given={Maurice},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{fullhash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{bibnamehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{authorbibnamehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{authornamehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{authorfullhash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{nameabibnamehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{nameanamehash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \strng{nameafullhash}{5c366ebfb5380bc867e36e6d5b9c1eb9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Autonomous Robots}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{3}
+      \field{title}{Optimization-based Locomotion Planning, Estimation, and Control Design for the Atlas Humanoid Robot}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{40}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{429\bibrangedash 455}
+      \range{pages}{27}
+      \keyw{Kuindersma2016Atlas}
+    \endentry
+    \entry{Agility2023Digit}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=76ddf631a0561a8f818b24ed604e5982}{%
+           family={{Agility Robotics}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=76ddf631a0561a8f818b24ed604e5982}{%
+           family={{Agility Robotics}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{fullhash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{bibnamehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{authorbibnamehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{authornamehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{authorfullhash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{nameabibnamehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{nameanamehash}{76ddf631a0561a8f818b24ed604e5982}
+      \strng{nameafullhash}{76ddf631a0561a8f818b24ed604e5982}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://agilityrobotics.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Digit: Human-Centric, Multi-Purpose Robot for Logistics Work}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \keyw{Agility2023Digit}
+    \endentry
+    \entry{Tesla2023Optimus}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=071d4f8a859a857df28d98a8224e674b}{%
+           family={{Tesla Inc.}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=071d4f8a859a857df28d98a8224e674b}{%
+           family={{Tesla Inc.}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{fullhash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{bibnamehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{authorbibnamehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{authornamehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{authorfullhash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{nameabibnamehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{nameanamehash}{071d4f8a859a857df28d98a8224e674b}
+      \strng{nameafullhash}{071d4f8a859a857df28d98a8224e674b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.tesla.com/AI}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Tesla Optimus Gen 2 Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \keyw{Tesla2023Optimus}
+    \endentry
+    \entry{BostonDynamics2024Atlas}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9fff6234432849eb87e9f1aa94e91ff2}{%
+           family={{Boston Dynamics}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=9fff6234432849eb87e9f1aa94e91ff2}{%
+           family={{Boston Dynamics}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{fullhash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{bibnamehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{authorbibnamehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{authornamehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{authorfullhash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{nameabibnamehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{nameanamehash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \strng{nameafullhash}{9fff6234432849eb87e9f1aa94e91ff2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.bostondynamics.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Atlas: The Fully Electric Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{BostonDynamics2024Atlas}
+    \endentry
+    \entry{FigureAI2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2b20a1dfc82b79e3c04f832c479ce828}{%
+           family={{Figure AI}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=2b20a1dfc82b79e3c04f832c479ce828}{%
+           family={{Figure AI}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{fullhash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{bibnamehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{authorbibnamehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{authornamehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{authorfullhash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{nameabibnamehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{nameanamehash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \strng{nameafullhash}{2b20a1dfc82b79e3c04f832c479ce828}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://figure.ai}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Figure 02 Autonomous General-Purpose Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{FigureAI2024}
+    \endentry
+    \entry{1X2024NeoGamma}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=acdb1c059aff8e5ef705d68c163a7d3f}{%
+           family={{1X Technologies}},
+           familyi={1\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=acdb1c059aff8e5ef705d68c163a7d3f}{%
+           family={{1X Technologies}},
+           familyi={1\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{fullhash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{bibnamehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{authorbibnamehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{authornamehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{authorfullhash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{nameabibnamehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{nameanamehash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \strng{nameafullhash}{acdb1c059aff8e5ef705d68c163a7d3f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.1x.tech}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{NEO Gamma: Home-Safe Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{1X2024NeoGamma}
+    \endentry
+    \entry{Fu2014SensoryReflex}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=f9ee05a451213dd475213787f16cad8f}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=92faacc6874983183ce7fb86e39f31ec}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=def5514c2e3b86a8ffae96ab0fb26158}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=f9ee05a451213dd475213787f16cad8f}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=92faacc6874983183ce7fb86e39f31ec}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=def5514c2e3b86a8ffae96ab0fb26158}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Hong Kong, China}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{fullhash}{f345df40414bb4bab4ad7081fd61772b}
+      \strng{bibnamehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{authorbibnamehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{authornamehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{authorfullhash}{f345df40414bb4bab4ad7081fd61772b}
+      \strng{nameabibnamehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{nameanamehash}{c44e2ff5b5be52338fedce6c268bd765}
+      \strng{nameafullhash}{f345df40414bb4bab4ad7081fd61772b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 4th Annual IEEE International Conference on Cyber Technology in Automation, Control and Intelligent Systems (CYBER)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Sensory Reflex Control for a Pneumatic Biped Robot}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{pages}{401\bibrangedash 406}
+      \range{pages}{6}
+      \keyw{Fu2014SensoryReflex}
+    \endentry
+    \entry{Hou2014FlexibleDrive}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=6072a7dfad3f513ad2ce88f71b33cbea}{%
+           family={侯月阳},
+           familyi={侯\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=6072a7dfad3f513ad2ce88f71b33cbea}{%
+           family={侯月阳},
+           familyi={侯\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {哈尔滨工业大学}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{location}{1}{%
+        {哈尔滨}%
+      }
+      \strng{namehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{fullhash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{bibnamehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{authorbibnamehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{authornamehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{authorfullhash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{nameabibnamehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{nameanamehash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \strng{nameafullhash}{6072a7dfad3f513ad2ce88f71b33cbea}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{挠性驱动单元及其在仿人双足步行机器人中的应用研究}
+      \field{type}{phdthesis}
+      \field{usera}{D}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \keyw{Hou2014FlexibleDrive}
+    \endentry
+    \entry{Xu2011ImprovedZMP}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=786af77513e12c05e5d39eb6e8c541e1}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=def5514c2e3b86a8ffae96ab0fb26158}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=ef065b28c31984323fd6d3483d29aafd}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=786af77513e12c05e5d39eb6e8c541e1}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=def5514c2e3b86a8ffae96ab0fb26158}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=ef065b28c31984323fd6d3483d29aafd}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=38026ba4ee6b102b47bf3ffb41325c8f}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Shanghai, China}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{ef290fa788039f714784ee448bac445f}
+      \strng{fullhash}{05cf9810d1d68290bba4a2b1f8849413}
+      \strng{bibnamehash}{ef290fa788039f714784ee448bac445f}
+      \strng{authorbibnamehash}{ef290fa788039f714784ee448bac445f}
+      \strng{authornamehash}{ef290fa788039f714784ee448bac445f}
+      \strng{authorfullhash}{05cf9810d1d68290bba4a2b1f8849413}
+      \strng{nameabibnamehash}{ef290fa788039f714784ee448bac445f}
+      \strng{nameanamehash}{ef290fa788039f714784ee448bac445f}
+      \strng{nameafullhash}{05cf9810d1d68290bba4a2b1f8849413}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{An Improved ZMP Trajectory Design for the Biped Robot BHR}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{569\bibrangedash 574}
+      \range{pages}{6}
+      \keyw{Xu2011ImprovedZMP}
+    \endentry
+    \entry{Unitree2024G1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1816738b3d76b98cee588de847aee6f0}{%
+           family={{Unitree Robotics}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=1816738b3d76b98cee588de847aee6f0}{%
+           family={{Unitree Robotics}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{fullhash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{bibnamehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{authorbibnamehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{authornamehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{authorfullhash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{nameabibnamehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{nameanamehash}{1816738b3d76b98cee588de847aee6f0}
+      \strng{nameafullhash}{1816738b3d76b98cee588de847aee6f0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.unitree.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Unitree G1 Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{Unitree2024G1}
+    \endentry
+    \entry{EngineAI2024SE01}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8d54ed7c5542435e45a75eb41f185da0}{%
+           family={{EngineAI}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=8d54ed7c5542435e45a75eb41f185da0}{%
+           family={{EngineAI}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{fullhash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{bibnamehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{authorbibnamehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{authornamehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{authorfullhash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{nameabibnamehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{nameanamehash}{8d54ed7c5542435e45a75eb41f185da0}
+      \strng{nameafullhash}{8d54ed7c5542435e45a75eb41f185da0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.engineai.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{SE01 High-Dynamic Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{EngineAI2024SE01}
+    \endentry
+    \entry{UBTECH2024WalkerS2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a7c8591fbd5175411442b18c8ea6caff}{%
+           family={{UBTECH Robotics}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=a7c8591fbd5175411442b18c8ea6caff}{%
+           family={{UBTECH Robotics}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{fullhash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{bibnamehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{authorbibnamehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{authornamehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{authorfullhash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{nameabibnamehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{nameanamehash}{a7c8591fbd5175411442b18c8ea6caff}
+      \strng{nameafullhash}{a7c8591fbd5175411442b18c8ea6caff}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ubtrobot.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Walker S2 Industrial Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{UBTECH2024WalkerS2}
+    \endentry
+    \entry{UBTECH2024Tienkung}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d51762cb56030b9ec385bbd4a8ef0a36}{%
+           family={{UBTECH Robotics and Beijing Humanoid Innovation Center}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=d51762cb56030b9ec385bbd4a8ef0a36}{%
+           family={{UBTECH Robotics and Beijing Humanoid Innovation Center}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{fullhash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{bibnamehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{authorbibnamehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{authornamehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{authorfullhash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{nameabibnamehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{nameanamehash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \strng{nameafullhash}{d51762cb56030b9ec385bbd4a8ef0a36}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ubtrobot.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{Walker Tienkung Research Platform}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{UBTECH2024Tienkung}
+    \endentry
+    \entry{Fourier2024GR1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=420947a1e4a01543129fd794a004031a}{%
+           family={{Fourier Intelligence}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=420947a1e4a01543129fd794a004031a}{%
+           family={{Fourier Intelligence}},
+           familyi={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{420947a1e4a01543129fd794a004031a}
+      \strng{fullhash}{420947a1e4a01543129fd794a004031a}
+      \strng{bibnamehash}{420947a1e4a01543129fd794a004031a}
+      \strng{authorbibnamehash}{420947a1e4a01543129fd794a004031a}
+      \strng{authornamehash}{420947a1e4a01543129fd794a004031a}
+      \strng{authorfullhash}{420947a1e4a01543129fd794a004031a}
+      \strng{nameabibnamehash}{420947a1e4a01543129fd794a004031a}
+      \strng{nameanamehash}{420947a1e4a01543129fd794a004031a}
+      \strng{nameafullhash}{420947a1e4a01543129fd794a004031a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.fftai.com}}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{note}{Accessed 2026-03-01}
+      \field{title}{GR-1 General-Purpose Humanoid Robot}
+      \field{usera}{Z}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{Fourier2024GR1}
+    \endentry
     \entry{Liegeois1977}{article}{}
       \name{author}{1}{}{%
         {{hash=a3df77294d1b052bb008559c6c103933}{%
@@ -3970,8 +5002,8 @@
       \strng{nameabibnamehash}{a3df77294d1b052bb008559c6c103933}
       \strng{nameanamehash}{a3df77294d1b052bb008559c6c103933}
       \strng{nameafullhash}{a3df77294d1b052bb008559c6c103933}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
@@ -4020,8 +5052,8 @@
       \strng{nameabibnamehash}{9b20cab1212374ead2722ffc6828f603}
       \strng{nameanamehash}{9b20cab1212374ead2722ffc6828f603}
       \strng{nameafullhash}{9b20cab1212374ead2722ffc6828f603}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4072,8 +5104,8 @@
       \strng{nameabibnamehash}{f5758328f6160d80471e42cc35d7ff61}
       \strng{nameanamehash}{f5758328f6160d80471e42cc35d7ff61}
       \strng{nameafullhash}{f5758328f6160d80471e42cc35d7ff61}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 5th International Conference on Advanced Robotics}
@@ -4117,8 +5149,8 @@
       \strng{nameabibnamehash}{a1ed48939870abd896792330bc735967}
       \strng{nameanamehash}{a1ed48939870abd896792330bc735967}
       \strng{nameafullhash}{a1ed48939870abd896792330bc735967}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Journal on Robotics and Automation}
@@ -4194,8 +5226,8 @@
       \strng{nameabibnamehash}{9fcb788a58c848f4272eeac56363cf70}
       \strng{nameanamehash}{9fcb788a58c848f4272eeac56363cf70}
       \strng{nameafullhash}{aee0468ac4209cd4769e37e7201efee6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Humanoid Robotics}
@@ -4244,8 +5276,8 @@
       \strng{nameabibnamehash}{1b7e3f69527189e4c91062599cc2f49b}
       \strng{nameanamehash}{1b7e3f69527189e4c91062599cc2f49b}
       \strng{nameafullhash}{1b7e3f69527189e4c91062599cc2f49b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4307,8 +5339,8 @@
       \strng{nameabibnamehash}{ee2a93bcd873fc225644901715ac378e}
       \strng{nameanamehash}{ee2a93bcd873fc225644901715ac378e}
       \strng{nameafullhash}{ee2a93bcd873fc225644901715ac378e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Robotics}
@@ -4374,8 +5406,8 @@
       \strng{nameabibnamehash}{848ecdd35f1c378096b01caddd7c5846}
       \strng{nameanamehash}{848ecdd35f1c378096b01caddd7c5846}
       \strng{nameafullhash}{848ecdd35f1c378096b01caddd7c5846}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The International Journal of Robotics Research}
@@ -4451,8 +5483,8 @@
       \strng{nameabibnamehash}{454ea9a1dacfaf2fdc372751750179bd}
       \strng{nameanamehash}{454ea9a1dacfaf2fdc372751750179bd}
       \strng{nameafullhash}{7a4baa842a57799a55d148b9293767c5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)}
@@ -4536,8 +5568,8 @@
       \strng{nameabibnamehash}{0a14064f34d63375b17b59e4144492f1}
       \strng{nameanamehash}{0a14064f34d63375b17b59e4144492f1}
       \strng{nameafullhash}{ea818f91756edc384b00852160bae02e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Autonomous Robots}
@@ -4593,8 +5625,8 @@
       \strng{nameabibnamehash}{5bd61dcd20f7f0981c97ee892f06f5ca}
       \strng{nameanamehash}{5bd61dcd20f7f0981c97ee892f06f5ca}
       \strng{nameafullhash}{5bd61dcd20f7f0981c97ee892f06f5ca}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Science Robotics}
@@ -4646,8 +5678,8 @@
       \strng{nameabibnamehash}{7f95cecf461969792b7dbd46cfcea114}
       \strng{nameanamehash}{7f95cecf461969792b7dbd46cfcea114}
       \strng{nameafullhash}{7f95cecf461969792b7dbd46cfcea114}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4698,8 +5730,8 @@
       \strng{nameabibnamehash}{72b11f1c5bf3cdae5cd6bc8cd07c4847}
       \strng{nameanamehash}{72b11f1c5bf3cdae5cd6bc8cd07c4847}
       \strng{nameafullhash}{72b11f1c5bf3cdae5cd6bc8cd07c4847}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4750,8 +5782,8 @@
       \strng{nameabibnamehash}{e50a931c4abdc26bb0b69466778098e5}
       \strng{nameanamehash}{e50a931c4abdc26bb0b69466778098e5}
       \strng{nameafullhash}{e50a931c4abdc26bb0b69466778098e5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4802,8 +5834,8 @@
       \strng{nameabibnamehash}{6fe60b0a28f26a382a36836388bbbed8}
       \strng{nameanamehash}{6fe60b0a28f26a382a36836388bbbed8}
       \strng{nameafullhash}{6fe60b0a28f26a382a36836388bbbed8}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -4874,8 +5906,8 @@
       \strng{nameabibnamehash}{ead3190e08c16e3c15645f2573d8c344}
       \strng{nameanamehash}{ead3190e08c16e3c15645f2573d8c344}
       \strng{nameafullhash}{1292bdc8336854145f2ee318f6f677a4}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Robotics and Autonomous Systems}
@@ -4921,8 +5953,8 @@
       \strng{nameabibnamehash}{4e5f05606e47b1676579799cf7e84220}
       \strng{nameanamehash}{4e5f05606e47b1676579799cf7e84220}
       \strng{nameafullhash}{4e5f05606e47b1676579799cf7e84220}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
@@ -4967,8 +5999,8 @@
       \strng{nameabibnamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
       \strng{nameanamehash}{d187b931e51c091ba3ecc0dd9ef65f88}
       \strng{nameafullhash}{d187b931e51c091ba3ecc0dd9ef65f88}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -5020,8 +6052,8 @@
       \strng{nameabibnamehash}{d2c2729ff759e9862fc32bdfb994a71c}
       \strng{nameanamehash}{d2c2729ff759e9862fc32bdfb994a71c}
       \strng{nameafullhash}{d2c2729ff759e9862fc32bdfb994a71c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
@@ -5093,8 +6125,8 @@
       \strng{nameabibnamehash}{d0f1ae6bc29b6f03b1c727899a8a7454}
       \strng{nameanamehash}{d0f1ae6bc29b6f03b1c727899a8a7454}
       \strng{nameafullhash}{84bc5d59f83c8bf0d83b18c67ffde539}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Graphics (SIGGRAPH)}
@@ -5180,8 +6212,8 @@
       \strng{nameabibnamehash}{35e94d78c3cb7f7e5053e8c8b761d2e4}
       \strng{nameanamehash}{35e94d78c3cb7f7e5053e8c8b761d2e4}
       \strng{nameafullhash}{74e9b494f254538115a0503b2c4d078d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Graphics (SIGGRAPH)}
@@ -5297,8 +6329,8 @@
       \strng{nameabibnamehash}{41f1f50185eadb92c1952dacfce3d04c}
       \strng{nameanamehash}{41f1f50185eadb92c1952dacfce3d04c}
       \strng{nameafullhash}{c56b379f9f9de427774b1a8785904534}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2511.06371}
@@ -5374,8 +6406,8 @@
       \strng{nameabibnamehash}{7060bd990d2960dada89b96c1e039868}
       \strng{nameanamehash}{7060bd990d2960dada89b96c1e039868}
       \strng{nameafullhash}{8db12f5728340d2e257c5b4142ea060d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Graphics}
@@ -5393,6 +6425,1626 @@
       \field{pages}{40:1\bibrangedash 40:12}
       \range{pages}{-1}
       \keyw{MVAE}
+    \endentry
+    \entry{fu2024mobile}{article}{}
+      \name{author}{3}{}{%
+        {{hash=871ca5e6de8cc6f1b62466dd6e9a440a}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Zipeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ca261c82abd59f3b483329f40cc75b16}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Tony\bibnamedelima Z},
+           giveni={T\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=058e82495825ae376c6a96a12169e6ee}{%
+           family={Finn},
+           familyi={F\bibinitperiod},
+           given={Chelsea},
+           giveni={C\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=871ca5e6de8cc6f1b62466dd6e9a440a}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Zipeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ca261c82abd59f3b483329f40cc75b16}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Tony\bibnamedelima Z},
+           giveni={T\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=058e82495825ae376c6a96a12169e6ee}{%
+           family={Finn},
+           familyi={F\bibinitperiod},
+           given={Chelsea},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{fullhash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{bibnamehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{authorbibnamehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{authornamehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{authorfullhash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{nameabibnamehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{nameanamehash}{b5edd979da7e740ac4ee60b82606a615}
+      \strng{nameafullhash}{b5edd979da7e740ac4ee60b82606a615}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2401.02117}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Mobile aloha: Learning bimanual mobile manipulation with low-cost whole-body teleoperation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{fu2024mobile}
+    \endentry
+    \entry{he2024learning}{article}{}
+      \name{author}{7}{}{%
+        {{hash=90fdbcf96b9f6eb06400a7a809c19434}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Tairan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=99c4aa9db701b87fcbdac7cc662b68dc}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhengyi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b751a698564c079cf00371b55d056d9d}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Wenli},
+           giveni={W\bibinitperiod}}}%
+        {{hash=6396eaa69e1c798e2c8c503e9ce9067b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Chong},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4e4b95cc7070ea5a03c13bea9ba5c5e5}{%
+           family={Kitani},
+           familyi={K\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod}}}%
+        {{hash=0f9c3846c27ef6b23153f98809a2a292}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Changliu},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a65e0dcf7d61134ee634d3a12fbc6fc9}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Guanya},
+           giveni={G\bibinitperiod}}}%
+      }
+      \name{namea}{7}{}{%
+        {{hash=90fdbcf96b9f6eb06400a7a809c19434}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Tairan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=99c4aa9db701b87fcbdac7cc662b68dc}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhengyi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b751a698564c079cf00371b55d056d9d}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Wenli},
+           giveni={W\bibinitperiod}}}%
+        {{hash=6396eaa69e1c798e2c8c503e9ce9067b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Chong},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4e4b95cc7070ea5a03c13bea9ba5c5e5}{%
+           family={Kitani},
+           familyi={K\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod}}}%
+        {{hash=0f9c3846c27ef6b23153f98809a2a292}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Changliu},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a65e0dcf7d61134ee634d3a12fbc6fc9}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Guanya},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{fullhash}{b2ad8a2554dda1f34af5610a8f8c6eb5}
+      \strng{bibnamehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{authorbibnamehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{authornamehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{authorfullhash}{b2ad8a2554dda1f34af5610a8f8c6eb5}
+      \strng{nameabibnamehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{nameanamehash}{580616ad21a5906dadff7bb3ff425721}
+      \strng{nameafullhash}{b2ad8a2554dda1f34af5610a8f8c6eb5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2403.04436}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{he2024learning}
+    \endentry
+    \entry{butepage2020imitating}{article}{}
+      \name{author}{5}{}{%
+        {{hash=bde30e732b545e2acc7b19e133984b13}{%
+           family={Bütepage},
+           familyi={B\bibinitperiod},
+           given={Judith},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ef0448a5545c9036a7a91df80ee7d12f}{%
+           family={Ghadirzadeh},
+           familyi={G\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=74a311b5709b5944a39f6f4279e1cece}{%
+           family={Öztimur\bibnamedelima Karadaǧ},
+           familyi={Ö\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Özge},
+           giveni={Ö\bibinitperiod}}}%
+        {{hash=42e622a383c3b1afe356cb7f0e6585a6}{%
+           family={Björkman},
+           familyi={B\bibinitperiod},
+           given={M{å}rten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d8a72b3bd29e9244932e7c10628e6b03}{%
+           family={Kragic},
+           familyi={K\bibinitperiod},
+           given={Danica},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=bde30e732b545e2acc7b19e133984b13}{%
+           family={Bütepage},
+           familyi={B\bibinitperiod},
+           given={Judith},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ef0448a5545c9036a7a91df80ee7d12f}{%
+           family={Ghadirzadeh},
+           familyi={G\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=74a311b5709b5944a39f6f4279e1cece}{%
+           family={Öztimur\bibnamedelima Karadaǧ},
+           familyi={Ö\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Özge},
+           giveni={Ö\bibinitperiod}}}%
+        {{hash=42e622a383c3b1afe356cb7f0e6585a6}{%
+           family={Björkman},
+           familyi={B\bibinitperiod},
+           given={M{å}rten},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d8a72b3bd29e9244932e7c10628e6b03}{%
+           family={Kragic},
+           familyi={K\bibinitperiod},
+           given={Danica},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media SA}%
+      }
+      \strng{namehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{fullhash}{be25b049e3b21679f0dadc9cf3ca10ca}
+      \strng{bibnamehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{authorbibnamehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{authornamehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{authorfullhash}{be25b049e3b21679f0dadc9cf3ca10ca}
+      \strng{nameabibnamehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{nameanamehash}{cade0ebd70700e9ee4df83a59273f6b1}
+      \strng{nameafullhash}{be25b049e3b21679f0dadc9cf3ca10ca}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Robotics and AI}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Imitating by generating: Deep generative models for imitation of interactive tasks}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{7}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{47}
+      \range{pages}{1}
+      \keyw{butepage2020imitating}
+    \endentry
+    \entry{kulic2016anthropomorphic}{article}{}
+      \name{author}{6}{}{%
+        {{hash=7be8ae2de32e6e154dd5dd61d19d2bdb}{%
+           family={Kulić},
+           familyi={K\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1cc24ceefe2dd00c422f199861a18aaa}{%
+           family={Venture},
+           familyi={V\bibinitperiod},
+           given={Gentiane},
+           giveni={G\bibinitperiod}}}%
+        {{hash=60729ebbaf4e7c8372dc7df8e0e82dda}{%
+           family={Yamane},
+           familyi={Y\bibinitperiod},
+           given={Katsu},
+           giveni={K\bibinitperiod}}}%
+        {{hash=551a8a8fdebab83a8ef6c3257a95a745}{%
+           family={Demircan},
+           familyi={D\bibinitperiod},
+           given={Emel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=abc656adf27a820f3d284f3cee556724}{%
+           family={Mizuuchi},
+           familyi={M\bibinitperiod},
+           given={Ikuo},
+           giveni={I\bibinitperiod}}}%
+        {{hash=52e791655dd0f52f8a6932f4555cc8bf}{%
+           family={Mombaur},
+           familyi={M\bibinitperiod},
+           given={Katja},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{namea}{6}{}{%
+        {{hash=7be8ae2de32e6e154dd5dd61d19d2bdb}{%
+           family={Kulić},
+           familyi={K\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1cc24ceefe2dd00c422f199861a18aaa}{%
+           family={Venture},
+           familyi={V\bibinitperiod},
+           given={Gentiane},
+           giveni={G\bibinitperiod}}}%
+        {{hash=60729ebbaf4e7c8372dc7df8e0e82dda}{%
+           family={Yamane},
+           familyi={Y\bibinitperiod},
+           given={Katsu},
+           giveni={K\bibinitperiod}}}%
+        {{hash=551a8a8fdebab83a8ef6c3257a95a745}{%
+           family={Demircan},
+           familyi={D\bibinitperiod},
+           given={Emel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=abc656adf27a820f3d284f3cee556724}{%
+           family={Mizuuchi},
+           familyi={M\bibinitperiod},
+           given={Ikuo},
+           giveni={I\bibinitperiod}}}%
+        {{hash=52e791655dd0f52f8a6932f4555cc8bf}{%
+           family={Mombaur},
+           familyi={M\bibinitperiod},
+           given={Katja},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c773686f530a01421549d2aee452fae8}
+      \strng{fullhash}{63576a2711e025b68afae3b18a8b9513}
+      \strng{bibnamehash}{c773686f530a01421549d2aee452fae8}
+      \strng{authorbibnamehash}{c773686f530a01421549d2aee452fae8}
+      \strng{authornamehash}{c773686f530a01421549d2aee452fae8}
+      \strng{authorfullhash}{63576a2711e025b68afae3b18a8b9513}
+      \strng{nameabibnamehash}{c773686f530a01421549d2aee452fae8}
+      \strng{nameanamehash}{c773686f530a01421549d2aee452fae8}
+      \strng{nameafullhash}{63576a2711e025b68afae3b18a8b9513}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Robotics}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Anthropomorphic movement analysis and synthesis: A survey of methods and applications}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{32}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{776\bibrangedash 795}
+      \range{pages}{20}
+      \keyw{kulic2016anthropomorphic}
+    \endentry
+    \entry{chi2024universal}{article}{}
+      \name{author}{8}{}{%
+        {{hash=df2b093090f880615de44c41b24e5a83}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=271e14075f67de88e200f59d1766ac4f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhenjia},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4028da705b21c792114c9d8562c65b18}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Chuer},
+           giveni={C\bibinitperiod}}}%
+        {{hash=88123d907f0c54d03563b005be97ba8a}{%
+           family={Cousineau},
+           familyi={C\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1995579599c113e09459f6c5b512b672}{%
+           family={Burchfiel},
+           familyi={B\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e6acb0e0e37d5ca1407d95c9240e659d}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=480d067fbc7c00be4a01a0e4902c984e}{%
+           family={Tedrake},
+           familyi={T\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5abaf8ffacdb02cbfe12fca8f3d327cb}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Shuran},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{8}{}{%
+        {{hash=df2b093090f880615de44c41b24e5a83}{%
+           family={Chi},
+           familyi={C\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=271e14075f67de88e200f59d1766ac4f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhenjia},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4028da705b21c792114c9d8562c65b18}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Chuer},
+           giveni={C\bibinitperiod}}}%
+        {{hash=88123d907f0c54d03563b005be97ba8a}{%
+           family={Cousineau},
+           familyi={C\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1995579599c113e09459f6c5b512b672}{%
+           family={Burchfiel},
+           familyi={B\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e6acb0e0e37d5ca1407d95c9240e659d}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=480d067fbc7c00be4a01a0e4902c984e}{%
+           family={Tedrake},
+           familyi={T\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5abaf8ffacdb02cbfe12fca8f3d327cb}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Shuran},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{fullhash}{2805617b30c8b89e44182b1655ad8e9d}
+      \strng{bibnamehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{authorbibnamehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{authornamehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{authorfullhash}{2805617b30c8b89e44182b1655ad8e9d}
+      \strng{nameabibnamehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{nameanamehash}{10253ab924af23bd14439fe47e470d97}
+      \strng{nameafullhash}{2805617b30c8b89e44182b1655ad8e9d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2402.10329}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \keyw{chi2024universal}
+    \endentry
+    \entry{bahl2022human}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e7584772dcf4aadad2e9ba78e7cb4412}{%
+           family={Bahl},
+           familyi={B\bibinitperiod},
+           given={Shikhar},
+           giveni={S\bibinitperiod}}}%
+        {{hash=83dd9d464c9f0ea982254939a7f021d8}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=09e431093c8637ade01037714cfc992c}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=e7584772dcf4aadad2e9ba78e7cb4412}{%
+           family={Bahl},
+           familyi={B\bibinitperiod},
+           given={Shikhar},
+           giveni={S\bibinitperiod}}}%
+        {{hash=83dd9d464c9f0ea982254939a7f021d8}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=09e431093c8637ade01037714cfc992c}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{fullhash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{bibnamehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{authorbibnamehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{authornamehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{authorfullhash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{nameabibnamehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{nameanamehash}{d0827a86c55797e6590f287a38cd524a}
+      \strng{nameafullhash}{d0827a86c55797e6590f287a38cd524a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2207.09450}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Human-to-robot imitation in the wild}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \keyw{bahl2022human}
+    \endentry
+    \entry{ishiguro2020bilateral}{article}{}
+      \name{author}{9}{}{%
+        {{hash=b1a199f42308065fdd6b2c6fcda29fcd}{%
+           family={Ishiguro},
+           familyi={I\bibinitperiod},
+           given={Yasuhiro},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8d5fc0b043373f0908ed2abedff27096}{%
+           family={Makabe},
+           familyi={M\bibinitperiod},
+           given={Tasuku},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f4de6523c9f7ae49668efab9d8e65e85}{%
+           family={Nagamatsu},
+           familyi={N\bibinitperiod},
+           given={Yuya},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cd9c717d758e2d3fae9a5c4cb96b942e}{%
+           family={Kojio},
+           familyi={K\bibinitperiod},
+           given={Yuta},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=eaad65a0df07408273793bf010b2168c}{%
+           family={Kojima},
+           familyi={K\bibinitperiod},
+           given={Kunio},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cf44b5e80ca869ecc8acb3fef1bbabe4}{%
+           family={Sugai},
+           familyi={S\bibinitperiod},
+           given={Fumihito},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f65f7e10df139400d6d15f8f244a05bf}{%
+           family={Kakiuchi},
+           familyi={K\bibinitperiod},
+           given={Yohei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b94285fdbb856f7e140ea83e452fcad8}{%
+           family={Okada},
+           familyi={O\bibinitperiod},
+           given={Kei},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2662189a99364276c4448c2a503abe75}{%
+           family={Inaba},
+           familyi={I\bibinitperiod},
+           given={Masayuki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{9}{}{%
+        {{hash=b1a199f42308065fdd6b2c6fcda29fcd}{%
+           family={Ishiguro},
+           familyi={I\bibinitperiod},
+           given={Yasuhiro},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8d5fc0b043373f0908ed2abedff27096}{%
+           family={Makabe},
+           familyi={M\bibinitperiod},
+           given={Tasuku},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f4de6523c9f7ae49668efab9d8e65e85}{%
+           family={Nagamatsu},
+           familyi={N\bibinitperiod},
+           given={Yuya},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cd9c717d758e2d3fae9a5c4cb96b942e}{%
+           family={Kojio},
+           familyi={K\bibinitperiod},
+           given={Yuta},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=eaad65a0df07408273793bf010b2168c}{%
+           family={Kojima},
+           familyi={K\bibinitperiod},
+           given={Kunio},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cf44b5e80ca869ecc8acb3fef1bbabe4}{%
+           family={Sugai},
+           familyi={S\bibinitperiod},
+           given={Fumihito},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f65f7e10df139400d6d15f8f244a05bf}{%
+           family={Kakiuchi},
+           familyi={K\bibinitperiod},
+           given={Yohei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b94285fdbb856f7e140ea83e452fcad8}{%
+           family={Okada},
+           familyi={O\bibinitperiod},
+           given={Kei},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2662189a99364276c4448c2a503abe75}{%
+           family={Inaba},
+           familyi={I\bibinitperiod},
+           given={Masayuki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{fullhash}{87c342207a21c4e332f77b46427290c7}
+      \strng{bibnamehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{authorbibnamehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{authornamehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{authorfullhash}{87c342207a21c4e332f77b46427290c7}
+      \strng{nameabibnamehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{nameanamehash}{6e878d9538864ab0fe762691c8fa9289}
+      \strng{nameafullhash}{87c342207a21c4e332f77b46427290c7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Robotics and Automation Letters}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Bilateral humanoid teleoperation system using whole-body exoskeleton cockpit TABLIS}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{5}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{6419\bibrangedash 6426}
+      \range{pages}{8}
+      \keyw{ishiguro2020bilateral}
+    \endentry
+    \entry{ramos2018humanoid}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7751d770002f5eb684e801d3128b1216}{%
+           family={Ramos},
+           familyi={R\bibinitperiod},
+           given={Joao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=23a30c71925ebf508cf3e30627b69403}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sangbae},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=7751d770002f5eb684e801d3128b1216}{%
+           family={Ramos},
+           familyi={R\bibinitperiod},
+           given={Joao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=23a30c71925ebf508cf3e30627b69403}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sangbae},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{fullhash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{bibnamehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{authorbibnamehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{authornamehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{authorfullhash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{nameabibnamehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{nameanamehash}{bc0d3876edcb334fc3297d96fef14afc}
+      \strng{nameafullhash}{bc0d3876edcb334fc3297d96fef14afc}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Robotics}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Humanoid dynamic synchronization through whole-body bilateral feedback teleoperation}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{34}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{953\bibrangedash 965}
+      \range{pages}{13}
+      \keyw{ramos2018humanoid}
+    \endentry
+    \entry{kim2009stable}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=ad2dc4c51ca25dfaca5272a5c65d934e}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Seungsu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6a0815820079044d495a6c4857301eb2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={ChangHwan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9069f80c4da3f3475cfe8d985dc12401}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Bumjae},
+           giveni={B\bibinitperiod}}}%
+        {{hash=70f30dd78a707ca7681ded3fae7591ed}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Sangrok},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=ad2dc4c51ca25dfaca5272a5c65d934e}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Seungsu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6a0815820079044d495a6c4857301eb2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={ChangHwan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9069f80c4da3f3475cfe8d985dc12401}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Bumjae},
+           giveni={B\bibinitperiod}}}%
+        {{hash=70f30dd78a707ca7681ded3fae7591ed}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Sangrok},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{fullhash}{9a389086e887f4c63780c73a74e2a2d0}
+      \strng{bibnamehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{authorbibnamehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{authornamehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{authorfullhash}{9a389086e887f4c63780c73a74e2a2d0}
+      \strng{nameabibnamehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{nameanamehash}{803628b17be0bb32434abe68060a0ee3}
+      \strng{nameafullhash}{9a389086e887f4c63780c73a74e2a2d0}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Stable whole-body motion generation for humanoid robots to imitate human motions}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{pages}{2518\bibrangedash 2524}
+      \range{pages}{7}
+      \keyw{kim2009stable}
+    \endentry
+    \entry{peng2018deepmimic}{article}{}
+      \name{author}{4}{}{%
+        {{hash=eaf6d025c486d283ccc7c617f05b7214}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xue\bibnamedelima Bin},
+           giveni={X\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=625047e6bbadc6d0c1973ce2b6d8b156}{%
+           family={Van\bibnamedelimb de\bibnamedelima Panne},
+           familyi={V\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Michiel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=eaf6d025c486d283ccc7c617f05b7214}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xue\bibnamedelima Bin},
+           giveni={X\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=625047e6bbadc6d0c1973ce2b6d8b156}{%
+           family={Van\bibnamedelimb de\bibnamedelima Panne},
+           familyi={V\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Michiel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{fullhash}{cbe1df7de24f5412838be25f9faba16d}
+      \strng{bibnamehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{authorbibnamehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{authornamehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{authorfullhash}{cbe1df7de24f5412838be25f9faba16d}
+      \strng{nameabibnamehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{nameanamehash}{bfbb455bce76b0501d1836a329228a59}
+      \strng{nameafullhash}{cbe1df7de24f5412838be25f9faba16d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions On Graphics (TOG)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Deepmimic: Example-guided deep reinforcement learning of physics-based character skills}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{37}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 14}
+      \range{pages}{14}
+      \keyw{peng2018deepmimic}
+    \endentry
+    \entry{peng2021amp}{article}{}
+      \name{author}{5}{}{%
+        {{hash=eaf6d025c486d283ccc7c617f05b7214}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xue\bibnamedelima Bin},
+           giveni={X\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=04b3cd267a67dae67a9a1545ed8f5ad0}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Ze},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6739ae1219e43710a65f37e9a5b5e902}{%
+           family={Kanazawa},
+           familyi={K\bibinitperiod},
+           given={Angjoo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=eaf6d025c486d283ccc7c617f05b7214}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xue\bibnamedelima Bin},
+           giveni={X\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=04b3cd267a67dae67a9a1545ed8f5ad0}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Ze},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6739ae1219e43710a65f37e9a5b5e902}{%
+           family={Kanazawa},
+           familyi={K\bibinitperiod},
+           given={Angjoo},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{fullhash}{61bd79686de44641a4de49b62816e9ea}
+      \strng{bibnamehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{authorbibnamehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{authornamehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{authorfullhash}{61bd79686de44641a4de49b62816e9ea}
+      \strng{nameabibnamehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{nameanamehash}{375f6e7c80969240d0fa697b61bbf375}
+      \strng{nameafullhash}{61bd79686de44641a4de49b62816e9ea}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Graphics (ToG)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{Amp: Adversarial motion priors for stylized physics-based character control}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{40}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 20}
+      \range{pages}{20}
+      \keyw{peng2021amp}
+    \endentry
+    \entry{won2020scalable}{article}{}
+      \name{author}{3}{}{%
+        {{hash=45f6d7a63964e32f8cbc9b48dc20d038}{%
+           family={Won},
+           familyi={W\bibinitperiod},
+           given={Jungdam},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0755c5e9f71c5cd68721464b27bd907c}{%
+           family={Gopinath},
+           familyi={G\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9f0dddb86e8b155b0942c2f91707a044}{%
+           family={Hodgins},
+           familyi={H\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=45f6d7a63964e32f8cbc9b48dc20d038}{%
+           family={Won},
+           familyi={W\bibinitperiod},
+           given={Jungdam},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0755c5e9f71c5cd68721464b27bd907c}{%
+           family={Gopinath},
+           familyi={G\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9f0dddb86e8b155b0942c2f91707a044}{%
+           family={Hodgins},
+           familyi={H\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{fullhash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{bibnamehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{authorbibnamehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{authornamehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{authorfullhash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{nameabibnamehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{nameanamehash}{bb3bc58033836d2918c77c58e9210df7}
+      \strng{nameafullhash}{bb3bc58033836d2918c77c58e9210df7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Graphics (TOG)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{A scalable approach to control diverse behaviors for physically simulated characters}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{39}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{33\bibrangedash 1}
+      \range{pages}{-1}
+      \keyw{won2020scalable}
+    \endentry
+    \entry{luo2023perpetual}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{4}{}{%
+        {{hash=99c4aa9db701b87fcbdac7cc662b68dc}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhengyi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9a844591c023ff26be25e9c6e4ab6072}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Jinkun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e4b95cc7070ea5a03c13bea9ba5c5e5}{%
+           family={Kitani},
+           familyi={K\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3a35bfece90e8985ea554f3eaa661bff}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Weipeng},
+           giveni={W\bibinitperiod}}}%
+      }
+      \true{morenamea}
+      \name{namea}{4}{}{%
+        {{hash=99c4aa9db701b87fcbdac7cc662b68dc}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhengyi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9a844591c023ff26be25e9c6e4ab6072}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Jinkun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e4b95cc7070ea5a03c13bea9ba5c5e5}{%
+           family={Kitani},
+           familyi={K\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3a35bfece90e8985ea554f3eaa661bff}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Weipeng},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{fullhash}{f76ba5b4b4b5520cab34195395978094}
+      \strng{bibnamehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{authorbibnamehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{authornamehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{authorfullhash}{f76ba5b4b4b5520cab34195395978094}
+      \strng{nameabibnamehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{nameanamehash}{69dbc1381dd0e07992772e4c60d044ab}
+      \strng{nameafullhash}{f76ba5b4b4b5520cab34195395978094}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/CVF International Conference on Computer Vision.}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Perpetual humanoid control for real-time simulated avatars}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{10895\bibrangedash 10904}
+      \range{pages}{10}
+      \keyw{luo2023perpetual}
+    \endentry
+    \entry{bohez2022imitate}{article}{}
+      \name{author}{10}{}{%
+        {{hash=6754daa04c1b19b3b3263245916330a5}{%
+           family={Bohez},
+           familyi={B\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fd3e43fdb9c189d7744e77e954489d4d}{%
+           family={Tunyasuvunakool},
+           familyi={T\bibinitperiod},
+           given={Saran},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a6c411a44d11e9456ee693329c818cd5}{%
+           family={Brakel},
+           familyi={B\bibinitperiod},
+           given={Philemon},
+           giveni={P\bibinitperiod}}}%
+        {{hash=cfb168f384448254e2c18b917df93f8d}{%
+           family={Sadeghi},
+           familyi={S\bibinitperiod},
+           given={Fereshteh},
+           giveni={F\bibinitperiod}}}%
+        {{hash=563d786c962445b65622bd83f74d91f9}{%
+           family={Hasenclever},
+           familyi={H\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=58112cb88a80c1bc045b6eaab26a8695}{%
+           family={Tassa},
+           familyi={T\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f432a700f86fcb79a7721a1f2475f36c}{%
+           family={Parisotto},
+           familyi={P\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a5f654845165e841f9cd496d8a1e917e}{%
+           family={Humplik},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=45b14f55dd7ae28cb6cb2e23e4a168b9}{%
+           family={Haarnoja},
+           familyi={H\bibinitperiod},
+           given={Tuomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fc9873fa16235237944ddb12fc2db97d}{%
+           family={Hafner},
+           familyi={H\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{namea}{10}{}{%
+        {{hash=6754daa04c1b19b3b3263245916330a5}{%
+           family={Bohez},
+           familyi={B\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fd3e43fdb9c189d7744e77e954489d4d}{%
+           family={Tunyasuvunakool},
+           familyi={T\bibinitperiod},
+           given={Saran},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a6c411a44d11e9456ee693329c818cd5}{%
+           family={Brakel},
+           familyi={B\bibinitperiod},
+           given={Philemon},
+           giveni={P\bibinitperiod}}}%
+        {{hash=cfb168f384448254e2c18b917df93f8d}{%
+           family={Sadeghi},
+           familyi={S\bibinitperiod},
+           given={Fereshteh},
+           giveni={F\bibinitperiod}}}%
+        {{hash=563d786c962445b65622bd83f74d91f9}{%
+           family={Hasenclever},
+           familyi={H\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=58112cb88a80c1bc045b6eaab26a8695}{%
+           family={Tassa},
+           familyi={T\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f432a700f86fcb79a7721a1f2475f36c}{%
+           family={Parisotto},
+           familyi={P\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a5f654845165e841f9cd496d8a1e917e}{%
+           family={Humplik},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=45b14f55dd7ae28cb6cb2e23e4a168b9}{%
+           family={Haarnoja},
+           familyi={H\bibinitperiod},
+           given={Tuomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fc9873fa16235237944ddb12fc2db97d}{%
+           family={Hafner},
+           familyi={H\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{fullhash}{109dd90048716f25b82e7dba26ffdead}
+      \strng{bibnamehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{authorbibnamehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{authornamehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{authorfullhash}{109dd90048716f25b82e7dba26ffdead}
+      \strng{nameabibnamehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{nameanamehash}{dd1b62751fe38cd02e106c67ead6daf3}
+      \strng{nameafullhash}{109dd90048716f25b82e7dba26ffdead}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2203.17138}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Imitate and repurpose: Learning reusable robot movement skills from human and animal behaviors}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \keyw{bohez2022imitate}
+    \endentry
+    \entry{tang2024humanmimic}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{hash=b8c3cc321e8540f69f668a3d338ce089}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Annan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0dd0ec614ddbd68f23dd87100508ff2d}{%
+           family={Hiraoka},
+           familyi={H\bibinitperiod},
+           given={Takuma},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3a7850469c40910d1daf430c69a42bb5}{%
+           family={Hiraoka},
+           familyi={H\bibinitperiod},
+           given={Naoki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=72aaabf078ec0312c6659c5e821e39f9}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=65149a17cdb330a0ce852c3380517370}{%
+           family={Kawaharazuka},
+           familyi={K\bibinitperiod},
+           given={Kento},
+           giveni={K\bibinitperiod}}}%
+        {{hash=eaad65a0df07408273793bf010b2168c}{%
+           family={Kojima},
+           familyi={K\bibinitperiod},
+           given={Kunio},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b94285fdbb856f7e140ea83e452fcad8}{%
+           family={Okada},
+           familyi={O\bibinitperiod},
+           given={Kei},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2662189a99364276c4448c2a503abe75}{%
+           family={Inaba},
+           familyi={I\bibinitperiod},
+           given={Masayuki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{8}{}{%
+        {{hash=b8c3cc321e8540f69f668a3d338ce089}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Annan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0dd0ec614ddbd68f23dd87100508ff2d}{%
+           family={Hiraoka},
+           familyi={H\bibinitperiod},
+           given={Takuma},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3a7850469c40910d1daf430c69a42bb5}{%
+           family={Hiraoka},
+           familyi={H\bibinitperiod},
+           given={Naoki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=72aaabf078ec0312c6659c5e821e39f9}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=65149a17cdb330a0ce852c3380517370}{%
+           family={Kawaharazuka},
+           familyi={K\bibinitperiod},
+           given={Kento},
+           giveni={K\bibinitperiod}}}%
+        {{hash=eaad65a0df07408273793bf010b2168c}{%
+           family={Kojima},
+           familyi={K\bibinitperiod},
+           given={Kunio},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b94285fdbb856f7e140ea83e452fcad8}{%
+           family={Okada},
+           familyi={O\bibinitperiod},
+           given={Kei},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2662189a99364276c4448c2a503abe75}{%
+           family={Inaba},
+           familyi={I\bibinitperiod},
+           given={Masayuki},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{fullhash}{a4571f8a8ba5f7afd47d3097404da814}
+      \strng{bibnamehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{authorbibnamehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{authornamehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{authorfullhash}{a4571f8a8ba5f7afd47d3097404da814}
+      \strng{nameabibnamehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{nameanamehash}{d1215a5ea45d03e71449178ad51751fc}
+      \strng{nameafullhash}{a4571f8a8ba5f7afd47d3097404da814}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Humanmimic: Learning natural locomotion and transitions for humanoid robot via wasserstein adversarial imitation}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{pages}{13107\bibrangedash 13114}
+      \range{pages}{8}
+      \keyw{tang2024humanmimic}
+    \endentry
+    \entry{koenemann2014real}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=4a05d89b20a613febc351ab75a831c84}{%
+           family={Koenemann},
+           familyi={K\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+        {{hash=045637c4091a2533d6119c830486566a}{%
+           family={Burget},
+           familyi={B\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=38bbd60cd009b934787bb8cdf9f77a79}{%
+           family={Bennewitz},
+           familyi={B\bibinitperiod},
+           given={Maren},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=4a05d89b20a613febc351ab75a831c84}{%
+           family={Koenemann},
+           familyi={K\bibinitperiod},
+           given={Jonas},
+           giveni={J\bibinitperiod}}}%
+        {{hash=045637c4091a2533d6119c830486566a}{%
+           family={Burget},
+           familyi={B\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=38bbd60cd009b934787bb8cdf9f77a79}{%
+           family={Bennewitz},
+           familyi={B\bibinitperiod},
+           given={Maren},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{fullhash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{bibnamehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{authorbibnamehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{authornamehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{authorfullhash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{nameabibnamehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{nameanamehash}{d6b421010ef34303e4bdb3d4db097adf}
+      \strng{nameafullhash}{d6b421010ef34303e4bdb3d4db097adf}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Real-time imitation of human whole-body motions by humanoids}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{pages}{2806\bibrangedash 2812}
+      \range{pages}{7}
+      \keyw{koenemann2014real}
+    \endentry
+    \entry{arduengo2021human}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=33886f9cce5ffbf1cf8e05fbe9d5f9d6}{%
+           family={Arduengo},
+           familyi={A\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a689330fd22611a95e202f2c8f4c76d7}{%
+           family={Arduengo},
+           familyi={A\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=908274ab155be971f6c7d081b17b5d15}{%
+           family={Colomé},
+           familyi={C\bibinitperiod},
+           given={Adrià},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0877a73e20d815f310d577d27b04a501}{%
+           family={Lobo-Prat},
+           familyi={L\bibinithyphendelim P\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=778c70c9745c20f56ca9891d66d23159}{%
+           family={Torras},
+           familyi={T\bibinitperiod},
+           given={Carme},
+           giveni={C\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=33886f9cce5ffbf1cf8e05fbe9d5f9d6}{%
+           family={Arduengo},
+           familyi={A\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a689330fd22611a95e202f2c8f4c76d7}{%
+           family={Arduengo},
+           familyi={A\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=908274ab155be971f6c7d081b17b5d15}{%
+           family={Colomé},
+           familyi={C\bibinitperiod},
+           given={Adrià},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0877a73e20d815f310d577d27b04a501}{%
+           family={Lobo-Prat},
+           familyi={L\bibinithyphendelim P\bibinitperiod},
+           given={Joan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=778c70c9745c20f56ca9891d66d23159}{%
+           family={Torras},
+           familyi={T\bibinitperiod},
+           given={Carme},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{fullhash}{fd0a282f5485c2989ea5c6f45a5b22fb}
+      \strng{bibnamehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{authorbibnamehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{authornamehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{authorfullhash}{fd0a282f5485c2989ea5c6f45a5b22fb}
+      \strng{nameabibnamehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{nameanamehash}{33e80f3a057dc6422c137e86c6cf403a}
+      \strng{nameafullhash}{fd0a282f5485c2989ea5c6f45a5b22fb}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE-RAS 20th International Conference on Humanoid Robots (Humanoids)}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Human to robot whole-body motion transfer}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{299\bibrangedash 305}
+      \range{pages}{7}
+      \keyw{arduengo2021human}
+    \endentry
+    \entry{osqp}{article}{}
+      \name{author}{5}{}{%
+        {{hash=7c556ecc0487775bc60967d24e2e182a}{%
+           family={Stellato},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7e72b0c2eea66bb1bdf3fd8366c7dbb5}{%
+           family={Banjac},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=163d084364da0c21fb7460e6a0e22540}{%
+           family={Goulart},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b6ecf99e2259cba453b26997d42f3e2b}{%
+           family={Bemporad},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fdb760b740da8a080df12615e128118d}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \name{namea}{5}{}{%
+        {{hash=7c556ecc0487775bc60967d24e2e182a}{%
+           family={Stellato},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7e72b0c2eea66bb1bdf3fd8366c7dbb5}{%
+           family={Banjac},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=163d084364da0c21fb7460e6a0e22540}{%
+           family={Goulart},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b6ecf99e2259cba453b26997d42f3e2b}{%
+           family={Bemporad},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fdb760b740da8a080df12615e128118d}{%
+           family={Boyd},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{fullhash}{6045f73ef3998a2c86a8a457c4dc5ef1}
+      \strng{bibnamehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{authorbibnamehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{authornamehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{authorfullhash}{6045f73ef3998a2c86a8a457c4dc5ef1}
+      \strng{nameabibnamehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{nameanamehash}{c0a314a7f46b4d78527b3a9479595f40}
+      \strng{nameafullhash}{6045f73ef3998a2c86a8a457c4dc5ef1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Programming Computation}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{4}
+      \field{title}{{OSQP}: an operator splitting solver for quadratic programs}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{12}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{637\bibrangedash 672}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.1007/s12532-020-00179-2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s12532-020-00179-2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s12532-020-00179-2
+      \endverb
+      \keyw{osqp}
     \endentry
   \enddatalist
   \missing{Kim2019}

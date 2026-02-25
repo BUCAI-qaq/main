@@ -2,12 +2,29 @@
 {\noindent \textrm {ABSTRACT}\par }
 \contentsline {chapter}{\numberline {第一章}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景与意义}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}腿臂协同控制的研究综述}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}基于零空间分解的腿臂协同控制}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}基于分层二次规划的腿臂协同控制}{5}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}基于强化学习的腿臂协同控制}{8}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}基于模仿学习的腿臂协同控制}{11}{subsection.1.2.4}%
-\contentsline {paragraph}{1）行为克隆}{12}{paragraph*.10}%
-\contentsline {paragraph}{2）对抗式模仿学习}{12}{paragraph*.11}%
-\contentsline {paragraph}{3）生成式运动先验}{13}{paragraph*.12}%
-\contentsline {section}{\numberline {1.3}本文研究内容及章节安排}{14}{section.1.3}%
+\contentsline {section}{\numberline {1.2}人形机器人本体系统的发展历程}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}腿臂协同控制的研究综述}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}基于零空间分解的腿臂协同控制}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}基于分层二次规划的腿臂协同控制}{10}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}基于强化学习的腿臂协同控制}{12}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}基于模仿学习的腿臂协同控制}{15}{subsection.1.3.4}%
+\contentsline {paragraph}{1）行为克隆}{16}{paragraph*.13}%
+\contentsline {paragraph}{2）对抗式模仿学习}{17}{paragraph*.14}%
+\contentsline {paragraph}{3）生成式运动先验}{17}{paragraph*.15}%
+\contentsline {section}{\numberline {1.4}本文的主要问题}{19}{section.1.4}%
+\contentsline {section}{\numberline {1.5}本文研究内容及章节安排}{20}{section.1.5}%
+\contentsline {chapter}{\numberline {第二章}人形机器人全身动作重定向}{22}{chapter.2}%
+\contentsline {section}{\numberline {2.1}引言}{22}{section.2.1}%
+\contentsline {section}{\numberline {2.2}方法}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}动作模仿系统设计}{23}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}改进重定向}{24}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}人体肘关节建模}{25}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}实验}{28}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}单人动作模仿}{28}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}多人动作模仿}{30}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}任务操作}{31}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}结果与讨论}{32}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}数据分析}{32}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}消融实验}{35}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}局限}{36}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}结论}{37}{section.2.6}%

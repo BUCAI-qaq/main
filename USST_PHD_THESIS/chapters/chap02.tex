@@ -1,398 +1,422 @@
+\chapter{人形机器人全身动作重定向}%20页
 
 
-\chapter{理论基础和问题建模}%15页
+\section{引言}
+人机交互（Human–Robot Interaction，HRI）是仿人机器人研究中的重要方向，而运动模仿则是实现自然、高效交互行为的核心手段之一。由于人体与机器人在运动学结构、关节自由度配置以及运动范围等方面存在显著差异，如何将人体动作合理映射到机器人平台上，仍然是运动模仿与动作重定向中的关键挑战。
+
+现有的动作重定向方法通常可分为基于关节空间和基于笛卡尔空间的两类。前者侧重于保持人体与机器人在关节构型层面的相似性，但往往难以保证末端执行器在任务空间中的精确运动；后者则以末端轨迹跟踪为主要目标，但容易忽略整体肢体构型的一致性，从而导致机器人运动不自然。这种构型一致性与任务空间精度之间的权衡，限制了重定向结果在复杂交互场景中的适用性。
+
+针对上述问题，本章在已有动作重定向研究的基础上，对传统重定向框架进行了改进，通过在关节空间构型约束与笛卡尔空间末端跟踪之间建立协调机制，实现了对人体上肢动作的有效映射。在保证机器人手臂整体构型与人体动作保持一致的同时，该方法能够显著提升末端执行器位置与姿态的跟踪精度，从而兼顾运动自然性与任务可执行性。实验结果表明，该重定向方法在不同动作类型与操作场景下均表现出良好的稳定性与适应性，为后续结合学习方法进行全身动作生成与控制奠定了基础。
+
+近年来，利用人体运动数据对机器人进行示教与运动生成，已成为简化机器人运动编程与学习过程的一种重要途径 \cite{fu2024mobile, he2024learning, butepage2020imitating, kulic2016anthropomorphic}。通过观测和映射人类动作，机器人能够在无需显式建模复杂任务逻辑的情况下获得具有较强表现力和适应性的运动行为，这对于提升仿人机器人的自然性、自主性以及人机交互能力具有重要意义 \cite{chi2024universal, bahl2022human}。尽管该方向已取得一定进展 \cite{ishiguro2020bilateral, ramos2018humanoid}，但在结构受限的真实机器人平台上实现稳定且精确的人体运动模仿，仍然面临诸多挑战 \cite{kim2009stable}。
+
+从运动映射的角度来看，人体到机器人的动作模仿通常可抽象为一个\emph{动作重定向（motion retargeting）}问题，即在满足机器人自身运动学与动力学约束的前提下，将人体动作合理映射到机器人关节空间或任务空间中。由于人体与机器人在自由度数量、关节拓扑结构、运动范围以及力矩能力等方面存在显著差异，人体动作往往无法被机器人直接复现，这使得动作重定向成为运动模仿中的核心问题之一。
+
+现有的动作重定向方法大致可以分为基于学习的方法和基于模型的方法。在动画与虚拟角色控制领域，强化学习被广泛用于从人体动作数据中学习复杂运动策略，并在多种任务中展现出良好的泛化能力与风格一致性 \cite{peng2018deepmimic, peng2021amp, won2020scalable, luo2023perpetual}。然而，将此类方法直接应用于真实仿人机器人仍然面临仿真到现实差距（sim-to-real gap）的问题，尤其是在关节力矩限制、硬件安全性以及高精度末端控制等方面存在明显挑战 \cite{bohez2022imitate, tang2024humanmimic}。
+
+相比之下，基于模型的动作重定向方法由于其可解释性强、对物理约束处理明确，在真实机器人系统中仍被广泛采用。根据映射空间的不同，这类方法通常可进一步分为基于笛卡尔空间和基于关节空间的重定向策略。基于笛卡尔空间的方法通常以末端执行器位姿跟踪为主要目标，通过逆运动学或优化方法实现任务空间误差最小化 \cite{koenemann2014real, arduengo2021human}。这类方法在任务执行精度方面具有优势，但由于缺乏对整体肢体构型的约束，容易导致机器人运动不自然，且在存在避障或关节限制时可行性较差。相对而言，基于关节空间的方法更关注机器人与人体在构型层面的相似性，能够生成较为自然的运动，但往往难以保证末端执行器在任务空间中的精确跟踪，从而限制了其在精细操作任务中的应用。
+
+因此，\textbf{如何在动作重定向过程中同时兼顾关节构型一致性与末端执行器的任务空间精度}，成为当前类人机器人运动模仿研究中的一个关键问题。现有方法通常在这两者之间进行权衡，尚难以在统一框架下有效协调二者。
+
+基于上述背景，本章在已有动作重定向研究的基础上，对传统的重定向流程进行了系统梳理与分析，并引入一种结合关节空间构型约束与笛卡尔空间任务优化的重定向建模思路。该思路以人体手臂运动为示教源，通过建立人体与机器人之间的几何对应关系，在满足机器人关节空间约束的前提下，引入基于笛卡尔空间的优化机制，对末端执行器运动进行精确调节，从而在构型一致性与任务精度之间取得更为平衡的解。
+
+需要强调的是，本章关注的重点在于\emph{动作重定向问题本身的建模方式与约束处理机制}，其目的在于为后续章节中基于学习的全身动作生成与控制策略提供稳定、合理的低层动作映射基础。
 
 
+\section{方法}
+\subsection{动作模仿系统设计}
+图 \ref{fig: System_Block_Diagram} 展示了本文所构建的机器人机械臂动作模仿系统整体框架。系统主要由视觉采集系统、上位处理器、下位处理器以及机械运动系统四个部分组成，各模块协同工作以实现人体上肢动作向机器人机械臂的实时重定向。
+
+视觉采集系统采用标准的 RGB-D 摄像设备，本文实验中使用 Intel RealSense D435 深度相机。摄像头安装于被试者正前方，距地面约 1.5 m，用于实时获取人体运动图像及对应的深度信息。采集到的数据通过 USB 接口传输至上位处理器进行处理。
+
+上位处理器为一台 PC，负责完成人体姿态信息的提取与预处理。具体而言，上位处理器对输入的 RGB 图像进行人体姿态估计，提取人体手臂关键点的二维信息，并进一步结合深度数据恢复三维关键点位置。为降低传感噪声对后续动作重定向的影响，本文对三维关键点序列引入卡尔曼滤波进行平滑处理。处理后的关键点数据通过 ROS 通信机制发送至下位处理器。
+
+下位处理器用于执行动作重定向计算与机器人控制指令生成。在接收到人体三维关键点数据后，系统首先基于人体手臂的几何模型计算对应的关节角度，该关节角度作为机器人动作重定向问题的初始参考。随后，通过迭代优化求解满足机器人关节约束并同时逼近人体末端运动目标的关节角解。最终得到的目标关节角通过 CAN 总线发送至机械运动系统，用于驱动机器人机械臂执行相应动作。
+
+机械运动系统由机器人双臂、电机及其驱动模块构成。本文所使用的仿人机器人平台为自主研发系统，如图 \ref{fig:robot_body} 所示。每条机械臂具有六个自由度，关节配置包括肩关节屈伸、肩关节外展内收、肩关节旋内外、肘关节屈伸、前臂旋前旋后以及腕关节屈伸。该结构能够满足机械臂在三维空间内完成复杂动作的运动学需求，为人体动作的有效重定向提供了硬件基础。
 
 
+\section{改进重定向}
+由于肩关节和肘关节主要影响手臂的运动，而手腕主要影响手的运动，本研究重点对肩关节和肘关节进行几何建模。为清楚说明肩关节和肘关节的建模方法，下面以左臂的建模过程进行说明。
+
+如图 \ref{fig:Modeling_of_shoulder} 所示，点 $S$ 表示左臂的肩关节，点 $E$ 表示左臂的肘关节，点 $M$ 则位于 Y 轴上，距离为 $a$ 的一点。
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.47\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/chapter3/Fig2.png}
+		\caption{Joint structures and link frames of the robot's arm.}
+		\label{fig:robot_body}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.355\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/chapter3/Fig3.png}
+		% \caption{Modeling of the left shoulder joint.}
+            \caption{左手肩关节建模。}
+		\label{fig:Modeling_of_shoulder}
+	\end{minipage}
+\end{figure}
 
 
-\section{人形机器人全身控制}
-\label{sec:whole_body_control}
-人形机器人通常具有高自由度、多关节串并联混合结构，其运动控制问题天然具有强耦合性与高度冗余性。在执行行走、操作、支撑以及复杂交互行为时，机器人需要同时满足动力学一致性、接触稳定性、关节物理约束以及多任务目标之间的协调要求。传统将控制问题分解为若干独立子系统的方法难以在全身层面实现一致、稳定且可扩展的运动生成，因此，全身控制（Whole-Body Control, WBC）作为一种统一协调机器人整体运动与受力行为的控制范式逐渐形成。
+根据上述定义，可以证明 $|\bm{SM}| = a$。通过姿态估计，可以获得各关键点在相机坐标系下的坐标，分别为 $S(x_0, y_0, z_0)$、$E(x_1, y_1, z_1)$ 以及 $M(x_0, y_0 - a, z_0)$。以点 $S$ 为原点建立肩关节局部坐标系后，各点在该坐标系下的坐标可表示为 $S(0, 0, 0)$、$E(x_1 - x_0,\, y_1 - y_0,\, z_1 - z_0)$ 以及 $M(0,\, -a,\, 0)$。
 
-全身控制的核心思想在于，将机器人视为一个整体系统，在统一的数学框架下对其所有自由度、任务目标以及物理约束进行联合建模与协调求解。与仅关注局部关节或单一末端执行器的控制方法不同，全身控制显式考虑任务之间的潜在冲突以及系统冗余自由度的分配问题，从而能够在满足关键安全与稳定性约束的前提下，协调完成多目标运动任务。全身控制方法主要分为两类：基于零空间的控制（Null-space WBC）和基于二次规划的控制（QP/SQP WBC）。  
+点 $E$ 在平面 $(ZSM)$ 上的正交投影记为点 $F$，其坐标为 $F(0,\, y_0 - y_1,\, z_1 - z_0)$。向量 $\bm{SE}$ 在平面 $(ZSM)$ 上的投影与 $Y$ 轴负方向之间的夹角定义为 $\theta_1$，即 $\angle FSM = \theta_1$，其中 $\theta_1$ 表示肩关节的屈伸角；向量 $\bm{SE}$ 与其在平面 $(ZSM)$ 上投影之间的夹角定义为 $\theta_2$，即 $\angle FSE = \theta_2$，其中 $\theta_2$ 表示肩关节的外展–内收角。
 
-
-\subsection{基于零空间的多任务优先级控制}
-
-设机器人关节空间自由度为 $q \in \mathbb{R}^n$，任务空间向量为 $x \in \mathbb{R}^m$，满足运动学约束：
+在上述几何关系下，可在三角形 $\triangle FSM$ 中求解角度 $\theta_1$，根据余弦定理有
 \begin{equation}
-x = f(q),
-\end{equation}
-对其求导可得关节速度与任务速度的映射关系：
-\begin{equation}
-\dot{x} = J(q) \dot{q},
-\end{equation}
-其中 $J \in \mathbb{R}^{m \times n}$ 为任务雅可比矩阵。当 $n > m$ 时，任务存在冗余自由度，此时雅可比矩阵的右伪逆 $J^\dagger$ 可用于求解最小范数解：
-\begin{equation}
-\dot{q} = J^\dagger \dot{x}.
-\end{equation}
-
-零空间 $\mathcal{N}(J)$ 定义为满足 $\dot{x} = 0$ 的关节速度集合，即：
-\begin{equation}
-\mathcal{N}(J) = \{\dot{q} \in \mathbb{R}^n \mid J \dot{q} = 0\}.
-\end{equation}
-对应的零空间投影矩阵为：
-\begin{equation}
-N = I - J^\dagger J,
-\end{equation}
-它可以将任意关节速度投影到任务零空间。
-
-对于两个任务 $x_1$ 和 $x_2$，其中 $x_1$ 优先级高于 $x_2$，其关节速度解可迭代表示为：
-\begin{align}
-\dot{q}_1 &= J_1^\dagger \dot{x}_1 + N_1 \dot{q}_0, \\
-\dot{q}_2 &= J_2^\dagger \dot{x}_2 + N_2 \dot{q}_1,
-\end{align}
-其中 $\dot{q}_0$ 为任意关节速度向量，$N_1$ 为任务1的零空间投影矩阵。通过这种方式，低优先级任务可以在高优先级任务零空间内执行，从而保证高优先级任务不被破坏。对于 $k$ 个任务的情况，可推广为迭代形式：
-\begin{equation}
-\dot{q} = \dot{q}_k = J_k^\dagger \dot{x}_k + N_k \dot{q}_{k-1}, \quad N_k = I - J_k^\dagger J_k.
-\end{equation}
-
-\subsection{基于分层二次规划的多任务控制}
-
-将运动学方程写成最优化形式：
-\begin{equation}
-\min_{\dot{q}} \| J \dot{q} - \dot{x}_{\text{des}} \|^2,
-\end{equation}
-其中 $\dot{x}_{\text{des}}$ 为任务期望速度。引入松弛变量 $\epsilon$ 可处理不可行约束：
-\begin{equation}
-\min_{\dot{q}, \epsilon} \| J \dot{q} - \dot{x}_{\text{des}} + \epsilon \|^2, \quad \epsilon \ge 0.
-\end{equation}
-
-对于多任务情况，可按照优先级依次求解：
-\begin{align}
-\dot{q}_1^* &= \arg\min_{\dot{q}, \epsilon_1} \| J_1 \dot{q} - \dot{x}_1 + \epsilon_1 \|^2, \\
-\dot{q}_2^* &= \arg\min_{\dot{q}, \epsilon_2} \| J_2 \dot{q} - \dot{x}_2 + \epsilon_2 \|^2, \quad \text{s.t. } J_1 \dot{q} = \dot{x}_1^*,
-\end{align}
-依此类推，得到严格优先级的解 $\dot{q}_k^*$。通过这种分层二次规划方法，可以同时处理等式、不等式约束，并在不可行情况下利用松弛变量保证优化过程可解。最终，结合动力学模型可计算出所需关节力矩，实现多任务轨迹跟踪和任务空间任务完成。
-
-
-尽管全身控制方法通常依赖精确的系统模型和显式约束求解，其所蕴含的控制思想对于更一般的运动生成问题具有重要启示意义。特别地，任务分解、优先级建模以及在可行空间内协调多目标行为的理念，为理解和设计复杂全身运动策略提供了一种清晰的结构化视角。该思想为后续引入数据驱动和学习方法奠定了重要的理论指导，使得学习到的控制策略能够在隐式层面体现类似的协调与优先级行为。
-
-
-
-\section{强化学习}
-
-强化学习（Reinforcement Learning, RL）研究如何通过与环境交互来训练智能体，使其在给定任务中获得最大累积回报。通常，这一过程可建模为马尔可夫决策过程（Markov Decision Process, MDP），其核心包括状态空间 \(S\)、动作空间 \(A\)、环境动力学 \(p(s_{t+1} \mid s_t, a_t)\) 以及奖励函数 \(r(s_t, a_t, s_{t+1})\)。智能体的策略 \(\pi(a_t \mid s_t)\) 定义了在每个状态下选择动作的概率分布。
-
-智能体与环境的交互被组织为若干回合（episode）。在每个回合开始时，智能体从初始状态 \(s_0 \sim p(s_0)\) 出发。随后，在每个时间步 \(t\)，智能体观测当前状态 \(s_t\)，并根据策略采样动作 \(a_t \sim \pi(a_t \mid s_t)\)，然后将该动作作用于环境。环境根据动力学模型转移到下一个状态 \(s_{t+1} \sim p(s_{t+1} \mid s_t, a_t)\)，同时返回标量奖励 \(r_t = r(s_t, a_t, s_{t+1})\)，该奖励量化了状态转移对于任务目标的价值。智能体在一个回合内的交互轨迹可表示为 \(\tau = (s_0, a_0, r_0, s_1, a_1, r_1, \ldots, s_T)\)。
-
-智能体的目标是找到最优策略，使期望折扣回报最大化，即
-\begin{equation}
-\pi^* = \arg \max_{\pi} J(\pi)
-\label{eq:optimal_policy}
-\end{equation}
-其中 \(J(\pi)\) 表示策略的期望折扣回报：
-\begin{equation}
-J(\pi) = \mathbb{E}_{\tau \sim p(\tau \mid \pi)} \left[ \sum_{t=0}^{T-1} \gamma^t r_t \right]
-\label{eq:expected_return}
-\end{equation}
-其中 \(\gamma \in [0,1]\) 为折扣因子，用于调节即时奖励与未来奖励的相对权重。通过优化该目标函数，智能体能够学习在环境中实现期望行为的控制策略。
-
-\subsection{值函数}
-
-在强化学习中，值函数是评估策略性能的重要工具，它用于估计在特定状态或动作下，遵循策略 \(\pi\) 所能获得的期望未来回报\cite{SuttonBarto2018}。
-
-\subsubsection{状态值函数与状态-动作值函数}
-
-策略 \(\pi\) 的状态值函数 \(V^{\pi}(s)\) 表示智能体从状态 \(s\) 出发，遵循策略 \(\pi\) 时的期望累积回报：
-\begin{equation}
-V^{\pi}(s) = \mathbb{E}_{\tau \sim p(\tau \mid \pi, s_0=s)} \Bigg[ \sum_{t=0}^{T-1} \gamma^t r_t \Bigg],
-\label{eq:state_value_function}
-\end{equation}
-其中，\(\gamma \in [0,1]\) 为折扣因子，\(p(\tau \mid \pi, s_0=s) = \prod_{t=0}^{T-1} p(s_{t+1} \mid s_t, a_t) \pi(a_t \mid s_t)\) 表示从状态 \(s\) 出发，遵循策略 \(\pi\) 所生成轨迹 \(\tau\) 的概率。状态值函数可以理解为智能体处于某一状态的期望价值。
-
-状态-动作值函数 \(Q^{\pi}(s, a)\)，通常称为 Q 函数，用于评估在状态 \(s\) 采取动作 \(a\) 并随后遵循策略 \(\pi\) 的期望累积回报：
-\begin{equation}
-Q^{\pi}(s, a) = \mathbb{E}_{\tau \sim p(\tau \mid \pi, s_0=s, a_0=a)} \Bigg[ \sum_{t=0}^{T-1} \gamma^t r_t \Bigg],
-\label{eq:state_action_value_function}
-\end{equation}
-其中 \(p(\tau \mid \pi, s_0=s, a_0=a) = p(s_1 \mid s_0, a_0) \prod_{t=1}^{T-1} p(s_{t+1} \mid s_t, a_t) \pi(a_t \mid s_t)\)。
-
-在不引起歧义的情况下，值函数和 Q 函数对策略 \(\pi\) 的依赖通常省略。此时，\(V(s)\) 简称为状态值函数，\(Q(s,a)\) 简称为 Q 函数。
-
-\subsubsection{最优值函数与最优策略}
-
-最优策略 \(\pi^*\) 的状态值函数与 Q 函数分别记作 \(V^*(s)\) 和 \(Q^*(s,a)\)。最优策略可以通过选择使 Q 函数最大的动作来恢复：
-\begin{equation}
-\pi^*(a \mid s) =
-\begin{cases}
-1, & \text{如果 } a = \arg \max_{a'} Q^*(s, a') \\
-0, & \text{否则}
-\end{cases}
-\label{eq:optimal_policy_from_q}
+\theta_{1}
+= \arccos\!\left(
+\frac{|\bm{SF}|^{2} + |\bm{SM}|^{2} - |\bm{FM}|^{2}}
+{2\,|\bm{SF}|\,|\bm{SM}|}
+\right)
+= \arccos\!\left(
+\frac{y_0 - y_1}{|\bm{SF}|}
+\right),
+\label{eq:theta1}
 \end{equation}
 
-\subsubsection{贝尔曼方程}
-
-状态值函数与 Q 函数之间存在递归关系，可通过贝尔曼方程表示：
+其中角度 $\theta_1$ 的符号可由 $z_1 - z_0$ 的符号确定：当 $z_1 - z_0 > 0$ 时，表示手臂向前摆动；当 $z_1 - z_0 < 0$ 时，表示手臂向后摆动。同理，在三角形 $\triangle FSE$ 中可求解肩关节外展–内收角 $\theta_2$，其表达式为
 
 \begin{equation}
-Q^{\pi}(s, a) = \mathbb{E}_{s' \sim p(s' \mid s, a), a' \sim \pi(a' \mid s')} \Big[ r(s, a, s') + \gamma Q^{\pi}(s', a') \Big],
-\label{eq:q_bellman_recursive}
+\theta_{2}
+= \arccos\!\left(
+\frac{|\bm{SF}|^{2} + |\bm{SE}|^{2} - |\bm{FE}|^{2}}
+{2\,|\bm{SF}|\,|\bm{SE}|}
+\right).
+\label{eq:theta2}
 \end{equation}
 
-\begin{equation}
-Q^{\pi}(s, a) = \mathbb{E}_{s' \sim p(s' \mid s, a)} \Big[ r(s, a, s') + \gamma V^{\pi}(s') \Big],
-\label{eq:q_bellman_recursive_v}
-\end{equation}
 
-\begin{equation}
-V^{\pi}(s) = \mathbb{E}_{a \sim \pi(a \mid s), s' \sim p(s' \mid s, a)} \Big[ r(s, a, s') + \gamma V^{\pi}(s') \Big],
-\label{eq:v_bellman_recursive}
-\end{equation}
 
-\begin{equation}
-V^{\pi}(s) = \mathbb{E}_{a \sim \pi(a \mid s), s' \sim p(s' \mid s, a), a' \sim \pi(a' \mid s')} \Big[ r(s, a, s') + \gamma Q^{\pi}(s', a') \Big].
-\label{eq:v_bellman_recursive_q}
-\end{equation}
+\subsection{人体肘关节建模}
+如图~\ref{fig:Modeling of elbow}(\textbf{a}) 所示，$W$ 表示手腕的实际位置，$W'$ 表示手腕的假定初始位置（此时 $\theta_{3} = 0$）。角度 $\theta_{3}$ 定义为从肘部指向手腕的向量 $\bm{EW}$ 与其初始位置向量 $\bm{EW'}$ 之间的夹角；角度 $\theta_{4}$ 定义为向量 $\bm{EW}$ 与向量 $\bm{SE}$ 的延长线之间的夹角。
 
-这些递归方程在计算和学习值函数及 Q 函数时非常有用，后续可用于策略评估、策略改进以及强化学习训练中。
 
-\subsection{策略评估（Policy Evaluation）}
+\begin{figure}[H]
+	\centering
+	%\isPreprints{}{% This command is only used for ``preprints''.
+		\begin{adjustwidth}{0cm}{0cm}
+			\subfloat[\centering]{\includegraphics[width=7.5cm]{figures/chapter3/Fig4.png}}
+			\label{fig:arm joint angles are non zero}
+			\hfill
+			\subfloat[\centering]{\includegraphics[width=5.4cm]{figures/chapter3/Fig5.png}}
+			\label{fig:arm joint angles are zero}
+			
+		\end{adjustwidth}
+  \caption{肘关节建模。（\textbf{a}）当手臂关节角不为零时的肘关节坐标系，其中 $\theta_{3}$ 表示肩关节外-内旋角，$\theta_{4}$ 表示肘关节屈伸角的补角。（\textbf{b}）当手臂所有关节角均为零时的肘关节坐标系。}
+		\label{fig:Modeling of elbow}
+	\end{figure} 
 
-在强化学习算法中，学习给定策略 \(\pi\) 的状态值函数或状态-动作值函数通常作为一个基本子过程出现。策略评估（Policy Evaluation）是一种基于动态规划思想的方法，通过利用值函数的递归结构，对策略对应的期望回报进行近似计算\cite{SuttonBarto2018}。
+当手腕位于位置 $W'$ 时，肘关节的局部坐标系记为 $E X_{1} Y_{1} Z_{1}$。假设手臂的初始状态为 $\theta_{1}$、$\theta_{2}$、$\theta_{3}$ 和 $\theta_{4}$ 均为零，则此时肘关节坐标系的定义如图~\ref{fig:Modeling of elbow}(\textbf{b}) 所示。
 
-\subsubsection{状态值函数的策略评估}
 
-假设通过在环境中执行策略 \(\pi\) 收集得到一组状态转移样本数据集
+通过姿态估计，可以获得点 $S$、$E$ 和 $W$ 在相机坐标系下的绝对坐标，分别为 $S(x_{0}, y_{0}, z_{0})$、$E(x_{1}, y_{1}, z_{1})$ 和 $W(x_{2}, y_{2}, z_{2})$。在以肩关节为原点建立的相对坐标系下，手腕点 $W$ 的坐标可表示为 $W(x_{2}-x_{0},\, y_{2}-y_{0},\, z_{2}-z_{0})$。
+
+如图 \ref{fig:Modeling of elbow}(\textbf{a}) 所示，在以肩关节为原点建立的相对坐标系中，肩关节外旋角 $\theta_4$ 可通过向量 $\bm{SE}$ 与向量 $\bm{EW}$ 的点积计算得到。
+
+
+\begin{eqnarray}
+\theta_{4} = \arccos\left[\frac{\bm{SE}\cdot\bm{EW}}{|\bm{SE}||\bm{EW}|}\right]
+\end{eqnarray}
+
+人体肘关节的活动范围为 $\pi - \theta_{4}$，其中向量 $\bm{EW}$ 的坐标为 $(x_{1} - x_{2},\, y_{1} - y_{2},\, z_{2} - z_{1})$。
+
+为求解 $\theta_{3}$，已知实际手腕位置 $W$，首先需要计算向量 $\bm{HW}$。如图 \ref{fig:Modeling of elbow}(\textbf{a}) 所示，$Y_1$ 轴定义为始终指向肩关节到肘关节的连线，即沿向量 $\bm{SE}$ 的方向。由于 $\theta_{4}$ 已确定，无论 $\theta_{3}$ 如何变化，向量 $\bm{EW}$、$\bm{EW'}$ 与 $\bm{EH}$（即 $Y_1$ 轴）之间的夹角均保持为 $\theta_{4}$，换言之，连接肘关节与手腕的线 $\bm{EW'}$ 围绕 $Y_1$ 轴旋转形成向量 $\bm{EW}$。
+
+
+\begin{gather}
+|\bm{EW'}|= |\bm{EW}| \\
+|\bm{EH}|= |\bm{EW'}|*cos\theta_4 \\
+\bm{EH} =|\bm{EH}|\ast\frac{\bm{SE}}{|\bm{SE}|}
+\end{gather}
+
+因此，通过 $\bm{HW} = \bm{EW} - \bm{EH}$ 可以得到向量 $\bm{HW}$。需要注意的是，虽然肩关节坐标系在手臂运动过程中保持固定，但肘关节坐标系会随姿态变化而改变方向，如图 \ref{fig: Rotational schematic of the shoulder coordinate system} 所示。在手臂运动过程中，肘关节坐标系会旋转到新的状态。在图 \ref{fig: Rotational schematic of the shoulder coordinate system} 中，$Z_1$ 轴的方向会随着 $\theta_1$ 的值而变化，$Z_1'$ 轴表示 $Z_1$ 轴从肘关节平移到肩关节的位置。沿 $Z_1'$ 轴的方向向量记为 $\bm{p}$，且满足 $\bm{p} \perp \bm{m}$ 且 $|\bm{p}| = 1$，因此 $\bm{p} = (0, \sin\theta_1, -\cos\theta_1)$。如图所示，$\bm{p}$ 表示当手腕达到位置 $W'$ 时，肘关节处 $Z_1$ 轴的方向。已知向量 $\bm{HW}$ 以及与 $\bm{HW'}$ 平行的方向向量 $\bm{p}$，即可求得 $\theta_3$。
+
+
+\begin{figure}[H]
+\centering
+%\isPreprints{}{% This command is only used for ``preprints''.
+	\begin{adjustwidth}{0cm}{0cm}
+		\subfloat[\centering]{\includegraphics[width=5cm]{figures/chapter3/Fig6_a.png}}
+		\label{fig: Shoulder motion as an acute angle}
+		\hfill
+		\subfloat[\centering]{\includegraphics[width=5cm]{figures/chapter3/Fig6_b.png}}
+		\label{fig: Shoulder motion as an obtuse angle}
+		
+	\end{adjustwidth}
+\caption{手臂运动过程中肩关节坐标系的旋转示意图。（\textbf{a}）肩关节屈伸运动为锐角示意，(\textbf{b}）肩关节屈伸运动为钝角示意。}
+\label{fig: Rotational schematic of the shoulder coordinate system}
+\end{figure} 
+
+ 在通过人体几何建模得到手臂关节角度后，可以将这些角度直接作为目标角度来控制机械臂的运动。虽然这种方法能够模仿动作，但无法实现精确的末端执行器位置跟踪，从而难以完成高精度任务。为解决这一问题，我们引入了末端执行器位置跟踪约束。
+
+ 考虑到机器人与人体模型在尺寸、自由度和物理参数等方面的差异，即使关节角度相同，末端执行器的位置也可能不同。为了在任务执行过程中满足笛卡尔空间位置跟踪的要求，我们将末端执行器位置的变化（相对于设定的初始手臂位置 $P_{human_init}$）作为控制目标。
+
+ 通过监测人体手臂末端执行器位置的变化，可以实现机器人手臂在任务空间中的精确跟踪。在此基础上，从手臂几何建模中得到的四个关节角被用作二次规划（QP）优化的初始条件。该方法确保在跟踪笛卡尔目标位置的同时，机器人手臂的几何构型与人体手臂保持一致。
+
+ 关节空间与任务空间之间的速度映射关系可以通过微分运动学获得。
+
+根据 OSQP \cite{osqp}，其中 Hessian 矩阵 $H = J^\mathrm{T} J$，梯度向量 $g = -J^\mathrm{T} v$，约束上下界则根据任务需求进行定义。整体算法流程如算法 \ref{algo1} 所示，最终求解得到满足几何构型约束和末端执行器位置约束的手臂关节角 $q$。
+
+
+ \begin{algorithm}
+\caption{几何建模与二次规划融合的动作重定向算法}\label{algo1}
+\begin{algorithmic}[1]
+\Require 通过几何建模得到的参考关节角
+\( q_{\text{init}} = \{\theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}\} \)
+\Ensure 最终优化后的机器人关节角 \( q \)
+
+\State 通过正向运动学计算初始末端位置：
 \[
-\mathcal{D} = \{(s_i, a_i, r_i, s'_i)\}.
-\]
-策略评估采用迭代方式对状态值函数 \(V^{\pi}\) 进行近似估计，从一个初始估计 \(V_0\) 开始。在第 \(k\) 次迭代中，通过优化以下目标函数得到新的值函数近似 \(V_k\)：
-\begin{equation}
-V_k = \arg\min_{V} \;
-\mathbb{E}_{(s_i, r_i, s'_i) \sim \mathcal{D}}
-\Big[ \big( y_i - V(s_i) \big)^2 \Big],
-\label{eq:policy_eval_v}
-\end{equation}
-其中目标值 \(y_i\) 定义为
-\begin{equation}
-y_i = r_i + \gamma V_{k-1}(s'_i),
-\label{eq:policy_eval_v_target}
-\end{equation}
-该目标值利用上一轮迭代得到的值函数 \(V_{k-1}\) 对状态 \(s_i\) 的期望回报进行估计。
-
-上述方法采用了一步自举（single-step bootstrapping）的方式构造目标值。除了一步自举外，也可以使用多步自举方法，例如 TD(\(\lambda\))\cite{SuttonBarto2018}。在表格型表示的情形下，可以证明当迭代次数 \(k \to \infty\) 时，\(V_k\) 将收敛到真实的状态值函数 \(V^{\pi}\)。在实际应用中，通常只需相对较少的迭代次数即可获得较为准确的近似结果。
-
-\subsubsection{状态-动作值函数的策略评估}
-
-状态-动作值函数 \(Q^{\pi}(s,a)\) 可以通过类似的迭代过程进行估计。在第 \(k\) 次迭代中，通过优化以下目标函数构造 Q 函数的近似：
-\begin{equation}
-Q_k = \arg\min_{Q} \;
-\mathbb{E}_{(s_i, a_i, r_i, s'_i, a'_i) \sim \mathcal{D}}
-\Big[ \big( y_i - Q(s_i, a_i) \big)^2 \Big],
-\label{eq:policy_eval_q}
-\end{equation}
-其中目标值 \(y_i\) 定义为
-\begin{equation}
-y_i = r_i + \gamma Q_{k-1}(s'_i, a'_i),
-\label{eq:policy_eval_q_target}
-\end{equation}
-该目标值通过上一轮迭代得到的 Q 函数 \(Q_{k-1}\) 进行自举计算。与状态值函数的情形类似，这里每条转移样本被扩展为包含后继状态 \(s'_i\) 及其对应动作 \(a'_i\)，其中 \(a'_i\) 由策略 \(\pi\) 在状态 \(s'_i\) 下采样得到。
-
-\subsubsection{函数逼近与优化}
-
-在实际应用中，值函数和 Q 函数通常采用参数化函数逼近器进行表示，例如神经网络。在这种情况下，上述目标函数（式 \eqref{eq:policy_eval_v} 与式 \eqref{eq:policy_eval_q}）可以通过梯度下降等迭代优化方法进行求解。此外，在每一轮策略评估中，通常不需要将优化问题完全求解至收敛，而是仅进行有限次参数更新即可获得有效的近似，这在实践中具有较高的计算效率。
-
-\subsection{策略梯度方法（Policy Gradient Methods）}
-
-在回顾了强化学习的基本概念之后，下面讨论用于求解强化学习问题的具体算法选择。本文主要关注机器人运动控制任务，这类任务通常具有连续动作空间的特点。策略梯度方法（Policy Gradient Methods）是一类特别适用于连续动作空间的问题的强化学习算法\cite{Williams1992, SuttonBarto2018}，同时也易于与神经网络等函数逼近器相结合。
-
-策略梯度方法通过梯度上升的方式，直接对策略的参数进行优化，其目标是最大化策略的期望回报。具体而言，策略参数通过对期望回报关于策略参数的梯度 \(\nabla_{\pi} J(\pi)\) 进行迭代更新来优化。
-
-\subsubsection{策略梯度的推导}
-
-为了推导策略梯度，首先将策略的期望回报（式 \eqref{eq:expected_return}）从基于轨迹分布的形式，改写为基于策略诱导状态分布的期望形式：
-\begin{equation}
-J(\pi) = \mathbb{E}_{s \sim d^{\pi}(s)} \;
-\mathbb{E}_{a \sim \pi(a \mid s)}
-\big[ Q^{\pi}(s, a) \big],
-\label{eq:pg_objective}
-\end{equation}
-其中 \(d^{\pi}(s)\) 表示策略 \(\pi\) 所诱导的（未归一化）折扣状态分布，其定义为
-\[
-d^{\pi}(s) = \sum_{t=0}^{\infty} \gamma^{t} p(s_t = s \mid \pi),
-\]
-\(p(s_t = s \mid \pi)\) 表示在第 \(t\) 个时间步执行策略 \(\pi\) 时处于状态 \(s\) 的概率。
-
-对式 \eqref{eq:pg_objective} 关于策略参数求梯度，可得
-\begin{equation}
-\nabla_{\pi} J(\pi)
-= \nabla_{\pi}
-\mathbb{E}_{s \sim d^{\pi}(s)}
-\mathbb{E}_{a \sim \pi(a \mid s)}
-\big[ Q^{\pi}(s, a) \big].
-\label{eq:pg_grad_1}
-\end{equation}
-将内层期望写成对动作空间的积分形式，有
-\begin{equation}
-\nabla_{\pi} J(\pi)
-=
-\mathbb{E}_{s \sim d^{\pi}(s)}
-\left[
-\int_{a \in \mathcal{A}}
-\nabla_{\pi} \pi(a \mid s) Q^{\pi}(s, a) \, da
-\right].
-\label{eq:pg_grad_2}
-\end{equation}
-
-然而，在高维或连续动作空间中，上述积分形式往往难以直接计算。为此，引入对数导数技巧（score function），将积分形式转化为基于采样的期望：
-\begin{equation}
-\nabla_{\pi} J(\pi)
-=
-\mathbb{E}_{s \sim d^{\pi}(s)}
-\mathbb{E}_{a \sim \pi(a \mid s)}
-\big[
-\nabla_{\pi} \log \pi(a \mid s)
-\, Q^{\pi}(s, a)
-\big].
-\label{eq:policy_gradient}
-\end{equation}
-
-\subsubsection{策略梯度的估计}
-
-式 \eqref{eq:policy_gradient} 给出了策略梯度的一种可计算形式。在实际应用中，可通过在环境中执行当前策略收集样本轨迹来近似该期望。具体而言，在每个时间步计算动作对数概率的梯度 \(\nabla_{\pi} \log \pi(a_t \mid s_t)\)，并使用对应的 \(Q\) 值对其进行加权，随后对所有时间步的加权梯度取平均，即可得到策略梯度的经验估计。
-
-尽管策略梯度方法在形式上较为直接，但在实践中，其梯度估计通常具有较高的方差，从而可能导致学习过程不稳定或收敛缓慢。因此，实际算法中通常需要引入额外的设计以改善训练稳定性。
-
-\subsubsection{基线与优势函数}
-
-一种常见的方差降低策略是在策略梯度估计中引入基线（baseline）\cite{Williams1992, SuttonBarto2018}。通常选取状态值函数 \(V^{\pi}(s)\) 作为基线，并定义优势函数
-\begin{equation}
-A^{\pi}(s, a) = Q^{\pi}(s, a) - V^{\pi}(s).
-\label{eq:advantage_function}
-\end{equation}
-在引入优势函数后，策略梯度可写为
-\begin{equation}
-\nabla_{\pi} J(\pi)
-=
-\mathbb{E}_{s \sim d^{\pi}(s)}
-\mathbb{E}_{a \sim \pi(a \mid s)}
-\big[
-\nabla_{\pi} \log \pi(a \mid s)
-\, A^{\pi}(s, a)
-\big].
-\label{eq:policy_gradient_adv}
-\end{equation}
-
-优势函数刻画了在给定状态下，某一动作相对于平均水平的优劣程度。上述更新规则可以理解为：提高在当前状态下带来高于平均回报的动作的概率，同时降低带来低于平均回报的动作的概率。可以证明，引入基线并不会改变策略梯度的期望值，但能够显著降低其方差，从而提升学习效率。
-
-\subsubsection{值函数估计（Value Estimation）}
-
-策略梯度的计算依赖于对策略对应的状态值函数 \(V^{\pi}\) 以及状态-动作值函数 \(Q^{\pi}\) 的估计。在实际算法设计中，针对这两类量的近似方式存在多种选择，不同的设计决策在计算复杂度、偏差与方差之间形成权衡。
-
-一种直接的做法是利用由策略 \(\pi\) 采样得到的数据，同时对 \(V^{\pi}\) 和 \(Q^{\pi}\) 进行函数逼近，并据此估计策略梯度。然而，在连续控制任务中，直接学习高维状态-动作空间中的 Q 函数往往较为困难。基于这一考虑，本文在整个工作中采用一种更为常见且实践效果良好的策略：使用参数化函数逼近器对状态值函数 \(V^{\pi}\) 进行近似，而状态-动作值函数 \(Q^{\pi}(s,a)\) 则通过经验回报进行直接估计。
-
-具体而言，对于在状态 \(s\) 采取动作 \(a\) 后得到的经验回报，使用如下形式的经验估计：
-\[
-Q^{\pi}(s,a) \approx R^{\pi}_{s,a},
-\]
-其中 \(R^{\pi}_{s,a}\) 表示在策略 \(\pi\) 下，从状态 \(s\) 执行动作 \(a\) 开始的折扣累计回报。该经验回报可以通过沿着以 \((s,a)\) 为起点的轨迹，对后续奖励进行折扣求和得到，即
-\[
-R^{\pi}_{s,a} = \sum_{t=0}^{T-1} \gamma^{t} r_t,
-\]
-其定义与式 \eqref{eq:q_function_def}（即状态-动作值函数的期望形式）一致。
-
-在这种设置下，状态值函数 \(V^{\pi}\) 主要用于作为策略梯度中的基线，以降低梯度估计的方差；而 Q 函数则通过经验回报的方式隐式参与策略更新。这种估计方式在保持算法简单性的同时，避免了显式学习高维 Q 函数所带来的不稳定性，因此被广泛应用于基于策略梯度的连续控制方法中。
-
-\subsubsection{训练方法（Training）}
-
-在后续章节中，本文主要采用近端策略优化（Proximal Policy Optimization, PPO）算法\cite{Schulman2017PPO}对控制策略进行训练。PPO 属于策略梯度方法的一种，通过在目标函数中引入约束项，有效提升了训练过程的稳定性与样本利用效率，因此在连续控制任务中得到了广泛应用。
-
-算法 \ref{alg:ppo_training} 总结了本文中所采用的整体训练流程。策略函数与状态值函数均采用神经网络进行参数化建模。在每一次参数更新迭代中，首先使用当前策略 \(\pi\) 在环境中采样得到一批轨迹数据 \(\{\tau_i\}_{i=1}^{m}\)。随后，利用采集到的数据对状态值函数 \(V(s)\) 进行更新，其目标值通过 TD(\(\lambda\)) 方法\cite{SuttonBarto2018}计算得到。
-
-在完成值函数更新后，对轨迹中每一个时间步估计其优势函数
-\[
-A_i \approx A^{\pi}(s_i, a_i),
-\]
-其中优势函数采用广义优势估计（Generalized Advantage Estimation, GAE(\(\lambda\))）方法\cite{Schulman2016GAE}进行计算。最终，基于估计得到的优势值，通过 PPO 算法对策略网络的参数进行更新。
-
-上述训练流程在保证梯度估计稳定性的同时，兼顾了样本效率与实现复杂度，因此被作为本文后续实验中默认的策略训练方法。
-
-\subsubsection{目标条件强化学习（Goal-Conditioned Reinforcement Learning）}
-
-前述强化学习框架主要针对单一任务场景，即智能体在训练与测试过程中始终试图完成相同的目标。然而，在许多实际应用中，更期望智能体具备执行多种任务的能力。为此，可以采用目标条件强化学习（Goal-Conditioned Reinforcement Learning）框架，对标准强化学习问题进行扩展。
-
-在该框架中，引入目标变量 \(g \in \mathcal{G}\) 用于描述智能体当前需要完成的具体任务。例如，在导航任务中，目标 \(g\) 可以表示需要到达的目标位置坐标。在每个回合开始时，根据任务分布采样一个目标
-\[
-g \sim p(g),
-\]
-并使奖励函数依赖于该目标，即
-\[
-r_t = r(s_t, a_t, s_{t+1}, g)。
-\]
-同时，目标 \(g\) 作为额外输入与状态信息一并提供给策略函数，使策略表示为
-\[
-\pi(a \mid s, g)。
+P_{\text{init}} = f(q_{\text{init}})
 \]
 
-在目标条件设置下，策略的期望回报定义为其在目标分布上的平均性能：
-\begin{equation}
-J(\pi) = \mathbb{E}_{g \sim p(g)} 
-\mathbb{E}_{\tau \sim p(\tau \mid \pi, g)}
-\left[
-\sum_{t=0}^{T-1} \gamma^{t} r_t
-\right].
-\label{eq:goal_conditioned_objective}
-\end{equation}
+\State 设置仿真参数：
+\State \hspace{2em} 时间步长 \( t = 0.05 \)，迭代步数 \( \text{step} = 20 \)
+\State \hspace{2em} 上一时刻末端位置 \( P_{t-1} = P_{\text{init}} \)
 
-此时，策略对应的轨迹分布同样依赖于目标 \(g\)，可表示为
+\State 计算末端位置增量：
 \[
-p(\tau \mid \pi, g) = p(s_0) \prod_{t=0}^{T-1} p(s_{t+1} \mid s_t, a_t)\,\pi(a_t \mid s_t, g)。
+\Delta P = \frac{(P_{\text{robot}} - P_{\text{init}})}{\text{step}}
 \]
-相应地，状态值函数 \(V^{\pi}(s, g)\) 与状态-动作值函数 \(Q^{\pi}(s, a, g)\) 也均以目标 \(g\) 作为附加输入。
 
-需要指出的是，在算法实现层面，目标变量 \(g\) 可以被视为状态观测的一部分，与状态 \(s\) 以完全相同的方式进行处理。因此，前文所讨论的策略梯度方法、值函数估计方法以及 PPO 训练流程，均可以在不作本质修改的情况下，直接推广至目标条件强化学习设置。此外，该框架还可进一步扩展以支持随时间变化的非平稳目标 \(g_t\)。
+\For{$i = 1 : \text{step}$}
+\State \textbf{步骤 1：} 计算当前期望笛卡尔速度及二次规划的 Hessian 矩阵：
+\[
+v = \frac{\left( P_{\text{init}} + i \cdot \Delta P \right) - P_{t-1}}{t}
+\]
+
+\State \textbf{步骤 2：} 通过二次规划求解关节速度：
+\[
+\dot{q} = \text{osqp}(H, g, l, u)
+\]
+
+\State \textbf{步骤 3：} 状态更新：
+\State \hspace{2em} 更新关节角度：
+\[
+q = q + \dot{q} \cdot t
+\]
+\State \hspace{2em} 更新当前末端位置：
+\[
+P_{t-1} = f(q)
+\]
+\EndFor
+
+\State \Return \( q \)
+
+\end{algorithmic}
+\end{algorithm}
+
+\section{实验}
+\subsection{单人动作模仿}
+为了验证人体手臂运动学建模与动作重定向算法的有效性，我们首先进行了单人动作模仿实验。实验步骤如下：
+
+\textbf{步骤 1：} 初始化机器人，确保所有关节移动至零位。
+
+\textbf{步骤 2：} 示范者站在摄像头前，保证身体处于视野范围内并开始执行动作。上位机处理器实时获取示范者肩部、肘部和手腕的关键点坐标，用于后续手臂运动计算。
+
+\textbf{步骤 3：} 在下位机处理中，利用人体手臂几何模型计算肩关节屈伸角 $(\theta_1)$、肩关节外展–内收角 $(\theta_2)$、肘关节屈伸角 $(\theta_4)$ 以及肩关节内外旋角 $(\theta_3)$。随后，通过末端执行器位置跟踪方法对关节角进行优化，得到调整后的机器人目标关节角 $q$。
+
+\textbf{步骤 4：} 将计算得到的手臂目标关节角直接发送至机器人，完成动作模仿过程。
+
+如图 \ref{fig:Single Person Action Imitation} 所示，从示范者的连续动作中选取了八帧，展示机器人模仿人体手臂动作的过程。前两组展示了机器人模仿人体左臂动作的情况，第三、四组展示了机器人模仿人体右臂动作的情况，最后四组展示了机器人同时模仿双臂动作的情况。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig9.png}
+\caption{单人手臂动作模仿.}
+\label{fig:Single Person Action Imitation}
+\end{figure}
+
+实验结果表明，机器人能够通过动作重定向方法准确复制人体手臂动作，验证了基于手臂几何模型的动作计算和末端执行器跟踪算法的有效性。
+
+\subsection{多人动作模仿}
+
+在双人动作模仿实验中，尽管两台机器人具有相同的结构尺寸，但两位示范者在身高比例和手臂关节长度上存在差异。图 \ref{fig:Dual person action imitation} 展示了四组不同动作状态，每组均包含不同的手臂动作。实验结果表明，两台机器人能够平滑地复现示范者的手臂动作及末端执行器位置，验证了改进重定向方法的通用性。
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig10.png}
+\caption{双人手臂动作模仿：机器人 1 模仿示范者 1 的动作，机器人 2 模仿示范者 2 的动作。}
+\label{fig:Dual person action imitation}
+\end{figure}
+
+为了进一步评估动作重定向算法在多人场景下的泛化能力，我们在仿真环境中进行了多人动作模仿实验。如图 \ref{fig:Multi person action imitation} 所示，在 Mujoco 仿真环境中创建了四个机器人模型。四位示范者的动作通过动作捕捉系统采集并生成手臂关键点，这些关键点随后输入改进重定向算法，计算四组目标手臂关节角度，用于驱动仿真机器人关节的运动。关节控制系统采用 500 Hz 的 PD 位置控制器运行，以确保仿真与实体机器人的控制频率一致，实现同步运动。
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig11.png}
+	\caption{多人动作模仿：选择两组动作。}
+	\label{fig:Multi person action imitation}
+\end{figure}
+
+实验结果显示，随着示范者数量增加，机器人仍能保持动作模仿的平滑性和精确性。所采用的改进重定向方法能够有效保证手臂运动相似性，同时在不同体型和动作模式之间具有良好的泛化能力。
+
+\subsection{任务操作}
+为了评估我们多人动作模仿系统在实际任务场景中的可行性，我们选择了四项任务：两项单臂模仿任务（倒水和分类）以及两项双臂协作任务（交接和搬运）。这些任务涵盖了在实际应用中可能出现的多种场景。为了便于任务执行，我们使用手持控制器操作机器人的前臂旋前-旋后关节、手腕屈伸关节以及末端执行器的夹爪。
+
+在倒水任务中，如图 \ref{fig:pouring} 所示，机器人需要将水从瓶子倒入指定的杯子中。该任务对机器人具有一定的操作风险，因此需要保证动作的稳定性和准确性。
+
+对于物体分类任务，如图 \ref{fig:classification} 所示，桌面上有四类物品：芒果、枣子、猕猴桃和玩具。机器人需要将这些物品移动到各自对应的区域。该任务类似于日常的分类操作任务，需要双手协作进行操作。由于单臂机器人的作业空间有限，即便完成任务也需要较长的时间。
+
+对于协作移交任务，如图 \ref{fig:double_change} 所示，桌面上放置了一个工具箱，里面有一把六角螺丝刀。机器人 B 需要从工具箱中取出螺丝刀并递给机器人 A，随后机器人 A 将螺丝刀放置到桌面上。该任务需要机器人之间的相互协作。
+
+对于大型物体搬运任务，如图 \ref{fig:double_up} 所示，桌面上放置了一副金属框架（长度 180 cm，宽度 40 cm，重量 3.1 kg）。两台机器人协作完成该框架的搬运任务。由于目标物体的尺寸和重量较大，单台机器人在执行任务时会面临诸如重心难以保持稳定、手臂电机力矩不足等问题。通过协作，两台机器人可以共同抓取并抬起物体，从而降低任务难度。
+
+需要注意的是，虽然执行任务的双足机器人外观与前述有所不同，但其机械臂的结构尺寸保持一致。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig15.png}
+\caption{倒水。(0) 机器人在工作台前初始化；(1) 首先抓取桌面上的水瓶；(2) 将水瓶移动至目标杯子上方；(3) 旋转水瓶，将水倒入杯中；(4) 最后放开水瓶。整个过程耗时 48 秒。}
+
+\label{fig:pouring}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig16.png}
+\caption{物体分类。(0) 机器人在工作台前初始化；(1) 首先选择右侧的物体进行分类，抓取最右侧的芒果；(2) 提起并放置到目标位置；(3) 然后抓取枣子；(4) 提起并放置到目标位置。随后的步骤 (5-9) 重复 (1)(2) 的过程，依次完成芒果（7）、枣子（8）和玩具（9）的分类。最终完成所有物体的分类，整个过程耗时 92 秒。}
+\label{fig:classification}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig17.png}
+\caption{协作交接：两台机器人在桌子前初始化。(1) 机器人 B 抓取六角螺丝刀；(2) 机器人 A 接收机器人 B 递来的螺丝刀；(3) 机器人 A 准备放置螺丝刀；(4) 机器人 A 松开夹爪完成放置。整个过程耗时 17 秒。}
+
+\label{fig:double_change}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig18.png}
+\caption{协作搬运：(0) 两台机器人在金属框架前初始化；(1) 机器人 A 与 B 抓住框架；(2) 两台机器人同时抬起框架；(3) 两台机器人同时放下框架。整个过程耗时 15 秒。}
+
+\label{fig:double_up}
+\end{figure}
+
+\section{结果与讨论}
+\subsection{数据分析}
+通过观察图 \ref{fig:Tracking of Robot Arm Joints dual} 可知，在双人动作模仿过程中，机器人能够有效跟踪人体左肩的屈伸关节和外展内收关节的运动轨迹。如图 \ref{fig:Robot Arm Joints dual} 所示，肩部旋转关节（外旋-内旋）和肘关节也表现出良好的跟踪性能。然而，在图中的 (b) 和 (d) 中肘关节未能跟踪到动作，这是由于关节角度受限，无法超过机械极限所致。
+\begin{figure}[H]
+	\centering
+	\begin{adjustwidth}{0cm}{0cm}
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13a.eps}}
+		 \hfill  % 调整两图之间的间距
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13b.eps}}\\
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13c.eps}}
+		\hfill  % 调整两图之间的间距
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13d.eps}}
+		
+	\end{adjustwidth}
+\caption{双人动作模仿中左肩屈伸关节和外展-内收关节的轨迹跟踪：（\textbf{a}）和（\textbf{b}）机器人 1 跟踪表演者 1 左肩屈伸关节和外展-内收关节的关节轨迹；（\textbf{c}）和（\textbf{d}）机器人 2 跟踪表演者 2 左肩屈伸关节和外展-内收关节的关节轨迹。}
+
+\label{fig:Tracking of Robot Arm Joints dual}
+\end{figure} 
+
+\begin{figure}[H]
+	\centering
+	\begin{adjustwidth}{0cm}{0cm}
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LSY1.eps}}
+		\hfill  % 调整两图之间的间距
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LE1.eps}}\\
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LSY2.eps}}
+		\hfill  % 调整两图之间的间距
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LE2.eps}}
+		
+	\end{adjustwidth}
+	\caption{双人动作模仿中左肩关节外旋-内旋及肘关节的轨迹跟踪：（\textbf{a}）和（\textbf{b}）表示机器人 1 跟踪示范者 1 左肩关节外旋-内旋及肘关节的轨迹；（\textbf{c}）和（\textbf{d}）表示机器人 2 跟踪示范者 2 左肩关节外旋-内旋及肘关节的轨迹。
+}
+	\label{fig:Robot Arm Joints dual}
+\end{figure} 
+
+为了定量评估动作模仿的跟踪性能，本文采用均方误差（Mean Square Error, MSE）作为关节轨迹跟踪精度的指标。MSE 值越小，表示机器人的关节运动越接近目标轨迹。
+
+图 \ref{fig:MSE} 展示了单人和双人动作模仿过程中各关节的均方误差（MSE）。由于关节电机存在固有延迟，跟踪过程中不可避免地引入了误差，从而影响了 MSE 值。结果表明，与单人动作模仿相比，双人动作模仿时各关节的 MSE 并未显著增加，这验证了系统在多智能体动作模仿中的可行性和有效性。此外，肩部外展-内收关节的跟踪 MSE 最小，而肩部内外旋关节的跟踪 MSE 最大。这主要是因为肩部外展-内收的运动特征更为显著，使得从姿态估计输出的人体关键点数据更稳定。因此，通过几何建模计算得到的肩部外展-内收关节参考角波动较小。相比之下，手腕深度信息的波动较大，使得生成的关键点数据变化更明显，导致肩部内外旋关节参考角的波动较大。总之，关节跟踪 MSE 主要来源于姿态估计过程中的数据波动，同时电机响应延迟也会对跟踪精度产生一定影响。
+\begin{figure}[H]
+	\centering
+	\begin{adjustwidth}{0cm}{0cm}
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig14_a.eps}}
+		\label{fig:MSE_1}
+	    \hfill  % 调整两图之间的间距
+		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig14_b.eps}}
+		\label{fig:MSE_2}
+		
+	\end{adjustwidth}
+\caption{手臂动作模仿过程中关节角度的均方误差（MSE）：（\textbf{a}）单人手臂动作模仿；（\textbf{b}）双人手臂动作模仿。关节 1 对应肩屈伸关节，关节 2 对应肩外展-内收关节，关节 3 对应肩外旋-内旋关节，关节 4 对应肘屈伸关节。}
+
+\label{fig:MSE}
+\end{figure} 
+
+\subsection{消融实验}
+通过消融实验，我们比较了仅使用几何方法以及基于优化的二次规划（QP）方法在末端执行器位置跟踪任务中的性能。如表~\ref{tab1} 所示，当采用纯几何方法时，末端执行器的跟踪误差为 $9.35 \times 10^{-2}$；而采用 QP 优化方法时，该误差显著降低至 $3.75 \times 10^{-4}$。相比之下，本文提出的方法将末端执行器的跟踪误差进一步降低至 $2.065 \times 10^{-5}$，略高于解析逆向运动学方法，但明显优于几何方法和 QP 方法。
 
 
+在机器人任务执行中，末端执行器的跟踪精度固然重要，但保持合理的手臂构型同样关键。良好的手臂构型不仅可以避免与环境及机器人自身发生碰撞，还能增强运动的稳定性与安全性。如表 \ref{tab1} 所示，只有本文提出的改进重定向方法在保持可行手臂构型的同时，实现了较小的末端执行器误差。
+\begin{table}[ht]
+	\centering
+	\caption{不同重定向方法的性能比较}
+	\begin{tabular}{lcccc}
+		\toprule
+		方法       & 关节限制 & 构型约束 & 末端执行器误差  & 迭代次数 \\
+		\midrule
+		几何方法     & $\times$     & \checkmark    & \(9.35 \times 10^{-2}\)    & $\times$   \\
+		解析逆运动学 & $\times$     & $\times$      & \(2\times 10^{-6}\)     & 1          \\
+		QP方法       & \checkmark   & $\times$      &  \(3.75\times 10^{-4}\) & $\approx100 $      \\
+		改进重定向     & \checkmark   & \checkmark    &  \(2.065\times 10^{-5}\)  & $\approx20 $       \\
+		\bottomrule
+	\end{tabular}
+	\label{tab1}
+\end{table}
+
+此外，在计算效率方面，所提出的方法仅需约 20 次迭代即可收敛至最优解，相较于传统的基于 QP 的方法，更适合实时应用。
+
+为了直观比较不同重定向方法在动作模仿任务中的表现，我们提供了本文所提出方法的实验视频（\href{https://youtu.be/lXEJFHylUEI}{实验视频}），并在同一关键帧下展示了各重定向方法的差异。如图~\ref{fig:matched_com} 所示，实验结果表明：
 
 
-\section{电机控制}
-我们的工作将探索强化学习在运动控制任务中的应用，包括模拟环境和真实环境。然而，直接将强化学习应用于真实环境中的智能体训练会带来诸多挑战，例如样本效率、安全性、复位问题等。为了规避部分挑战，我们先在模拟环境中训练机器人。本节将详细介绍机器人的设计，并对运动控制相关概念进行简要回顾。
+基于几何的方法通过追踪肩关节和肘关节角度来保证手臂的配置相似性。然而，由于它并未显式地追踪末端执行器的位置，因此末端执行器的跟踪误差相对较大。逆向运动学（IK）方法能够实现末端执行器位置的跟踪，但由于在求解过程中未考虑关节限制且忽略手臂配置，导致肘关节位置偏差明显，手臂配置相似性降低。QP 方法在优化关节限制的同时能够成功跟踪末端执行器位置，并改善手臂配置。然而，该方法增加了计算复杂度，且手臂配置仍存在一定误差。我们提出的改进重定向方法在保持低末端执行器跟踪误差的同时，能够维持手臂的相似配置，从而提升运动的稳定性和自然性。
 
-\subsection{机器人模型}
+为了评估多机器人动作模仿的自然性和可接受性，我们邀请了六名参与者进行示范动作，随后机器人执行模仿及任务操作。评价指标如下：
+1. **动作平滑性 (Motion Smoothness, MS)**：评估机器人执行过程中是否存在不连续或突兀的动作。
+2. **姿态可行性 (Pose Feasibility, PF)**：评估机器人手臂姿态是否与人类示范者保持相似。
+3. **任务完成度 (Task Achievement, TA)**：评估机器人是否准确完成指定的模仿任务。
+4. **总体用户偏好 (Overall User Preference)**：反映参与者对整体模仿质量的主观评价。
 
-\subsection{状态特征}
-为了控制角色的运动，策略的输入之一是状态特征集 $s_t$，用于描述角色在时刻 $t$ 的身体配置。图 2.3 给出了状态特征的一个示例，其定义如下：
-$$
-s_t = \left[ \boldsymbol{\omega}_t,\ r_t,\ p_t,\ \dot{p}_t,\ a_{t-1},\ \beta \right].
-$$
+ 用户评分采用1（差）到5（优）的五分制，统计结果如表 \ref{tab2} 所示。实验结果表明，在所有评价指标上，我们的方法均优于基于几何方法（geometry-based）、逆向运动学（IK）和二次规划（QP）方法。尤其在动作平滑性和姿态可行性方面，用户主观评分明显更高。这表明，改进的重定向方法不仅提高了模仿精度，同时也增强了动作的自然性和用户可接受性。
 
-其中，$\boldsymbol{\omega}_t \in \mathbb{R}^3$ 表示机器人基座的角速度；$r_t$ 表示基座的横滚角（roll），$p_t$ 表示俯仰角（pitch）；$p_t \in \mathbb{R}^{19}$ 和 $\dot{p}_t \in \mathbb{R}^{19}$ 分别表示机器人各关节的位置与速度；$a_{t-1} \in \mathbb{R}^{19}$ 为上一时间步的动作输入；$\beta \in (0,1]$ 为用于缩放策略输出动作幅值的标量参数。
+ \subsection{局限}
+ 所提出的改进重定向算法能够有效地计算出最优关节角，同时满足手臂几何结构一致性和末端执行器位置跟踪的要求。通过结合多人人体姿态估计技术，该框架实现了多机械臂的动作模仿与协作任务，增强了系统的适应性和多任务处理能力。尽管人体运动运动学长期以来一直是研究前沿，但本研究在重定向算法方面相较于现有方法取得了进展。尤其是，将改进的重定向算法与多机器人协作任务相结合，并利用实时人体姿态估计进行机器人动作模仿，本方法在复杂环境中显著提升了动作模仿的精度与协调性。
+ 然而，所提出的框架仍存在一定局限性，尤其是在姿态方向跟踪方面。由于我们的姿态估计系统主要通过单目相机估计末端执行器的位置，它只能获取位置数据，而无法完整提取关节的全姿态信息（包括旋转分量）。这一限制显著影响了关节运动的灵活性，尤其是在涉及前臂旋前-旋后和手腕屈伸等复杂动作时，机器人无法充分调整这些关节以满足任务要求。未来的研究可以引入完整的姿态估计，实现位置与方向的综合跟踪，从而提升机器人在复杂任务中的灵活性与精度。关于关节限位约束，如图 \ref{fig:Robot Arm Joints dual} (b) 和 (d) 所示，无法实现精确跟踪主要是由于机械结构限制了关节运动范围，这一问题在传统控制方法中同样存在。为解决该局限性，未来工作可引入更加灵活的自适应关节限位控制策略，使机器人在不超出机械极限的前提下调整运动范围，从而减轻关节限位带来的影响。
 
-\subsection{驱动模型}
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\captionof{table}{不同重定向方法的用户主观评价}
+		\begin{tabular}{lcccc}
+			\toprule
+			方法  & MS  & PF  & TA  & 综合评分 \\
+			\midrule
+			几何方法     & 4   & 5   & 2   & 4   \\ 
+			逆运动学方法 & 4   & 2   & 3   & 2   \\
+			QP 方法      & 3   & 3   & 3   & 3   \\
+			本文方法     & 5   & 5   & 4   & 5   \\
+			\bottomrule
+		\end{tabular}
+		\label{tab:user_evaluation}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/chapter3/mathed_com.png}
+		\caption{相同动作关键帧下不同重定向方法的对比结果。橙色点表示目标位置，蓝色点表示实际到达位置。}
+		\label{fig:matched_comparison}
+	\end{minipage}
+\end{figure}
 
-在每一个时间步，策略通过输出动作 $a_t$ 来控制角色的运动，该动作随后被驱动模型转换为施加在各关节上的控制力矩。对于关节 $j$，其控制力矩记为 $f_j$。动作参数化方式以及驱动模型的选择是强化学习控制中的关键设计决策，对策略的训练稳定性以及最终生成动作的质量均具有重要影响。
+\section{结论}
+本文提出了一个综合性的实时多仿人机器人手臂动作模仿框架，该框架采用改进的重定向方法，有效实现了手臂运动学配置与末端执行器精度之间的最佳平衡。通过整合多人人体姿态估计技术，该框架不仅支持多仿人机器人之间的协作运动，还为复杂任务中的多机器人协作提供了有效解决方案。
 
-一种直接的动作参数化方式是令动作
-\begin{equation}
-a = (f_1, f_2, \ldots, f_n)
-\end{equation}
-直接表示各关节的控制力矩，此时驱动模型可视为恒等映射。该方法在文献中被广泛采用，但对于具有多个自由度的复杂关节系统而言，直接进行低层力矩控制往往会增加学习难度，并且容易导致生成动作中出现高频抖动等视觉伪影。
+实验结果表明，机器人能够成功复现各种人类手臂动作。尽管随着示范者数量的增加，姿态估计误差有所上升，但整体动作模仿仍保持较高的跟踪精度和末端执行器准确性。此外，在倒水、物品分类及协作等任务中，我们进一步验证了改进重定向方法在保持手臂运动学结构完整性和末端执行器精度方面的优越性能。此外，随着多人人体姿态估计技术的整合，即使检测对象数量增加，系统仍能保持良好的实时性能，有效避免了计算负载的大幅增加。
 
-在已有研究中发现，对于全身动作控制任务，引入更高层次的控制抽象（如基于位置的控制）通常能够显著提升学习效率与动作质量。因此，在本文后续章节中，采用比例–微分（Proportional-Derivative, PD）控制器作为驱动模型。
-
-\paragraph{PD 控制器}  
-在使用 PD 控制器的情况下，策略输出的动作
-\begin{equation}
-a = (\hat{q}_1, \hat{q}_2, \ldots, \hat{q}_n)
-\end{equation}
-表示机器人各关节的目标旋转位置 $\hat{q}_j$。为便于说明，首先考虑一维转动关节的情形。给定目标旋转角 $\hat{q} \in \mathbb{R}$，PD 控制器可建模为一个角弹簧–阻尼系统，其输出的关节力矩 $f$ 表达为：
-\begin{equation}
-f = k_p (\hat{q} - q) - k_d \dot{q},
-\end{equation}
-其中，$q$ 和 $\dot{q}$ 分别表示关节当前的旋转角度与角速度，$k_p$ 和 $k_d$ 为比例增益和微分增益参数，其取值可参考图 2.2。
-
-该驱动模型通过施加恢复力矩将关节驱动至目标旋转位置，同时引入阻尼项以抑制关节速度过大，从而在保证控制稳定性的同时生成平滑、自然的运动。
-
-
-
-
-
-
-
-
-
-
+尽管该框架在高精度与高效率方面表现出色，但在姿态跟踪上仍存在一定局限性。未来的研究将重点进一步优化姿态估计技术，实现位置与姿态的综合跟踪，从而提升机器人在复杂任务中的灵活性与精度，并使其在多智能体交互与协作任务中发挥更大作用。
