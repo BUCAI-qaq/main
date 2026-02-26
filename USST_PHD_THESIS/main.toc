@@ -1,30 +1,29 @@
 {\noindent \xiaosi 中文摘要\par }
 {\noindent \textrm {ABSTRACT}\par }
-\contentsline {chapter}{\numberline {第一章}绪论}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}研究背景与意义}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}人形机器人本体系统的发展历程}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}腿臂协同控制的研究综述}{6}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}基于零空间分解的腿臂协同控制}{7}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}基于分层二次规划的腿臂协同控制}{10}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}基于强化学习的腿臂协同控制}{12}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}基于模仿学习的腿臂协同控制}{15}{subsection.1.3.4}%
-\contentsline {paragraph}{1）行为克隆}{16}{paragraph*.13}%
-\contentsline {paragraph}{2）对抗式模仿学习}{17}{paragraph*.14}%
-\contentsline {paragraph}{3）生成式运动先验}{17}{paragraph*.15}%
-\contentsline {section}{\numberline {1.4}本文的主要问题}{19}{section.1.4}%
-\contentsline {section}{\numberline {1.5}本文研究内容及章节安排}{20}{section.1.5}%
-\contentsline {chapter}{\numberline {第二章}人形机器人全身动作重定向}{22}{chapter.2}%
-\contentsline {section}{\numberline {2.1}引言}{22}{section.2.1}%
-\contentsline {section}{\numberline {2.2}方法}{23}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}动作模仿系统设计}{23}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}改进重定向}{24}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}人体肘关节建模}{25}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}实验}{28}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}单人动作模仿}{28}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}多人动作模仿}{30}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}任务操作}{31}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}结果与讨论}{32}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}数据分析}{32}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}消融实验}{35}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}局限}{36}{subsection.2.5.3}%
-\contentsline {section}{\numberline {2.6}结论}{37}{section.2.6}%
+\contentsline {chapter}{\numberline {第一章}人形机器人全身动作重定向}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}引言}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}预备知识}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}空间位姿描述与坐标变换基础}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}二次规划与约束优化基础}{4}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}方法}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}动作模仿系统设计}{5}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}改进重定向}{8}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}人体肩关节几何建模}{8}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}人体肘关节几何建模}{9}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}人体髋关节几何建模}{11}{subsection.1.4.3}%
+\contentsline {paragraph}{（1）骨盆局部坐标系构建}{11}{paragraph*.15}%
+\contentsline {paragraph}{（2）Hip Roll 角计算}{12}{paragraph*.17}%
+\contentsline {paragraph}{（3）Hip Pitch 角计算}{12}{paragraph*.18}%
+\contentsline {subsection}{\numberline {1.4.4}人体膝关节几何建模}{12}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}笛卡尔空间建模}{12}{subsection.1.4.5}%
+\contentsline {subsubsection}{\numberline {1.4.5.1}全身末端任务建模}{13}{subsubsection.1.4.5.1}%
+\contentsline {subsubsection}{\numberline {1.4.5.2}几何解与QP优化的融合机制}{13}{subsubsection.1.4.5.2}%
+\contentsline {section}{\numberline {1.5}实验}{15}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}单人动作模仿}{15}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}多人动作模仿}{15}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}任务操作}{16}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}结果与讨论}{17}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}数据分析}{17}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}消融实验}{20}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}局限}{21}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}结论}{22}{section.1.7}%

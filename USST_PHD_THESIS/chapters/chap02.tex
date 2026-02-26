@@ -18,44 +18,254 @@
 
 因此，\textbf{如何在动作重定向过程中同时兼顾关节构型一致性与末端执行器的任务空间精度}，成为当前类人机器人运动模仿研究中的一个关键问题。现有方法通常在这两者之间进行权衡，尚难以在统一框架下有效协调二者。
 
-基于上述背景，本章在已有动作重定向研究的基础上，对传统的重定向流程进行了系统梳理与分析，并引入一种结合关节空间构型约束与笛卡尔空间任务优化的重定向建模思路。该思路以人体手臂运动为示教源，通过建立人体与机器人之间的几何对应关系，在满足机器人关节空间约束的前提下，引入基于笛卡尔空间的优化机制，对末端执行器运动进行精确调节，从而在构型一致性与任务精度之间取得更为平衡的解。
+基于上述背景，本章在已有动作重定向研究的基础上，对传统的重定向流程进行了系统梳理与分析，并引入一种结合关节空间构型约束与笛卡尔空间任务优化的重定向建模思路。该思路以人体手臂运动为示教源，通过建立人体与机器人之间的几何对应关系，
+在满足机器人关节空间约束的前提下，引入基于笛卡尔空间的优化机制，对末端执行器运动进行精确调节，从而在构型一致性与任务精度之间取得更为平衡的解。
 
 需要强调的是，本章关注的重点在于\emph{动作重定向问题本身的建模方式与约束处理机制}，其目的在于为后续章节中基于学习的全身动作生成与控制策略提供稳定、合理的低层动作映射基础。
+
+\section{预备知识}
+
+为后续人形机器人全身动作重定向与任务优先级控制模型的构建，本节对空间位姿描述与坐标变换方法，以及二次规划优化的基本理论进行简要回顾。这些内容构成后续全身运动学建模与优化求解的理论基础。
+
+
+
+\subsection{空间位姿描述与坐标变换基础}
+
+在人形机器人运动控制问题中，空间中任一点或刚体的状态通常由位置与姿态两部分组成。为统一描述空间几何关系，首先定义参考坐标系。设 $\{A\}$ 为参考坐标系，则空间点 $P$ 在坐标系 $\{A\}$ 下的位置向量表示为
+
+\begin{equation}
+	{}^{A}\mathbf{p} =
+	\begin{bmatrix}
+		p_x \\
+		p_y \\
+		p_z
+	\end{bmatrix}.
+\end{equation}
+
+其中，上标 $A$ 表示该向量在坐标系 $\{A\}$ 下表达。图~\ref{fig:frameA} 给出了三维直角坐标系 $\{A\}$ 的示意图。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.45\linewidth]{Figure/chapter2/frame_A.png}
+	\caption{三维直角坐标系 $\{A\}$ 示意图}
+	\label{fig:frameA}
+\end{figure}
+
+刚体姿态可通过附着于刚体的坐标系 $\{B\}$ 相对于参考系 $\{A\}$ 的关系描述。设 
+$\{\hat{\mathbf{x}}_B,\hat{\mathbf{y}}_B,\hat{\mathbf{z}}_B\}$ 
+为 $\{B\}$ 的三个单位基向量，则其在 $\{A\}$ 中的表达可构成旋转矩阵
+
+\begin{equation}
+	{}^{A}_{B}\mathbf{R} =
+	\begin{bmatrix}
+		{}^{A}\hat{\mathbf{x}}_B &
+		{}^{A}\hat{\mathbf{y}}_B &
+		{}^{A}\hat{\mathbf{z}}_B
+	\end{bmatrix}.
+\end{equation}
+
+该旋转矩阵满足正交性条件
+
+\begin{equation}
+	{}^{A}_{B}\mathbf{R}^{T} \, {}^{A}_{B}\mathbf{R} = \mathbf{I}_3,
+	\qquad
+	{}^{A}_{B}\mathbf{R}^{-1} = {}^{B}_{A}\mathbf{R}.
+\end{equation}
+
+图~\ref{fig:frameAB} 给出了两个坐标系 $\{A\}$ 与 $\{B\}$ 的空间关系示意图。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.75\linewidth]{Figure/chapter2/frame_A_B.png}
+	\caption{坐标系 $\{A\}$ 与 $\{B\}$ 的空间关系示意图}
+	\label{fig:frameAB}
+\end{figure}
+
+若两个坐标系原点重合，仅存在旋转关系，则任意向量在两个坐标系中的表达满足
+${}^{A}\mathbf{p} = {}^{A}_{B}\mathbf{R}\,{}^{B}\mathbf{p}$。若两坐标系姿态相同，仅存在平移关系，则有
+${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其中 ${}^{A}\mathbf{p}_{B\mathrm{ORG}}$ 表示坐标系 $\{B\}$ 原点在 $\{A\}$ 下的位置。
+
+综合平移与旋转，可构造齐次变换矩阵
+
+\begin{equation}
+	{}^{A}_{B}\mathbf{T} =
+	\begin{bmatrix}
+		{}^{A}_{B}\mathbf{R} & {}^{A}\mathbf{p}_{B\mathrm{ORG}} \\
+		\mathbf{0}_{1\times 3} & 1
+	\end{bmatrix}
+	\in SE(3),
+\end{equation}
+
+则空间点在不同坐标系之间的映射关系可统一表示为
+
+\begin{equation}
+	\begin{bmatrix}
+		{}^{A}\mathbf{p} \\
+		1
+	\end{bmatrix}
+	=
+	{}^{A}_{B}\mathbf{T}
+	\begin{bmatrix}
+		{}^{B}\mathbf{p} \\
+		1
+	\end{bmatrix}.
+\end{equation}
+
+上述空间位姿表示与坐标变换关系构成了人形机器人几何建模的基础框架，为后续全身运动学推导以及人体动作到机器人结构之间的重定向映射提供了统一的数学描述形式。
+
+
+
+\subsection{二次规划与约束优化基础}
+二次规划（Quadratic Programming, QP）的一般形式为
+\begin{equation}
+	\begin{aligned}
+		\min_{\mathbf{x}} \quad &
+		\frac{1}{2}\mathbf{x}^T \mathbf{G}\mathbf{x}
+		+
+		\mathbf{h}^T \mathbf{x} \\
+		\text{s.t.} \quad &
+		\mathbf{A}\mathbf{x} = \mathbf{b}, \\
+		&
+		\mathbf{C}\mathbf{x} \le \mathbf{d},
+	\end{aligned}
+	\label{eq:qp_general}
+\end{equation}
+其中 $\mathbf{G} \succeq 0$ 为半正定矩阵，$\mathbf{A}\mathbf{x} = \mathbf{b}$ 和 $\mathbf{C}\mathbf{x} \le \mathbf{d}$ 分别表示等式与不等式约束。
+
+当仅存在等式约束时，可构造 Lagrange 函数
+\begin{equation}
+	\mathcal{L}(\mathbf{x},\boldsymbol{\lambda})
+	=
+	\frac{1}{2}\mathbf{x}^T \mathbf{G}\mathbf{x}
+	+
+	\mathbf{h}^T \mathbf{x}
+	+
+	\boldsymbol{\lambda}^T(\mathbf{A}\mathbf{x}-\mathbf{b}),
+\end{equation}
+对 $\mathbf{x}$ 与 $\boldsymbol{\lambda}$ 求偏导并令其为零，可得到一阶最优性条件，整理后得到 KKT 方程组
+\begin{equation}
+	\begin{bmatrix}
+		\mathbf{G} & \mathbf{A}^T \\
+		\mathbf{A} & \mathbf{0}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\mathbf{x} \\
+		\boldsymbol{\lambda}
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		-\mathbf{h} \\
+		\mathbf{b}
+	\end{bmatrix},
+\end{equation}
+通过求解该线性方程组即可获得二次规划问题的最优解。
+
+另一方面，在人形机器人运动学中，设广义关节变量为 $\mathbf{q} \in \mathbb{R}^n$，任务空间变量记为 $\mathbf{x}$，则末端或任务点的位姿满足
+\begin{equation}
+	\mathbf{x} = f(\mathbf{q}),
+\end{equation}
+其微分形式为
+\begin{equation}
+	\dot{\mathbf{x}} = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}},
+	\label{eq:task_velocity_mapping}
+\end{equation}
+其中 $\mathbf{J}(\mathbf{q})$ 为雅可比矩阵。
+
+给定期望的任务空间速度 $\dot{\mathbf{x}}_d$，可以构造任务空间速度误差
+\begin{equation}
+	\mathbf{e}_v = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d,
+\end{equation}
+并以其加权二范数作为代价函数
+\begin{equation}
+	\min_{\dot{\mathbf{q}}} \;
+	\frac{1}{2} \mathbf{e}_v^T \mathbf{W} \mathbf{e}_v
+	=
+	\frac{1}{2}
+	\big(
+	\mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d
+	\big)^T
+	\mathbf{W}
+	\big(
+	\mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d
+	\big),
+	\label{eq:quadratic_cost_from_jacobian}
+\end{equation}
+其中 $\mathbf{W} \succeq 0$ 为任务空间加权矩阵。展开式\eqref{eq:quadratic_cost_from_jacobian} 可得
+\begin{equation}
+	\frac{1}{2} \dot{\mathbf{q}}^T \big( \mathbf{J}^T \mathbf{W} \mathbf{J} \big) \dot{\mathbf{q}}
+	-
+	\big( \mathbf{J}^T \mathbf{W} \dot{\mathbf{x}}_d \big)^T \dot{\mathbf{q}}
+	+
+	\text{const},
+\end{equation}
+从而可以识别出
+\begin{equation}
+	\mathbf{x} \equiv \dot{\mathbf{q}}, \quad
+	\mathbf{G} = \mathbf{J}^T \mathbf{W} \mathbf{J}, \quad
+	\mathbf{h} = - \mathbf{J}^T \mathbf{W} \dot{\mathbf{x}}_d,
+\end{equation}
+
+即由机器人雅可比映射自然得到二次规划中的二次型代价形式。进一步结合关节速度限制、末端约束等线性约束，即可将全身运动学问题统一表示为式\eqref{eq:qp_general} 所示的标准 QP 形式，为后续的人形机器人动作重定向提供统一的优化求解框架。
+
+
 
 
 \section{方法}
 \subsection{动作模仿系统设计}
-图 \ref{fig: System_Block_Diagram} 展示了本文所构建的机器人机械臂动作模仿系统整体框架。系统主要由视觉采集系统、上位处理器、下位处理器以及机械运动系统四个部分组成，各模块协同工作以实现人体上肢动作向机器人机械臂的实时重定向。
+图~\ref{fig:System_Block_Diagram} 展示了本文所构建的全身动作模仿系统整体框架。系统主要由视觉采集系统、上位处理器、下位处理器以及机械运动系统四个部分组成，各模块协同工作以实现人形机器人全身动作模仿。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figure/chapter2/system_frame.png}
+	\caption{全身动作模仿系统整体框架}
+	\label{fig:System_Block_Diagram}
+\end{figure}
 
 视觉采集系统采用标准的 RGB-D 摄像设备，本文实验中使用 Intel RealSense D435 深度相机。摄像头安装于被试者正前方，距地面约 1.5 m，用于实时获取人体运动图像及对应的深度信息。采集到的数据通过 USB 接口传输至上位处理器进行处理。
 
-上位处理器为一台 PC，负责完成人体姿态信息的提取与预处理。具体而言，上位处理器对输入的 RGB 图像进行人体姿态估计，提取人体手臂关键点的二维信息，并进一步结合深度数据恢复三维关键点位置。为降低传感噪声对后续动作重定向的影响，本文对三维关键点序列引入卡尔曼滤波进行平滑处理。处理后的关键点数据通过 ROS 通信机制发送至下位处理器。
+上位处理器为一台 PC，负责完成人体姿态信息的提取与预处理。具体而言，上位处理器对输入的 RGB 图像进行人体姿态估计，提取人体全身关键点的二维信息，并进一步结合深度数据恢复三维关键点位置。为降低传感噪声对后续动作重定向的影响，本文对三维关键点序列引入卡尔曼滤波进行平滑处理。处理后的关键点数据通过 ROS 通信机制发送至下位处理器。
 
-下位处理器用于执行动作重定向计算与机器人控制指令生成。在接收到人体三维关键点数据后，系统首先基于人体手臂的几何模型计算对应的关节角度，该关节角度作为机器人动作重定向问题的初始参考。随后，通过迭代优化求解满足机器人关节约束并同时逼近人体末端运动目标的关节角解。最终得到的目标关节角通过 CAN 总线发送至机械运动系统，用于驱动机器人机械臂执行相应动作。
+为清晰描述人体与机器人之间的映射关系，
+图~\ref{fig:human_robot_compare} 给出了人体关键点结构与机器人本体结构的对比示意图。
+图~\ref{fig:human_keypoints_sub} 为人体关键点定义，
+图~\ref{fig:robot_structure_sub} 为机器人本体结构及关节坐标系定义。
 
-机械运动系统由机器人双臂、电机及其驱动模块构成。本文所使用的仿人机器人平台为自主研发系统，如图 \ref{fig:robot_body} 所示。每条机械臂具有六个自由度，关节配置包括肩关节屈伸、肩关节外展内收、肩关节旋内外、肘关节屈伸、前臂旋前旋后以及腕关节屈伸。该结构能够满足机械臂在三维空间内完成复杂动作的运动学需求，为人体动作的有效重定向提供了硬件基础。
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter2/human_body.png}
+		\caption{人体关键点定义}
+		\label{fig:human_keypoints_sub}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.52\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter2/M04_body.png}
+		\caption{人形机器人本体结构与关节旋转}
+		\label{fig:robot_structure_sub}
+	\end{subfigure}
+	\caption{人体关键点与机器人本体结构对比示意图}
+	\label{fig:human_robot_compare}
+\end{figure}
+
+人体侧关键点包括肩关节（$S$）、肘关节（$E$）、腕关节（$W$）、髋关节（$H$）、膝关节（$K$）、踝关节（$A$）以及躯干参考点（$P$、$O$）等。通过人体姿态估计算法可获取上述关键点在相机坐标系下的三维空间位置坐标，从而构建人体全身骨架的几何拓扑结构。机器人侧则建立与人体结构相对应的串联关节连杆模型，并在各关节处定义局部连杆坐标系 $\{X,Y,Z\}$。各关节旋转采用右手坐标系约定，并按照 Roll–Pitch–Yaw 顺序定义转动自由度。该统一的坐标描述方式为人体—机器人之间的几何映射与运动学重定向提供了理论基础。
+
+下位处理器用于执行动作重定向计算与机器人控制指令生成。在接收到人体三维关键点数据后，系统首先基于人体几何模型计算对应的人体关节角度，该关节角度作为机器人动作重定向问题的初始参考。随后，通过迭代优化求解满足机器人关节物理约束并同时逼近人体末端运动目标的关节角解。最终得到的目标关节角通过 CAN 总线发送至机械运动系统，用于驱动机器人执行相应的全身动作。
+
+机械运动系统由机器人双臂、双腿、电机及其驱动模块构成。本文所使用的仿人机器人平台为自主研发系统。上肢每条机械臂具有六个自由度，包括肩关节三自由度（屈伸、外展内收、旋内外）、肘关节屈伸、前臂旋前旋后以及腕关节屈伸；下肢包括髋关节三自由度、膝关节屈伸以及踝关节俯仰。该结构能够满足机器人在三维空间内完成复杂全身动作的运动学需求，为人体动作的有效重定向提供了硬件基础。
 
 
 \section{改进重定向}
+\subsection{人体肩关节几何建模}
 由于肩关节和肘关节主要影响手臂的运动，而手腕主要影响手的运动，本研究重点对肩关节和肘关节进行几何建模。为清楚说明肩关节和肘关节的建模方法，下面以左臂的建模过程进行说明。
 
 如图 \ref{fig:Modeling_of_shoulder} 所示，点 $S$ 表示左臂的肩关节，点 $E$ 表示左臂的肘关节，点 $M$ 则位于 Y 轴上，距离为 $a$ 的一点。
 \begin{figure}[h]
 	\centering
-	\begin{minipage}{0.47\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/chapter3/Fig2.png}
-		\caption{Joint structures and link frames of the robot's arm.}
-		\label{fig:robot_body}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.355\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/chapter3/Fig3.png}
-		% \caption{Modeling of the left shoulder joint.}
-            \caption{左手肩关节建模。}
-		\label{fig:Modeling_of_shoulder}
-	\end{minipage}
+	\includegraphics[width=0.4\textwidth]{Figure/chapter2/Fig3.png}
+	\caption{左手肩关节建模。}
+	\label{fig:Modeling_of_shoulder}
 \end{figure}
 
 
@@ -89,7 +299,7 @@
 
 
 
-\subsection{人体肘关节建模}
+\subsection{人体肘关节几何建模}
 如图~\ref{fig:Modeling of elbow}(\textbf{a}) 所示，$W$ 表示手腕的实际位置，$W'$ 表示手腕的假定初始位置（此时 $\theta_{3} = 0$）。角度 $\theta_{3}$ 定义为从肘部指向手腕的向量 $\bm{EW}$ 与其初始位置向量 $\bm{EW'}$ 之间的夹角；角度 $\theta_{4}$ 定义为向量 $\bm{EW}$ 与向量 $\bm{SE}$ 的延长线之间的夹角。
 
 
@@ -97,10 +307,10 @@
 	\centering
 	%\isPreprints{}{% This command is only used for ``preprints''.
 		\begin{adjustwidth}{0cm}{0cm}
-			\subfloat[\centering]{\includegraphics[width=7.5cm]{figures/chapter3/Fig4.png}}
+			\subfloat[\centering]{\includegraphics[width=7.5cm]{Figure/chapter2/Fig4.png}}
 			\label{fig:arm joint angles are non zero}
 			\hfill
-			\subfloat[\centering]{\includegraphics[width=5.4cm]{figures/chapter3/Fig5.png}}
+			\subfloat[\centering]{\includegraphics[width=5.4cm]{Figure/chapter2/Fig5.png}}
 			\label{fig:arm joint angles are zero}
 			
 		\end{adjustwidth}
@@ -138,10 +348,10 @@
 \centering
 %\isPreprints{}{% This command is only used for ``preprints''.
 	\begin{adjustwidth}{0cm}{0cm}
-		\subfloat[\centering]{\includegraphics[width=5cm]{figures/chapter3/Fig6_a.png}}
+		\subfloat[\centering]{\includegraphics[width=5cm]{Figure/chapter2/Fig6_a.png}}
 		\label{fig: Shoulder motion as an acute angle}
 		\hfill
-		\subfloat[\centering]{\includegraphics[width=5cm]{figures/chapter3/Fig6_b.png}}
+		\subfloat[\centering]{\includegraphics[width=5cm]{Figure/chapter2/Fig6_b.png}}
 		\label{fig: Shoulder motion as an obtuse angle}
 		
 	\end{adjustwidth}
@@ -149,64 +359,281 @@
 \label{fig: Rotational schematic of the shoulder coordinate system}
 \end{figure} 
 
- 在通过人体几何建模得到手臂关节角度后，可以将这些角度直接作为目标角度来控制机械臂的运动。虽然这种方法能够模仿动作，但无法实现精确的末端执行器位置跟踪，从而难以完成高精度任务。为解决这一问题，我们引入了末端执行器位置跟踪约束。
+\subsection{人体髋关节几何建模}
 
- 考虑到机器人与人体模型在尺寸、自由度和物理参数等方面的差异，即使关节角度相同，末端执行器的位置也可能不同。为了在任务执行过程中满足笛卡尔空间位置跟踪的要求，我们将末端执行器位置的变化（相对于设定的初始手臂位置 $P_{human_init}$）作为控制目标。
+为清晰描述人体下肢关键点的空间关系，
+图~\ref{fig:human_keypoints_sub}  给出了人体全身关键点定义示意图。
+其中 $H$、$K$、$A$ 分别表示髋、膝和踝关节，
 
- 通过监测人体手臂末端执行器位置的变化，可以实现机器人手臂在任务空间中的精确跟踪。在此基础上，从手臂几何建模中得到的四个关节角被用作二次规划（QP）优化的初始条件。该方法确保在跟踪笛卡尔目标位置的同时，机器人手臂的几何构型与人体手臂保持一致。
+与上肢几何建模方法类似，
+下肢髋关节角度可通过关键点之间的空间向量关系进行求解。
+设姿态估计得到关键点在相机坐标系下的三维位置为
+$\mathbf{p}_H,\mathbf{p}_K,\mathbf{p}_O,\mathbf{p}_P \in \mathbb{R}^3$，
+则可构建如下几何关系。。
 
- 关节空间与任务空间之间的速度映射关系可以通过微分运动学获得。
+\paragraph{（1）骨盆局部坐标系构建}
 
-根据 OSQP \cite{osqp}，其中 Hessian 矩阵 $H = J^\mathrm{T} J$，梯度向量 $g = -J^\mathrm{T} v$，约束上下界则根据任务需求进行定义。整体算法流程如算法 \ref{algo1} 所示，最终求解得到满足几何构型约束和末端执行器位置约束的手臂关节角 $q$。
+如图~\ref{fig:hip_leg_geometry}(a) 所示，定义骨盆参考向量 $\mathbf{v}_{OH} = \mathbf{p}_H - \mathbf{p}_O$，
+以及躯干方向向量 $\mathbf{v}_{OP} = \mathbf{p}_P - \mathbf{p}_O$。由上述两个向量可构建骨盆局部参考平面。该平面的法向量定义为
+\begin{equation}
+	\mathbf{n}_{HP}
+	=
+	\mathbf{v}_{OP} \times \mathbf{v}_{OH}.
+	\label{eq:hip_normal}
+\end{equation}
+
+
+\begin{figure}[htbp]
+	\centering
+	%--------- (a) 骨盆局部坐标系 ---------
+	\begin{subfigure}[c]{0.5\textwidth}
+		\centering
+		\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=1.2]
+			% 全局坐标轴
+			\draw[->] (0,0) -- (0,3.0) node[above] {$Z$};
+			\draw[->] (0,0) -- (2.9,0) node[right] {$Y$};
+			\draw[->] (0,0) -- (-2,-1) node[left] {$X$};
+			
+			% 关键点 O, P, H
+			\coordinate (O) at (0,0);       % 骨盆中心
+			\coordinate (P) at (0.9,2.1);   % 上躯干参考点
+			\coordinate (H) at (2.0,-0.5);  % 髋关节中心
+			
+			% 骨盆平面 O-P-H
+			\fill[orange!20, draw=orange!60]
+			(O) -- (P) -- (H) -- cycle;
+			
+			% 向量 v_OP, v_OH
+			\draw[thick,->] (O) -- (P)
+			node[pos=0.35,right=4pt,yshift=2pt] {$\mathbf{v}_{OP}$};
+			\draw[thick,->] (O) -- (H)
+			node[midway,below=2pt] {$\mathbf{v}_{OH}$};
+			
+			% 法向量 n_HP
+			\coordinate (nHP) at (0.5,2.0);
+			\draw[thick,->] (O) -- (nHP)
+			node[pos=1.05,left=-9pt,yshift=4pt] {$\mathbf{n}_{HP}$};
+			
+			% 侧向轴 r
+			\coordinate (rvec) at (2.3,0.45);
+			\draw[thick,->] (O) -- (rvec)
+			node[below=2pt] {$\mathbf{r}$};
+			
+			% 标注点 O, P, H
+			\fill (O) circle (1.2pt) node[below left=1pt] {$O$};
+			\fill (P) circle (1.2pt) node[above right=1pt] {$P$};
+			\fill (H) circle (1.2pt) node[below right=1pt] {$H$};
+		\end{tikzpicture}
+		\caption{骨盆局部坐标系构建}
+		\label{fig:pelvis_local_frame_sub}
+	\end{subfigure}
+	\hfill
+	%--------- (b) 髋膝几何关系 ---------
+	\begin{subfigure}[c]{0.46\textwidth}
+		\centering
+		% 这里用你导出的那张髋膝几何图的文件名替换 leg_geometry.pdf
+		\includegraphics[width=\linewidth]{Figure/chapter2/leg_geometry.png}
+		\caption{髋膝关节几何关系}
+		\label{fig:hip_knee_geometry_sub}
+	\end{subfigure}
+	
+	\caption{人体下肢髋膝关节几何建模示意图}
+	\label{fig:hip_leg_geometry}
+\end{figure}
+
+
+
+
+
+向量 $\mathbf{n}_{HP}$ 表示骨盆横向方向，用于刻画身体左右方向的空间参考。
+
+为构建右手坐标系，引入侧向单位向量
+
+
+\begin{equation}
+	\mathbf{r}
+	=
+	\frac{\mathbf{v}_{OH} \times \mathbf{n}_{HP}}
+	{\left\|\mathbf{v}_{OH} \times \mathbf{n}_{HP}\right\|},
+	\label{eq:hip_r}
+\end{equation}
+
+至此，在髋关节处建立局部参考坐标系
+$\{\mathbf{v}_{OH},\; \mathbf{r},\; \mathbf{n}_{HP}\}$。
+
+
+
+
+
+\paragraph{（2）Hip Roll 角计算}
+
+
+如图~\ref{fig:hip_leg_geometry}(b) 所示，定义大腿方向向量为 $\mathbf{v}_{HK} = \mathbf{p}_K - \mathbf{p}_H$，
+该向量刻画大腿在三维空间中的方向。Hip Roll 描述大腿相对于骨盆平面的侧向摆动。其角度可定义为
+大腿方向向量在骨盆侧向方向 $\mathbf{r}$ 上的投影角度：
+
+\begin{equation}
+	\theta_{\mathrm{HR}}
+	=
+	\arcsin
+	\left(
+	\frac{\mathbf{v}_{HK} \cdot \mathbf{r}}
+	{\|\mathbf{v}_{HK}\|}
+	\right).
+	\label{eq:hip_roll}
+\end{equation}
+
+当 $\theta_{\mathrm{HR}}>0$ 时表示外展，
+当 $\theta_{\mathrm{HR}}<0$ 时表示内收。
+
+\paragraph{（3）Hip Pitch 角计算}
+
+Hip Pitch 角描述大腿方向相对于骨盆矢状面的俯仰偏转。
+由式~\eqref{eq:hip_normal} 可知，
+$\mathbf{n}_{HP}$ 为通过 $O$、$H$、$P$ 三点的骨盆参考平面的法向量，
+其方向与髋关节 Pitch 轴一致。
+因此，可先计算大腿方向向量
+$\mathbf{v}_{HK}$ 与法向量 $\mathbf{n}_{HP}$ 之间的夹角，
+再将其转换为向平面的夹角。
+
+具体地，髋关节俯仰角定义为
+\begin{equation}
+	\theta_{\mathrm{HP}}
+	=
+	\frac{\pi}{2}
+	-
+	\arccos
+	\left(
+	\frac{
+		\mathbf{v}_{HK} \cdot \mathbf{n}_{HP}
+	}{
+		\|\mathbf{v}_{HK}\| \, \|\mathbf{n}_{HP}\|
+	}
+	\right).
+	\label{eq:hip_pitch}
+\end{equation}
+
+
+
+\subsection{人体膝关节几何建模}
+
+如图~\ref{fig:hip_leg_geometry}(b) 所示，
+膝关节屈伸角定义为大腿方向向量与小腿方向向量之间的夹角。定义小腿方向向量为 $\mathbf{v}_{KA} = \mathbf{p}_A - \mathbf{p}_K$。
+
+则膝关节屈伸角可表示为
+
+\begin{equation}
+	\theta_{\mathrm{K}}
+	=
+	\pi
+	-
+	\arccos
+	\left(
+	\frac{
+		\mathbf{v}_{HK} \cdot \mathbf{v}_{KA}
+	}{
+		\|\mathbf{v}_{HK}\| \, \|\mathbf{v}_{KA}\|
+	}
+	\right).
+	\label{eq:knee_angle_final}
+\end{equation}
+
+当 $\theta_{\mathrm{K}} > 0$ 时表示膝关节屈曲，
+$\theta_{\mathrm{K}} = 0$ 表示完全伸直。
+
+ \subsection{笛卡尔空间建模}
+ 在通过人体几何建模得到全身各肢体的参考关节角后，可以将这些角度直接作为机器人关节空间的控制目标，从而实现动作模仿。然而，该方法本质上属于关节空间姿态映射，其仅保证构型层面的几何相似性，并未显式约束末端执行器在任务空间中的位置一致性。由于机器人与人体在连杆长度、关节排列方式以及自由度分布等方面存在结构差异，即使关节角度相同，末端执行器在三维空间中的实际位置仍可能产生偏差。因此，单纯依赖几何角度映射难以满足高精度操作任务或接触交互场景中的位置一致性要求。
+ 
+ 为提高动作重定向的任务空间精度，本文在几何重定向结果基础上引入笛卡尔空间位置跟踪约束。通过对关键末端执行器的任务空间误差进行优化修正，使机器人在保持人体几何构型一致性的同时，实现末端执行器位置的精确对齐，从而构建“几何一致性 + 任务空间一致性”相结合的重定向框架。
+ 
+ \subsubsection{全身末端任务建模}
+ 
+ 设机器人全身关节向量为 $q \in \mathbb{R}^{n}$，其中 $n$ 为机器人全身自由度数目。人体几何建模阶段得到的参考关节角记为 $q_{\text{init}}$。其对应的机器人各末端初始位置为
+ \begin{equation}
+ 	P_i^{\text{init}} = f_i(q_{\text{init}}),
+ \end{equation}
+ 其中 $f_i(\cdot)$ 表示第 $i$ 个末端的正向运动学映射函数。
+ 
+ 考虑到全身动作模仿通常涉及多个关键末端执行器，定义末端集合为
+ \begin{equation}
+ 	\mathcal{E} =
+ 	\{
+ 	\text{left hand},
+ 	\text{right hand},
+ 	\text{left foot},
+ 	\text{right foot}
+ 	\}.
+ \end{equation}
+ 
+ 设人体动作中第 $i$ 个末端相对于其初始状态的位移为 $\Delta P_i^{human}$，则机器人对应的期望末端位置定义为
+ \begin{equation}
+ 	P_i^{des}
+ 	=
+ 	P_i^{\text{init}}
+ 	+
+ 	\Delta P_i^{human}.
+ \end{equation}
+ 
+ 上述建模方式并不直接复制人体的绝对空间坐标，而是跟踪人体在任务空间中的相对运动变化，从而减弱由于形态差异带来的系统性偏移，提高跨形态重定向的稳定性与泛化能力。
+ 
+ \subsubsection{几何解与QP优化的融合机制}
+ 
+ 与传统从零开始求解逆运动学问题的方法不同，本文首先通过人体几何建模获得全身参考构型
+ \begin{equation}
+ 	q(0) = q_{\text{init}}.
+ \end{equation}
+ 
+ 该初始构型在几何层面已经保证了肢体方向一致性与结构合理性，为后续优化提供了稳定且物理合理的初值条件。在此基础上，通过引入笛卡尔空间位置约束，对该构型进行局部修正，使关键末端执行器精确跟踪人体在任务空间中的运动变化。因此，在本文提出的重定向框架中，二次规划优化并不承担全局姿态构造的职责，而是作为几何解析解的精细校正模块。该融合机制在保持全身动作形态自然一致性的同时，提高了数值求解的稳定性与收敛效率，并为后续全身控制与任务优先级控制阶段提供连续且可执行的参考轨迹。为实现上述“几何构型保持 + 笛卡尔空间修正”的统一建模思想，本文将几何建模得到的全身参考关节角作为优化初值，在此基础上通过迭代二次规划逐步修正末端误差，整体重定向流程如算法 \ref{algo_fullbody} 所示。该算法以人体几何建模结果为输入，通过构造末端任务空间速度目标，在关节速度层面求解最优修正量，从而实现全身动作在保持几何一致性的同时满足笛卡尔空间约束
 
 
  \begin{algorithm}
-\caption{几何建模与二次规划融合的动作重定向算法}\label{algo1}
-\begin{algorithmic}[1]
-\Require 通过几何建模得到的参考关节角
-\( q_{\text{init}} = \{\theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}\} \)
-\Ensure 最终优化后的机器人关节角 \( q \)
-
-\State 通过正向运动学计算初始末端位置：
-\[
-P_{\text{init}} = f(q_{\text{init}})
-\]
-
-\State 设置仿真参数：
-\State \hspace{2em} 时间步长 \( t = 0.05 \)，迭代步数 \( \text{step} = 20 \)
-\State \hspace{2em} 上一时刻末端位置 \( P_{t-1} = P_{\text{init}} \)
-
-\State 计算末端位置增量：
-\[
-\Delta P = \frac{(P_{\text{robot}} - P_{\text{init}})}{\text{step}}
-\]
-
-\For{$i = 1 : \text{step}$}
-\State \textbf{步骤 1：} 计算当前期望笛卡尔速度及二次规划的 Hessian 矩阵：
-\[
-v = \frac{\left( P_{\text{init}} + i \cdot \Delta P \right) - P_{t-1}}{t}
-\]
-
-\State \textbf{步骤 2：} 通过二次规划求解关节速度：
-\[
-\dot{q} = \text{osqp}(H, g, l, u)
-\]
-
-\State \textbf{步骤 3：} 状态更新：
-\State \hspace{2em} 更新关节角度：
-\[
-q = q + \dot{q} \cdot t
-\]
-\State \hspace{2em} 更新当前末端位置：
-\[
-P_{t-1} = f(q)
-\]
-\EndFor
-
-\State \Return \( q \)
-
-\end{algorithmic}
-\end{algorithm}
+ 	\caption{全身几何-优化融合重定向算法}
+ 	\label{algo_fullbody}
+ 	\begin{algorithmic}[1]
+ 		\Require 几何建模得到的全身参考关节角 $q_{\text{init}}$
+ 		\Ensure 满足笛卡尔约束的全身关节角 $q$
+ 		
+ 		\State 初始化：$q = q_{\text{init}}$
+ 		\State 计算各末端初始位置 $P_i^{init}$
+ 		
+ 		\State 设置时间步长 $t$，迭代次数 $\text{step}$
+ 		
+ 		\For{$k = 1 : \text{step}$}
+ 		
+ 		\For{每个末端 $i \in \mathcal{E}$}
+ 		\State 计算位置误差：
+ 		\[
+ 		e_i = P_i^{des} - P_i(q)
+ 		\]
+ 		\State 计算期望任务速度：
+ 		\[
+ 		v_i = K_i e_i
+ 		\]
+ 		\EndFor
+ 		
+ 		\State 构造 Hessian 与梯度：
+ 		\[
+ 		H = \sum_i J_i^\mathrm{T} J_i,
+ 		\quad
+ 		g = - \sum_i J_i^\mathrm{T} v_i
+ 		\]
+ 		
+ 		\State 通过 OSQP 求解：
+ 		\[
+ 		\dot{q} = \text{osqp}(H, g, l, u)
+ 		\]
+ 		
+ 		\State 状态更新：
+ 		\[
+ 		q = q + \dot{q} t
+ 		\]
+ 		
+ 		\EndFor
+ 		
+ 		\State \Return $q$
+ 		
+ 	\end{algorithmic}
+ \end{algorithm}
 
 \section{实验}
 \subsection{单人动作模仿}
@@ -224,7 +651,7 @@ P_{t-1} = f(q)
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig9.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig9.png}
 \caption{单人手臂动作模仿.}
 \label{fig:Single Person Action Imitation}
 \end{figure}
@@ -236,7 +663,7 @@ P_{t-1} = f(q)
 在双人动作模仿实验中，尽管两台机器人具有相同的结构尺寸，但两位示范者在身高比例和手臂关节长度上存在差异。图 \ref{fig:Dual person action imitation} 展示了四组不同动作状态，每组均包含不同的手臂动作。实验结果表明，两台机器人能够平滑地复现示范者的手臂动作及末端执行器位置，验证了改进重定向方法的通用性。
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig10.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig10.png}
 \caption{双人手臂动作模仿：机器人 1 模仿示范者 1 的动作，机器人 2 模仿示范者 2 的动作。}
 \label{fig:Dual person action imitation}
 \end{figure}
@@ -244,7 +671,7 @@ P_{t-1} = f(q)
 为了进一步评估动作重定向算法在多人场景下的泛化能力，我们在仿真环境中进行了多人动作模仿实验。如图 \ref{fig:Multi person action imitation} 所示，在 Mujoco 仿真环境中创建了四个机器人模型。四位示范者的动作通过动作捕捉系统采集并生成手臂关键点，这些关键点随后输入改进重定向算法，计算四组目标手臂关节角度，用于驱动仿真机器人关节的运动。关节控制系统采用 500 Hz 的 PD 位置控制器运行，以确保仿真与实体机器人的控制频率一致，实现同步运动。
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig11.png}
+	\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig11.png}
 	\caption{多人动作模仿：选择两组动作。}
 	\label{fig:Multi person action imitation}
 \end{figure}
@@ -266,7 +693,7 @@ P_{t-1} = f(q)
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig15.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig15.png}
 \caption{倒水。(0) 机器人在工作台前初始化；(1) 首先抓取桌面上的水瓶；(2) 将水瓶移动至目标杯子上方；(3) 旋转水瓶，将水倒入杯中；(4) 最后放开水瓶。整个过程耗时 48 秒。}
 
 \label{fig:pouring}
@@ -274,14 +701,14 @@ P_{t-1} = f(q)
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig16.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig16.png}
 \caption{物体分类。(0) 机器人在工作台前初始化；(1) 首先选择右侧的物体进行分类，抓取最右侧的芒果；(2) 提起并放置到目标位置；(3) 然后抓取枣子；(4) 提起并放置到目标位置。随后的步骤 (5-9) 重复 (1)(2) 的过程，依次完成芒果（7）、枣子（8）和玩具（9）的分类。最终完成所有物体的分类，整个过程耗时 92 秒。}
 \label{fig:classification}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig17.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig17.png}
 \caption{协作交接：两台机器人在桌子前初始化。(1) 机器人 B 抓取六角螺丝刀；(2) 机器人 A 接收机器人 B 递来的螺丝刀；(3) 机器人 A 准备放置螺丝刀；(4) 机器人 A 松开夹爪完成放置。整个过程耗时 17 秒。}
 
 \label{fig:double_change}
@@ -289,7 +716,7 @@ P_{t-1} = f(q)
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/chapter3/Fig18.png}
+\includegraphics[width=1.0\textwidth]{Figure/chapter2/Fig18.png}
 \caption{协作搬运：(0) 两台机器人在金属框架前初始化；(1) 机器人 A 与 B 抓住框架；(2) 两台机器人同时抬起框架；(3) 两台机器人同时放下框架。整个过程耗时 15 秒。}
 
 \label{fig:double_up}
@@ -301,12 +728,12 @@ P_{t-1} = f(q)
 \begin{figure}[H]
 	\centering
 	\begin{adjustwidth}{0cm}{0cm}
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13a.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig13a.eps}}
 		 \hfill  % 调整两图之间的间距
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13b.eps}}\\
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13c.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig13b.eps}}\\
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig13c.eps}}
 		\hfill  % 调整两图之间的间距
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig13d.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig13d.eps}}
 		
 	\end{adjustwidth}
 \caption{双人动作模仿中左肩屈伸关节和外展-内收关节的轨迹跟踪：（\textbf{a}）和（\textbf{b}）机器人 1 跟踪表演者 1 左肩屈伸关节和外展-内收关节的关节轨迹；（\textbf{c}）和（\textbf{d}）机器人 2 跟踪表演者 2 左肩屈伸关节和外展-内收关节的关节轨迹。}
@@ -317,12 +744,12 @@ P_{t-1} = f(q)
 \begin{figure}[H]
 	\centering
 	\begin{adjustwidth}{0cm}{0cm}
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LSY1.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/LSY1.eps}}
 		\hfill  % 调整两图之间的间距
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LE1.eps}}\\
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LSY2.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/LE1.eps}}\\
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/LSY2.eps}}
 		\hfill  % 调整两图之间的间距
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/LE2.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/LE2.eps}}
 		
 	\end{adjustwidth}
 	\caption{双人动作模仿中左肩关节外旋-内旋及肘关节的轨迹跟踪：（\textbf{a}）和（\textbf{b}）表示机器人 1 跟踪示范者 1 左肩关节外旋-内旋及肘关节的轨迹；（\textbf{c}）和（\textbf{d}）表示机器人 2 跟踪示范者 2 左肩关节外旋-内旋及肘关节的轨迹。
@@ -336,10 +763,10 @@ P_{t-1} = f(q)
 \begin{figure}[H]
 	\centering
 	\begin{adjustwidth}{0cm}{0cm}
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig14_a.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig14_a.eps}}
 		\label{fig:MSE_1}
 	    \hfill  % 调整两图之间的间距
-		\subfloat[\centering]{\includegraphics[width=7cm]{figures/chapter3/Fig14_b.eps}}
+		\subfloat[\centering]{\includegraphics[width=7cm]{Figure/chapter2/Fig14_b.eps}}
 		\label{fig:MSE_2}
 		
 	\end{adjustwidth}
@@ -408,7 +835,7 @@ P_{t-1} = f(q)
 	\hfill
 	\begin{minipage}{0.5\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{figures/chapter3/mathed_com.png}
+		\includegraphics[width=\linewidth]{Figure/chapter2/mathed_com.png}
 		\caption{相同动作关键帧下不同重定向方法的对比结果。橙色点表示目标位置，蓝色点表示实际到达位置。}
 		\label{fig:matched_comparison}
 	\end{minipage}
