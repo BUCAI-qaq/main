@@ -1,35 +1,42 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\pp@pagectr{footnote}{4}{53}{43}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第四章}基于模仿学习的全身控制框架}{43}{chapter.4}\protected@file@percent }
-\@writefile{lof}{\addvspace {10.0pt}}
-\@writefile{lot}{\addvspace {10.0pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}相关工作}{44}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}方法}{45}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}运动跟踪目标}{45}{subsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}观测}{46}{subsection.4.2.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {equation}{\numberline {4.1}}{46}{equation.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}奖励设计}{46}{subsection.4.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}难度采样}{47}{subsection.4.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}讨论}{47}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}基线方法}{48}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.1}不同跟踪目标}{48}{subsubsection.4.3.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4-1}{\ignorespaces 不同状态表示在不同任务下的成功率对比}}{49}{table.caption.33}\protected@file@percent }
-\newlabel{tab:state_ablation}{{4-1}{49}{不同状态表示在不同任务下的成功率对比}{table.caption.33}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.2}不同观测设计}{49}{subsubsection.4.3.1.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4-2}{\ignorespaces 不同观测历史设计的训练稳定性对比}}{50}{table.caption.34}\protected@file@percent }
-\newlabel{tab:history_ablation}{{4-2}{50}{不同观测历史设计的训练稳定性对比}{table.caption.34}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}评价指标}{50}{subsection.4.3.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {equation}{\numberline {4.2}}{50}{equation.4.3.2}\protected@file@percent }
-\newlabel{eq:eg-mpbpe}{{4.2}{50}{评价指标}{equation.4.3.2}{}}
-\@writefile{loe}{\contentsline {equation}{\numberline {4.3}}{50}{equation.4.3.3}\protected@file@percent }
-\newlabel{eq:empbpe}{{4.3}{50}{评价指标}{equation.4.3.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4-3}{\ignorespaces 不同方法在不同难度等级下的性能对比结果（均值 $\pm $ 标准差，$\downarrow $ 表示越小越好）}}{51}{table.caption.35}\protected@file@percent }
-\newlabel{tab:main_results_cn}{{4-3}{51}{不同方法在不同难度等级下的性能对比结果（均值 $\pm $ 标准差，$\downarrow $ 表示越小越好）}{table.caption.35}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}sim2real}{52}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {0.1}引言}{2}{section.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {0.2}方法}{4}{section.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.1}绳驱动机器人运动学建模}{4}{subsection.0.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.2}膝关节扭矩映射关系}{5}{subsection.0.2.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {1}}{5}{equation.0.2.1}\protected@file@percent }
+\newlabel{eq:knee_torque_relation}{{1}{5}{膝关节扭矩映射关系}{equation.0.2.1}{}}
+\@writefile{loe}{\contentsline {equation}{\numberline {2}}{5}{equation.0.2.2}\protected@file@percent }
+\newlabel{eq:knee_coupled}{{2}{5}{膝关节扭矩映射关系}{equation.0.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.3}踝关节扭矩映射关系}{5}{subsection.0.2.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {3}}{6}{equation.0.2.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {4}}{6}{equation.0.2.4}\protected@file@percent }
+\newlabel{eq:G_total}{{4}{6}{踝关节扭矩映射关系}{equation.0.2.4}{}}
+\@writefile{loe}{\contentsline {equation}{\numberline {5}}{6}{equation.0.2.5}\protected@file@percent }
+\newlabel{eq:ankle_coupled}{{5}{6}{踝关节扭矩映射关系}{equation.0.2.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.4}关节-电机扭矩映射关系}{6}{subsection.0.2.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {6}}{6}{equation.0.2.6}\protected@file@percent }
+\newlabel{eq:torque_mapping}{{6}{6}{关节-电机扭矩映射关系}{equation.0.2.6}{}}
+\@writefile{loe}{\contentsline {equation}{\numberline {7}}{7}{equation.0.2.7}\protected@file@percent }
+\newlabel{eq:inverse_mapping}{{7}{7}{关节-电机扭矩映射关系}{equation.0.2.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.5}策略训练}{7}{subsection.0.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.5.1}跌倒恢复行为策略}{7}{subsubsection.0.2.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.5.2}姿态过渡策略}{8}{subsubsection.0.2.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{随机根姿态初始化}{8}{paragraph*.8}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {8}}{8}{equation.0.2.8}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {9}}{8}{equation.0.2.9}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {10}}{8}{equation.0.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{随机关节角初始化}{8}{paragraph*.9}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {11}}{9}{equation.0.2.11}\protected@file@percent }
+\@writefile{loe}{\contentsline {equation}{\numberline {12}}{9}{equation.0.2.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.2.6}策略训练}{9}{subsection.0.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.6.1}观测}{9}{subsubsection.0.2.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.6.2}奖励函数}{9}{subsubsection.0.2.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.6.3}终止条件}{10}{subsubsection.0.2.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {0.2.6.4}域随机化（Domain Randomization）}{10}{subsubsection.0.2.6.4}\protected@file@percent }
 \@setckpt{chapters/chap04}{
-\setcounter{page}{53}
-\setcounter{equation}{3}
+\setcounter{page}{11}
+\setcounter{equation}{12}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -37,22 +44,22 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{4}
-\setcounter{section}{4}
-\setcounter{subsection}{0}
-\setcounter{subsubsection}{0}
+\setcounter{chapter}{0}
+\setcounter{section}{2}
+\setcounter{subsection}{6}
+\setcounter{subsubsection}{4}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
 \setcounter{figure}{0}
-\setcounter{table}{3}
+\setcounter{table}{0}
 \setcounter{parentequation}{0}
-\setcounter{caption@flags}{2}
+\setcounter{caption@flags}{0}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
 \setcounter{AM@survey}{0}
-\setcounter{pp@a@footnote}{4}
-\setcounter{endNonectr}{80}
+\setcounter{pp@a@footnote}{0}
+\setcounter{endNonectr}{21}
 \setcounter{currNonectr}{0}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
@@ -60,7 +67,7 @@
 \setcounter{Item}{3}
 \setcounter{Hfootnote}{0}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{49}
+\setcounter{bookmark@seq@number}{11}
 \setcounter{usst@bookmark}{3}
 \setcounter{translationbibi}{0}
 \setcounter{publicationsi}{0}
@@ -239,8 +246,8 @@
 \setcounter{case}{0}
 \setcounter{float@type}{8}
 \setcounter{nlinenum}{0}
-\setcounter{algorithm}{1}
-\setcounter{ALG@line}{13}
+\setcounter{algorithm}{0}
+\setcounter{ALG@line}{0}
 \setcounter{ALG@rem}{0}
 \setcounter{ALG@nested}{0}
 \setcounter{ALG@Lnr}{2}
