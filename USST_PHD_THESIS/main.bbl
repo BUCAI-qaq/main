@@ -3696,56 +3696,6 @@
       \field{dateera}{ce}
       \keyw{sutton1999policy}
     \endentry
-    \entry{williams1992simple}{article}{}
-      \name{author}{1}{}{%
-        {{hash=6cbc29ad7fd57ffdb9ed4728418fd988}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Ronald\bibnamedelima J},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=6cbc29ad7fd57ffdb9ed4728418fd988}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Ronald\bibnamedelima J},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{fullhash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{bibnamehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{authorbibnamehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{authornamehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{authorfullhash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{nameabibnamehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{nameanamehash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \strng{nameafullhash}{6cbc29ad7fd57ffdb9ed4728418fd988}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Machine learning}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{number}{3}
-      \field{title}{Simple statistical gradient-following algorithms for connectionist reinforcement learning}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{8}
-      \field{year}{1992}
-      \field{dateera}{ce}
-      \field{pages}{229\bibrangedash 256}
-      \range{pages}{28}
-      \keyw{williams1992simple}
-    \endentry
     \entry{harvey2020robust}{article}{}
       \name{author}{4}{}{%
         {{hash=c777eb653b4bbdb82ab4acd812f3000c}{%
@@ -3946,8 +3896,8 @@
       \strng{nameabibnamehash}{a01eee6c78a2a939f76d96b7269835c0}
       \strng{nameanamehash}{a01eee6c78a2a939f76d96b7269835c0}
       \strng{nameafullhash}{0daab41624f39b4c0c38956c3509888c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2505.07294}
@@ -4082,8 +4032,8 @@
       \strng{nameabibnamehash}{4b06f1d541517930684c6b56eb8428bf}
       \strng{nameanamehash}{4b06f1d541517930684c6b56eb8428bf}
       \strng{nameafullhash}{e1e8d36801d8833b8e1fba284f2a40ca}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2502.01143}
@@ -4125,8 +4075,8 @@
       \strng{nameabibnamehash}{92af39dbf45da8e7939cd87e6d395701}
       \strng{nameanamehash}{92af39dbf45da8e7939cd87e6d395701}
       \strng{nameafullhash}{92af39dbf45da8e7939cd87e6d395701}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://onnxruntime.ai/}}
@@ -4222,8 +4172,8 @@
       \strng{nameabibnamehash}{dfe27e54685ab907e3efc1684066b662}
       \strng{nameanamehash}{dfe27e54685ab907e3efc1684066b662}
       \strng{nameafullhash}{10c286b0e47b6fea33893dc3ecc01758}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2017 IEEE-RAS 17th International Conference on Humanoid Robotics (Humanoids)}
