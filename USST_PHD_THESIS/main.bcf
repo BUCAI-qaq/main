@@ -2988,19 +2988,19 @@
     <bcf:citekey order="18" intorder="2">liu2010sampling</bcf:citekey>
     <bcf:citekey order="19" intorder="1">schulman2017proximal</bcf:citekey>
     <bcf:citekey order="20" intorder="1">sutton1999policy</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">Sharon2005</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">Nair2017</bcf:citekey>
-    <bcf:citekey order="22" intorder="2">Rajeswaran2017</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">he2025asap，luo2023perpetual，truong2024pdp</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">Peng2016</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">Heess2016</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">ratliff2007imitation</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">nair2018overcoming</bcf:citekey>
+    <bcf:citekey order="22" intorder="2">rajeswaran2017learning</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">he2025asap</bcf:citekey>
+    <bcf:citekey order="23" intorder="2">luo2023perpetual</bcf:citekey>
+    <bcf:citekey order="23" intorder="3">truong2024pdp</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">peng2016terrain</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">heess2016learning</bcf:citekey>
     <bcf:citekey order="26" intorder="1">harvey2020robust</bcf:citekey>
     <bcf:citekey order="27" intorder="1">zhang2025hub</bcf:citekey>
     <bcf:citekey order="27" intorder="2">he2025asap</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">onnxruntime</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">flayols2017experimental</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">koide2024glim</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">onnxruntime</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">merel2017learning</bcf:citekey>
+    <bcf:citekey order="28" intorder="2">schulman2015trust</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
