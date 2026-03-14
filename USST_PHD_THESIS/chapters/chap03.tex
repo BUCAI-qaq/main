@@ -178,7 +178,7 @@ $g_{\text{tracking}} = \{\hat{T}_{b_{\text{anchor}}},\ \hat{T}_b,\ \hat{V}_b\},\
 
 %其中，关节限位惩罚 $r_{\text{limit}}$ 用于鼓励关节位置保持在软限位范围内；动作变化率惩罚 $r_{\text{smooth}}$ 用于鼓励相邻时间步的动作平滑变化，从而避免策略产生过度抖动；自碰撞惩罚 $r_{\text{contact}}$ 通过统计自接触力超过预设阈值的刚体数量来计算，该统计在 $b \notin B_{\text{ee}} \subseteq B$ 的刚体集合上进行，其中 $B_{\text{ee}}$ 表示末端执行器刚体集合。最终的总奖励形式为：$r = r_{\text{task}} - \lambda_l r_{\text{limit}} - \lambda_s r_{\text{smooth}} - \lambda_c r_{\text{contact}}$，其中 $\lambda_l, \lambda_s, \lambda_c > 0$ 为各正则化项对应的权重系数。作为可选项，还可以为锚定刚体 $b_{\text{anchor}}$ 添加一个全局跟踪奖励，其结构与 $r_{\text{tracking}}$ 相同，但仅使用位置误差 $e_{p,b_{\text{anchor}}}$ 和姿态误差 $e_{R,b_{\text{anchor}}}$ 来计算。
 
-\section{训练}
+\section{策略训练}
 
 本文策略采用 PPO 算法进行训练，使用裁剪代理目标函数。我们维护两个网络：策略网络 $\pi_\theta(a|s,g)$ 与价值函数网络 $V_\psi(s,g)$，参数分别为 $\theta$ 和 $\psi$。训练采用回合制方式进行，在每个回合开始时，从参考动作中均匀采样一个初始状态 $s_0$，随后在每个时间步从当前策略中采样动作生成轨迹。每个回合仿真至固定时间长度，或在满足终止条件时提前结束。收集一批数据后，从数据集中采样小批量样本用于更新策略与价值函数。价值函数使用 TD($\lambda$) 方法计算目标值进行更新。策略网络基于代理目标函数的梯度进行更新，其中优势函数 $A_t$ 使用 GAE($\lambda$) 进行估计。
 
