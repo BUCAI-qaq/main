@@ -2938,47 +2938,6 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">ref/chapter4.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">ling2020character</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">peng2018deepmimic</bcf:citekey>
-    <bcf:citekey order="2" intorder="2">heess2017emergence</bcf:citekey>
-    <bcf:citekey order="2" intorder="3">hwangbo2019learning</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">chen2025gmt</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">he2024omnih2o</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">ji2024exbody2</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">luo2025sonic</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">liao2025beyondmimic</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">zhang2025track</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">wang2026omnixtreme</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">jacobs1991adaptive</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">obando2024mixtures</bcf:citekey>
-    <bcf:citekey order="11" intorder="2">li2024mixtures</bcf:citekey>
-    <bcf:citekey order="11" intorder="3">celik2024acquiring</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">peng2019mcp</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">coros2010generalized</bcf:citekey>
-    <bcf:citekey order="13" intorder="2">hausman2018learning</bcf:citekey>
-    <bcf:citekey order="13" intorder="3">heess2015learning</bcf:citekey>
-    <bcf:citekey order="13" intorder="4">wu2010terrain</bcf:citekey>
-    <bcf:citekey order="13" intorder="5">faloutsos2001composable</bcf:citekey>
-    <bcf:citekey order="13" intorder="6">ling2020character</bcf:citekey>
-    <bcf:citekey order="13" intorder="7">mordatch2012discovery</bcf:citekey>
-    <bcf:citekey order="13" intorder="8">peng2017deeploco</bcf:citekey>
-    <bcf:citekey order="13" intorder="9">laszlo2000interactive</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">won2020scalable</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">park2019learning</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">hasenclever2020comic</bcf:citekey>
-    <bcf:citekey order="16" intorder="2">luo2020carl</bcf:citekey>
-    <bcf:citekey order="16" intorder="3">lynch2020learning</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">luo2023perpetual</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">chen2025gmt</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">harvey2020robust</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">mahmood2019amass</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">guo2022generating</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">radford2021learning</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">mcqueen1967some</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">zhang2025unleashing</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">ross2011reduction</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">ling2020character</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">kingma2014adam</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

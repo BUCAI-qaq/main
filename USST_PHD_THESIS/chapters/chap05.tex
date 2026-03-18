@@ -1,16 +1,322 @@
-\chapter{仿真实验与结果分析}
+\chapter{实物实验与结果分析}
 
+ 前述章节围绕人形机器人全身动作生成与控制问题开展了系统研究。第二章通过几何建模与优化方法，实现了人体动作到机器人的全身动作重定向，为机器人提供了运动学一致的参考动作轨迹；第三章基于强化学习构建了全身动作跟踪控制策略，使机器人能够在物理仿真环境中稳定复现多种复杂全身动作；第四章进一步引入技能嵌入与分层控制框架，实现了多种运动技能的统一表达与灵活切换，从而提升了控制策略的泛化能力与行为多样性。上述方法均在仿真环境中进行了系统验证，并取得了良好的实验效果。
  
-\section{A}
+ 然而，由于仿真模型与真实机器人系统在动力学参数、执行器特性、传感器噪声以及控制延迟等方面存在差异，仅依赖仿真实验难以全面评估算法在真实机器人系统中的可行性与稳定性。因此，有必要在实际机器人平台上对所提出的方法进行系统验证，通过实物实验进一步检验控制算法在真实环境中的鲁棒性与应用价值。
+ 
+ 为此，本文构建了一套完整的人形机器人实验平台，并在该平台上实现了所提出全身动作控制方法的部署与验证。本章首先介绍实验平台的人形机器人本体结构及其硬件系统组成，包括机器人机械结构、驱动系统以及传感与计算单元；随后给出机器人控制系统的软件架构与整体控制流程，说明强化学习控制策略在真实机器人系统中的部署方式；最后在实物平台上开展多组实验，对机器人全身动作跟踪能力及多技能控制效果进行验证，并对实验结果进行分析。
+ 
+ 通过上述实验验证，可以进一步说明本文所提出的人形机器人全身控制方法在真实机器人平台上的有效性与实用性，为人形机器人在复杂任务环境中的应用提供实验依据。
+ 
+ 本文实物实验采用课题组自主研发的两代人形机器人平台 X02 与 X03。X03 平台是在 X02 的基础上进行升级改进得到的新一代机器人系统，在机械结构、驱动系统以及计算平台等方面均进行了优化。两款机器人在整体结构拓扑上保持一致，均采用典型的人形机器人构型，但在自由度数量、驱动方式以及部分硬件参数方面存在一定差异。
+ 
+ 在研究过程中，部分实验首先在 X02 平台上完成系统验证，而随着机器人平台的迭代升级，相关方法进一步部署至 X03 平台进行实验测试。由于两平台在动力学参数、驱动特性以及硬件配置方面存在差异，因此在两个平台上的实验结果能够从一定程度上验证本文所提出控制方法对不同硬件平台的适应能力与泛化性能。
+ 
+ 两款机器人平台的主要结构参数如表~\ref{tab:robot_platform} 所示。通过在两款人形机器人平台上的实验验证，可以更加全面地评估所提出方法在真实机器人系统中的可行性与稳定性。
+ 
+ X03 平台在 X02 的基础上进行了结构升级，在腰部增加了两个自由度，并在踝关节处引入侧摆自由度，从而提升了机器人在全身运动中的姿态调节能力。同时，在上肢末端增加了手腕俯仰与侧摆两个自由度，进一步增强了机器人的操作灵活性。
+ \begin{table}[htbp]
+ 	\centering
+ 	\caption{两款人形机器人平台主要参数对比}
+ 	\label{tab:robot_platform}
+ 	\begin{tabular}{ccc}
+ 		\toprule
+ 		参数 & X02 & X03 \\
+ 		\midrule
+ 		高度 (m) & 1.68 & 1.70 \\
+ 		质量 (kg) & 30 & 32 \\
+ 		自由度 (DoF) & 20 & 28 \\
+ 		驱动方式 & 绳驱 + 直驱 & 绳驱 + 差分 + 直驱 \\
+ 		\bottomrule
+ 	\end{tabular}
+ \end{table}
+ 
 
 
 
+\section{硬件系统与驱动系统}
+\subsection{硬件系统}
+X02 与 X03人形机器人平台在设计上强调轻量化结构，以适应绳驱动耦合传动系统的应用需求。机器人整体结构采用轻量化材料，并通过优化机械布局和驱动结构降低系统惯量，从而提升机器人在动态运动中的控制性能。其中，关节驱动系统采用绳驱与直驱相结合的方式，实现紧凑结构与高传动效率的统一。具体的绳驱耦合驱动结构将在后续章节中进行详细介绍。
+机器人控制系统采用分层计算架构。运动控制主计算单元采用 NanoPi R6S 边缘计算平台。该平台基于瑞芯微 RK3588S 处理器，支持 Linux 系列操作系统。R6S 具有丰富的通信接口，包括双 2.5G 以太网接口以及多路 USB 接口，能够满足机器人多传感器数据采集与实时控制通信需求。由于其体积小、功耗低且计算性能较高，该平台适合作为机器人实时运动控制计算单元。
 
-\section{B}
+为了实现机器人感知与高层智能计算功能，系统同时配置 NVIDIA Jetson Orin NX 作为多模态计算单元。Orin NX可提供最高可达百 TOPS 级别的 AI 推理算力，能够高效运行计算机视觉、语音交互以及导航等算法。因此，该模块主要用于视觉感知、环境理解以及高层任务决策等计算任务。
+
+在机器人姿态感知方面，系统配置了3DM-GX5-25 惯性测量单元（IMU）。该传感器集成三轴加速度计、三轴陀螺仪以及三轴磁力计，并内置扩展卡尔曼滤波算法，可实时输出姿态、角速度及线加速度等状态信息。由于其具有较高的测量精度和动态响应能力，该 IMU 可用于机器人姿态估计和运动稳定控制。
+
+视觉传感器方面，系统采用 Intel RealSense D435i 深度相机。该相机由一个 RGB 相机、两个红外相机以及一个红外投射器组成，通过主动立体视觉原理获取深度信息，从而生成高精度的 RGB-D 数据。同时，相机内部还集成惯性测量单元，可提供视觉—惯性融合数据。通过获取同步的 RGB 图像与深度信息，机器人能够构建环境三维点云并进行视觉定位与环境感知，从而支持视觉导航与人机交互等应用。
+图~\ref{fig:robot_hardware} 展示了 X02 与 X03 人形机器人平台的主要硬件组成，包括视觉传感器、惯性测量单元以及计算平台等关键模块。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure/chapter5/hardware_system.png}
+	\caption{系统硬件架构示意图。}
+	\label{fig:robot_hardware}
+\end{figure}
+
+\subsection{驱动系统设计}
+
+X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证关节输出能力的同时尽可能降低远端肢体质量与转动惯量。针对不同关节的负载需求、安装空间以及动态性能要求，机器人采用了绳驱、差分驱动与直驱相结合的混合驱动方案。其中，腰部、下肢以及上肢部分关节根据输出扭矩、运动范围及结构布局要求配置了不同类型的驱动结构，从而在结构紧凑性、传动效率与动态响应性能之间取得平衡。
+
+机器人关节驱动单元大部分采用 CubeMars AK80-9 V3.0 动力模组。该模组将无刷直流电机、行星减速器以及驱动控制板高度集成，具有结构紧凑、功率密度高和控制响应快等特点。其内部集成 $9:1$ 行星减速机构，可在较小体积下提供较高输出扭矩，适用于人形机器人关节驱动场景。该模组支持位置、速度、力矩及混合控制等多种控制模式，并具备过流、过压、欠压与过温保护功能，能够满足机器人在复杂动态任务中的稳定驱动需求。
+
+在两款平台中，不同关节均根据负载需求配置了不同传动比与机械放大结构，其主要驱动性能参数分别如表~\ref{tab:x2_joint_spec} 与表~\ref{tab:x3_joint_spec} 所示。需要说明的是，由于部分关节采用绳驱耦合结构，其实际关节输出能力与传动结构及耦合方式密切相关，具体将在下一节中进行详细分析。
+
+由于 X02 与 X03 平台在自由度配置、驱动拓扑及关节结构上存在差异，两款机器人在关节驱动能力方面并不完全一致。为便于后续实验分析，本文分别给出两款平台主要关节驱动单元的性能参数。
+
+\begin{table}[htbp]
+	\centering
+	\caption{X02 各关节运动参数}
+	\label{tab:x2_joint_spec}
+	\begin{tabular}{lrrrr}
+		\toprule
+		关节名称 & 限位（角度） & 限位（弧度） & 关节速度 & 峰值扭矩 \\
+		\midrule
+		髋关节（旋转） & $-45 \sim 45^\circ$ & $-0.7854 \sim 0.7854\,\mathrm{rad}$ & $10.47\,\mathrm{rad/s}$ & $50\,\mathrm{N\cdot m}$ \\
+		髋关节（侧向） & $-15 \sim 25^\circ$ & $-0.2618 \sim 0.4363\,\mathrm{rad}$ & $4.29\,\mathrm{rad/s}$ & $110\,\mathrm{N\cdot m}$ \\
+		髋关节（俯仰） & $-30 \sim 115^\circ$ & $-0.5236 \sim 2.0071\,\mathrm{rad}$ & $9.22\,\mathrm{rad/s}$ & $72\,\mathrm{N\cdot m}$ \\
+		膝关节（俯仰） & $-140 \sim 5^\circ$ & $-2.4435 \sim 0.0873\,\mathrm{rad}$ & $7.33\,\mathrm{rad/s}$ & $93\,\mathrm{N\cdot m}$ \\
+		踝关节（俯仰） & $-80 \sim 60^\circ$ & $-1.3963 \sim 1.0472\,\mathrm{rad}$ & $14.66\,\mathrm{rad/s}$ & $64.8\,\mathrm{N\cdot m}$ \\
+		肩关节（前后） & $-90 \sim 180^\circ$ & $-1.5708 \sim 3.1416\,\mathrm{rad}$ & $3.12\,\mathrm{rad/s}$ & $18\,\mathrm{N\cdot m}$ \\
+		肩关节（侧向） & $-20 \sim 90^\circ$ & $-0.3491 \sim 1.5708\,\mathrm{rad}$ & $3.12\,\mathrm{rad/s}$ & $14\,\mathrm{N\cdot m}$ \\
+		大臂关节（旋转） & $-130 \sim 130^\circ$ & $-2.2689 \sim 2.2689\,\mathrm{rad}$ & $3.12\,\mathrm{rad/s}$ & $10\,\mathrm{N\cdot m}$ \\
+		肘关节（俯仰） & $0 \sim 145^\circ$ & $0 \sim 2.5307\,\mathrm{rad}$ & $4.47\,\mathrm{rad/s}$ & $14\,\mathrm{N\cdot m}$ \\
+		小臂关节（旋转） & $-115 \sim 115^\circ$ & $-2.0071 \sim 2.0071\,\mathrm{rad}$ & $3.12\,\mathrm{rad/s}$ & $14\,\mathrm{N\cdot m}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\caption{X03 各关节运动参数}
+	\label{tab:x3_joint_spec}
+	\begin{tabular}{rrrrr}
+		\toprule
+		关节名称 & 限位（角度） & 限位（弧度） & 关节速度 &  峰值扭矩 \\
+		\midrule
+		腰关节（侧摆） & $-20 \sim 20^\circ$ & $-0.3491 \sim 0.3491\,\mathrm{rad}$ & $5.94\,\mathrm{rad/s}$ & $80.9\,\mathrm{N\cdot m}$ \\
+		腰关节（旋转） & $-105 \sim 105^\circ$ & $-1.8326 \sim 1.8326\,\mathrm{rad}$ & $5.94\,\mathrm{rad/s}$ & $80.9\,\mathrm{N\cdot m}$ \\
+		髋关节（前后摆） & $-135 \sim 135^\circ$ & $-2.3562 \sim 2.3562\,\mathrm{rad}$ & $6.28\,\mathrm{rad/s}$ & $75\,\mathrm{N\cdot m}$ \\
+		髋关节（侧摆） & $-30 \sim 95^\circ$ & $-0.5236 \sim 1.6581\,\mathrm{rad}$ & $5.94\,\mathrm{rad/s}$ & $80.9\,\mathrm{N\cdot m}$ \\
+		髋关节（旋转） & $-180 \sim 110^\circ$ & $-3.1416 \sim 1.9199\,\mathrm{rad}$ & $5.94\,\mathrm{rad/s}$ & $80.9\,\mathrm{N\cdot m}$ \\
+		膝关节（俯仰） & $0 \sim 135^\circ$ & $0 \sim 2.3562\,\mathrm{rad}$ & $15.71\,\mathrm{rad/s}$ & $79.5\,\mathrm{N\cdot m}$ \\
+		踝关节（俯仰） & $-60 \sim 60^\circ$ & $-1.0472 \sim 1.0472\,\mathrm{rad}$ & $15.71\,\mathrm{rad/s}$ & $79.5\,\mathrm{N\cdot m}$ \\
+		踝关节（侧摆） & $-30 \sim 30^\circ$ & $-0.5236 \sim 0.5236\,\mathrm{rad}$ & $4.19\,\mathrm{rad/s}$ & $20\,\mathrm{N\cdot m}$ \\
+		肩关节（前后摆） & $-90 \sim 180^\circ$ & $-1.5708 \sim 3.1416\,\mathrm{rad}$ & $12.51\,\mathrm{rad/s}$ & $50\,\mathrm{N\cdot m}$ \\
+		肩关节（侧摆） & $0 \sim 175^\circ$ & $0 \sim 3.0543\,\mathrm{rad}$ & $6.08\,\mathrm{rad/s}$ & $41.2\,\mathrm{N\cdot m}$ \\
+		大臂关节（旋转） & $-115 \sim 115^\circ$ & $-2.0071 \sim 2.0071\,\mathrm{rad}$ & $6.08\,\mathrm{rad/s}$ & $41.2\,\mathrm{N\cdot m}$ \\
+		肘关节（俯仰） & $0 \sim 115^\circ$ & $0 \sim 2.0071\,\mathrm{rad}$ & $7.33\,\mathrm{rad/s}$ & $34\,\mathrm{N\cdot m}$ \\
+		小臂关节（旋转） & $-115 \sim 115^\circ$ & $-2.0071 \sim 2.0071\,\mathrm{rad}$ & $7.33\,\mathrm{rad/s}$ & $34\,\mathrm{N\cdot m}$ \\
+		腕关节（俯仰） & $-40 \sim 40^\circ$ & $-0.6981 \sim 0.6981\,\mathrm{rad}$ & $18.74\,\mathrm{rad/s}$ & $2.8\,\mathrm{N\cdot m}$ \\
+		腕关节（侧摆） & $-50 \sim 50^\circ$ & $-0.8727 \sim 0.8727\,\mathrm{rad}$ & $15.47\,\mathrm{rad/s}$ & $3.4\,\mathrm{N\cdot m}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+由表~\ref{tab:x2_joint_spec} 与表~\ref{tab:x3_joint_spec} 可见，X03 平台在保持整体人形结构拓扑一致的基础上，进一步扩展了腰部、踝部及腕部自由度，并对部分关节驱动能力进行了优化，使其在全身姿态调节能力、动态运动性能以及末端操作灵活性方面均优于 X02 平台。
 
 
+为满足人形机器人关节驱动对高实时性、高功率密度与高可靠性的要求，本文设计了专用关节驱动器。该驱动器主要包括供电电路、主控电路、驱动电路、电流检测电路、位置检测电路以及通信电路六个部分。其中，供电电路为系统提供稳定的母线电压及逻辑电源，并具备过压、欠压与过流保护功能；主控电路负责执行电机控制算法、解析上位机指令并协调各功能模块工作；驱动电路将控制信号转换为三相桥式功率输出，实现对无刷直流电机的驱动；电流检测电路实时采集电机相电流，为闭环控制与安全保护提供反馈信息；位置检测电路通过磁编码器获取电机转子位置与速度信息，用于实现高精度换相与状态估计；通信电路则负责驱动器与机器人主控系统之间的数据交互。
 
-\section{C}
+本文驱动器主控芯片采用 STM32F405RGT6，位置传感器采用 TLE5012B 磁编码器，驱动芯片采用 DRV8323RH，功率级由三相全桥 MOSFET 电路构成。驱动器通过 RS485 与上位控制器通信，接收目标位置、速度和力矩指令，并实时反馈运行状态。主控芯片结合电机位置与电流反馈执行闭环控制算法，生成 PWM 信号驱动三相逆变桥，从而实现对关节电机的精确控制。驱动控制系统硬件电路板如图~\ref{fig:driver_hardware} 所示。
+\begin{figure}[htbp]
+	\centering
+	
+	\subfloat[驱动器顶层电路]{
+		\includegraphics[width=0.48\linewidth]{Figure/chapter5/driver_top.png}}
+	\hfill
+	\subfloat[驱动器底层电路]{
+		\includegraphics[width=0.48\linewidth]{Figure/chapter5/driver_bottom.png}}
+	
+	\caption{关节驱动器硬件电路板结构}
+	\label{fig:driver_hardware}
+\end{figure}
 
+如图~\ref{fig:motor_control} 所示，驱动器采用基于前馈力矩与位置、速度误差反馈的混合控制结构，通过电流内环与FOC控制实现对电机转矩的精确调节。
+在电机控制层，系统采用位置—速度—力矩混合控制方式。驱动器接收目标位置、目标速度以及前馈力矩等控制量，并根据位置误差与速度误差计算关节输出力矩，其控制律可写为
+\begin{equation}
+	\tau = \tau_{\mathrm{ff}} + K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}),
+	\label{eq:mit_control}
+\end{equation}
+其中，$\tau$ 为电机输出力矩，$\tau_{\mathrm{ff}}$ 为前馈力矩，$q_d$ 与 $\dot{q}_d$ 分别为期望位置与期望角速度，$q$ 与 $\dot{q}$ 分别为当前电机位置与角速度，$K_p$ 与 $K_d$ 分别为位置误差比例系数与速度误差比例系数。该控制方式兼具位置控制的稳定性与力矩控制的柔顺性，能够较好地满足人形机器人在高动态运动与复杂接触任务中的驱动需求。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure/chapter5/motor_control.png}
+	\caption{基于位置—速度—力矩混合控制的电机控制框图}
+	\label{fig:motor_control}
+\end{figure}
+
+\section{绳驱耦合传动机制}
+
+为降低下肢远端质量并提升系统动态响应性能，X02 与 X03 人形机器人在膝关节与踝关节处均采用绳驱耦合传动结构。该结构通过钢缆与滑轮构建远程传动链，将驱动电机集中布置于靠近机体质心的位置，并将驱动力矩传递至远端关节，从而有效降低腿部摆动惯量并提升整体运动灵活性。相比传统直驱方案，该结构在保证高输出能力的同时实现了轻量化设计，并具备良好的动态响应特性与力控制性能。
+
+在机械实现上，系统采用直径为 $1.5\,\mathrm{mm}$ 的高强度钢缆作为传动介质，并结合多级滑轮构建动力传输路径。通过双向缠绕结构与张力调节机构，可有效抑制钢缆松弛与回程间隙，从而保证稳定的扭矩传递与较低的控制回差。基于该设计，单腿结构质量可控制在 $3.6\,\mathrm{kg}$ 以下，在保证输出能力的同时实现了显著的轻量化效果。
+
+如图~\ref{fig:platform} 所示，膝关节与踝关节通过级联腱驱动结构实现耦合传动。电机输出首先作用于膝关节传动链路，随后通过级联钢缆进一步驱动踝关节，从而形成多级动力传递路径。由于钢缆绕行拓扑与滑轮半径关系的约束，电机侧与关节侧之间存在明确的运动学耦合关系。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figure/chapter5/tensor.png}
+	\caption{下肢关节腱驱动结构示意图。}
+	\label{fig:platform}
+\end{figure}
+
+为建立统一的建模形式，本文首先从运动学关系出发，定义电机侧与关节侧的广义速度向量为
+\begin{equation}
+	\dot{\boldsymbol q}_m=
+	\begin{bmatrix}
+		\dot q_1\\
+		\dot q_2
+	\end{bmatrix},
+	\qquad
+	\dot{\boldsymbol q}_j=
+	\begin{bmatrix}
+		\dot q_{\mathrm{knee}}\\
+		\dot q_{\mathrm{ankle}}
+	\end{bmatrix}.
+\end{equation}
+
+在理想条件（忽略摩擦、弹性变形及滑移）下，绳驱传动系统满足几何约束关系，其电机侧与关节侧角速度之间可表示为线性映射
+\begin{equation}
+	\dot{\boldsymbol q}_j = \mathbf G \dot{\boldsymbol q}_m,
+	\label{eq:vel_mapping}
+\end{equation}
+其中 $\mathbf G$ 为速度传动矩阵，其元素由滑轮半径比及钢缆绕行方向共同决定。该矩阵的第 $i$ 行第 $j$ 列元素表示第 $j$ 个电机对第 $i$ 个关节角速度的贡献系数。
+
+对于本文所使用的两种机器人平台，其对应的速度传动矩阵分别为
+\begin{equation}
+	\mathbf G_{\mathrm{X02}}=
+	\begin{bmatrix}
+		0.5 & -0.5\\
+		0.74 & 0.74
+	\end{bmatrix},
+	\qquad
+	\mathbf G_{\mathrm{X03}}=
+	\begin{bmatrix}
+		-0.5 & 0.5\\
+		-0.722 & -0.722
+	\end{bmatrix}.
+\end{equation}
+
+进一步，在忽略能量损失的理想条件下，系统满足功率守恒关系，即
+\begin{equation}
+	\boldsymbol\tau_m^\top \dot{\boldsymbol q}_m = \boldsymbol\tau_j^\top \dot{\boldsymbol q}_j,
+\end{equation}
+其中 $\boldsymbol\tau_m$ 与 $\boldsymbol\tau_j$ 分别表示电机侧与关节侧的力矩向量。将式~\eqref{eq:vel_mapping} 代入上述关系，可得电机侧与关节侧之间的力矩映射为
+\begin{equation}
+	\boldsymbol\tau_m = \mathbf G^\top \boldsymbol\tau_j.
+	\label{eq:torque_mapping_motor}
+\end{equation}
+
+当速度传动矩阵 $\mathbf G$ 满足可逆条件时，可进一步得到关节侧力矩关于电机侧力矩的表达式
+\begin{equation}
+	\boldsymbol\tau_j = (\mathbf G^\top)^{-1} \boldsymbol\tau_m.
+	\label{eq:torque_mapping_joint}
+\end{equation}
+
+上述结果表明，在绳驱耦合系统中，关节侧输出力矩并非由单一电机独立产生，而是多个电机经传动结构耦合后的协同输出结果。因此，与理想独立驱动关节模型相比，该类结构在系统层面引入了显式的驱动耦合约束。这种耦合特性在提升关节等效输出能力的同时，也增加了控制建模与策略设计的复杂度，是仿真环境与真实机器人之间存在差异的重要来源之一。
+
+\subsection{c建模}
+
+尽管强化学习策略通常在关节空间中生成控制指令，但对于本文所采用的绳驱耦合系统而言，真实机器人中的物理约束首先作用于电机侧，而非关节侧。关节侧可实现的输出力矩不仅取决于控制器给出的目标指令，还受到电机峰值扭矩、传动结构以及耦合关系的共同限制。因此，若在仿真中仍采用理想的独立关节驱动模型，将不可避免地导致策略输出超出真实执行器能力范围，从而引入显著的仿真与现实的差异。
+
+为缩小上述差异，本文基于上一节建立的电机—关节耦合模型，在仿真环境中构建执行器感知的驱动约束机制。具体而言，在每个控制周期内，策略首先输出关节侧控制量，并通过关节动力学计算得到关节侧期望力矩 $\boldsymbol{\tau}_j$。随后，利用电机—关节力矩映射关系，将其转换为电机侧力矩需求：
+\begin{equation}
+	\boldsymbol{\tau}_m = \mathbf G^\top \boldsymbol{\tau}_j,
+	\label{eq:motor_tau_from_joint}
+\end{equation}
+其中 $\mathbf G$ 为速度传动矩阵。
+
+由于电机存在最大输出能力限制，其输出力矩需满足
+\begin{equation}
+	|\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max},
+\end{equation}
+其中不等式按元素逐维成立。当计算得到的电机侧力矩超过其最大输出能力时，对其进行逐元素饱和处理，其形式可表示为
+\begin{equation}
+	\boldsymbol{\tau}_m^{\mathrm{clip}} =
+	\begin{cases}
+		\boldsymbol{\tau}_m, & |\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max}, \\
+		\boldsymbol{\tau}_m^{\max} \odot \mathrm{sgn}(\boldsymbol{\tau}_m), & |\boldsymbol{\tau}_m| > \boldsymbol{\tau}_m^{\max},
+	\end{cases}
+\end{equation}
+其中 $\odot$ 表示逐元素乘法。从而保证电机侧输出始终处于真实硬件的可执行范围内。
+
+在完成电机侧约束后，利用逆映射关系将裁剪后的电机力矩重新映射回关节空间：
+\begin{equation}
+	\boldsymbol{\tau}_j^{\mathrm{applied}} = (\mathbf G^\top)^{-1} \boldsymbol{\tau}_m^{\mathrm{clip}},
+	\label{eq:joint_tau_applied}
+\end{equation}
+并将 $\boldsymbol{\tau}_j^{\mathrm{applied}}$ 作为最终施加于仿真环境中的关节驱动力矩。
+
+上述过程等价于在仿真中显式构建了一个执行器感知的前向驱动模型，其计算流程可概括为
+\begin{equation}
+	\boldsymbol{\tau}_j \rightarrow \boldsymbol{\tau}_m \rightarrow \boldsymbol{\tau}_m^{\mathrm{clip}} \rightarrow \boldsymbol{\tau}_j^{\mathrm{applied}}.
+\end{equation}
+
+与传统仅在关节空间进行简单裁剪的方法相比，该方法能够真实反映绳驱耦合系统中的驱动约束特性。由于电机侧约束在物理系统中具有优先性，通过在仿真中对电机力矩进行显式建模，可以避免策略生成不可实现的关节指令，从而显著提升仿真与真实机器人之间的一致性。
+
+在此基础上，还可以进一步引入与执行器相关的不确定性建模，例如传动比扰动、摩擦损失、回程间隙以及传感延迟等因素。这些因素均可在电机侧或传动映射过程中引入，从而使策略在训练阶段即暴露于更加接近真实系统的动力学环境中。通过上述执行器感知建模方法，策略能够学习到符合真实驱动能力约束的控制规律，从而提高其在实际人形机器人平台上的稳定性与鲁棒性。
+
+
+图~\ref{fig:joint_tau} 展示了机器人在执行地面爬起过程中，左右腿膝关节与踝关节的力矩变化曲线。其中分别给出了期望关节力矩 $\boldsymbol{\tau}_j$、映射得到的电机侧力矩 $\boldsymbol{\tau}_m$、经过饱和处理后的电机力矩 $\boldsymbol{\tau}_m^{\mathrm{clip}}$ 以及最终施加到关节侧的力矩 $\boldsymbol{\tau}_j^{\mathrm{applied}}$。
+
+\begin{figure}[htbp]
+	\centering
+	
+	\subfloat[]{
+		\includegraphics[width=0.45\linewidth]{Figure/chapter5/left_knee_tau.eps}
+	}
+	\hfill
+	\subfloat[]{
+		\includegraphics[width=0.45\linewidth]{Figure/chapter5/right_knee_tau.eps}
+	}
+	
+	\vspace{0.5em}
+	
+	\subfloat[]{
+		\includegraphics[width=0.45\linewidth]{Figure/chapter5/left_ankle_tau.eps}
+	}
+	\hfill
+	\subfloat[]{
+		\includegraphics[width=0.45\linewidth]{Figure/chapter5/right_ankle_tau.eps}
+	}
+	\vspace{0.5em}
+	\caption{爬起过程中膝–踝关节力矩变化。其中，（a）为左腿膝关节力矩，（b）为右腿膝关节力矩，（c）为左腿踝关节力矩，（d）为右腿踝关节力矩。}
+	
+	\label{fig:joint_tau}
+\end{figure}
+
+从图中可以看出，在引入电机—关节耦合驱动建模及电机侧力矩约束之后，关节力矩的生成不再由单一电机独立提供，而是通过多电机协同输出实现。当关节侧期望力矩较大时，系统会通过耦合映射关系在多个电机之间进行力矩分配，从而避免单个电机进入饱和状态。以约 $3.5\,\mathrm{s}$ 时刻为例，机器人在爬起过程中进入关键发力阶段，膝关节出现较大的力矩需求。若采用理想独立驱动模型，该关节对应电机将直接达到甚至超过其输出上限；而在耦合驱动结构下，部分负载通过传动链路分配至踝关节相关电机，使多个电机共同承担输出需求，从而有效降低单个电机的负载压力。
+
+同时可以观察到，当电机侧力矩达到限制边界时，其输出被显式裁剪，对应的关节实际输出力矩 $\boldsymbol{\tau}_j^{\mathrm{applied}}$ 相较于期望力矩 $\boldsymbol{\tau}_j$ 存在一定幅值削减，但整体变化趋势保持一致。这表明所构建的执行器感知模型能够在保证物理可实现性的前提下，尽可能保留原始控制策略的动态特性。
+
+表~\ref{tab:skill_motion_success} 给出了不同技能动作下引入驱动约束前后的成功率对比结果。整体来看，驱动约束对低动态任务影响较小，而在高动态任务中能够显著提升执行成功率。
+
+对于步态类动作，由于其运动相对平稳、关节力矩变化较小，驱动约束的引入对成功率提升有限，但整体仍表现出一定改善。例如，在 X02 与 X03 平台上，成功率分别由 $93.33\%$ 和 $95.56\%$ 提升至 $95.56\%$ 和 $97.78\%$。这说明尽管步态任务较少触及电机输出上限，引入驱动约束仍能够在一定程度上抑制极端力矩指令，提高系统运行的稳定性。
+
+相比之下，在武术与舞蹈等动态性较强的动作中，引入驱动约束后成功率显著提升。例如，武术动作在 X02 平台上的成功率由 $16.67\%$ 提升至 $50.00\%$。这表明，在高动态任务中若忽略执行器物理限制，策略容易生成不可实现的力矩指令，从而导致执行失败；而通过在仿真中引入驱动约束，可以有效引导策略学习符合硬件能力边界的控制模式。
+
+对于起身任务，该任务对瞬时力矩输出要求极高，是最具挑战性的场景之一。在 X03 平台上，引入驱动约束后成功率由 $13.33\%$ 显著提升至 $80.00\%$，而未引入约束时几乎无法完成任务。这进一步说明，在极端动力学条件下，通过电机侧力矩限制与耦合分配机制，可以有效避免驱动饱和并提升系统稳定性。
+
+此外，对比 X02 与 X03 平台可以发现，升级后的 X03 在大多数任务中均表现出更高成功率。这主要得益于其更优的自由度配置与驱动性能，使其在执行复杂动作时具有更强的力矩输出能力。同时，本文方法在两代平台上均表现出良好的适应性，验证了其对不同硬件系统的泛化能力。
+
+综上所述，引入执行器感知的驱动约束能够有效避免电机过载，并在高动态任务中显著提升控制策略的可执行性与稳定性，从而进一步缩小仿真与真实机器人之间的差异。
+
+                             
+\begin{table}[htbp]
+	\centering
+	\caption{不同技能–动作在驱动约束条件下的成功率对比}
+	\label{tab:skill_motion_success}
+	\begin{tabular}{lcccc}
+		\toprule
+		技能 & 动作组 & 尝试次数 & 成功率（X02/X03）（\%） & 未引入约束（X02/X03）（\%）\\
+		\midrule
+		步态   & 6 & 90 &  95.56 / 97.78 & 93.33 / 95.56  \\
+		
+		武术   & 7 & 30 & 50.00 / 66.67 & 16.67 / 40.00 \\
+		舞蹈   & 5 & 20 & 50.00 / 65.00 & 25.00 / 50.00 \\
+		起身   & 2 & 15 & 0.00  / 80.00 & 0.00  / 13.33 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \section{本章小结}
