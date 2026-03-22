@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  18 MAR 2026 22:04
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  20 MAR 2026 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1927,9 +1927,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
+Package biblatex Info: ... file 'main.bbl' not found.
 
-(./main.bbl)
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 106.
 Package biblatex Info: Reference segment=0 on input line 106.
 
@@ -2092,41 +2092,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 [2
 
 
-] (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-3.
-
-(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-))
+] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -2136,19 +2102,52 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 ]
 \openout2 = `chapters/chap05.aux'.
 
-
-(./chapters/chap05.tex
+ (./chapters/chap05.tex
 第一章
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12.045> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 11.
 [1
 
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 22
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 24
 .
-LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12.045> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 37.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
+e 24.
+ (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
+
+(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+
+
+(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
+24.
+
+(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
+24.
+
+(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
+24.
+
+(d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2175,7 +2174,7 @@ File: Figure/chapter5/driver_top.png Graphic file (type bmp)
 File: Figure/chapter5/driver_bottom.png Graphic file (type bmp)
 <Figure/chapter5/driver_bottom.png>
 Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
-ut line 138.
+ut line 140.
  [5]
 File: Figure/chapter5/motor_control.png Graphic file (type bmp)
 <Figure/chapter5/motor_control.png>
@@ -2218,7 +2217,85 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[10]) [11]
+[10] [11]
+File: Figure/chapter2/Fig10.png Graphic file (type bmp)
+<Figure/chapter2/Fig10.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[12]
+File: Figure/chapter2/Fig15.png Graphic file (type bmp)
+<Figure/chapter2/Fig15.png>
+File: Figure/chapter2/Fig16.png Graphic file (type bmp)
+<Figure/chapter2/Fig16.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Figure/chapter2/Fig17.png Graphic file (type bmp)
+<Figure/chapter2/Fig17.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Figure/chapter2/Fig18.png Graphic file (type bmp)
+<Figure/chapter2/Fig18.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[14]
+File: Figure/chapter5/X02_track.png Graphic file (type bmp)
+<Figure/chapter5/X02_track.png>
+File: Figure/chapter5/X03_track.png Graphic file (type bmp)
+<Figure/chapter5/X03_track.png>
+ [15]
+File: Figure/chapter5/x03_chars/rpy.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/rpy.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[16]
+File: Figure/chapter5/x03_chars/left_hip_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_hip_pitch.eps>
+File: Figure/chapter5/x03_chars/left_knee.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_knee.eps>
+File: Figure/chapter5/x03_chars/left_ankle_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_ankle_pitch.eps>
+File: Figure/chapter5/x03_chars/left_shoulder_pitch.eps Graphic file (type eps)
+
+<Figure/chapter5/x03_chars/left_shoulder_pitch.eps>
+File: Figure/chapter5/x03_chars/left_elbow.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_elbow.eps>
+ [17])
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[18]
 
 LaTeX Warning: Empty bibliography on input line 150.
 
@@ -2234,27 +2311,19 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7B2EBFBD1FA918681575895D77FEA1EB;1161.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 9599084796032FEE5F5D0609C20956C3;2879.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48190 strings out of 474773
- 1034416 string characters out of 5755949
- 1957842 words of memory out of 5000000
- 69530 multiletter control sequences out of 15000+600000
+ 48381 strings out of 474773
+ 1043318 string characters out of 5755949
+ 1958842 words of memory out of 5000000
+ 69708 multiletter control sequences out of 15000+600000
  596398 words of font info for 172 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  107i,17n,145p,1215b,989s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (19 pages).
+Output written on main.pdf (26 pages).
