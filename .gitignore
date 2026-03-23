@@ -10,5 +10,6 @@
 *.fdb_latexmk
 *.synctex.gz
 *.webm
+*.mp4
 
 *.pdf
