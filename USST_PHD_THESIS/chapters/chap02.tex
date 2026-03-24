@@ -218,6 +218,7 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figure/chapter2/system_frame.png}
 	\caption{全身动作模仿系统整体框架}
+	\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
 	\label{fig:System_Block_Diagram}
 \end{figure}
 
@@ -245,6 +246,7 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 		\caption{人形机器人本体结构与关节旋转}
 		\label{fig:robot_structure_sub}
 	\end{subfigure}
+	\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
 	\caption{人体关键点与机器人本体结构对比示意图}
 	\label{fig:human_robot_compare}
 \end{figure}
@@ -266,7 +268,7 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Figure/chapter2/Fig3.png}
-	\caption{左手肩关节建模。}
+	\caption{左手肩关节建模}
 	\label{fig:Modeling_of_shoulder}
 \end{figure}
 
@@ -304,21 +306,32 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 \paragraph{人体肘关节几何建模}
 如图~\ref{fig:Modeling of elbow}(\textbf{a}) 所示，$W$ 表示手腕的实际位置，$W'$ 表示手腕的假定初始位置（此时 $\theta_{SY} = 0$）。角度 $\theta_{SY}$ 定义为从肘部指向手腕的向量 $\bm{EW}$ 与其初始位置向量 $\bm{EW'}$ 之间的夹角；角度 $\theta_{E}$ 定义为向量 $\bm{EW}$ 与向量 $\bm{SE}$ 的延长线之间的夹角。
 
-
 \begin{figure}[H]
 	\centering
-	%\isPreprints{}{% This command is only used for ``preprints''.
-		\begin{adjustwidth}{0cm}{0cm}
-			\subfloat[\centering]{\includegraphics[width=7.5cm]{Figure/chapter2/Fig4.png}}
-			\label{fig:arm joint angles are non zero}
-			\hfill
-			\subfloat[\centering]{\includegraphics[width=5.4cm]{Figure/chapter2/Fig5.png}}
-			\label{fig:arm joint angles are zero}
-			
-		\end{adjustwidth}
-  \caption{肘关节建模。（\textbf{a}）当手臂关节角不为零时的肘关节坐标系，其中 $\theta_{SY}$ 表示肩关节外-内旋角，$\theta_{E}$ 表示肘关节屈伸角的补角。（\textbf{b}）当手臂所有关节角均为零时的肘关节坐标系。}
-		\label{fig:Modeling of elbow}
-	\end{figure} 
+	\begin{adjustwidth}{0cm}{0cm}
+		
+		\begin{subfigure}[b]{0.55\textwidth}
+			\centering
+			\includegraphics[width=7.5cm]{Figure/chapter2/Fig4.png}
+			\caption{当手臂关节角不为零时的肘关节坐标系}
+			\label{fig:arm_joint_angles_non_zero}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.40\textwidth}
+			\centering
+			\includegraphics[width=5.4cm]{Figure/chapter2/Fig5.png}
+			\caption{当手臂所有关节角均为零时的肘关节坐标系}
+			\label{fig:arm_joint_angles_zero}
+		\end{subfigure}
+		
+	\end{adjustwidth}
+	
+	\vspace{0.5em}
+	\setstretch{1.0}
+	\caption{左手肘关节建模}
+	\label{fig:modeling_of_elbow}
+\end{figure}
+
 
 当手腕位于位置 $W'$ 时，肘关节的局部坐标系记为 $E X_{1} Y_{1} Z_{1}$。假设手臂的初始状态为 $\theta_{SP}$、$\theta_{SR}$、$\theta_{SY}$ 和 $\theta_{E}$ 均为零，则此时肘关节坐标系的定义如图~\ref{fig:Modeling of elbow}(\textbf{b}) 所示。
 
@@ -347,19 +360,30 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 
 
 \begin{figure}[H]
-\centering
-%\isPreprints{}{% This command is only used for ``preprints''.
+	\centering
 	\begin{adjustwidth}{0cm}{0cm}
-		\subfloat[\centering]{\includegraphics[width=5cm]{Figure/chapter2/Fig6_a.png}}
-		\label{fig: Shoulder motion as an acute angle}
+		
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=5cm]{Figure/chapter2/Fig6_a.png}
+			\caption{肩关节屈伸运动为锐角示意}
+			\label{fig:shoulder_motion_acute}
+		\end{subfigure}
 		\hfill
-		\subfloat[\centering]{\includegraphics[width=5cm]{Figure/chapter2/Fig6_b.png}}
-		\label{fig: Shoulder motion as an obtuse angle}
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=5cm]{Figure/chapter2/Fig6_b.png}
+			\caption{肩关节屈伸运动为钝角示意}
+			\label{fig:shoulder_motion_obtuse}
+		\end{subfigure}
 		
 	\end{adjustwidth}
-\caption{手臂运动过程中肩关节坐标系的旋转示意图。（\textbf{a}）肩关节屈伸运动为锐角示意，(\textbf{b}）肩关节屈伸运动为钝角示意。}
-\label{fig: Rotational schematic of the shoulder coordinate system}
-\end{figure} 
+	
+	\vspace{0.5em}
+	\setstretch{1.0}
+	\caption{手臂运动过程中肩关节坐标系的旋转示意图}
+	\label{fig:shoulder_coordinate_rotation}
+\end{figure}
 
 \paragraph{人体髋关节几何建模}
 
@@ -387,7 +411,7 @@ $\mathbf{p}_H,\mathbf{p}_K,\mathbf{p}_O,\mathbf{p}_P \in \mathbb{R}^3$，
 \begin{figure}[htbp]
 	\centering
 	%--------- (a) 骨盆局部坐标系 ---------
-	\begin{subfigure}[c]{0.5\textwidth}
+	\begin{subfigure}[b]{0.5\textwidth}
 		\centering
 		\begin{tikzpicture}[>=Stealth, line cap=round, line join=round, scale=1.2]
 			% 全局坐标轴
@@ -430,14 +454,15 @@ $\mathbf{p}_H,\mathbf{p}_K,\mathbf{p}_O,\mathbf{p}_P \in \mathbb{R}^3$，
 	\end{subfigure}
 	\hfill
 	%--------- (b) 髋膝几何关系 ---------
-	\begin{subfigure}[c]{0.46\textwidth}
+	\begin{subfigure}[b]{0.44\textwidth}
 		\centering
 		% 这里用你导出的那张髋膝几何图的文件名替换 leg_geometry.pdf
 		\includegraphics[width=\linewidth]{Figure/chapter2/leg_geometry.png}
 		\caption{髋膝关节几何关系}
 		\label{fig:hip_knee_geometry_sub}
 	\end{subfigure}
-	
+		\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+	\setstretch{1.0}  % ⭐ 单倍行距
 	\caption{人体下肢髋膝关节几何建模示意图}
 	\label{fig:hip_leg_geometry}
 \end{figure}
@@ -614,13 +639,13 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/walk.png}
-		\caption{}
+		\caption{行走动作}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/Box2.png}
-		\caption{}
+		\caption{拳击动作}
 	\end{subfigure}
 	
 	\vspace{0.5em}
@@ -629,15 +654,17 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/art.png}
-		\caption{}
+		\caption{武术动作}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/side.png}
-		\caption{}
+		\caption{侧跳动作}
 	\end{subfigure}
 	
+			\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+		\setstretch{1.0}  % ⭐ 单倍行距
 	\caption{不同动作在人形机器人上的全身动作重定向结果}
 	\label{fig:retarget_all}
 \end{figure}
@@ -655,16 +682,17 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/left_shoulder_roll.eps}
-		\caption{}
+		\caption{肩外展–内收关节}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/left_elbow.eps}
-		\caption{}
+		\caption{肘屈伸关节}
 	\end{subfigure}
-	
-	\caption{不同重定向方法在左侧上肢关节上的轨迹对比结果：（a）肩关节外展–内收，（b）肘关节屈伸。}
+		\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+	\setstretch{1.0}  % ⭐ 单倍行距
+	\caption{不同重定向方法在左侧上肢关节上的轨迹对比结果}
 
 	\label{fig:upper_tracking}
 \end{figure}
@@ -681,16 +709,17 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/left_hip_pitch.eps}
-		\caption{髋关节俯仰（Hip pitch）}
+		\caption{髋关节俯仰}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter2/left_knee.eps}
-		\caption{膝关节屈伸（Knee）}
+		\caption{膝关节屈伸}
 	\end{subfigure}
-	
-	\caption{不同重定向方法在左侧下肢关节上的轨迹对比结果：（a）髋关节俯仰，（b）膝关节屈伸。}
+	\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+\setstretch{1.0}  % ⭐ 单倍行距
+	\caption{不同重定向方法在左侧下肢关节上的轨迹对比结果}
 	\label{fig:lower_tracking}
 \end{figure}
 
@@ -713,24 +742,55 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 为进一步定量评估误差水平，图~\ref{fig:end_eff_results}(b) 给出了各末端的均方误差（MSE）统计结果。从结果可见，右手误差最大（$2.55\,\mathrm{cm}^2$），左手为 $2.10\,\mathrm{cm}^2$，左脚与右脚分别为 $1.58\,\mathrm{cm}^2$ 与 $1.60\,\mathrm{cm}^2$。整体误差均保持在较低水平，说明改进的全身运动学重定向方法在任务空间层面能够实现较高精度的末端位置重构。
 
 综合时间序列分析与统计结果可以看出，所提出的改进重定向框架在保证几何结构一致性的同时，实现了任务空间层面的高精度位姿对齐。误差主要来源于人体姿态估计噪声、比例映射误差以及数值求解近似，而非模型结构性缺陷。这表明该方法能够生成高质量的全身参考轨迹，为第三章基于学习的全身控制提供可靠的参考数据基础。
+%\begin{figure}[H]
+%	\centering
+%	
+%	\begin{subfigure}{0.48\linewidth}
+%		\centering
+%		\includegraphics[width=\linewidth]{Figure/chapter2/end_xyz_err.eps}
+%		\label{fig:end_eff_time}
+%		\caption{双手与双脚末端位置误差时间序列}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}{0.48\linewidth}
+%		\centering
+%		\includegraphics[width=\linewidth]{Figure/chapter2/end_MSE.eps}
+%		\label{fig:end_eff_mse}
+%		\caption{双手与双脚末端位置均方误差统计结果}
+%	\end{subfigure}
+%		\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+%	\setstretch{1.0}  % ⭐ 单倍行距
+%	\caption{末端位置误差结果对比}
+%	\label{fig:end_eff_results}
+%\end{figure}
+
 \begin{figure}[H]
 	\centering
 	
 	\begin{subfigure}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{Figure/chapter2/end_xyz_err.eps}
+		\includegraphics[
+		width=\linewidth,
+		trim=0 5 0 0,  % ⭐ 裁掉底部
+		clip
+		]{Figure/chapter2/end_xyz_err.eps}
+		\caption{双手与双脚末端位置误差时间序列}
 		\label{fig:end_eff_time}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{Figure/chapter2/end_MSE.eps}
+		\includegraphics[
+		width=\linewidth,
+		trim=0 5 0 0,  % ⭐ 同样裁掉底部
+		clip
+		]{Figure/chapter2/end_MSE.eps}
+		\caption{双手与双脚末端位置均方误差统计结果}
 		\label{fig:end_eff_mse}
 	\end{subfigure}
-	
-	\caption{末端位置误差结果对比。
-		(a) 双手与双脚末端位置误差时间序列；
-		(b) 双手与双脚末端位置均方误差统计结果。}
+		\vspace{0.8em}
+	\setstretch{1.0}
+	\caption{末端位置误差结果对比}
 	\label{fig:end_eff_results}
 \end{figure}
 

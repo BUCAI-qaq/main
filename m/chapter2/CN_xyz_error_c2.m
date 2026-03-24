@@ -84,9 +84,9 @@ plot(t, err_cm(:,2), '--', 'LineWidth',2.0, 'Color',cmap(2,:)); % RH
 plot(t, err_cm(:,3), '-.', 'LineWidth',1.3, 'Color',cmap(3,:)); % LF
 plot(t, err_cm(:,4), ':',  'LineWidth',1.3, 'Color',cmap(4,:)); % RF
 
-xlabel('Time (s)');
-ylabel('Position error (cm)');
-legend({'LH','RH','LF','RF'}, 'Location','northeast');
+xlabel('时间 (s)');
+ylabel('位置误差 (cm)');
+legend({'左手','右手','左脚','右脚'}, 'Location','northeast');
 
 xlim([0 10]);
 ylim([0 ceil(max(err_cm(:))*1.1)]);
@@ -95,8 +95,7 @@ grid on;
 set(gca, ...
     'Box','on', ...          % 四边框
     'LineWidth',0.5, ...     % 细边框
-    'FontName','Times New Roman', ...
-    'FontSize',10);
+    'FontSize',14);
 
 % print('-depsc','EndEffErr_Time.eps');
 
@@ -113,13 +112,12 @@ for i = 1:4
 end
 
 set(gca, 'XTick', 1:4, ...
-         'XTickLabel', {'LH','RH','LF','RF'}, ...
-         'FontName','Times New Roman', ...
-         'FontSize',10, ...
+         'XTickLabel', {'左手','右手','左脚','右脚'}, ...
+         'FontSize',14, ...
          'LineWidth',0.5, ...
          'Box','on');
 
-ylabel('MSE (cm^2)');
+ylabel('均方误差 (cm^2)');
 
 grid on;
 
@@ -135,7 +133,6 @@ labels = arrayfun(@(x) sprintf('%.2f', x), MSE_cm2, 'UniformOutput', false);
 text(xtips, ytips, labels, ...
     'HorizontalAlignment','center', ...
     'VerticalAlignment','bottom', ...
-    'FontName','Times New Roman', ...
-    'FontSize',9);
+    'FontSize',14);
 
 % print('-depsc','EndEffErr_MSE.eps');

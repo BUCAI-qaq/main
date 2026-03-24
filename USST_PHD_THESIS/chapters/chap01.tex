@@ -21,10 +21,34 @@
 
 20 世纪 70 年代，日本率先开展人形机器人系统研究。1976 年早稻田大学研发的 WABOT 系列机器人首次实现双足行走，被认为是最早具有完整类人结构的双足机器人之一\cite{Kato1976WABOT}。该阶段的研究重点集中在双足结构构型设计与重心稳定控制问题，为人形机器人基本构型与自由度分配奠定了工程基础。进入 1990 年代后，日本逐步将研究重心转向电机驱动关节与系统工程实现。AIST 与早稻田大学联合推出的 HRP 系列机器人在全身自由度配置、动力学建模与姿态控制方面形成了较为完整的技术体系\cite{Kaneko2004HRP2}。与此同时，本田公司推出的 ASIMO 系列（2000 年首发）采用旋转电机与减速器结合的刚性电驱结构，实现了稳定行走、跑步与上下楼梯等动作\cite{Sakagami2002ASIMO}。该阶段的核心贡献在于建立了电驱人形机器人标准化关节结构与控制框架。然而，由于采用较高减速比结构，关节反驱能力有限，动态性能受到一定约束。日本阶段的代表性平台如图~\ref{fig:japan_humanoid} 所示。
 
+
+
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figure/chapter1/japan_robot_c1.jpg}
+	
+	\begin{subfigure}[b]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/japan_robot/Wabot1.png}
+		\caption{WABOT机器人}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/japan_robot/HRP1.png}
+		\caption{HRP系列机器人}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/japan_robot/Asimo1.png}
+		\caption{ASIMO机器人}
+	\end{subfigure}
+	
+	\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+	
+	\setstretch{1.0}  % ⭐ 单倍行距
 	\caption{日本代表性人形机器人平台}
+	
 	\label{fig:japan_humanoid}
 \end{figure}
 
@@ -43,7 +67,49 @@ Figure 公司发布的 Figure 02 被定位为面向制造与物流场景的自�
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figure/chapter1/american_robot_c1.jpg}
+	
+	% ================= 第一行 =================
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/atlas_1.png}
+		\caption{Atlas液压版}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/atlas_2.png}
+		\caption{Atlas电驱版}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/digit.png}
+		\caption{Digit机器人}
+	\end{subfigure}
+	
+	\vspace{0.8em}
+	
+	% ================= 第二行 =================
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/optimus.png}
+		\caption{Optimus机器人}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/figure.png}
+		\caption{Figure机器人}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.25\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter1/american_robot/neo.png}
+		\caption{NEO 机器人}
+	\end{subfigure}
+	
+	\vspace{0.8em}
+	
 	\caption{欧美代表性人形机器人平台}
 	\label{fig:us_eu_humanoid}
 \end{figure}
@@ -61,9 +127,65 @@ Figure 公司发布的 Figure 02 被定位为面向制造与物流场景的自�
 智元 发布的 A2 通用人形机器人采用模块化设计理念，强调工业装配与物流搬运能力，通过高带宽电驱关节与高自由度上肢系统实现复杂操作任务\cite{Fourier2024GR1}。星动纪元 Star1 则率先开源 humanoid\_gym 框架，为双足机器人强化学习训练提供统一平台，推动算法与硬件平台的协同发展，体现出国内在“算法—本体一体化”方向上的探索趋势。
 
 在医疗与康复技术积累基础上，傅利叶（Fourier）推出 GR-1 平台，采用自主研发的 FSA 执行器系统，在保证较高负载能力的同时实现较好的力控精度，形成医疗康复与通用人形机器人技术的融合路径。Adam 平台则采用透明仿生结构设计，强调生物力学展示与教育研究功能，为人形机器人结构教学与运动机理研究提供实验载体。近年来中国代表性平台如图~\ref{fig:china_humanoid} 所示。
+
+
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figure/chapter1/china_robot_c1.jpg}
+	
+	% ================= 第一行 =================
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/g1.png}
+		\caption{宇树 G1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/se01.png}
+		\caption{众擎 SE01}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/walker.png}
+		\caption{优必选 Walker S2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/a2.png}
+		\caption{智元 A2}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+	
+	% ================= 第二行 =================
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/star1.png}
+		\caption{星动纪元Star1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/tienkung.png}
+		\caption{天工机器人}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/gr1.png}
+		\caption{傅利叶GR1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\textwidth}
+		\centering
+		\includegraphics[height=5cm]{Figure/chapter1/cn-robot/pnd.png}
+		\caption{PND}
+	\end{subfigure}
+	
+	\vspace{0.8em}
+	
 	\caption{近年来中国代表性人形机器人平台}
 	\label{fig:china_humanoid}
 \end{figure}
@@ -120,7 +242,7 @@ Figure 公司发布的 Figure 02 被定位为面向制造与物流场景的自�
 \label{fig:nullspace_framework}
 \end{figure}
 
-如图所示~\ref{fig:nullspace_framework}，该框架采用自上而下的层级结构。最上层为约束层（Constraint Layer），通常包括接触约束、质心控制或整体动量调节等稳定性相关任务。这一层对应公式中的最高优先级任务 $x_1$，其解通过雅可比伪逆 $J_1^\dagger$ 求得，并生成零空间投影矩阵 $N_1$。
+如图~\ref{fig:nullspace_framework}所示，该框架采用自上而下的层级结构。最上层为约束层（Constraint Layer），通常包括接触约束、质心控制或整体动量调节等稳定性相关任务。这一层对应公式中的最高优先级任务 $x_1$，其解通过雅可比伪逆 $J_1^\dagger$ 求得，并生成零空间投影矩阵 $N_1$。
 
 在此基础上，任务层（Task Layer）中的手臂操作或轨迹跟踪任务被投影至约束层的零空间中执行，对应公式中的递归项 $N_1 J_2^\dagger \dot{x}_2$。这种结构确保操作任务不会破坏系统稳定性与接触一致性。
 

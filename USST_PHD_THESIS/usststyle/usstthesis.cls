@@ -292,20 +292,22 @@
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 \ifusst@master
-  \g@addto@macro\appendix{\renewcommand*{\thefigure}{\thechapter-\arabic{figure}}}
-  \g@addto@macro\appendix{\renewcommand*{\thetable}{\thechapter-\arabic{table}}}
+  \g@addto@macro\appendix{\renewcommand*{\thefigure}{\thechapter.\arabic{figure}}}
+  \g@addto@macro\appendix{\renewcommand*{\thetable}{\thechapter.\arabic{table}}}
 \fi 
-\renewcommand{\thefigure}{\ifnum \c@chapter>\z@ \thechapter-\fi\@arabic\c@figure} 
-\renewcommand\thetable{\ifnum \c@chapter>\z@ \thechapter-\fi\@arabic\c@table}
+\renewcommand{\thefigure}{\ifnum \c@chapter>\z@ \thechapter.\fi\@arabic\c@figure} 
+\renewcommand\thetable{\ifnum \c@chapter>\z@ \thechapter.\fi\@arabic\c@table}
 \let\old@tabular\@tabular
 \def\usst@tabular{\dawu[1.5]\old@tabular}
 \DeclareCaptionLabelFormat{usst}{{\xiaosi\songti #1~~\rmfamily #2}}  %% gang added
 \DeclareCaptionLabelSeparator{usst}{\hspace{1em}}
 \DeclareCaptionFont{usst}{\xiaosi}
+\DeclareCaptionFont{usstsub}{\wuhao} % 分图 五号
+
 \captionsetup{labelformat=usst,labelsep=usst,font=usst}
 \captionsetup[table]{position=top,belowskip={15bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
-\captionsetup[sub]{font=usst,skip=6bp}
+\captionsetup[sub]{font=usstsub,skip=6bp}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\thesubtable}{(\alph{subtable})}
 \let\usst@LT@array\LT@array

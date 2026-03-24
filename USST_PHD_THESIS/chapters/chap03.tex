@@ -41,7 +41,7 @@
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1.1\linewidth]{Figure/chapter3/system_frame.png}
+	\includegraphics[width=1.0\linewidth]{Figure/chapter3/system_frame.png}
 	\caption{全身强化学习控制框架示意图}
 	\label{fig:rl_framework}
 \end{figure}
@@ -249,7 +249,7 @@ Droid 系列机器人与 Unitree G1 在整体身体结构上具有较高相似�
 		\includegraphics[width=\linewidth]{Figure/chapter3/g1_mode.png}
 		\caption{Unitree G1}
 	\end{subfigure}
-	
+	\vspace{0.8em}
 	\caption{实验所使用的人形机器人模型}
 	\label{fig:characters}
 \end{figure}
@@ -381,29 +381,38 @@ Droid 系列机器人与 Unitree G1 在整体身体结构上具有较高相似�
 实验结果表明，通过模仿真实人体动作捕捉数据，机器人能够学习到自然流畅的全身运动模式。与传统深度强化学习方法~\cite{merel2017learning,schulman2015trust} 相比，本文方法显著减少了不自然的运动伪影。此外，在受到较大外部扰动时，所学习到的策略仍能够保持稳定，并生成合理的恢复行为，表现出良好的鲁棒性。
 \begin{figure*}[t]
 	\centering
-	\subfloat[Droid X03: Getdown]{
-		\includegraphics[width=1.0\linewidth]{Figure/chapter3/x03_getdown.png}
-	}
-	\vspace{3mm}
-	% ---------- 长图 ----------
-	\subfloat[Droid X03: Getup]{
-		\includegraphics[width=1.0\linewidth]{Figure/chapter3/x03_getup_sim.png}
-	}
-%	\vspace{3mm}
-%		\subfloat[Droid X03: Dance]{
-%		\includegraphics[width=1.0\linewidth]{Figure/chapter3/x03_dance1_sim.png}
-%	}
-	\vspace{3mm}
-		\subfloat[Droid X03: Dance]{
-		\includegraphics[width=1.0\linewidth]{Figure/chapter3/x03_dance2_sim.png}
-	}
-	\vspace{3mm}
-		\subfloat[Unitree g1: Dance]{
-		\includegraphics[width=1.0\linewidth]{Figure/chapter3/g1_dance_sim.png}
-	}
 	
-
-	\caption{多种代表性技能关键帧。}
+	\begin{subfigure}{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter3/x03_getdown.png}
+		\caption{X03 躺下动作}
+	\end{subfigure}
+	
+	\vspace{3mm}
+	
+	\begin{subfigure}{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter3/x03_getup_sim.png}
+		\caption{X03 起身动作}
+	\end{subfigure}
+	
+	\vspace{3mm}
+	
+	\begin{subfigure}{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter3/x03_dance2_sim.png}
+		\caption{X03 舞蹈动作}
+	\end{subfigure}
+	
+	\vspace{3mm}
+	
+	\begin{subfigure}{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter3/g1_dance_sim.png}
+		\caption{G1 舞蹈动作}
+	\end{subfigure}
+	\vspace{0.8em}
+	\caption{多种代表性技能关键帧}
 	\label{fig:skill_snapshots}
 \end{figure*}
 
