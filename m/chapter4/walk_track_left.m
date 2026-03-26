@@ -47,29 +47,40 @@ lw = 1.2;
 % plot_joint(time, L_ap_real, L_ap_ref, '踝关节俯仰', fontCN, fontEN, fs, lw, [180 180 800 250]);
 % plot_joint(time, L_ar_real, L_ar_ref, '踝关节滚转', fontCN, fontEN, fs, lw, [200 200 800 250]);
 
-plot_joint(time, L_hr_real, L_hr_ref, '关节角度', fontCN, fontEN, fs, lw, [100 100 800 250]);
-plot_joint(time, L_hp_real, L_hp_ref, '关节角度', fontCN, fontEN, fs, lw, [120 120 800 250]);
-plot_joint(time, L_hy_real, L_hy_ref, '关节角度', fontCN, fontEN, fs, lw, [140 140 800 250]);
-plot_joint(time, L_kn_real, L_kn_ref, '关节角度',     fontCN, fontEN, fs, lw, [160 160 800 250]);
-plot_joint(time, L_ap_real, L_ap_ref, '关节角度', fontCN, fontEN, fs, lw, [180 180 800 250]);
-plot_joint(time, L_ar_real, L_ar_ref, '关节角度', fontCN, fontEN, fs, lw, [200 200 800 250]);
+%% ================= 左腿6张图 =================
+plot_joint(time, L_hp_real, L_hp_ref, '关节角度', fontCN, fontEN, fs, lw, [120 120 800 250], false);
+plot_joint(time, L_hr_real, L_hr_ref, '关节角度', fontCN, fontEN, fs, lw, [100 100 800 250], false);
+plot_joint(time, L_hy_real, L_hy_ref, '关节角度', fontCN, fontEN, fs, lw, [140 140 800 250], false);
+plot_joint(time, L_kn_real, L_kn_ref, '关节角度', fontCN, fontEN, fs, lw, [160 160 800 250], false);
+plot_joint(time, L_ap_real, L_ap_ref, '关节角度', fontCN, fontEN, fs, lw, [180 180 800 250], false);
+
+% 只有最后一个显示时间轴
+plot_joint(time, L_ar_real, L_ar_ref, '关节角度', fontCN, fontEN, fs, lw, [200 200 800 250], true);
 
 %% ================= 函数定义 =================
-function plot_joint(time, real, ref, ylab, fontCN, fontEN, fs, lw, pos)
+function plot_joint(time, real, ref, ylab, fontCN, fontEN, fs, lw, pos, show_xlabel)
 
     figure('Color','w','Position',pos);
 
     plot(time, real, 'b', 'LineWidth', lw); hold on;
     plot(time, ref,  'r--', 'LineWidth', lw);
 
+    % ===== Y轴 =====
     ylabel(['\fontname{',fontCN,'}',ylab,' ', ...
             '\fontname{',fontEN,'}(rad)'], ...
             'FontSize', fs, 'Interpreter','tex');
 
-    xlabel(['\fontname{',fontCN,'}时间 ', ...
-            '\fontname{',fontEN,'}(s)'], ...
-            'FontSize', fs, 'Interpreter','tex');
+    % ===== X轴（是否显示）=====
+    if show_xlabel
+        xlabel(['\fontname{',fontCN,'}时间 ', ...
+                '\fontname{',fontEN,'}(s)'], ...
+                'FontSize', fs, 'Interpreter','tex');
+    else
+        % 不显示标签（但保留刻度）
+        xlabel('');
+    end
 
+    % ===== legend =====
     legend({ ...
         ['\fontname{',fontCN,'}实际值'], ...
         ['\fontname{',fontCN,'}参考值']}, ...

@@ -123,12 +123,21 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	
-	\subfloat[驱动器顶层电路]{
-		\includegraphics[width=0.48\linewidth]{Figure/chapter5/driver_top.png}}
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/driver_top.png}
+		\caption{驱动器顶层电路}
+		\label{fig:driver_top}
+	\end{subfigure}
 	\hfill
-	\subfloat[驱动器底层电路]{
-		\includegraphics[width=0.48\linewidth]{Figure/chapter5/driver_bottom.png}}
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/driver_bottom.png}
+		\caption{驱动器底层电路}
+		\label{fig:driver_bottom}
+	\end{subfigure}
 	
+	\vspace{0.5em}
 	\caption{关节驱动器硬件电路板结构}
 	\label{fig:driver_hardware}
 \end{figure}
@@ -148,7 +157,7 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 	\label{fig:motor_control}
 \end{figure}
 
-\subsection{软件架构与部署流程}
+%\subsection{软件架构与部署流程}
 
 \section{绳驱耦合驱动建模与约束}
 \subsection{绳驱耦合驱动建模}
@@ -161,7 +170,7 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figure/chapter5/tensor.png}
-	\caption{下肢关节腱驱动结构示意图。}
+	\caption{下肢关节腱驱动结构示意图}
 	\label{fig:platform}
 \end{figure}
 
@@ -267,26 +276,40 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	
-	\subfloat[]{
-		\includegraphics[width=0.45\linewidth]{Figure/chapter5/left_knee_tau.eps}
-	}
+	% 第一行
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/left_knee_tau.eps}
+		\caption{左腿膝关节力矩}
+		\label{fig:left_knee_tau}
+	\end{subfigure}
 	\hfill
-	\subfloat[]{
-		\includegraphics[width=0.45\linewidth]{Figure/chapter5/right_knee_tau.eps}
-	}
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/right_knee_tau.eps}
+		\caption{右腿膝关节力矩}
+		\label{fig:right_knee_tau}
+	\end{subfigure}
 	
-	\vspace{0.5em}
+	\vspace{0.4em}
 	
-	\subfloat[]{
-		\includegraphics[width=0.45\linewidth]{Figure/chapter5/left_ankle_tau.eps}
-	}
+	% 第二行
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/left_ankle_tau.eps}
+		\caption{左腿踝关节力矩}
+		\label{fig:left_ankle_tau}
+	\end{subfigure}
 	\hfill
-	\subfloat[]{
-		\includegraphics[width=0.45\linewidth]{Figure/chapter5/right_ankle_tau.eps}
-	}
-	\vspace{0.5em}
-	\caption{爬起过程中膝–踝关节力矩变化。其中，（a）为左腿膝关节力矩，（b）为右腿膝关节力矩，（c）为左腿踝关节力矩，（d）为右腿踝关节力矩。}
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/right_ankle_tau.eps}
+		\caption{右腿踝关节力矩}
+		\label{fig:right_ankle_tau}
+	\end{subfigure}
 	
+	\vspace{0.8em}
+	\caption{爬起过程中膝–踝关节力矩变化}
 	\label{fig:joint_tau}
 \end{figure}
 
@@ -439,14 +462,19 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/X02_track.png}
+		\caption{X02 机器人舞蹈动作关键帧序列}
+		\label{fig:x02_track}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/X03_track.png}
+		\caption{X03 机器人舞蹈动作关键帧序列}
+		\label{fig:x03_track}
 	\end{subfigure}
 	
-	\caption{基于强化学习的全身控制策略在实物平台上的执行效果。（a）X02 机器人舞蹈动作关键帧序列；（b）X03 机器人舞蹈动作关键帧序列。}
+	\vspace{0.8em}  % ⭐ 控制子图与主caption间距（关键）
+	\caption{基于强化学习的全身控制策略在实物平台上的执行效果}
 	\label{fig:real_world_results}
 \end{figure}
 
@@ -471,28 +499,36 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/rpy.eps}
+		\caption{躯干姿态}
+		\label{fig:x03_rpy}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/left_hip_pitch.eps}
+		\caption{髋关节前后摆}
+		\label{fig:x03_hip_pitch}
 	\end{subfigure}
 	
-	\vspace{0.5em}
+	\vspace{0.4em}
 	
 	% 第二行
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/left_knee.eps}
+		\caption{膝关节}
+		\label{fig:x03_knee}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		% 可选：放 ankle 或留空
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/left_ankle_pitch.eps}
+		\caption{踝关节前后摆}
+		\label{fig:x03_ankle_pitch}
 	\end{subfigure}
 	
-	\caption{X03 机器人关键状态与下肢关节运动情况。（a）躯干姿态；（b）髋关节前后摆；（c）膝关节；（d）踝关节前后摆。}
+	\vspace{0.8em}
+	\caption{X03 机器人关键状态与下肢关节运动情况}
 	\label{fig:whole_tracking}
 \end{figure}
 
@@ -506,14 +542,19 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/left_shoulder_pitch.eps}
+		\caption{肩关节前后摆}
+		\label{fig:left_shoulder_pitch}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_chars/left_elbow.eps}
+		\caption{肘关节屈伸}
+		\label{fig:left_elbow}
 	\end{subfigure}
 	
-	\caption{左臂关键关节运动情况。（a）肩关节前后摆；（b）肘关节屈伸。}
+	\vspace{0.8em}
+	\caption{左臂关键关节运动情况}
 	\label{fig:arm_tracking}
 \end{figure}
 
@@ -535,7 +576,7 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk.png}
-	\caption{X02 人形机器人在目标位置行走任务中的关键帧序列。机器人在加速、转向及减速过程中均能够保持稳定步态，并实现连续运动过渡。}
+	\caption{X02 人形机器人在目标位置行走任务中的关键帧序列}
 	\label{fig:walk_real}
 \end{figure}
 
@@ -544,47 +585,62 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/cmd.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\vspace{0.3em}
+	\vspace{0.2em}
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/hip_yaw.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\vspace{0.3em}
+	\vspace{0.2em}
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/hip_roll.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\vspace{0.3em}
+	\vspace{0.2em}
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/hip_pitch.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\vspace{0.3em}
+	\vspace{0.2em}
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/knee.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\vspace{0.3em}
+	\vspace{0.2em}
 	
-	\begin{subfigure}[b]{0.9\linewidth}
+	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_walk/ankle_pitch.eps}
+		\caption{}
 	\end{subfigure}
 	
-	\caption{目标位置行走任务中的控制指令与关键关节轨迹变化。(a) 线速度与角速度指令；(b) 髋关节偏航；(c) 髋关节侧摆；(d) 髋关节前后摆；(e) 膝关节；(f) 踝关节前后摆。}
+	\vspace{0.4em}
+	\caption{
+		目标位置行走任务中的控制指令与关键关节轨迹变化。
+		（a）线速度与角速度指令；
+		（b）髋关节偏航；
+		（c）髋关节侧摆；
+		（d）髋关节前后摆；
+		（e）膝关节；
+		（f）踝关节前后摆。
+	}
 	\label{fig:walk_joint}
 \end{figure}
 
@@ -611,14 +667,19 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_sit/Height1.png}
+		\caption{较低座椅高度}
+		\label{fig:height_low}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x02_sit/Height2.png}
+		\caption{较高座椅高度}
+		\label{fig:height_high}
 	\end{subfigure}
 	
-	\caption{不同座椅高度条件下机器人完成坐下与起身过程的关键帧序列。(a) 较低座椅高度；(b) 较高座椅高度。可以观察到，机器人能够根据接触高度变化自适应调整下肢弯曲程度与躯干姿态，实现稳定过渡。}
+	\vspace{0.8em}
+	\caption{不同座椅高度条件下机器人完成坐下与起身过程的关键帧序列}
 	\label{fig:sit_stand_real}
 \end{figure}
 
@@ -628,7 +689,7 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{Figure/chapter5/x02_sit/push.png}
-	\caption{外部扰动条件下的起身过程关键帧序列。在运动过程中施加外力扰动，机器人能够通过调整躯干姿态与支撑关系逐步恢复平衡，并完成起身动作。}
+	\caption{外部扰动条件下的起身过程关键帧序列}
 	\label{fig:sit_push}
 \end{figure}
 
@@ -659,29 +720,40 @@ X02 与 X03 人形机器人平台采用轻量化驱动设计思路，在保证�
 \begin{figure}[htbp]
 	\centering
 	
+	% 第一行
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_getup/right_arm_tau.eps}
+		\caption{上肢关节力矩}
+		\label{fig:right_arm_tau}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{Figure/chapter5/x03_getup/right_lef_tau.eps}
+		\includegraphics[width=\linewidth]{Figure/chapter5/x03_getup/right_leg_tau.eps}
+		\caption{下肢关节力矩分布}
+		\label{fig:right_leg_tau}
 	\end{subfigure}
 	
-	\vspace{0.5em}
+	\vspace{0.4em}
 	
+	% 第二行
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_getup/quat.eps}
+		\caption{躯干姿态变化}
+		\label{fig:quat}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Figure/chapter5/x03_getup/tau.eps}
+		\caption{全身关节力矩}
+		\label{fig:tau}
 	\end{subfigure}
 	
-	\caption{跌倒恢复过程中关键动力学与姿态变化。(a) 上肢关节力矩；(b) 下肢关节力矩分布；(c) 躯干姿态变化；(d) 全身关节力矩。}
+	\vspace{0.8em}
+	\caption{跌倒恢复过程中关键动力学与姿态变化}
 	\label{fig:torque_profile}
 \end{figure}
 

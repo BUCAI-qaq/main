@@ -335,9 +335,66 @@ $p(z)=\mathcal{N}(0,I)$。
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.75\linewidth]{Figure/chapter4/Left_leg_walk_joint.eps}
-	\caption{步态运动中下肢主要关节的轨迹跟踪结果。}
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/hip_pitch.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/hip_roll.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/hip_yaw.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/knee.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/ankle_pitch.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.3em}
+	
+	\begin{subfigure}{0.65\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter4/track/ankle_roll.eps}
+		\caption{}
+	\end{subfigure}
+	
+	\vspace{0.4em}
+	\caption{
+		步态运动中下肢主要关节的轨迹跟踪结果。
+		（a）髋关节前后摆；
+		（b）髋关节侧摆；
+		（c）髋关节旋转；
+		（d）膝关节；
+		（e）踝关节俯仰；
+		（f）踝关节侧摆
+	}
 	\label{fig:gait_tracking}
+	
 \end{figure}
 
 
@@ -425,7 +482,7 @@ $p(z)=\mathcal{N}(0,I)$。
 	\subfloat[物体搬运任务]{
 		\includegraphics[width=0.9\linewidth]{Figure/chapter4/pickup_box.png}}
 	
-	\vspace{0.5em}
+	\vspace{0.8em}
 	\caption{分层控制框架在不同任务中的执行结果。}
 	\label{fig:task_results}
 	

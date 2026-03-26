@@ -1,5 +1,10 @@
 clc; clear; close all;
 
+%% ============== 字体设置 ==============
+fontCN = 'SimSun';           
+fontEN = 'Times New Roman';  
+fs = 16;
+
 %% =========================
 % 1. 文件路径
 %% =========================
@@ -34,16 +39,16 @@ t_sim  = sim_tbl.time;
 % 4. 绘图参数
 %% =========================
 lw_line   = 2.0;
-fs_axis   = 12;
-fs_leg    = 11;
-fs_title  = 13;
+fs_axis   = fs;
+fs_leg    = fs;
+fs_title  = fs;
 
 smooth_win = 25;   % 平滑窗口
 band_scale = 1.0;  % 波带系数（±1σ）
 band_alpha = 0.15; % 波带透明度
 
 %% =========================
-% 5. 关节分组（只保留最终4张图需要的关节）
+% 5. 关节分组
 %% =========================
 right_leg_cols  = {'mpRc', 'mkRc', 'mapRc'};
 right_leg_names = {'Hip pitch', 'Knee', 'Ankle pitch'};
@@ -105,11 +110,17 @@ for i = 1:numel(right_leg_cols)
 end
 
 grid on;
-xlabel('时间 (s)', 'FontSize', fs_axis);
-ylabel('关节力矩 (N·m)', 'FontSize', fs_axis);
+xlabel(['\fontname{',fontCN,'}时间 ' ...
+        '\fontname{',fontEN,'}(s)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
+
+ylabel(['\fontname{',fontCN,'}关节力矩 ' ...
+        '\fontname{',fontEN,'}(N·m)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
 
 lgd = legend(h_lines_leg, right_leg_names, 'FontSize', fs_leg);
 set(lgd, 'Location', 'northeast');
+set(gca, 'FontName', fontEN, 'FontSize', fs_axis);
 
 %% =========================
 % 8. 右手关节扭矩：时序图（平滑线 + 波带）
@@ -148,16 +159,20 @@ for i = 1:numel(right_arm_cols)
 end
 
 grid on;
-xlabel('时间 (s)', 'FontSize', fs_axis);
-ylabel('关节力矩 (N·m)', 'FontSize', fs_axis);
+xlabel(['\fontname{',fontCN,'}时间 ' ...
+        '\fontname{',fontEN,'}(s)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
+
+ylabel(['\fontname{',fontCN,'}关节力矩 ' ...
+        '\fontname{',fontEN,'}(N·m)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
 
 lgd = legend(h_lines_arm, right_arm_names, 'FontSize', fs_leg);
 set(lgd, 'Location', 'northeast');
+set(gca, 'FontName', fontEN, 'FontSize', fs_axis);
 
 %% =========================
-% 9. 姿态：用四元数代替欧拉角绘图
-% 假设 sim_tbl 中 r/p/y 分别为 roll / pitch / yaw，单位 rad
-% 按 yaw-pitch-roll (ZYX) 组合成四元数
+% 9. 姿态：四元数绘图
 %% =========================
 r = sim_tbl.r;   % roll
 p = sim_tbl.p;   % pitch
@@ -194,11 +209,18 @@ plot(t_sim, q(:,3), '-.', 'LineWidth', 1.8);
 plot(t_sim, q(:,4), ':', 'LineWidth', 2.0);
 
 grid on;
-xlabel('时间 (s)', 'FontSize', fs_axis);
-ylabel('四元数分量', 'FontSize', fs_axis);
+xlabel(['\fontname{',fontCN,'}时间 ' ...
+        '\fontname{',fontEN,'}(s)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
+
+ylabel(['\fontname{',fontCN,'}四元数分量'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
+
 legend({'q_w', 'q_x', 'q_y', 'q_z'}, ...
        'Location', 'northeast', ...
        'FontSize', fs_leg);
+
+set(gca, 'FontName', fontEN, 'FontSize', fs_axis);
 
 %% =========================
 % 10. 统计对比图（均值 + 最大绝对值）
@@ -222,10 +244,12 @@ figure('Color', 'w');
 bar(stats_mat, 'grouped');
 grid on;
 
-% xlabel('关节', 'FontSize', fs_axis);
-ylabel('关节力矩 (N·m)', 'FontSize', fs_axis);
+ylabel(['\fontname{',fontCN,'}关节力矩 ' ...
+        '\fontname{',fontEN,'}(N·m)'], ...
+        'FontSize', fs_axis, 'Interpreter', 'tex');
 
-set(gca, 'XTick', 1:n_joint, 'XTickLabel', all_names, 'FontSize', fs_axis);
+set(gca, 'XTick', 1:n_joint, 'XTickLabel', all_names, ...
+         'FontName', fontEN, 'FontSize', fs_axis);
 xtickangle(25);
 
 legend({'Mean', 'Max'}, ...

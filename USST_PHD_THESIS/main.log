@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  24 MAR 2026 20:55
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  25 MAR 2026 21:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1790,65 +1790,66 @@ uage=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 \@quotelevel=\count597
 \@quotereset=\count598
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 107.
+h' as default language. on input line 109.
 
 
 LaTeX Warning: Unused global option(s):
     [ontset].
 
-(./main.aux (./chapters/chap04.aux))
+(./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
+(./chapters/chap03.aux) (./chapters/chap04.aux) (./chapters/chap05.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 107.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 109.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 107.
+ 109.
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 109.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-107.
+109.
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 109.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 107.
+ 109.
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 109.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 107.
+e 109.
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Info: Command `\dddot' is already robust on input line 107.
-LaTeX Info: Command `\ddddot' is already robust on input line 107.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Info: Command `\dddot' is already robust on input line 109.
+LaTeX Info: Command `\ddddot' is already robust on input line 109.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen392
@@ -1876,7 +1877,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 
 ))
-Package hyperref Info: Link coloring OFF on input line 107.
+Package hyperref Info: Link coloring OFF on input line 109.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1932,9 +1933,24 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(./main.bbl)
-Package biblatex Info: Reference section=0 on input line 107.
-Package biblatex Info: Reference segment=0 on input line 107.
+(./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Kim2019
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Paredes2023
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 109.
+Package biblatex Info: Reference segment=0 on input line 109.
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/translations/translations-bas
 ic-dictionary-english.trsl
@@ -1942,7 +1958,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 107.
+or `english'. on input line 109.
 File: chapters/fengmian_jxs.pdf Graphic file (type pdf)
 <use chapters/fengmian_jxs.pdf>
 File: chapters/fengmian_jxs.pdf Graphic file (type pdf)
@@ -2075,7 +2091,7 @@ Package fontspec Info: Font family 'SimSun(1)' created for font 'SimSun' with
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 123.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 127.
 
 [1
 
@@ -2129,26 +2145,41 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 
 (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-))
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
- [3
+) [3
 
 
 ]
-\openout2 = `chapters/chap04.aux'.
 
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(./chapters/chap04.tex
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[4])
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [5]
+\openout2 = `chapters/chap01.aux'.
+
+ (./chapters/chap01.tex
 第一章
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12.045> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 5.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 2.
 [1
 
 
 
 ]
+File: Figure/chapter1/japan_robot/Wabot1.png Graphic file (type bmp)
+<Figure/chapter1/japan_robot/Wabot1.png>
+File: Figure/chapter1/japan_robot/HRP1.png Graphic file (type bmp)
+<Figure/chapter1/japan_robot/HRP1.png>
+File: Figure/chapter1/japan_robot/Asimo1.png Graphic file (type bmp)
+<Figure/chapter1/japan_robot/Asimo1.png>
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2158,6 +2189,19 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [2] [3]
+File: Figure/chapter1/american_robot/atlas_1.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/atlas_1.png>
+File: Figure/chapter1/american_robot/atlas_2.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/atlas_2.png>
+File: Figure/chapter1/american_robot/digit.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/digit.png>
+File: Figure/chapter1/american_robot/optimus.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/optimus.png>
+File: Figure/chapter1/american_robot/figure.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/figure.png>
+File: Figure/chapter1/american_robot/neo.png Graphic file (type bmp)
+<Figure/chapter1/american_robot/neo.png>
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2166,12 +2210,24 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[4]
-File: Figure/chapter4/system_frame.png Graphic file (type bmp)
-<Figure/chapter4/system_frame.png>
-Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
-ut line 61.
- [5]
+[4] [5]
+File: Figure/chapter1/cn-robot/g1.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/g1.png>
+File: Figure/chapter1/cn-robot/se01.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/se01.png>
+File: Figure/chapter1/cn-robot/walker.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/walker.png>
+File: Figure/chapter1/cn-robot/a2.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/a2.png>
+File: Figure/chapter1/cn-robot/star1.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/star1.png>
+File: Figure/chapter1/cn-robot/tienkung.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/tienkung.png>
+File: Figure/chapter1/cn-robot/gr1.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/gr1.png>
+File: Figure/chapter1/cn-robot/pnd.png Graphic file (type bmp)
+<Figure/chapter1/cn-robot/pnd.png>
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2181,6 +2237,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [6] [7]
+Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
+ut line 216.
+File: Figure/chapter1/null_space_frame.jpg Graphic file (type bmp)
+<Figure/chapter1/null_space_frame.jpg>
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2191,6 +2252,12 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 [8] [9]
 
+LaTeX Warning: Citation 'Kim2019' on page 10 undefined on input line 268.
+
+
+LaTeX Warning: Citation 'Paredes2023' on page 10 undefined on input line 268.
+
+
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
 (fancyhdr)                \setlength{\headheight}{20.07498pt}.
@@ -2198,14 +2265,12 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[10] [11]
-File: Figure/chapter4/walk_imitaion.png Graphic file (type bmp)
-<Figure/chapter4/walk_imitaion.png>
-File: Figure/chapter4/kick_imitaion.png Graphic file (type bmp)
-<Figure/chapter4/kick_imitaion.png>
-File: Figure/chapter4/pick_up.png Graphic file (type bmp)
-<Figure/chapter4/pick_up.png>
-
+[10]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+296.
+ (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [11]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2215,8 +2280,8 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [12] [13]
-File: Figure/chapter4/Left_leg_walk_joint.eps Graphic file (type eps)
-<Figure/chapter4/Left_leg_walk_joint.eps>
+File: Figure/chapter1/RL_control_frame.png Graphic file (type bmp)
+<Figure/chapter1/RL_control_frame.png>
 
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
@@ -2226,10 +2291,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[14]
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 35
-4.
- [15]
+[14] [15]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2238,18 +2300,13 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[16]
-File: Figure/chapter4/walk_loco.png Graphic file (type bmp)
-<Figure/chapter4/walk_loco.png>
-File: Figure/chapter4/kick_box.png Graphic file (type bmp)
-<Figure/chapter4/kick_box.png>
-File: Figure/chapter4/pickup_box.png Graphic file (type bmp)
-<Figure/chapter4/pickup_box.png>
- [17]
-File: Figure/chapter4/loco_pos.eps Graphic file (type eps)
-<Figure/chapter4/loco_pos.eps>
-File: Figure/chapter4/pick_up_tra.eps Graphic file (type eps)
-<Figure/chapter4/pick_up_tra.eps>
+[16] [17]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 45
+0.
+
+Overfull \hbox (47.99997pt too wide) in paragraph at lines 450--477
+ [][] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
@@ -2269,6 +2326,690 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [20]) [21]
+\openout2 = `chapters/chap02.aux'.
+
+ (./chapters/chap02.tex
+第二章
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[22
+
+
+
+
+] [23]
+File: Figure/chapter2/frame_A.png Graphic file (type bmp)
+<Figure/chapter2/frame_A.png>
+File: Figure/chapter2/frame_A_B.png Graphic file (type bmp)
+<Figure/chapter2/frame_A_B.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[24] [25]
+File: Figure/chapter2/system_frame.png Graphic file (type bmp)
+<Figure/chapter2/system_frame.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[26]
+File: Figure/chapter2/human_body.png Graphic file (type bmp)
+<Figure/chapter2/human_body.png>
+File: Figure/chapter2/M04_body.png Graphic file (type bmp)
+<Figure/chapter2/M04_body.png>
+ [27]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[28]
+File: Figure/chapter2/Fig3.png Graphic file (type bmp)
+<Figure/chapter2/Fig3.png>
+ [29]
+
+LaTeX Warning: Reference `fig:Modeling of elbow' on page 30 undefined on input 
+line 307.
+
+File: Figure/chapter2/Fig4.png Graphic file (type bmp)
+<Figure/chapter2/Fig4.png>
+File: Figure/chapter2/Fig5.png Graphic file (type bmp)
+<Figure/chapter2/Fig5.png>
+
+LaTeX Warning: Reference `fig:Modeling of elbow' on page 30 undefined on input 
+line 336.
+
+
+LaTeX Warning: Reference `fig:Modeling of elbow' on page 30 undefined on input 
+line 341.
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[30]
+
+LaTeX Warning: Reference `fig:Modeling of elbow' on page 31 undefined on input 
+line 350.
+
+
+LaTeX Warning: Reference `fig: Rotational schematic of the shoulder coordinate 
+system' on page 31 undefined on input line 359.
+
+
+LaTeX Warning: Reference `fig: Rotational schematic of the shoulder coordinate 
+system' on page 31 undefined on input line 359.
+
+File: Figure/chapter2/Fig6_a.png Graphic file (type bmp)
+<Figure/chapter2/Fig6_a.png>
+File: Figure/chapter2/Fig6_b.png Graphic file (type bmp)
+<Figure/chapter2/Fig6_b.png>
+[31]
+File: Figure/chapter2/leg_geometry.png Graphic file (type bmp)
+<Figure/chapter2/leg_geometry.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[32] [33]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[34]
+
+LaTeX Warning: Reference `fig:retarget_vis' on page 35 undefined on input line 
+625.
+
+[35]
+File: Figure/chapter2/walk.png Graphic file (type bmp)
+<Figure/chapter2/walk.png>
+File: Figure/chapter2/Box2.png Graphic file (type bmp)
+<Figure/chapter2/Box2.png>
+File: Figure/chapter2/art.png Graphic file (type bmp)
+<Figure/chapter2/art.png>
+File: Figure/chapter2/side.png Graphic file (type bmp)
+<Figure/chapter2/side.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[36]
+File: Figure/chapter2/left_shoulder_roll.eps Graphic file (type eps)
+<Figure/chapter2/left_shoulder_roll.eps>
+File: Figure/chapter2/left_elbow.eps Graphic file (type eps)
+<Figure/chapter2/left_elbow.eps>
+File: Figure/chapter2/left_hip_pitch.eps Graphic file (type eps)
+<Figure/chapter2/left_hip_pitch.eps>
+File: Figure/chapter2/left_knee.eps Graphic file (type eps)
+<Figure/chapter2/left_knee.eps>
+ [37]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[38]
+File: Figure/chapter2/end_xyz_err.eps Graphic file (type eps)
+<Figure/chapter2/end_xyz_err.eps>
+File: Figure/chapter2/end_MSE.eps Graphic file (type eps)
+<Figure/chapter2/end_MSE.eps>
+ [39]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[40]) [41]
+\openout2 = `chapters/chap03.aux'.
+
+ (./chapters/chap03.tex
+第三章
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[42
+
+
+
+
+] [43]
+File: Figure/chapter3/system_frame.png Graphic file (type bmp)
+<Figure/chapter3/system_frame.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[44] [45]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[46] [47]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[48] [49]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[50] [51]
+File: Figure/chapter3/Droid_x2_mode.png Graphic file (type bmp)
+<Figure/chapter3/Droid_x2_mode.png>
+File: Figure/chapter3/x3_mode.png Graphic file (type bmp)
+<Figure/chapter3/x3_mode.png>
+File: Figure/chapter3/g1_mode.png Graphic file (type bmp)
+<Figure/chapter3/g1_mode.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[52] [53]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[54]
+File: Figure/chapter3/x03_getdown.png Graphic file (type bmp)
+<Figure/chapter3/x03_getdown.png>
+File: Figure/chapter3/x03_getup_sim.png Graphic file (type bmp)
+<Figure/chapter3/x03_getup_sim.png>
+File: Figure/chapter3/x03_dance2_sim.png Graphic file (type bmp)
+<Figure/chapter3/x03_dance2_sim.png>
+File: Figure/chapter3/g1_dance_sim.png Graphic file (type bmp)
+<Figure/chapter3/g1_dance_sim.png>
+File: Figure/chapter3/root_vel.eps Graphic file (type eps)
+<Figure/chapter3/root_vel.eps>
+ [55]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[56] [57]
+File: Figure/chapter3/mpkpe.eps Graphic file (type eps)
+<Figure/chapter3/mpkpe.eps>
+File: Figure/chapter3/mpkve.eps Graphic file (type eps)
+<Figure/chapter3/mpkve.eps>
+File: Figure/chapter3/mpkoe.eps Graphic file (type eps)
+<Figure/chapter3/mpkoe.eps>
+File: Figure/chapter3/E_vel.eps Graphic file (type eps)
+<Figure/chapter3/E_vel.eps>
+File: Figure/chapter3/mpjpe.eps Graphic file (type eps)
+<Figure/chapter3/mpjpe.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[58] [59]
+
+LaTeX Warning: Reference `fig:ablation_learning_curve' on page 60 undefined on 
+input line 527.
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[60] [61]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[62]) [63]
+\openout2 = `chapters/chap04.aux'.
+
+ (./chapters/chap04.tex
+第四章
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[64
+
+
+
+
+] [65]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[66] [67]
+File: Figure/chapter4/system_frame.png Graphic file (type bmp)
+<Figure/chapter4/system_frame.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[68] [69]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[70] [71]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[72] [73]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[74]
+File: Figure/chapter4/walk_imitaion.png Graphic file (type bmp)
+<Figure/chapter4/walk_imitaion.png>
+File: Figure/chapter4/kick_imitaion.png Graphic file (type bmp)
+<Figure/chapter4/kick_imitaion.png>
+File: Figure/chapter4/pick_up.png Graphic file (type bmp)
+<Figure/chapter4/pick_up.png>
+ [75]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[76]
+File: Figure/chapter4/track/hip_pitch.eps Graphic file (type eps)
+<Figure/chapter4/track/hip_pitch.eps>
+File: Figure/chapter4/track/hip_roll.eps Graphic file (type eps)
+<Figure/chapter4/track/hip_roll.eps>
+File: Figure/chapter4/track/hip_yaw.eps Graphic file (type eps)
+<Figure/chapter4/track/hip_yaw.eps>
+File: Figure/chapter4/track/knee.eps Graphic file (type eps)
+<Figure/chapter4/track/knee.eps>
+File: Figure/chapter4/track/ankle_pitch.eps Graphic file (type eps)
+<Figure/chapter4/track/ankle_pitch.eps>
+File: Figure/chapter4/track/ankle_roll.eps Graphic file (type eps)
+<Figure/chapter4/track/ankle_roll.eps>
+ [77]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[78] [79]
+File: Figure/chapter4/walk_loco.png Graphic file (type bmp)
+<Figure/chapter4/walk_loco.png>
+File: Figure/chapter4/kick_box.png Graphic file (type bmp)
+<Figure/chapter4/kick_box.png>
+File: Figure/chapter4/pickup_box.png Graphic file (type bmp)
+<Figure/chapter4/pickup_box.png>
+File: Figure/chapter4/loco_pos.eps Graphic file (type eps)
+<Figure/chapter4/loco_pos.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[80] [81]
+File: Figure/chapter4/pick_up_tra.eps Graphic file (type eps)
+<Figure/chapter4/pick_up_tra.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[82] [83])
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[84]
+\openout2 = `chapters/chap05.aux'.
+
+ (./chapters/chap05.tex
+第五章
+[85
+
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[86]
+File: Figure/chapter5/hardware_system.png Graphic file (type bmp)
+<Figure/chapter5/hardware_system.png>
+ [87]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[88]
+File: Figure/chapter5/driver_top.png Graphic file (type bmp)
+<Figure/chapter5/driver_top.png>
+File: Figure/chapter5/driver_bottom.png Graphic file (type bmp)
+<Figure/chapter5/driver_bottom.png>
+ [89]
+File: Figure/chapter5/motor_control.png Graphic file (type bmp)
+<Figure/chapter5/motor_control.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[90]
+File: Figure/chapter5/tensor.png Graphic file (type bmp)
+<Figure/chapter5/tensor.png>
+ [91]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[92] [93]
+File: Figure/chapter5/left_knee_tau.eps Graphic file (type eps)
+<Figure/chapter5/left_knee_tau.eps>
+File: Figure/chapter5/right_knee_tau.eps Graphic file (type eps)
+<Figure/chapter5/right_knee_tau.eps>
+File: Figure/chapter5/left_ankle_tau.eps Graphic file (type eps)
+<Figure/chapter5/left_ankle_tau.eps>
+File: Figure/chapter5/right_ankle_tau.eps Graphic file (type eps)
+<Figure/chapter5/right_ankle_tau.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[94] [95]
+File: Figure/chapter2/Fig10.png Graphic file (type bmp)
+<Figure/chapter2/Fig10.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[96]
+File: Figure/chapter2/Fig15.png Graphic file (type bmp)
+<Figure/chapter2/Fig15.png>
+File: Figure/chapter2/Fig16.png Graphic file (type bmp)
+<Figure/chapter2/Fig16.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Figure/chapter2/Fig17.png Graphic file (type bmp)
+<Figure/chapter2/Fig17.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Figure/chapter2/Fig18.png Graphic file (type bmp)
+<Figure/chapter2/Fig18.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[97]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[98]
+File: Figure/chapter5/X02_track.png Graphic file (type bmp)
+<Figure/chapter5/X02_track.png>
+File: Figure/chapter5/X03_track.png Graphic file (type bmp)
+<Figure/chapter5/X03_track.png>
+ [99]
+File: Figure/chapter5/x03_chars/rpy.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/rpy.eps>
+File: Figure/chapter5/x03_chars/left_hip_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_hip_pitch.eps>
+File: Figure/chapter5/x03_chars/left_knee.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_knee.eps>
+File: Figure/chapter5/x03_chars/left_ankle_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_ankle_pitch.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[100]
+File: Figure/chapter5/x03_chars/left_shoulder_pitch.eps Graphic file (type eps)
+
+<Figure/chapter5/x03_chars/left_shoulder_pitch.eps>
+File: Figure/chapter5/x03_chars/left_elbow.eps Graphic file (type eps)
+<Figure/chapter5/x03_chars/left_elbow.eps>
+ [101]
+File: Figure/chapter5/x02_walk.png Graphic file (type bmp)
+<Figure/chapter5/x02_walk.png>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[102]
+File: Figure/chapter5/x02_walk/cmd.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/cmd.eps>
+File: Figure/chapter5/x02_walk/hip_yaw.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/hip_yaw.eps>
+File: Figure/chapter5/x02_walk/hip_roll.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/hip_roll.eps>
+File: Figure/chapter5/x02_walk/hip_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/hip_pitch.eps>
+File: Figure/chapter5/x02_walk/knee.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/knee.eps>
+File: Figure/chapter5/x02_walk/ankle_pitch.eps Graphic file (type eps)
+<Figure/chapter5/x02_walk/ankle_pitch.eps>
+ [103]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[104]
+File: Figure/chapter5/x02_sit/Height1.png Graphic file (type bmp)
+<Figure/chapter5/x02_sit/Height1.png>
+File: Figure/chapter5/x02_sit/Height2.png Graphic file (type bmp)
+<Figure/chapter5/x02_sit/Height2.png>
+File: Figure/chapter5/x02_sit/push.png Graphic file (type bmp)
+<Figure/chapter5/x02_sit/push.png>
+ [105]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[106]
+File: Figure/chapter5/X03_getup.png Graphic file (type bmp)
+<Figure/chapter5/X03_getup.png>
+ [107]
+File: Figure/chapter5/x03_getup/right_arm_tau.eps Graphic file (type eps)
+<Figure/chapter5/x03_getup/right_arm_tau.eps>
+File: Figure/chapter5/x03_getup/right_leg_tau.eps Graphic file (type eps)
+<Figure/chapter5/x03_getup/right_leg_tau.eps>
+File: Figure/chapter5/x03_getup/quat.eps Graphic file (type eps)
+<Figure/chapter5/x03_getup/quat.eps>
+File: Figure/chapter5/x03_getup/tau.eps Graphic file (type eps)
+<Figure/chapter5/x03_getup/tau.eps>
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[108]) [109]
 
 Package biblatex Warning: Name format 'last-first' deprecated.
 (biblatex)                Please use 'family-given' instead.
@@ -2282,11 +3023,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[22
+[110
 
 
 
-] [23]
+] [111]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2295,11 +3036,72 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[24]
+[112] [113]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[114] [115]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[116] [117]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[118]
+Underfull \hbox (badness 6284) in paragraph at lines 157--157
+[]\TU/TeXGyreTermesX(0)/m/n/12.045 Agrawal S, Shen S, Van de Panne M. Diverse m
+otion variations for
+ []
+
+[119]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[120] [121]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[122] [123]
 \tf@thm=\write7
 \openout7 = `main.thm'.
 
- [25] (./main.aux (./chapters/chap04.aux))
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[124] (./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
+(./chapters/chap03.aux) (./chapters/chap04.aux) (./chapters/chap05.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -2308,19 +3110,22 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B06E4BF6B34DDF9A308F2027B5E9001;2500.
+(rerunfilecheck)             Checksum: 074462246AE307ED8F8888EB87B6B4F2;11264.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48629 strings out of 474773
- 1048018 string characters out of 5755949
- 1950842 words of memory out of 5000000
- 69958 multiletter control sequences out of 15000+600000
- 592134 words of font info for 173 fonts, out of 8000000 for 9000
+ 50635 strings out of 474773
+ 1123021 string characters out of 5755949
+ 1955842 words of memory out of 5000000
+ 71826 multiletter control sequences out of 15000+600000
+ 638829 words of font info for 232 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 107i,17n,145p,1215b,5555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,17n,145p,1215b,5556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (33 pages).
+Output written on main.pdf (134 pages).
