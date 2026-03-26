@@ -1,18 +1,45 @@
 \begin{cabstract}
+人形机器人具有与人体相似的形态结构和丰富的自由度，被认为是面向服务、制造、特种作业及人机协作等场景的重要智能载体。然而，由于人形机器人系统普遍存在高维非线性、强关节耦合、多接触切换频繁以及执行器与传感器约束复杂等特点，使其在复杂环境下实现自然、稳定且具有泛化能力的全身运动控制仍面临诸多挑战。尤其是在高动态、长序列的复杂任务中，如何有效协调腿部支撑、躯干稳定与上肢辅助之间的关系，构建兼具运动自然性、控制稳定性与任务适应性的腿臂协同控制方法，已成为当前人形机器人研究中的关键问题。
 
+围绕上述问题，本文以“基于任务优先级的人形机器人腿臂协同控制”为主线，面向人形机器人全身动作生成、运动跟踪、多技能组合以及实物部署等关键环节，系统开展了从动作重定向、强化学习控制到技能嵌入分层控制和实物验证的研究工作，形成了一套较为完整的人形机器人全身控制方法框架。
+
+（1）针对人体动作难以直接迁移到机器人平台的问题，本文提出融合关节空间构型约束与笛卡尔空间任务优化的全身动作重定向方法。通过建立人体与机器人之间的几何对应关系，对上下肢关键关节进行建模，并在满足关节约束的前提下引入末端位置优化机制，在构型一致性与任务精度之间取得平衡。仿真结果表明，该方法能够保持人体动作整体构型特征，使末端位置误差控制在厘米级范围内，其中双手误差峰值约2.5\,cm，双脚误差为1.0--1.8\,cm，各末端均方误差为1.5--2.5\,cm$^2$，为后续学习型控制器提供了稳定、合理的参考动作先验。
+
+（2）针对重定向动作仅具有运动学可行性而缺乏动力学可执行性的问题，本文构建了面向真实双足人形机器人的全身强化学习控制框架。该框架以重定向得到的全身参考动作为运动先验，通过统一建模状态空间、动作空间与奖励函数，使控制策略能够在满足物理约束与接触一致性条件下学习动力学一致的全身运动行为。针对大规模动作训练中样本难度分布不均的问题，本文进一步设计了一种自适应动作采样与训练机制，以提高复杂高动态动作的学习效率与策略泛化能力。仿真结果表明，所提出方法能够在多类参考动作上实现稳定跟踪。在关键跟踪性能方面，该方法相较于现有方法均取得最优表现，其中关键刚体位置误差降低至7.5\,cm，较次优方法下降约40\%，同时在速度与姿态误差等指标上亦表现出一致优势。在简单全身动作任务（如行走）中，策略成功率最高达到99.0\%，并在多类复杂动作上稳定超过89\%。此外，所提出的难度采样机制显著提升了训练效率，在部分复杂动作中实现从无法收敛到稳定收敛，并使训练迭代次数降低约70\%，从而有效缓解了多动作训练中的样本难度分布不均问题。
+
+（3）针对单一动作跟踪策略难以满足复杂任务中多技能组合与灵活切换需求的问题，本文提出了一种基于技能嵌入的分层全身控制方法。在底层控制层面，通过专家策略训练与策略蒸馏相结合的方式，构建了统一的通用全身动作跟踪控制策略；在高层控制层面，引入基于自回归条件变分自编码器的运动生成模型，学习复杂全身动作的低维潜空间表示，并由高层策略在潜空间中进行决策，从而生成具有连续性和可组合性的目标动作序列。实验结果表明，所提出方法能够实现多种运动技能之间的自然切换与灵活组合。在目标引导行走、坐下--起身及物体搬运等任务中均取得良好性能，其中位置移动任务成功率达到90\%，物体搬运成功率达到83\%。相较于基线方法，整体任务成功率提升约10\%--17\%，同时目标到达误差由8.45\,cm降低至4.18\,cm。在运动质量方面，该方法显著提升了全身运动的平滑性与接触稳定性，其中动作平滑度降低至0.51，足部滑动误差控制在1.46\,cm以内，关节跟踪误差降低至0.16\,rad，均优于各对比方法。此外，机器人能够在多目标场景中完成连续位置移动，并在操作任务中实现双手末端的协同运动，从实验层面进一步验证了该方法在复杂任务中的泛化能力与实用性。
+
+（4）为验证所提出方法在真实系统中的可行性与工程应用价值，本文构建了完整的人形机器人实验平台，并开展了实物实验。针对绳驱耦合系统存在的耦合与非线性特性，本文建立了驱动建模与约束处理机制，以减小仿真与真实系统之间的差异。所提出的约束建模相较于未引入驱动约束的情况，复杂动作成功率提升约25\%，起身任务成功率提升超过60\%，显著提高了系统在复杂动力学条件下的可执行性与稳定性。在此基础上，分别对全身动作重定向、基于强化学习的全身动作跟踪以及基于技能嵌入的全身运动控制方法进行了实物验证。实验结果表明，所提出方法能够在两台自研人形机器人平台上稳定完成目标行走、舞蹈、坐下--起身和跌倒恢复等多类复杂任务，从实物实验角度验证了所构建全身控制框架在真实环境中的有效性、稳定性与实用性。
+
+综上，本文围绕人形机器人腿臂协同控制问题，系统研究了全身动作重定向、强化学习全身动作跟踪、技能嵌入分层控制以及实物系统部署方法，形成了一条从“人体动作获取与映射”到“动力学一致控制”再到“多技能组合与实物验证”的完整技术路线。本文的研究工作为人形机器人在复杂环境中的自然全身运动控制与多任务执行提供了方法支撑，也为后续面向具身智能的人形机器人任务优先级控制研究奠定了基础。
+
+\ckeywords{人形机器人 \quad 腿臂协同控制 \quad 动作重定向 \quad 强化学习 \quad 技能嵌入}
 
 \end{cabstract}
 \addtocontents{toc}{{\protect\noindent\protect\xiaosi 中文摘要\protect\par}}  %% 目的是在目录中出现中文摘要
 % 如果习惯关键字跟在摘要文字后面，可以用直接命令来设置，如下：
 
 
-\ckeywords{双足机器人 \quad 控制策略}
+
 
 \hyphenpenalty=5000
 \exhyphenpenalty=5000
 \begin{eabstract}
 	
+	Humanoid robots, which possess human-like morphology and high degrees of freedom, are regarded as promising platforms for applications in service, manufacturing, special operations, and human–robot interaction. However, due to the inherent characteristics of humanoid systems, including high-dimensional nonlinear dynamics, strong joint coupling, frequent contact switching, and complex actuator and sensor constraints, achieving natural, stable, and generalizable whole-body motion control in complex environments remains a significant challenge. In particular, for high-dynamic and long-horizon tasks, how to effectively coordinate lower-limb support, torso stabilization, and upper-limb assistance to realize natural, robust, and task-adaptive leg–arm coordination has become a key research problem.
+	
+	To address these challenges, this dissertation focuses on \textit{task-priority-based leg–arm coordination control for humanoid robots}. It systematically investigates whole-body motion generation, motion tracking, multi-skill composition, and real-world deployment, and develops a unified framework that integrates motion retargeting, reinforcement learning-based control, skill embedding, and hardware validation.
+	
+	(1) To tackle the difficulty of directly transferring human motions to humanoid robots, a whole-body motion retargeting method is proposed, which combines joint-space configuration constraints with Cartesian-space task optimization. By establishing geometric correspondences between human and robot kinematics, the proposed method models key upper- and lower-limb joints and introduces end-effector position optimization under joint constraints, achieving a balance between configuration consistency and task accuracy. Simulation results show that the method preserves the overall structure of human motions while maintaining centimeter-level accuracy of end-effector positions. Specifically, the peak error of hand end-effectors is approximately 2.5\,cm, the foot error ranges from 1.0 to 1.8\,cm, and the mean squared error of all end-effectors is within 1.5--2.5\,cm$^2$, providing reliable reference motions for subsequent learning-based controllers.
+	
+	(2) To address the limitation that retargeted motions are only kinematically feasible but not dynamically executable, a reinforcement learning-based whole-body control framework is developed. The retargeted motions are used as motion priors, and the policy is trained by jointly modeling the state space, action space, and reward functions, enabling the learning of dynamically consistent whole-body behaviors under physical constraints and contact interactions. To mitigate the imbalance of motion difficulty in large-scale datasets, an adaptive motion sampling strategy is proposed to improve learning efficiency and generalization. Experimental results demonstrate that the proposed method achieves stable tracking across diverse motion clips. The key body position error is reduced to 7.5\,cm, achieving approximately 40\% improvement over the next best method. The success rate reaches up to 99.0\% for simple motions (e.g., walking) and remains above 89\% for more complex motions. Furthermore, the adaptive sampling strategy significantly improves training efficiency, reducing the number of training iterations by approximately 70\% and enabling successful learning of previously unlearnable motions.
+	
+	(3) To overcome the limitation of single-policy tracking in handling multiple skills, a hierarchical whole-body control framework based on skill embedding is proposed. At the low level, a unified motion tracking policy is constructed via expert policy training and policy distillation. At the high level, a conditional variational autoencoder is employed to learn a low-dimensional latent space of complex motions, enabling the generation of continuous and composable motion sequences through latent variable control. Experimental results show that the proposed method enables smooth transitions and flexible combinations of multiple skills. For tasks such as goal-directed locomotion, sit-to-stand, and object transportation, the success rates reach 90\% and 83\% for locomotion and manipulation tasks, respectively. Compared to baseline methods, the overall success rate improves by 10\%--17\%, while the target reaching error decreases from 8.45\,cm to 4.18\,cm. In terms of motion quality, the proposed method achieves improved smoothness and contact stability, with motion smoothness reduced to 0.51, foot sliding error limited to 1.46\,cm, and joint tracking error reduced to 0.16\,rad. Moreover, the robot can perform continuous goal-directed locomotion and coordinated dual-arm manipulation, demonstrating strong generalization capability in complex tasks.
+	
+	(4) To validate the effectiveness and practical applicability of the proposed methods in real-world systems, a humanoid robot platform is developed and extensive hardware experiments are conducted. Considering the coupling and nonlinear characteristics of tendon-driven systems, an actuator-aware modeling and constraint handling mechanism is introduced to reduce the sim-to-real gap. Compared to the case without actuator constraints, the success rate of complex motions improves by approximately 25\%, and the success rate of the sit-to-stand task increases by more than 60\%. On this basis, the proposed methods are validated through real-world experiments, where the robot successfully performs multiple complex tasks, including goal-directed locomotion, dancing, sit-to-stand, and fall recovery. These results demonstrate the effectiveness, robustness, and practicality of the proposed whole-body control framework in real environments.
+	
+	In summary, this dissertation systematically investigates whole-body motion retargeting, reinforcement learning-based motion tracking, skill embedding for hierarchical control, and real-world deployment for humanoid robots. It establishes a complete pipeline from human motion acquisition and mapping to dynamically consistent control and multi-skill execution, providing a solid foundation for whole-body control and task-priority-based coordination in humanoid robotics, and paving the way for future research in embodied intelligence.
 	
 \end{eabstract}
 \addtocontents{toc}{{\protect\noindent\protect \textrm{ABSTRACT}\protect\par}}
-\ekeywords{\textbf{Bipedal robot, Control Strategy}}
+\ekeywords{\textbf{Humanoid robots, Leg--arm coordination, Motion retargeting, Reinforcement learning, Skill embedding}}
