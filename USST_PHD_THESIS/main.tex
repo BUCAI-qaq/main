@@ -57,7 +57,7 @@
 \usepackage{changepage}
 \usepackage{setspace}   % 控制行距
 \usepackage{graphicx}
-%\setkeys{Gin}{draft}
+\setkeys{Gin}{draft}
 
 % \usepackage[style=thuthesis]{biblatex} % 样式通常在加载宏包时指定
 
@@ -133,16 +133,25 @@
 
 %%% 正文部分
 \mainmatter
-%    \include{chapters/chap01}
-%    \include{chapters/chap02}
+    \include{chapters/chap01}
+    \include{chapters/chap02}
     \include{chapters/chap03}
-%    \include{chapters/chap04}
-%    \include{chapters/chap05}
-%     \include{chapters/chap06}
-    % \include{chapters/summary} 
-%\addcontentsline{toc}{chapter}{符号表}
+    \include{chapters/chap04}
+    \include{chapters/chap05}
+     \include{chapters/chap06}
+    % \include{chapters/summary}
+     
+% ===== 符号表 =====
+\chapter*{符号表}
+\addcontentsline{toc}{chapter}{符号表}
 
-%\include{data/denotation}
+\input{data/denotation}
+
+% ===== 中英文对照表 =====
+\chapter*{中英文对照表}
+\addcontentsline{toc}{chapter}{中英文对照表}
+%\markboth{中英文对照表}{中英文对照表}
+\input{data/abbreviation}
 
 
 %\backmatter
