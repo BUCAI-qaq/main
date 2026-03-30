@@ -12,13 +12,14 @@
 \contentsline {paragraph}{1）行为克隆}{17}{paragraph*.15}%
 \contentsline {paragraph}{2）对抗式模仿学习}{17}{paragraph*.16}%
 \contentsline {paragraph}{3）生成式运动先验}{17}{paragraph*.17}%
+\contentsline {subsection}{\numberline {1.3.4}方法对比与分析}{18}{subsection.1.3.4}%
 \contentsline {section}{\numberline {1.4}关键问题}{19}{section.1.4}%
-\contentsline {section}{\numberline {1.5}研究内容及章节安排}{20}{section.1.5}%
+\contentsline {section}{\numberline {1.5}研究内容及章节安排}{21}{section.1.5}%
 \contentsline {chapter}{\numberline {第二章}人形机器人全身动作重定向}{22}{chapter.2}%
 \contentsline {section}{\numberline {2.1}引言}{22}{section.2.1}%
 \contentsline {section}{\numberline {2.2}预备知识}{23}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}空间位姿描述与坐标变换}{24}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}二次规划与约束优化}{25}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}空间位姿描述与坐标变换}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}二次规划与约束}{25}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}全身动作重定向方法}{26}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}全身动作重定向系统框架}{26}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}人体运动几何建模}{28}{subsection.2.3.2}%
@@ -28,76 +29,76 @@
 \contentsline {paragraph}{人体膝关节几何建模}{32}{paragraph*.30}%
 \contentsline {subsection}{\numberline {2.3.3}人体运动缩放映射}{33}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}基于几何约束的全身重定向方法}{33}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}仿真验证与分析}{35}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}机器人仿真模型}{35}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.4}仿真验证与分析}{34}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}机器人仿真模型}{34}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}全身动作重定向仿真验证}{35}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}关节空间运动轨迹分析}{36}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.3}关节空间运动轨迹分析}{37}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}任务空间末端精度分析}{38}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}重定向方法对比}{40}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}本章小节}{41}{section.2.5}%
-\contentsline {chapter}{\numberline {第三章}基于强化学习的人形机器人全身动作跟踪控制}{43}{chapter.3}%
-\contentsline {section}{\numberline {3.1}引言}{43}{section.3.1}%
-\contentsline {section}{\numberline {3.2}基于强化学习的全身动作跟踪方法}{45}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}全身动作跟踪系统框架}{45}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}全身动作跟踪强化学习建模}{46}{subsection.3.2.2}%
-\contentsline {paragraph}{(1) 策略表示}{47}{paragraph*.38}%
-\contentsline {paragraph}{(2) 观测设计}{48}{paragraph*.39}%
-\contentsline {paragraph}{(3) 运动跟踪目标}{48}{paragraph*.40}%
-\contentsline {paragraph}{(4) 奖励设计}{49}{paragraph*.41}%
-\contentsline {subsection}{\numberline {3.2.3}全身动作作跟踪策略训练}{50}{subsection.3.2.3}%
+\contentsline {section}{\numberline {2.5}本章小结}{40}{section.2.5}%
+\contentsline {chapter}{\numberline {第三章}基于强化学习的人形机器人全身动作跟踪控制}{42}{chapter.3}%
+\contentsline {section}{\numberline {3.1}引言}{42}{section.3.1}%
+\contentsline {section}{\numberline {3.2}基于强化学习的全身动作跟踪方法}{44}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}全身动作跟踪系统框架}{44}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}全身动作跟踪的强化学习建模}{45}{subsection.3.2.2}%
+\contentsline {paragraph}{(1) 策略表示}{46}{paragraph*.38}%
+\contentsline {paragraph}{(2) 观测设计}{47}{paragraph*.39}%
+\contentsline {paragraph}{(3) 运动跟踪目标}{47}{paragraph*.40}%
+\contentsline {paragraph}{(4) 奖励设计}{48}{paragraph*.41}%
+\contentsline {subsection}{\numberline {3.2.3}全身动作跟踪的策略训练}{49}{subsection.3.2.3}%
 \contentsline {paragraph}{(1) 初始状态分布}{50}{paragraph*.42}%
-\contentsline {paragraph}{(2) 难度采样}{51}{paragraph*.43}%
-\contentsline {paragraph}{(3) 提前终止机制}{52}{paragraph*.44}%
-\contentsline {section}{\numberline {3.3}仿真验证与分析}{53}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}实验与评估体系设计}{53}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}全身动作跟踪性能分析}{55}{subsection.3.3.2}%
+\contentsline {paragraph}{(2) 难度采样}{50}{paragraph*.43}%
+\contentsline {paragraph}{(3) 提前终止机制}{51}{paragraph*.44}%
+\contentsline {section}{\numberline {3.3}仿真验证与分析}{52}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}实验与评估体系设计}{52}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}全身动作跟踪性能分析}{54}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}方法对比与性能分析}{59}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}关键机制分析}{60}{subsection.3.3.4}%
-\contentsline {paragraph}{参考状态初始化与提前终止机制}{61}{paragraph*.50}%
+\contentsline {paragraph}{参考状态初始化与提前终止机制}{60}{paragraph*.50}%
 \contentsline {paragraph}{难度采样}{62}{paragraph*.53}%
 \contentsline {section}{\numberline {3.4}本章小结}{63}{section.3.4}%
-\contentsline {chapter}{\numberline {第四章}基于技能嵌入的人形机器人分层全身控制}{65}{chapter.4}%
-\contentsline {section}{\numberline {4.1}引言}{65}{section.4.1}%
-\contentsline {section}{\numberline {4.2}基于技能嵌入的分层全身控制方法}{69}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}分层全身控制整体框架}{69}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {第四章}基于技能嵌入的人形机器人分层全身控制}{64}{chapter.4}%
+\contentsline {section}{\numberline {4.1}引言}{64}{section.4.1}%
+\contentsline {section}{\numberline {4.2}基于技能嵌入的分层全身控制方法}{68}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}分层全身控制整体框架}{68}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}底层通用全身跟踪策略}{69}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}基于 MVAE 的技能嵌入}{71}{subsection.4.2.3}%
-\contentsline {paragraph}{编码器网络}{72}{paragraph*.56}%
+\contentsline {subsection}{\numberline {4.2.3}基于 MVAE 的技能嵌入}{70}{subsection.4.2.3}%
+\contentsline {paragraph}{编码器网络}{71}{paragraph*.56}%
 \contentsline {paragraph}{解码器网络}{72}{paragraph*.57}%
-\contentsline {subsection}{\numberline {4.2.4}高层运动规划方法}{73}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}鲁棒恢复策略}{74}{subsection.4.2.5}%
-\contentsline {paragraph}{根姿态随机化}{74}{paragraph*.58}%
-\contentsline {paragraph}{关节角随机化}{75}{paragraph*.59}%
-\contentsline {section}{\numberline {4.3}仿真验证与分析}{75}{section.4.3}%
+\contentsline {subsection}{\numberline {4.2.4}高层运动规划方法}{72}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}鲁棒恢复策略}{73}{subsection.4.2.5}%
+\contentsline {paragraph}{根姿态随机化}{73}{paragraph*.58}%
+\contentsline {paragraph}{关节角随机化}{74}{paragraph*.59}%
+\contentsline {section}{\numberline {4.3}仿真验证与分析}{74}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}实验设置}{75}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}底层通用跟踪策略验证}{76}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}基于MVAE的技能嵌入验证}{78}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}分层全身控制方法验证}{80}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.3}基于MVAE的技能嵌入验证}{77}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}分层全身控制方法验证}{79}{subsection.4.3.4}%
 \contentsline {paragraph}{目标位置移动任务}{80}{paragraph*.63}%
 \contentsline {paragraph}{末端目标到达任务}{80}{paragraph*.64}%
-\contentsline {paragraph}{物体搬运任务}{81}{paragraph*.65}%
+\contentsline {paragraph}{物体搬运任务}{80}{paragraph*.65}%
 \contentsline {section}{\numberline {4.4}本章小结}{84}{section.4.4}%
-\contentsline {chapter}{\numberline {第五章}实物实验与结果分析}{86}{chapter.5}%
-\contentsline {section}{\numberline {5.1}引言}{86}{section.5.1}%
-\contentsline {section}{\numberline {5.2}实验平台与系统实现}{86}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}机器人平台概述}{86}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}硬件系统}{87}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}驱动系统设计}{89}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}软件架构与部署流程}{91}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}绳驱耦合驱动建模与约束}{92}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}绳驱耦合驱动建模}{92}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}绳驱耦合约束}{95}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}全身动作重定向实物验证}{98}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}全身重定向验证}{98}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}任务操作验证}{99}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}基于强化学习的全身动作跟踪控制实物验证}{102}{section.5.5}%
-\contentsline {section}{\numberline {5.6}基于技能嵌入的分层全身控制实物验证}{105}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}目标位置行走实物实验}{105}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}坐下--起身实物实验}{107}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}跌倒恢复实物实验}{109}{subsection.5.6.3}%
-\contentsline {section}{\numberline {5.7}本章小结}{111}{section.5.7}%
-\contentsline {chapter}{\numberline {第六章}全文总结与展望}{113}{chapter.6}%
-\contentsline {section}{\numberline {6.1}研究成果总结}{113}{section.6.1}%
-\contentsline {section}{\numberline {6.2}未来研究展望}{114}{section.6.2}%
-\contentsline {chapter}{符号表}{116}{chapter*.95}%
-\contentsline {chapter}{中英文对照表}{117}{chapter*.96}%
+\contentsline {chapter}{\numberline {第五章}实物实验与结果分析}{85}{chapter.5}%
+\contentsline {section}{\numberline {5.1}引言}{85}{section.5.1}%
+\contentsline {section}{\numberline {5.2}实验平台与系统实现}{85}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}机器人平台概述}{85}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}硬件系统}{86}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}驱动系统设计}{88}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}软件架构与部署流程}{90}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}绳驱耦合驱动建模与约束}{91}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}绳驱耦合驱动建模}{91}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}绳驱耦合约束}{94}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}全身动作重定向实物验证}{97}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}全身重定向验证}{97}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}任务操作验证}{98}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}基于强化学习的全身动作跟踪控制实物验证}{101}{section.5.5}%
+\contentsline {section}{\numberline {5.6}基于技能嵌入的分层全身控制实物验证}{104}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}目标位置行走实物实验}{104}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}坐下--起身实物实验}{106}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}跌倒恢复实物实验}{108}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}本章小结}{110}{section.5.7}%
+\contentsline {chapter}{\numberline {第六章}全文总结与展望}{112}{chapter.6}%
+\contentsline {section}{\numberline {6.1}研究成果总结}{112}{section.6.1}%
+\contentsline {section}{\numberline {6.2}未来研究展望}{113}{section.6.2}%
+\contentsline {chapter}{符号表}{115}{chapter*.95}%
+\contentsline {chapter}{中英文对照表}{116}{chapter*.96}%
