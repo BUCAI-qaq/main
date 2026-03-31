@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  30 MAR 2026 22:14
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  31 MAR 2026 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2562,11 +2562,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[62]) [63]
-\openout2 = `chapters/chap04.aux'.
-
- (./chapters/chap04.tex
-第四章
+[62] [63])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2575,12 +2571,17 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[64
+[64]
+\openout2 = `chapters/chap04.aux'.
+
+ (./chapters/chap04.tex
+第四章
+[65
 
 
 
 
-] [65]
+]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2661,7 +2662,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[82] [83])
+[82] [83]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2670,17 +2671,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[84]
+[84]) [85]
 \openout2 = `chapters/chap05.aux'.
 
  (./chapters/chap05.tex
 第五章
-[85
-
-
-
-
-]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2689,7 +2684,12 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[86] [87]
+[86
+
+
+
+
+] [87]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2743,14 +2743,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[98]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[99]
+[98] [99]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2759,7 +2752,14 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[100] [101]
+[100]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[101]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2804,7 +2804,16 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[110]) [111]
+[110] [111]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[112]) [113]
 \openout2 = `chapters/chap06.aux'.
 
  (./chapters/chap06.tex
@@ -2817,12 +2826,12 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[112
+[114
 
 
 
 
-] [113])
+] [115])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2831,7 +2840,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[114] (./data/denotation.tex)
+[116] (./data/denotation.tex)
 Overfull \hbox (2.0075pt too wide) in paragraph at lines 1--149
  []
  []
@@ -2841,7 +2850,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--149
 
  []
 
-[115
+[117
 
 
 
@@ -2863,7 +2872,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[116
+[118
 
 ]
 
@@ -2871,18 +2880,9 @@ Package biblatex Warning: Name format 'last-first' deprecated.
 (biblatex)                Please use 'family-given' instead.
 (biblatex)                Using 'family-given' now.
 
-[117
+[119
 
 ]
-
-Package fancyhdr Warning: \headheight is too small (14.22636pt): 
-(fancyhdr)                Make it at least 20.07498pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.07498pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
-
-[118] [119]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2901,11 +2901,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [122] [123]
-Underfull \hbox (badness 6284) in paragraph at lines 166--166
-[]\TU/TeXGyreTermesX(0)/m/n/12.045 Agrawal S, Shen S, Van de Panne M. Diverse m
-otion variations for
- []
-
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2915,6 +2910,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [124] [125]
+Underfull \hbox (badness 6284) in paragraph at lines 166--166
+[]\TU/TeXGyreTermesX(0)/m/n/12.045 Agrawal S, Shen S, Van de Panne M. Diverse m
+otion variations for
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2932,11 +2932,20 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[128]
+[128] [129]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[130]
 \tf@thm=\write7
 \openout7 = `main.thm'.
 
- [129] (./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
+ [131] (./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
 (./chapters/chap03.aux) (./chapters/chap04.aux) (./chapters/chap05.aux)
 (./chapters/chap06.aux))
  ***********
@@ -2954,12 +2963,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50543 strings out of 474773
- 1118722 string characters out of 5755949
- 1955842 words of memory out of 5000000
- 71705 multiletter control sequences out of 15000+600000
- 638893 words of font info for 240 fonts, out of 8000000 for 9000
+ 50578 strings out of 474773
+ 1120827 string characters out of 5755949
+ 1951842 words of memory out of 5000000
+ 71737 multiletter control sequences out of 15000+600000
+ 638909 words of font info for 242 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  107i,17n,145p,1402b,5553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (142 pages).
+Output written on main.pdf (144 pages).
