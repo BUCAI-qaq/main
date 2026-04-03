@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  31 MAR 2026 17:48
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.23)  3 APR 2026 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1798,7 +1798,7 @@ LaTeX Warning: Unused global option(s):
 
 (./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
 (./chapters/chap03.aux) (./chapters/chap04.aux) (./chapters/chap05.aux)
-(./chapters/chap06.aux))
+(./chapters/resume.aux) (./chapters/ack_eng.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 109.
@@ -1934,22 +1934,7 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Kim2019
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Paredes2023
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./main.bbl)
 Package biblatex Info: Reference section=0 on input line 109.
 Package biblatex Info: Reference segment=0 on input line 109.
 
@@ -2278,12 +2263,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 [8] [9]
 
-LaTeX Warning: Citation 'Kim2019' on page 10 undefined on input line 274.
-
-
-LaTeX Warning: Citation 'Paredes2023' on page 10 undefined on input line 274.
-
-
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
 (fancyhdr)                \setlength{\headheight}{20.07498pt}.
@@ -2293,10 +2272,15 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 [10]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-299.
+301.
  (d:/App/texlive/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [11]
+Underfull \hbox (badness 2245) in paragraph at lines 318--319
+\TU/SimSun(0)/b/n/12.045 基 于 强 化 学 习 的 腿 臂 协 同 控 制[] \TU/SimSun(0)/m/n/12.045 随
+ 着 大 规 模 并 行 仿 真 技 术 的 发 展，|  强 化 学
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2334,15 +2318,15 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 [18]
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 45
-3.
+5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--463
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
 []|\TU/SimSun(0)/m/n/11.04124 分 层 \TU/TeXGyreTermesX(0)/m/n/11.04124 QP \TU/Sim
 Sun(0)/m/n/11.04124 方 法
  []
 
 
-Overfull \hbox (47.99997pt too wide) in paragraph at lines 453--480
+Overfull \hbox (47.99997pt too wide) in paragraph at lines 455--482
  [][] 
  []
 
@@ -2355,11 +2339,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[20]) [21]
-\openout2 = `chapters/chap02.aux'.
-
- (./chapters/chap02.tex
-第二章
+[20] [21])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2368,12 +2348,17 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[22
+[22]
+\openout2 = `chapters/chap02.aux'.
+
+ (./chapters/chap02.tex
+第二章
+[23
 
 
 
 
-] [23]
+]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2454,11 +2439,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[40]) [41]
-\openout2 = `chapters/chap03.aux'.
-
- (./chapters/chap03.tex
-第三章
+[40] [41])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2467,12 +2448,17 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[42
+[42]
+\openout2 = `chapters/chap03.aux'.
+
+ (./chapters/chap03.tex
+第三章
+[43
 
 
 
 
-] [43]
+]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2562,7 +2548,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[62] [63])
+[62] [63]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2571,17 +2557,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[64]
+[64]) [65]
 \openout2 = `chapters/chap04.aux'.
 
  (./chapters/chap04.tex
 第四章
-[65
-
-
-
-
-]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2590,7 +2570,12 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[66] [67]
+[66
+
+
+
+
+] [67]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2671,11 +2656,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[84]) [85]
-\openout2 = `chapters/chap05.aux'.
-
- (./chapters/chap05.tex
-第五章
+[84] [85])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2684,12 +2665,17 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[86
+[86]
+\openout2 = `chapters/chap05.aux'.
+
+ (./chapters/chap05.tex
+第五章
+[87
 
 
 
 
-] [87]
+]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2752,14 +2738,19 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[100]
+[100] [101]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[101]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2813,11 +2804,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[112]) [113]
-\openout2 = `chapters/chap06.aux'.
-
- (./chapters/chap06.tex
-第六章
+[112] [113]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2826,21 +2813,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[114
-
-
-
-
-] [115])
-
-Package fancyhdr Warning: \headheight is too small (14.22636pt): 
-(fancyhdr)                Make it at least 20.07498pt, for example:
-(fancyhdr)                \setlength{\headheight}{20.07498pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
-
-[116] (./data/denotation.tex)
+[114]) [115] (./data/denotation.tex)
 Overfull \hbox (2.0075pt too wide) in paragraph at lines 1--149
  []
  []
@@ -2850,7 +2823,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--149
 
  []
 
-[117
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[116
 
 
 
@@ -2864,6 +2845,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--155
 
  []
 
+[117
+
+]
+
+Package biblatex Warning: Name format 'last-first' deprecated.
+(biblatex)                Please use 'family-given' instead.
+(biblatex)                Using 'family-given' now.
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2874,15 +2863,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 [118
 
-]
-
-Package biblatex Warning: Name format 'last-first' deprecated.
-(biblatex)                Please use 'family-given' instead.
-(biblatex)                Using 'family-given' now.
-
-[119
-
-]
+] [119]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2910,11 +2891,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [124] [125]
-Underfull \hbox (badness 6284) in paragraph at lines 166--166
-[]\TU/TeXGyreTermesX(0)/m/n/12.045 Agrawal S, Shen S, Van de Panne M. Diverse m
-otion variations for
- []
-
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2924,6 +2900,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
 [126] [127]
+Underfull \hbox (badness 6284) in paragraph at lines 166--166
+[]\TU/TeXGyreTermesX(0)/m/n/12.045 Agrawal S, Shen S, Van de Panne M. Diverse m
+otion variations for
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 20.07498pt, for example:
@@ -2941,13 +2922,77 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
 
-[130]
+[130] [131]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[132] [133]
+\openout2 = `chapters/resume.aux'.
+
+ (./chapters/resume.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
+[]\TU/SimSun(0)/m/n/12.045 梁 国 祥\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0
+)/b/n/12.045 姜 喜 胜\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0)/m/n/12.045 吴
+ 剑 雄\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0)/m/n/12.045 等\TU/TeXGyreTer
+mesX(0)/m/n/12.045 . \TU/SimSun(0)/m/n/12.045 基 于 相 对 雅 可 比 法 的 双 臂 协 同
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
+\TU/SimSun(0)/m/n/12.045 避 障 运 动 控 制 \TU/TeXGyreTermesX(0)/m/n/12.045 [J]. \TU/
+SimSun(0)/m/n/12.045 包 装 工 程\TU/TeXGyreTermesX(0)/m/n/12.045 , 2024, 45(19): 24
+7-255[2026-04-01].
+ []
+
+
+Underfull \hbox (badness 7326) in paragraph at lines 29--33
+[]\TU/SimSun(0)/m/n/12.045 李 思 敏\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0
+)/b/n/12.045 姜 喜 胜\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0)/m/n/12.045 吉
+ 祥\TU/TeXGyreTermesX(0)/m/n/12.045 , \TU/SimSun(0)/m/n/12.045 等\TU/TeXGyreTerme
+sX(0)/m/n/12.045 . \TU/SimSun(0)/m/n/12.045 基 于 分 层 二 次 规 划 的 双 臂 机 器 人 动
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 29--33
+\TU/SimSun(0)/m/n/12.045 作 模 仿 研 究 \TU/TeXGyreTermesX(0)/m/n/12.045 [J]. \TU/Si
+mSun(0)/m/n/12.045 智 能 计 算 机 与 应 用\TU/TeXGyreTermesX(0)/m/n/12.045 , 2024, 14(1
+2): 1-9[2026-04-01].
+ []
+
+)
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 20.07498pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.07498pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-5.84862pt}.
+
+[134
+
+
+
+]
+\openout2 = `chapters/ack_eng.aux'.
+
+ (./chapters/ack_eng.tex) [135
+
+
+
+
+
+]
 \tf@thm=\write7
 \openout7 = `main.thm'.
 
- [131] (./main.aux (./chapters/chap01.aux) (./chapters/chap02.aux)
-(./chapters/chap03.aux) (./chapters/chap04.aux) (./chapters/chap05.aux)
-(./chapters/chap06.aux))
+ (./main.aux (./chapters/chap01.aux)
+(./chapters/chap02.aux) (./chapters/chap03.aux) (./chapters/chap04.aux)
+(./chapters/chap05.aux) (./chapters/resume.aux) (./chapters/ack_eng.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -2957,18 +3002,18 @@ L3 programming layer <2022/08/05>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 371C0E74D02DFB085AC747AD2E81AE8F;12158.
+(rerunfilecheck)             Checksum: 2A41538E728330B15240CA5065ABF3C7;12042.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50578 strings out of 474773
- 1120827 string characters out of 5755949
- 1951842 words of memory out of 5000000
- 71737 multiletter control sequences out of 15000+600000
- 638909 words of font info for 242 fonts, out of 8000000 for 9000
+ 50782 strings out of 474773
+ 1129219 string characters out of 5755949
+ 1995828 words of memory out of 5000000
+ 71936 multiletter control sequences out of 15000+600000
+ 638901 words of font info for 241 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 107i,17n,145p,1402b,5553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,17n,145p,1402b,5555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (144 pages).
+Output written on main.pdf (148 pages).

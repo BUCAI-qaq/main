@@ -1,14 +1,15 @@
 \chapter{基于强化学习的人形机器人全身动作跟踪控制}
 \section{引言}
-大规模动作捕捉数据集涵盖了从风格化行走到复杂全身行为在内的多样化、高动态运动模式。若能够将这些人类运动有效迁移至类人机器人，它们将形成一套可复用的运动基元库，从而为多种下游任务提供统一且具有良好泛化能力的控制基础。第二章通过基于几何约束的全身重定向方法，已将人类全身动作映射至机器人关节空间，获得了一系列运动学层面的参考轨迹。然而，运动学一致性并不等同于动力学可执行性，如何在真实双足机器人平台上稳定、鲁棒地实现这些高动态全身动作，是本章需要解决的核心问题。
+大规模动作捕捉数据集涵盖了从风格化行走到复杂全身行为在内的多样化、高动态运动模式\cite{mahmood2019amass}。若能够将这些人类运动有效迁移至类人机器人，它们将形成一套可复用的运动基元库，从而为多种下游任务提供统一且具有良好泛化能力的控制基础\cite{starke2019neural}。第二章通过基于几何约束的全身重定向方法，已将人类全身动作映射至机器人关节空间，获得了一系列运动学层面的参考轨迹。然而，运动学一致性并不等同于动力学可执行性，如何在真实双足机器人平台上稳定、鲁棒地实现这些高动态全身动作，是本章需要解决的核心问题。
 
-类人机器人由于其与人体高度相似的结构和丰富的自由度，天然适合执行复杂全身运动并参与人机物理交互。然而，这种结构相似性也使其控制问题远比传统机器人更加复杂：高维状态空间、强关节耦合、不稳定的接触动力学以及执行器与传感器约束共同构成了严峻挑战，从而显著制约了这些人类动作在真实机器人上的直接落地。
+类人机器人由于其与人体高度相似的结构和丰富的自由度，天然适合执行复杂全身运动并参与人机物理交互。然而，这种结构相似性也使其控制问题远比传统机器人更加复杂：高维状态空间、强关节耦合、不稳定的接触动力学以及执行器与传感器约束共同构成了严峻挑战，从而显著制约了这些人类动作在真实机器人上的直接落地\cite{orin2013centroidal,escande2014hierarchical}。
 
-提升学习型控制器性能的一条自然途径是引入动作捕捉数据或人工设计的动画数据作为运动先验。现有研究通常采用一种分层控制结构，即在运动学动画系统之上叠加一个基于物理的跟踪控制器，通过将数据驱动的上层运动与底层动力学控制相结合，实现具有一定鲁棒性的角色运动合成~\cite{lee2010data}。然而，该类方法存在显著局限性：一方面，运动学层必须生成物理上可被精确跟踪的参考轨迹，否则会导致控制失败或运动质量下降；另一方面，所得的物理控制器在偏离原始参考以实现自恢复或任务导向行为时缺乏足够的灵活性。此外，这类系统在工程实现上通常较为复杂，难以扩展到大规模、多样化动作集。
+提升学习型控制器性能的一条自然途径是引入动作捕捉数据或人工设计的动画数据作为运动先验\cite{peng2018deepmimic,starke2019neural}。现有研究通常采用一种分层控制结构，即在运动学动画系统之上叠加一个基于物理的跟踪控制器，通过将数据驱动的上层运动与底层动力学控制相结合，实现具有一定鲁棒性的角色运动合成。然而，该类方法存在显著局限性：一方面，运动学层必须生成物理上可被精确跟踪的参考轨迹，否则会导致控制失败或运动质量下降；另一方面，所得的物理控制器在偏离原始参考以实现自恢复或任务导向行为时缺乏足够的灵活性。此外，这类系统在工程实现上通常较为复杂，难以扩展到大规模、多样化动作集\cite{peng2018deepmimic}。
+
 
 近年来，基于物理的角色动画与动作模仿研究在将人类动作合成为面向下游任务的动态全身控制策略方面取得了显著进展~\cite{luo2023universal,tessler2024maskedmimic,huang2025diffuse,pan2025tokenhsi}。这类方法通常利用强化学习在仿真环境中学习能够模仿高质量示例动作的数据驱动策略，在人类样本轨迹的约束下生成风格自然的全身运动。
 
-然而，这些成果主要建立在理想化仿真环境中，其中智能体通常假设拥有精确的动力学模型、较高的执行能力以及完备的状态观测，这与真实世界中的类人机器人存在本质差异。真实机器人必须面对未建模动力学、摩擦与柔性效应、执行器饱和以及传感器噪声和延迟等问题，使得直接迁移上述方法往往难以获得稳定可靠的表现。此外，若仅依赖模仿奖励进行训练，策略在遇到扰动、接触变化或任务修改时往往缺乏足够的适应性；而仅优化任务奖励又容易产生滑移、抖动与不自然姿态等运动伪影~\cite{duan2016benchmarking}。
+然而，这些成果主要建立在理想化仿真环境中，其中智能体通常假设拥有精确的动力学模型、较高的执行能力以及完备的状态观测，这与真实世界中的类人机器人存在本质差异。真实机器人必须面对未建模动力学、摩擦与柔性效应、执行器饱和以及传感器噪声和延迟等问题，使得直接迁移上述方法往往难以获得稳定可靠的表现。此外，若仅依赖模仿奖励进行训练，策略在遇到扰动、接触变化或任务修改时往往缺乏足够的适应性；而仅优化任务奖励又容易产生滑移、抖动与不自然姿态等运动伪影~\cite{duan2016benchmarking,jiang2025two}。
 
 从方法发展角度看，现有研究大致可分为三类。
 
@@ -16,9 +17,9 @@
 
 其次是基于模型的物理控制方法。大量工作围绕人形与非人形角色构建解析控制器，例如基于简化模型的步行控制~\cite{yin2007simbicon,ye2010optimal,coros2010generalized}、参数优化方法~\cite{agrawal2013diverse,ha2014iterative,wang2012optimizing}以及基于二次规划的动力学优化方法~\cite{da2008simulation,lee2010data,lee2014locomotion}。轨迹优化与模型预测控制也被用于生成物理一致动作~\cite{mordatch2012discovery,hamalainen2015online,tassa2012synthesis,wampler2014generalizing}。尽管这些方法具有良好的稳定性，但在高动态动作与富接触行为中往往需要复杂调参与离线计算，难以扩展至大规模动作集。
 
-最后是强化学习与动作模仿方法。随着深度强化学习的发展，策略梯度方法成为连续控制的主流~\cite{schulman2017proximal,schulman2015trust,sutton1998introduction}。然而，纯强化学习方法往往生成不自然动作~\cite{merel2017learning,schulman2015high}。模仿学习方法（如 GAIL~\cite{ho2016generative}）通过数据驱动构建奖励，但动作质量仍难达到动画级别。DeepMimic~\cite{peng2018deepmimic}通过显式模仿项与参考状态初始化机制显著提升了动作质量，并展示了多片段融合与技能序列化能力。后续采样式控制方法 SAMCON~\cite{liu2016guided,liu2010sampling}进一步提升了高度动态动作的表现力，但系统结构复杂且扩展性有限。
+最后是强化学习与动作模仿方法。随着深度强化学习的发展，策略梯度方法成为连续控制的主流~\cite{zhu2025reinforcement,schulman2017proximal,schulman2015trust,sutton1998introduction}。然而，纯强化学习方法往往生成不自然动作~\cite{merel2017learning,schulman2015high}。模仿学习方法（如 GAIL~\cite{ho2016generative}）通过数据驱动构建奖励，但动作质量仍难达到动画级别。DeepMimic~\cite{peng2018deepmimic}通过显式模仿项与参考状态初始化机制显著提升了动作质量，并展示了多片段融合与技能序列化能力。后续采样式控制方法 SAMCON~\cite{liu2016guided,liu2010sampling}进一步提升了高度动态动作的表现力，但系统结构复杂且扩展性有限。
 
-尽管上述方法在仿真环境中取得了显著成果，但在真实类人机器人系统中仍存在关键空缺：如何将大规模、多样化的人类动作片段在实际硬件平台上稳定、鲁棒地复现。现有方法普遍依赖理想化模型，忽略执行器限制、结构耦合及未建模动力学效应；同时，大规模动作训练还面临动作难度分布不均与样本利用效率不足的问题，这些问题在真实系统中尚未得到系统性解决。
+尽管上述方法在仿真环境中取得了显著成果，但在真实类人机器人系统中仍存在关键空缺：如何将大规模、多样化的人类动作片段在实际硬件平台上稳定、鲁棒地复现\cite{tobin2017domain}。现有方法普遍依赖理想化模型，忽略执行器限制、结构耦合及未建模动力学效应\cite{herzog2016momentum,zhu2025reinforcement}；同时，大规模动作训练还面临动作难度分布不均与样本利用效率不足的问题，这些问题在真实系统中尚未得到系统性解决\cite{florensa2017reverse,peng2018deepmimic}。
 
 因此，在真实硬件平台上实现高质量全身运动仍依赖两个关键要素：（1）一种可扩展且鲁棒的全身动作跟踪框架，能够将第二章获得的运动学参考动作转化为动力学一致的可执行运动；（2）一种高效的训练样本组织与调度机制，以缓解多样化动作带来的训练难度分布不均问题，从而提升策略的泛化能力。
 
@@ -51,21 +52,21 @@
 
 设策略 $\pi(a|s)$ 表示在给定状态 $s \in S$ 下对动作 $a \in A$ 的条件概率分布。在每个控制时刻，智能体观测当前状态 $s_t$，并根据策略 $\pi$ 采样动作 $a_t$。环境按照由机器人动力学隐式决定的状态转移分布 $p(s_{t+1}|s_t,a_t)$ 演化至下一状态 $s_{t+1}$，同时给出标量奖励 $r_t$，用于评价当前状态转移的优劣。对于参数化策略 $\pi_\theta(a|s)$，其优化目标可表示为
 \begin{equation}
-	J(\theta)=\mathbb{E}_{\tau\sim p_\theta(\tau)}\left[\sum_{t=0}^{T}\gamma^t r_t\right],
+	J(\theta)=\mathbb{E}_{\tau\sim p_\theta(\tau)}\left[\sum_{t=0}^{T}\gamma^t r_t\right]
 \end{equation}
 其中，$\tau=(s_0,a_0,s_1,\dots,a_{T-1},s_T)$ 表示一条由策略 $\pi_\theta$ 生成的轨迹，其分布写为
 \begin{equation}
-	p_\theta(\tau)=p(s_0)\prod_{t=0}^{T-1}\pi_\theta(a_t|s_t)\,p(s_{t+1}|s_t,a_t),
+	p_\theta(\tau)=p(s_0)\prod_{t=0}^{T-1}\pi_\theta(a_t|s_t)\,p(s_{t+1}|s_t,a_t)
 \end{equation}
 其中 $p(s_0)$ 为初始状态分布，$T$ 表示单个回合的时间跨度，$\gamma\in[0,1)$ 为折扣因子。
 
 一种常见的参数化策略优化方法是策略梯度方法~\cite{sutton1999policy}，其通过采样轨迹来估计目标函数关于策略参数的梯度。策略梯度可表示为
 \begin{equation}
-	\nabla_\theta J(\theta)=\mathbb{E}_{s_t\sim d_{\pi_\theta},\,a_t\sim\pi_\theta}\left[\nabla_\theta \log \pi_\theta(a_t|s_t)\,A_t\right],
+	\nabla_\theta J(\theta)=\mathbb{E}_{s_t\sim d_{\pi_\theta},\,a_t\sim\pi_\theta}\left[\nabla_\theta \log \pi_\theta(a_t|s_t)\,A_t\right]
 \end{equation}
 其中 $d_{\pi_\theta}$ 表示策略 $\pi_\theta$ 所诱导的状态访问分布，$A_t$ 为优势函数，用于衡量动作 $a_t$ 相对于当前状态平均水平的优劣，其定义为
 \begin{equation}
-	A_t=R_t-V(s_t),
+	A_t=R_t-V(s_t)
 \end{equation}
 其中
 \begin{equation}
@@ -73,7 +74,7 @@
 \end{equation}
 表示从时刻 $t$ 开始的折扣累计回报，$V(s_t)$ 为价值函数，用于估计从状态 $s_t$ 出发并遵循当前策略时的期望回报，即
 \begin{equation}
-	V(s_t)=\mathbb{E}[R_t\mid s_t,\pi_\theta].
+	V(s_t)=\mathbb{E}[R_t\mid s_t,\pi_\theta]
 \end{equation}
 由此可见，策略梯度方法的基本思想是提高那些带来高于平均期望回报动作的概率，同时抑制带来低于平均期望回报动作的概率，从而逐步优化策略性能。
 
@@ -84,14 +85,14 @@
 
 为此，控制策略 $\pi$ 采用神经网络进行参数化表示，将当前状态 $s$ 与参考运动目标 $g$（由参考动作提供）映射为连续动作空间中的概率分布：
 \begin{equation}
-	\pi(a|s,g).
+	\pi(a|s,g)
 \end{equation}
 
 考虑到该问题属于高维连续控制任务，策略输出建模为多元高斯分布：
 \begin{equation}
 	\pi(a|s,g)
 	=
-	\mathcal{N}\big(\mu(s,g), \Sigma\big),
+	\mathcal{N}\big(\mu(s,g), \Sigma\big)
 \end{equation}
 其中均值函数 $\mu(s,g)$ 由神经网络输出，协方差矩阵 $\Sigma$ 设为固定对角矩阵，并作为训练过程中的超参数。采用固定协方差结构能够在保持充分探索能力的同时提升训练稳定性，避免过度复杂的分布参数化对优化过程造成不利影响。
 
@@ -104,7 +105,7 @@
 \textbf{(1) 参考动作信息。}
 为引入参考运动的时序信息，本文采用参考动作中的关节位置与关节速度构造参考状态
 \begin{equation}
-	s_t^g = [q_{\text{joint},m}, \, v_{\text{joint},m}],
+	s_t^g = [q_{\text{joint},m}, \, v_{\text{joint},m}]
 \end{equation}
 该信息用于提供参考动作的相位指示，使策略能够感知当前所处的运动阶段，但并不要求对其进行逐元素的精确跟踪。
 
@@ -113,7 +114,7 @@
 
 综合上述信息，完整观测向量表示为
 \begin{equation}
-	o_t = [s_t^g,\; g^{\text{proj}}_t,\; \omega_t,\; q_{\text{joint}},\; v_{\text{joint}},\; a_{\text{last}} ].
+	o_t = [s_t^g,\; g^{\text{proj}}_t,\; \omega_t,\; q_{\text{joint}},\; v_{\text{joint}},\; a_{\text{last}} ]
 \end{equation}
 
 上述观测设计避免了对全局线速度及外部参考点位置的显式估计，从而降低了状态构建的复杂性，并提升了策略在实际系统中的鲁棒性与可实现性。
@@ -127,12 +128,12 @@
 
 具体而言，选取一个锚定刚体 $b_{\text{anchor}} \in \mathcal{B}$（通常为根部或躯干），并将参考动作重新对齐至该刚体的当前状态。对于锚定刚体，其期望位姿直接取参考值
 \begin{equation}
-	\hat{T}_{b_{\text{anchor}}} = T_{b_{\text{anchor}},m}.
+	\hat{T}_{b_{\text{anchor}}} = T_{b_{\text{anchor}},m}
 \end{equation}
 
 对于其余刚体 $b \in \mathcal{B} \setminus \{b_{\text{anchor}}\}$，其期望位姿定义为
 \begin{equation}
-	\hat{T}_b = T_\Delta \, T^{-1}_{b_{\text{anchor}},m} \, T_{b,m},
+	\hat{T}_b = T_\Delta \, T^{-1}_{b_{\text{anchor}},m} \, T_{b,m}
 \end{equation}
 其中对齐变换 $T_\Delta = (p_\Delta, R_\Delta)$ 用于将参考动作对齐至当前机器人坐标系。其平移部分定义为
 \begin{equation}
@@ -141,23 +142,23 @@
 		p_{b_{\text{anchor}}}^{x} \\
 		p_{b_{\text{anchor}}}^{y} \\
 		p_{b_{\text{anchor}},m}^{z}
-	\end{bmatrix},
+	\end{bmatrix}
 \end{equation}
 旋转部分仅对齐偏航角，定义为
 \begin{equation}
-	R_\Delta = R_z\!\left(\mathrm{yaw}\!\left(R_{b_{\text{anchor}}} R^{\top}_{b_{\text{anchor}},m}\right)\right).
+	R_\Delta = R_z\!\left(\mathrm{yaw}\!\left(R_{b_{\text{anchor}}} R^{\top}_{b_{\text{anchor}},m}\right)\right)
 \end{equation}
 
 该对齐方式在保持身体高度一致的同时，对齐参考动作与当前机器人之间的平面位置及偏航方向，从而将全局参考动作转换为局部一致的跟踪目标。
 
 对于空间速度，直接采用参考动作中的速度信息，即对于所有 $b \in \mathcal{B}$，有
 \begin{equation}
-	\hat{V}_b = V_{b,m}.
+	\hat{V}_b = V_{b,m}
 \end{equation}
 
 考虑到机器人包含大量空间位置相近的刚体，对所有刚体进行跟踪既增加计算开销，也缺乏必要性。因此，选取一个目标刚体子集 $\mathcal{B}_{\text{target}} \subseteq \mathcal{B}$，用于构建最终的运动约束。对应的运动跟踪目标定义为
 \begin{equation}
-	g_{\text{tracking}} = \left\{ \hat{T}_b,\ \hat{V}_b \mid b \in \mathcal{B}_{\text{target}} \right\}.
+	g_{\text{tracking}} = \left\{ \hat{T}_b,\ \hat{V}_b \mid b \in \mathcal{B}_{\text{target}} \right\}
 \end{equation}
 
 
@@ -169,25 +170,25 @@
 跟踪奖励基于目标刚体集合 $\mathcal{B}_{\text{target}}$ 上的位姿与速度误差构建。对于每一个刚体 $b \in \mathcal{B}_{\text{target}}$，根据期望状态 $(\hat{T}_b, \hat{V}_b)$ 与当前状态 $(T_b, V_b)$ 定义误差项，包括位置误差、姿态误差、线速度误差以及角速度误差：
 \begin{equation}
 	e_{p,b} = \hat{p}_b - p_b, \quad
-	e_{R,b} = \log(\hat{R}_b R_b^\top),
+	e_{R,b} = \log(\hat{R}_b R_b^\top)
 \end{equation}
 \begin{equation}
 	e_{v,b} = \hat{v}_b - v_b, \quad
-	e_{w,b} \approx \hat{w}_b - w_b,
+	e_{w,b} \approx \hat{w}_b - w_b
 \end{equation}
 其中角速度误差在小角度假设下采用线性近似。
 
 在所有目标刚体上，对各类误差取均方平均：
 \begin{equation}
-	\bar{e}_\chi = \frac{1}{|\mathcal{B}_{\text{target}}|} \sum_{b \in \mathcal{B}_{\text{target}}} \| e_{\chi,b} \|^2,
+	\bar{e}_\chi = \frac{1}{|\mathcal{B}_{\text{target}}|} \sum_{b \in \mathcal{B}_{\text{target}}} \| e_{\chi,b} \|^2
 \end{equation}
 其中 $\chi \in \{p, R, v, w\}$。随后，将各类误差通过指数形式映射为有界奖励：
 \begin{equation}
-	r(\bar{e}_\chi, \sigma_\chi) = \exp\!\left(-\bar{e}_\chi / \sigma_\chi^2\right),
+	r(\bar{e}_\chi, \sigma_\chi) = \exp\!\left(-\bar{e}_\chi / \sigma_\chi^2\right)
 \end{equation}
 其中 $\sigma_\chi$ 表示对应误差的尺度参数。最终的跟踪奖励定义为
 \begin{equation}
-	r_{\text{tracking}} = \sum_{\chi \in \{p, R, v, w\}} r(\bar{e}_\chi, \sigma_\chi).
+	r_{\text{tracking}} = \sum_{\chi \in \{p, R, v, w\}} r(\bar{e}_\chi, \sigma_\chi)
 \end{equation}
 
 \textbf{(2) 正则化项。}
@@ -202,7 +203,7 @@
 \textbf{(3) 总奖励函数。}
 综合上述各项，总奖励函数定义为
 \begin{equation}
-	r = r_{\text{tracking}} - \lambda_l r_{\text{limit}} - \lambda_s r_{\text{smooth}} - \lambda_c r_{\text{contact}},
+	r = r_{\text{tracking}} - \lambda_l r_{\text{limit}} - \lambda_s r_{\text{smooth}} - \lambda_c r_{\text{contact}}
 \end{equation}
 其中 $\lambda_l, \lambda_s, \lambda_c > 0$ 为对应的权重系数。
 
@@ -235,12 +236,12 @@
 
 进一步地，考虑到回合失败通常由终止前若干时间步内的次优行为所导致，单一时间点的失败率难以准确反映对应阶段的学习难度。因此，对平滑后的失败率序列施加一个加权聚合操作，并采用指数衰减核 $k(u)=\alpha^u$（其中 $\alpha \in (0,1)$ 为衰减系数），对临近时间段的失败信息进行加权整合，从而对更接近当前阶段的失败赋予更高权重。基于该加权失败度量，从第 $s$ 个时间段进行采样的概率定义为
 \begin{equation}
-	p_s=\frac{\sum_{u=0}^{K-1}\alpha^u \bar r_{s+u}}{\sum_{j=1}^{S}\sum_{u=0}^{K-1}\alpha^u \bar r_{j+u}}.
+	p_s=\frac{\sum_{u=0}^{K-1}\alpha^u \bar r_{s+u}}{\sum_{j=1}^{S}\sum_{u=0}^{K-1}\alpha^u \bar r_{j+u}}
 \end{equation}
 
 为在优先关注困难片段的同时保持对简单片段的覆盖，并缓解灾难性遗忘问题，将上述自适应采样分布与均匀分布进行混合，得到最终采样概率：
 \begin{equation}
-	p'_s=\lambda\frac{1}{S}+(1-\lambda)p_s,
+	p'_s=\lambda\frac{1}{S}+(1-\lambda)p_s
 \end{equation}
 其中 $\lambda \in [0,1]$ 为均匀采样权重。
 

@@ -4,11 +4,11 @@
 \section{引言}
 人机交互（Human–Robot Interaction，HRI）是仿人机器人研究中的重要方向，而运动模仿作为实现自然、高效交互行为的关键手段，近年来受到了广泛关注。利用人体运动数据对机器人进行示教与运动生成，已成为简化机器人运动编程与学习过程的重要途径 \cite{fu2024mobile, he2024learning, butepage2020imitating, kulic2016anthropomorphic}。通过观测与映射人类动作，机器人能够在无需显式建模复杂任务逻辑的情况下获得具有良好表现力与适应性的运动能力，从而显著提升系统的自然性、自主性以及人机交互能力 \cite{chi2024universal, bahl2022human}。尽管该方向已取得一定进展 \cite{ishiguro2020bilateral, ramos2018humanoid}，但在结构受限的真实机器人平台上实现稳定且精确的人体运动模仿，仍然面临诸多挑战，例如运动可行性约束、硬件限制以及控制稳定性问题 \cite{kim2009stable}。
 
-从技术角度来看，人体到机器人的运动模仿通常可抽象为\emph{动作重定向（motion retargeting）}问题，即在满足机器人运动学与动力学约束的前提下，将人体动作映射至机器人关节空间或任务空间中。然而，由于人体与机器人在自由度数量、关节拓扑结构、运动范围以及驱动能力等方面存在显著差异，人体动作往往难以被机器人直接复现，使得动作重定向成为实现高质量运动模仿的核心问题之一。
+从技术角度来看，人体到机器人的运动模仿通常可抽象为\textbf{动作重定向}（motion retargeting）问题，即在满足机器人运动学与动力学约束的前提下，将人体动作映射至机器人关节空间或任务空间中\cite{monzani2000using}。然而，由于人体与机器人在自由度数量、关节拓扑结构、运动范围以及驱动能力等方面存在显著差异，人体动作往往难以被机器人直接复现，使得动作重定向成为实现高质量运动模仿的核心问题之一\cite{kulic2016anthropomorphic,ayusawa2017motion,jiang2025multi}。
 
 围绕该问题，现有方法大致可以分为基于学习的方法与基于模型的方法。在动画与虚拟角色控制领域，基于强化学习的动作生成方法能够从大规模人体动作数据中学习复杂运动策略，并在多种任务中展现出良好的泛化能力与运动风格一致性 \cite{peng2018deepmimic, peng2021amp, won2020scalable, luo2023perpetual}。然而，这类方法通常依赖高保真仿真环境，其在真实机器人系统中的应用仍受到仿真到现实差距（sim-to-real gap）的限制，尤其在关节力矩约束、硬件安全性以及末端执行精度等方面存在明显挑战 \cite{bohez2022imitate, tang2024humanmimic}。
 
-相比之下，基于模型的动作重定向方法由于具有良好的可解释性，并能够显式处理运动学约束，在真实机器人系统中仍被广泛采用。根据映射空间的不同，该类方法通常可分为基于笛卡尔空间的方法与基于关节空间的方法。基于笛卡尔空间的方法通常以末端执行器位姿跟踪为主要目标，通过逆运动学或优化方法实现任务空间误差最小化，在任务执行精度方面具有优势，但由于缺乏对整体肢体构型的约束，容易导致机器人运动不自然。相对而言，基于关节空间的方法更加关注人体与机器人在构型层面的相似性，能够生成较为自然的运动，但往往难以保证末端执行器在任务空间中的精确跟踪。
+相比之下，基于模型的动作重定向方法由于具有良好的可解释性，并能够显式处理运动学约束，在真实机器人系统中仍被广泛采用\cite{aristidou2018inverse,gleicher2001comparing}。根据映射空间的不同，该类方法通常可分为基于笛卡尔空间的方法与基于关节空间的方法。基于笛卡尔空间的方法通常以末端执行器位姿跟踪为主要目标，通过逆运动学或优化方法实现任务空间误差最小化，在任务执行精度方面具有优势\cite{siciliano1990kinematic,chiaverini1994review}，但由于缺乏对整体肢体构型的约束，容易导致机器人运动不自然。相对而言，基于关节空间的方法更加关注人体与机器人在构型层面的相似性，能够生成较为自然的运动\cite{xiang2010predictive,asfour2006armar}，但往往难以保证末端执行器在任务空间中的精确跟踪。
 
 因此，\textbf{如何在动作重定向过程中同时兼顾关节构型一致性与末端执行器任务空间精度}，成为当前类人机器人运动模仿研究中的关键问题。现有方法通常在两者之间进行权衡，尚难以在统一框架下实现有效协调。
 
@@ -30,7 +30,7 @@
 		p_x \\
 		p_y \\
 		p_z
-	\end{bmatrix}.
+	\end{bmatrix}
 \end{equation}
 
 其中，上标 $A$ 表示该向量在坐标系 $\{A\}$ 下表达。图~\ref{fig:frameA} 给出了三维直角坐标系 $\{A\}$ 的示意图：
@@ -52,7 +52,7 @@ $\{\hat{\mathbf{x}}_B,\hat{\mathbf{y}}_B,\hat{\mathbf{z}}_B\}$
 		{}^{A}\hat{\mathbf{x}}_B &
 		{}^{A}\hat{\mathbf{y}}_B &
 		{}^{A}\hat{\mathbf{z}}_B
-	\end{bmatrix}.
+	\end{bmatrix}
 \end{equation}
 
 该旋转矩阵满足正交性条件
@@ -60,7 +60,7 @@ $\{\hat{\mathbf{x}}_B,\hat{\mathbf{y}}_B,\hat{\mathbf{z}}_B\}$
 \begin{equation}
 	{}^{A}_{B}\mathbf{R}^{T} \, {}^{A}_{B}\mathbf{R} = \mathbf{I}_3,
 	\qquad
-	{}^{A}_{B}\mathbf{R}^{-1} = {}^{B}_{A}\mathbf{R}.
+	{}^{A}_{B}\mathbf{R}^{-1} = {}^{B}_{A}\mathbf{R}
 \end{equation}
 
 图~\ref{fig:frameAB} 给出了两个坐标系 $\{A\}$ 与 $\{B\}$ 的空间关系示意图。
@@ -129,7 +129,7 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	+
 	\mathbf{h}^T \mathbf{z}
 	+
-	\boldsymbol{\lambda}^T(\mathbf{A}\mathbf{z}-\mathbf{b}),
+	\boldsymbol{\lambda}^T(\mathbf{A}\mathbf{z}-\mathbf{b})
 \end{equation}
 
 对 $\mathbf{z}$ 与 $\boldsymbol{\lambda}$ 求偏导并令其为零，可得到一阶最优性条件。根据 Karush–Kuhn–Tucker（KKT）条件，可将其整理为如下线性方程组（KKT 方程组）
@@ -146,24 +146,24 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	\begin{bmatrix}
 		-\mathbf{h} \\
 		\mathbf{b}
-	\end{bmatrix},
+	\end{bmatrix}
 \end{equation}
 通过求解该线性方程组即可获得二次规划问题的最优解。
 
 另一方面，在人形机器人运动学中，设广义关节变量为 $\mathbf{q} \in \mathbb{R}^n$，任务空间变量记为 $\mathbf{x}$，则末端或任务点的位姿满足
 \begin{equation}
-	\mathbf{x} = f(\mathbf{q}),
+	\mathbf{x} = f(\mathbf{q})
 \end{equation}
 其微分形式为
 \begin{equation}
-	\dot{\mathbf{x}} = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}},
+	\dot{\mathbf{x}} = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}}
 	\label{eq:task_velocity_mapping}
 \end{equation}
 其中 $\mathbf{J}(\mathbf{q})$ 为雅可比矩阵。
 
 给定期望的任务空间速度 $\dot{\mathbf{x}}_d$，可以构造任务空间速度误差
 \begin{equation}
-	\mathbf{e}_v = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d,
+	\mathbf{e}_v = \mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d
 \end{equation}
 并以其加权二范数作为代价函数
 \begin{equation}
@@ -177,7 +177,7 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	\mathbf{W}
 	\big(
 	\mathbf{J}(\mathbf{q}) \dot{\mathbf{q}} - \dot{\mathbf{x}}_d
-	\big),
+	\big)
 	\label{eq:quadratic_cost_from_jacobian}
 \end{equation}
 其中 $\mathbf{W} \succeq 0$ 为任务空间加权矩阵。展开式\eqref{eq:quadratic_cost_from_jacobian} 可得
@@ -186,15 +186,16 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	-
 	\big( \mathbf{J}^T \mathbf{W} \dot{\mathbf{x}}_d \big)^T \dot{\mathbf{q}}
 	+
-	\text{const},
+	\text{const}
 \end{equation}
 由此可见，机器人任务空间速度映射可以转化为标准的二次型代价函数。
+
 
 将关节速度 $\dot{\mathbf{q}}$ 作为优化变量，即令
 \begin{equation}
 	\mathbf{z} \equiv \dot{\mathbf{q}}, \quad
 	\mathbf{G} = \mathbf{J}^T \mathbf{W} \mathbf{J}, \quad
-	\mathbf{h} = - \mathbf{J}^T \mathbf{W} \dot{\mathbf{x}}_d,
+	\mathbf{h} = - \mathbf{J}^T \mathbf{W} \dot{\mathbf{x}}_d
 \end{equation}
 则上述问题可等价表示为式\eqref{eq:qp_general} 所示的标准二次规划形式。进一步结合关节速度限制、末端约束等线性条件，可将全身运动学求解统一纳入二次规划框架，从而为后续动作重定向中的约束优化求解提供统一的数学基础。
 
@@ -268,18 +269,25 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 
 在上述几何关系下，可在三角形 $\triangle FSM$ 中求解角度 $\theta_{SP}$，根据余弦定理有
 \begin{equation}
-	\begin{aligned}
-		\theta_{SP}
-		&= \arccos\!\left(
-		\frac{|\bm{SF}|^{2} + |\bm{SM}|^{2} - |\bm{FM}|^{2}}
-		{2\,|\bm{SF}|\,|\bm{SM}|}
-		\right) \\
-		&= \arccos\!\left(
-		\frac{y_0 - y_1}{|\bm{SF}|}
-		\right)
-	\end{aligned}
-	\label{eq:theta1}
+	\theta_{SP}
+	= \arccos\!\left(
+	\frac{|\bm{SF}|^{2} + |\bm{SM}|^{2} - |\bm{FM}|^{2}}
+	{2\,|\bm{SF}|\,|\bm{SM}|}
+	\right)
 \end{equation}
+%\begin{equation}
+%	\begin{aligned}
+%		\theta_{SP}
+%		&= \arccos\!\left(
+%		\frac{|\bm{SF}|^{2} + |\bm{SM}|^{2} - |\bm{FM}|^{2}}
+%		{2\,|\bm{SF}|\,|\bm{SM}|}
+%		\right) \\
+%		&= \arccos\!\left(
+%		\frac{y_0 - y_1}{|\bm{SF}|}
+%		\right)
+%	\end{aligned}
+%	\label{eq:theta1}
+%\end{equation}
 
 其中角度 $\theta_{SP}$ 的符号可由 $z_1 - z_0$ 的符号确定：当 $z_1 - z_0 > 0$ 时，表示手臂向前摆动；当 $z_1 - z_0 < 0$ 时，表示手臂向后摆动。同理，在三角形 $\triangle FSE$ 中可求解肩关节外展–内收角 $\theta_{SR}$，其表达式为
 
@@ -288,14 +296,10 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 = \arccos\!\left(
 \frac{|\bm{SF}|^{2} + |\bm{SE}|^{2} - |\bm{FE}|^{2}}
 {2\,|\bm{SF}|\,|\bm{SE}|}
-\right).
+\right)
 \label{eq:theta2}
 \end{equation}
 
-
-
-\paragraph{人体肘关节几何建模}
-如图~\ref{fig:arm_joint_angles_non_zero} 所示，$W$ 表示手腕的实际位置，$W'$ 表示手腕的假定初始位置（此时 $\theta_{SY} = 0$）。角度 $\theta_{SY}$ 定义为从肘部指向手腕的向量 $\bm{EW}$ 与其初始位置向量 $\bm{EW'}$ 之间的夹角；角度 $\theta_{E}$ 定义为向量 $\bm{EW}$ 与向量 $\bm{SE}$ 的延长线之间的夹角。
 
 \begin{figure}[b]
 	\centering
@@ -323,6 +327,11 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 	\label{fig:modeling_of_elbow}
 \end{figure}
 
+\paragraph{人体肘关节几何建模}
+如图~\ref{fig:arm_joint_angles_non_zero} 所示，$W$ 表示手腕的实际位置，$W'$ 表示手腕的假定初始位置（此时 $\theta_{SY} = 0$）。角度 $\theta_{SY}$ 定义为从肘部指向手腕的向量 $\bm{EW}$ 与其初始位置向量 $\bm{EW'}$ 之间的夹角；角度 $\theta_{E}$ 定义为向量 $\bm{EW}$ 与向量 $\bm{SE}$ 的延长线之间的夹角。
+
+
+
 
 当手腕位于位置 $W'$ 时，肘关节的局部坐标系记为 $E X_{1} Y_{1} Z_{1}$。假设手臂的初始状态为 $\theta_{SP}$、$\theta_{SR}$、$\theta_{SY}$ 和 $\theta_{E}$ 均为零，则此时肘关节坐标系的定义如图~\ref{fig:arm_joint_angles_zero}所示。
 
@@ -342,12 +351,16 @@ ${}^{A}\mathbf{p} = {}^{B}\mathbf{p} + {}^{A}\mathbf{p}_{B\mathrm{ORG}}$。其�
 
 
 \begin{gather}
-|\bm{EW'}|= |\bm{EW}| \\
-|\bm{EH}|= |\bm{EW'}|*cos\theta_{E} \\
-\bm{EH} =|\bm{EH}|\ast\frac{\bm{SE}}{|\bm{SE}|}
+	|\bm{EW'}|= |\bm{EW}| \\
+	|\bm{EH}|= |\bm{EW'}|\cos\theta_{E} \\
+	\bm{EH} =|\bm{EH}|\ast\frac{\bm{SE}}{|\bm{SE}|}
 \end{gather}
 
 因此，通过 $\bm{HW} = \bm{EW} - \bm{EH}$ 可以得到向量 $\bm{HW}$。需要注意的是，虽然肩关节坐标系在手臂运动过程中保持固定，但肘关节坐标系会随姿态变化而改变方向，如图 \ref{fig:shoulder_coordinate_rotation} 所示。在手臂运动过程中，肘关节坐标系会旋转到新的状态。在图 \ref{fig:shoulder_coordinate_rotation} 中，$Z_1$ 轴的方向会随着 $\theta_{SP}$ 的值而变化，$Z_1'$ 轴表示 $Z_1$ 轴从肘关节平移到肩关节的位置。沿 $Z_1'$ 轴的方向向量记为 $\bm{p}$，且满足 $\bm{p} \perp \bm{m}$ 且 $|\bm{p}| = 1$，因此 $\bm{p} = (0, \sin\theta_1, -\cos\theta_1)$。如图所示，$\bm{p}$ 表示当手腕达到位置 $W'$ 时，肘关节处 $Z_1$ 轴的方向。已知向量 $\bm{HW}$ 以及与 $\bm{HW'}$ 平行的方向向量 $\bm{p}$，即可求得 $\theta_{SY}$。
+
+\begin{eqnarray}
+	\theta_{SY} = \arccos\left[\frac{\bm{HW}\cdot\bm{p}}{|\bm{HW}|\cdot|\bm{p}|}\right]
+\end{eqnarray}
 
 
 \begin{figure}[H]
@@ -390,7 +403,7 @@ $\mathbf{p}_H,\mathbf{p}_K,\mathbf{p}_O,\mathbf{p}_P \in \mathbb{R}^3$，
 \begin{equation}
 	\mathbf{n}_{HP}
 	=
-	\mathbf{v}_{OP} \times \mathbf{v}_{OH}.
+	\mathbf{v}_{OP} \times \mathbf{v}_{OH}
 	\label{eq:hip_normal}
 \end{equation}
 
@@ -465,7 +478,7 @@ $\mathbf{p}_H,\mathbf{p}_K,\mathbf{p}_O,\mathbf{p}_P \in \mathbb{R}^3$，
 	\mathbf{r}
 	=
 	\frac{\mathbf{v}_{OH} \times \mathbf{n}_{HP}}
-	{\left\|\mathbf{v}_{OH} \times \mathbf{n}_{HP}\right\|},
+	{\left\|\mathbf{v}_{OH} \times \mathbf{n}_{HP}\right\|}
 	\label{eq:hip_r}
 \end{equation}
 至此，在髋关节处建立局部参考坐标系
@@ -486,7 +499,7 @@ $\{\mathbf{v}_{OH},\; \mathbf{r},\; \mathbf{n}_{HP}\}$。
 	\left(
 	\frac{\mathbf{v}_{HK} \cdot \mathbf{r}}
 	{\|\mathbf{v}_{HK}\|}
-	\right).
+	\right)
 	\label{eq:hip_roll}
 \end{equation}
 当 $\theta_{\mathrm{HR}}>0$ 时表示外展，
@@ -514,7 +527,7 @@ $\mathbf{v}_{HK}$ 与法向量 $\mathbf{n}_{HP}$ 之间的夹角，
 	}{
 		\|\mathbf{v}_{HK}\| \, \|\mathbf{n}_{HP}\|
 	}
-	\right).
+	\right)
 	\label{eq:hip_pitch}
 \end{equation}
 
@@ -539,7 +552,7 @@ $\mathbf{v}_{HK}$ 与法向量 $\mathbf{n}_{HP}$ 之间的夹角，
 	}{
 		\|\mathbf{v}_{HK}\| \, \|\mathbf{v}_{KA}\|
 	}
-	\right).
+	\right)
 	\label{eq:knee_angle_final}
 \end{equation}
 
@@ -555,14 +568,14 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 
 目标刚体在笛卡尔空间中的位置定义为
 \begin{equation}
-	p^{\text{target}}_b = \frac{h}{h_{\text{ref}}} s_b \left(p^{\text{source}}_b - p^{\text{source}}_{\text{root}}\right) + \frac{h}{h_{\text{ref}}} s_{\text{root}} p^{\text{source}}_{\text{root}}.
+	p^{\text{target}}_b = \frac{h}{h_{\text{ref}}} s_b \left(p^{\text{source}}_b - p^{\text{source}}_{\text{root}}\right) + \frac{h}{h_{\text{ref}}} s_{\text{root}} p^{\text{source}}_{\text{root}}
 \end{equation}
 
 其中 $p^{\text{source}}_b$ 表示源人体骨架中刚体 $b$ 的三维位置，$p^{\text{source}}_{\text{root}}$ 表示人体根部刚体的位置，$p^{\text{target}}_b$ 为经过缩放映射后的目标刚体位置，$s_b$ 为刚体 $b$ 对应的局部缩放因子，$s_{\text{root}}$ 为根部缩放因子。全局因子 $\frac{h}{h_{\text{ref}}}$ 用于统一调节整体身高比例，而局部因子 $s_b$ 则用于补偿不同肢段之间的长度比例差异。
 
 当刚体为根部时，上式可简化为
 \begin{equation}
-	p^{\text{target}}_{\text{root}} = \frac{h}{h_{\text{ref}}} s_{\text{root}} p^{\text{source}}_{\text{root}}.
+	p^{\text{target}}_{\text{root}} = \frac{h}{h_{\text{ref}}} s_{\text{root}} p^{\text{source}}_{\text{root}}
 \end{equation}
 
 实验发现，对根部平移采用统一缩放因子对于避免脚部滑动伪影至关重要，因为根部尺度误差会直接放大接触约束误差。
@@ -580,7 +593,7 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
  		& \sum_{i \in M} w_{R,i} \left\| R^h_i \ominus R_i(q) \right\|_2^2 
  		+ \sum_{i \in M_{ee}} w_{p,i} \left\| p^{\text{target}}_i - p_i(q) \right\|_2^2 \\
  		\text{s.t.} \quad 
- 		& q^- \leq q \leq q^+ .
+ 		& q^- \leq q \leq q^+ 
  	\end{aligned}
  \end{equation}
  
@@ -592,7 +605,7 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 \begin{equation}
 	\begin{aligned}
 		\min_{\dot{q}} \quad & \left\| e(q) + J(q)\dot{q} \right\|_W^2 \\
-		\text{s.t.} \quad & q^- \leq q + \dot{q}\Delta t \leq q^+ .
+		\text{s.t.} \quad & q^- \leq q + \dot{q}\Delta t \leq q^+ 
 	\end{aligned}
 \end{equation}
 
@@ -745,7 +758,7 @@ $\theta_{\mathrm{K}} = 0$ 表示完全伸直。
 
 末端误差定义为在统一参考坐标系下，机器人末端位置与缩放后人体末端目标位置之间的欧氏距离。记 $p^{\text{target}}(t)$ 为经过非均匀缩放映射后的人体末端在机器人尺度下的目标位置，$p^{\mathrm{robot}}(t)$ 为对应时刻机器人末端的实际位置，则末端位置误差定义为
 \begin{equation}
-	e(t) = \left\| p^{\mathrm{robot}}(t) - p^{\text{target}}(t) \right\|.
+	e(t) = \left\| p^{\mathrm{robot}}(t) - p^{\text{target}}(t) \right\|
 \end{equation}
 该定义直接在同一尺度与坐标系下对比机器人末端与人体映射目标的空间位置差异，能够客观反映重定向框架在任务空间层面的对齐精度。
 

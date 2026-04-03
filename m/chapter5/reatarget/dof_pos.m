@@ -3,19 +3,20 @@ clc; clear; close all;
 %% =========================
 % 1. 数据文件夹
 %% =========================
-data_dir = 'data';
+data_dir = 'real_retarget_data';
 
 %% =========================
 % 2. 文件分组（已去掉 ankle）
 %% =========================
 file_groups = {
-    'l_hip_pitch',    'l_hip_pitch_pos.csv',    'l_hip_pitch_posT.csv';
-    'R_knee',         'R_knee_pos.csv',         'R_knee_posT.csv';
-    'shoulder_pitch', 'shoulder_pitch_pos.csv', 'shoulder_pitch_posT.csv';
-    'elbow',          'elbow_pos.csv',          'elbow_posT.csv';
+    'left_hip_pitch',      'left_hip_pitch_pos.csv',      'left_hip_pitch_posT.csv';
+    'left_knee',           'left_knee_pos.csv',           'left_knee_posT.csv';
+    'left_shoulder_pitch', 'left_shoulder_pitch_pos.csv', 'left_shoulder_pitch_posT.csv';
+    'left_elbow',          'left_elbow_pos.csv',          'left_elbow_posT.csv';
 };
 
 n_groups = size(file_groups, 1);
+
 
 %% =========================
 % 3. 循环绘图（每个关节一张图）
@@ -58,36 +59,51 @@ for i = 1:n_groups
     x = step_posT(1:min_len);
     pos_data  = value_pos(1:min_len);
     posT_data = value_posT(1:min_len);
+    
+    pos_data  = deg2rad(pos_data);
+posT_data = deg2rad(posT_data);
+    
+    %% =========================
+    % 5.1 选择步数范围（关键修改）
+    %% =========================
+%     step_start = 500;
+%     step_end   = 2000;
+% 
+%     idx = (x >= step_start) & (x <= step_end);
+% 
+%     x = x(idx);
+%     pos_data  = pos_data(idx);
+%     posT_data = posT_data(idx);
 
     %% =========================
     % 6. 绘制单独图
     %% =========================
-    figure('Color', 'w', ...
-           'Name', joint_name, ...
-           'Position', [200 200 800 450]);
+%     figure('Color', 'w', ...
+%            'Name', joint_name, ...
+%            'Position', [200 200 800 450]);
+       
+        figure('Color', 'w', ...
+           'Name', joint_name)
 
-    plot(x, posT_data, 'LineWidth', 2); hold on;
-    plot(x, pos_data,  'LineWidth', 2);
+    plot(x, posT_data, 'LineWidth', 1.8); hold on;
+    plot(x, pos_data,  'LineWidth', 1.8);
     hold off;
     grid on;
 
-    title(joint_name, ...
-        'FontName', 'Times New Roman', ...
-        'FontSize', 16, ...
-        'Interpreter', 'none');
+%     title(joint_name, ...
+%         'FontName', 'Times New Roman', ...
+%         'FontSize', 16, ...
+%         'Interpreter', 'none');
 
-    xlabel('步数 (Step)', ...
-        'FontName', 'SimSun', ...
-        'FontSize', 14);
+%     set(gca, 'FontName', 'Times New Roman', 'FontSize', 12);
 
-    ylabel('关节角度', ...
-        'FontName', 'SimSun', ...
-        'FontSize', 14);
+hx = xlabel('步数');
+set(hx, 'FontName', 'SimSun', 'FontSize', 16);
 
-    legend({'posT（参考）', 'pos（实际）'}, ...
-        'FontName', 'SimSun', ...
-        'FontSize', 12, ...
-        'Location', 'best');
+hy = ylabel('\fontname{SimSun}关节角度 \fontname{Times New Roman}(rad)', ...
+    'Interpreter', 'tex');
+set(hy, 'FontSize', 16);
 
-    set(gca, 'FontName', 'Times New Roman', 'FontSize', 12);
+lgd = legend({'目标值', '实际值'}, 'Location', 'best');
+set(lgd, 'FontName', 'SimSun', 'FontSize', 16);
 end

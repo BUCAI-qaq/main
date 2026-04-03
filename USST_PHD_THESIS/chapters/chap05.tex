@@ -2,7 +2,8 @@
 \section{引言}
  前述章节围绕人形机器人全身动作生成与控制问题开展了系统研究。第二章通过几何建模与优化方法，实现了人体动作到机器人的全身动作重定向，为机器人提供了运动学一致的参考动作轨迹；第三章基于强化学习构建了全身动作跟踪控制策略，使机器人能够在物理仿真环境中稳定复现多种复杂全身动作；第四章进一步引入技能嵌入与分层控制框架，实现了多种运动技能的统一表达与灵活切换，从而提升了控制策略的泛化能力与行为多样性。上述方法均在仿真环境中进行了系统验证，并取得了良好的实验效果。
  
- 然而，仿真环境与真实机器人系统之间普遍存在“仿真到现实差异”（sim-to-real gap），主要体现在动力学参数不一致、执行器非理想特性、传感器噪声以及控制与通信延迟等方面。这些因素将显著影响控制策略在真实系统中的稳定性与性能表现，使得仅依赖仿真实验难以全面评估算法在实际机器人平台上的可行性与鲁棒性。因此，有必要在真实机器人系统上对所提出的方法进行系统验证，以检验其在复杂物理环境中的适应能力与实际应用价值。
+然而，仿真环境与真实机器人系统之间普遍存在“仿真到现实差异”（sim-to-real gap），主要体现在动力学参数不一致、执行器非理想特性、传感器噪声以及控制与通信延迟等方面\cite{tobin2017domain,peng2018sim,antonova2017deep}. 这些因素将显著影响控制策略在真实系统中的稳定性与性能表现，使得仅依赖仿真实验难以全面评估算法在实际机器人平台上的可行性与鲁棒性\cite{jakobi1995noise,hoffer2017train}. 因此，有必要在真实机器人系统上对所提出的方法进行系统验证，以检验其在复杂物理环境中的适应能力与实际应用价值。
+
  
  为此，本文构建了一套完整的人形机器人实验平台，并在该平台上实现了所提出全身动作控制方法的部署与验证。本章首先介绍实验平台的人形机器人本体结构及其硬件系统组成，包括机器人机械结构、驱动系统以及传感与计算单元；随后给出机器人控制系统的软件架构与整体控制流程，说明强化学习控制策略在真实系统中的部署方式及数据流与控制闭环；最后在实物平台上开展多组典型任务实验，对机器人全身动作跟踪能力、多技能协同控制效果以及系统整体稳定性进行验证，并结合实验现象对仿真与实际之间的差异进行分析。
  
@@ -147,12 +148,13 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 	\label{fig:driver_hardware}
 \end{figure}
 
-在控制策略实现上，驱动器采用基于前馈力矩与位置、速度误差反馈的混合控制结构，并结合电流内环及 FOC 控制实现对电机转矩的精确调节。该控制方式在保证系统稳定性的同时，提高了驱动系统的柔顺性与动态响应能力。其控制律表示为
+在控制策略实现上，驱动器采用基于位置与速度误差反馈的阻抗式控制结构，并结合电流内环及 FOC 控制实现对电机转矩的精确调节。该控制方式在保证系统稳定性的同时，提高了驱动系统的柔顺性与动态响应能力。其控制律表示为
 \begin{equation}
-	\tau = \tau_{\mathrm{ff}} + K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}),
+	\tau = K_p (q_d - q) + K_d (\dot{q}_d - \dot{q})
 	\label{eq:mit_control}
-\textsf{}\end{equation}
-其中，$\tau$ 为电机输出力矩，$\tau_{\mathrm{ff}}$ 为前馈力矩，$q_d$ 与 $\dot{q}_d$ 分别为期望位置与期望角速度，$q$ 与 $\dot{q}$ 分别为当前电机位置与角速度，$K_p$ 与 $K_d$ 分别为位置误差比例系数与速度误差比例系数。该混合控制结构兼具位置控制的稳定性与力矩控制的柔顺性，为本文强化学习策略输出的关节目标提供了统一且稳定的执行接口，使高层策略能够在真实机器人系统中实现有效落地。
+\end{equation}
+
+其中，$\tau$ 为电机输出力矩，$q_d$ 与 $\dot{q}_d$ 分别为期望位置与期望角速度，$q$ 与 $\dot{q}$ 分别为当前电机位置与角速度，$K_p$ 与 $K_d$ 分别为位置误差比例系数与速度误差比例系数。该控制结构兼具位置控制的稳定性与一定的柔顺性，为本文强化学习策略输出的关节目标提供了统一且稳定的执行接口，使高层策略能够在真实机器人系统中实现有效落地。
 
 \begin{figure}[htbp]
 	\centering
@@ -178,7 +180,7 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.85\linewidth]{Figure/chapter5/software.png}
+	\includegraphics[width=0.7\linewidth]{Figure/chapter5/software.png}
 	\caption{人形机器人全身控制软件架构与部署流程示意图}
 	\label{fig:software_architecture}
 \end{figure}
@@ -212,12 +214,12 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 	\begin{bmatrix}
 		\dot q_{\mathrm{knee}}\\
 		\dot q_{\mathrm{ankle}}
-	\end{bmatrix}.
+	\end{bmatrix}
 \end{equation}
 
 在理想条件（忽略摩擦、弹性变形及滑移）下，绳驱传动系统满足几何约束关系，其电机侧与关节侧角速度之间可表示为线性映射
 \begin{equation}
-	\dot{\boldsymbol q}_j = \mathbf G \dot{\boldsymbol q}_m,
+	\dot{\boldsymbol q}_j = \mathbf G \dot{\boldsymbol q}_m
 	\label{eq:vel_mapping}
 \end{equation}
 其中 $\mathbf G$ 为速度传动矩阵，其元素由滑轮半径比及钢缆绕行方向共同决定。该矩阵的第 $i$ 行第 $j$ 列元素表示第 $j$ 个电机对第 $i$ 个关节角速度的贡献系数。
@@ -234,22 +236,22 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 	\begin{bmatrix}
 		-0.5 & 0.5\\
 		-0.722 & -0.722
-	\end{bmatrix}.
+	\end{bmatrix}
 \end{equation}
 
 进一步，在忽略能量损失的理想条件下，系统满足功率守恒关系，即
 \begin{equation}
-	\boldsymbol\tau_m^\top \dot{\boldsymbol q}_m = \boldsymbol\tau_j^\top \dot{\boldsymbol q}_j,
+	\boldsymbol\tau_m^T \dot{\boldsymbol q}_m = \boldsymbol\tau_j^T \dot{\boldsymbol q}_j
 \end{equation}
 其中 $\boldsymbol\tau_m$ 与 $\boldsymbol\tau_j$ 分别表示电机侧与关节侧的力矩向量。将式~\eqref{eq:vel_mapping} 代入上述关系，可得电机侧与关节侧之间的力矩映射为
 \begin{equation}
-	\boldsymbol\tau_m = \mathbf G^\top \boldsymbol\tau_j.
+	\boldsymbol\tau_m = \mathbf G^T \boldsymbol\tau_j
 	\label{eq:torque_mapping_motor}
 \end{equation}
 
 当速度传动矩阵 $\mathbf G$ 满足可逆条件时，可进一步得到关节侧力矩关于电机侧力矩的表达式
 \begin{equation}
-	\boldsymbol\tau_j = (\mathbf G^\top)^{-1} \boldsymbol\tau_m.
+	\boldsymbol\tau_j = (\mathbf G^T)^{-1} \boldsymbol\tau_m
 	\label{eq:torque_mapping_joint}
 \end{equation}
 
@@ -265,35 +267,35 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 
 具体而言，在每个控制周期内，策略首先输出关节侧控制量，并结合关节动力学计算得到关节侧期望力矩 $\boldsymbol{\tau}_j$。随后，利用电机—关节力矩映射关系，将其转换为电机侧力矩需求
 \begin{equation}
-	\boldsymbol{\tau}_m = \mathbf G^\top \boldsymbol{\tau}_j,
+	\boldsymbol{\tau}_m = \mathbf G^T \boldsymbol{\tau}_j
 	\label{eq:motor_tau_from_joint}
 \end{equation}
 其中 $\mathbf G$ 为速度传动矩阵。
 
 由于电机存在最大输出能力限制，其输出力矩需满足
 \begin{equation}
-	|\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max},
+	|\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max}
 \end{equation}
 其中不等式按元素逐维成立。当计算得到的电机侧力矩超过其最大输出能力时，对其进行逐元素饱和处理，其形式可表示为
 \begin{equation}
 	\boldsymbol{\tau}_m^{\mathrm{clip}} =
 	\begin{cases}
-		\boldsymbol{\tau}_m, & |\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max}, \\
-		\boldsymbol{\tau}_m^{\max} \odot \mathrm{sgn}(\boldsymbol{\tau}_m), & |\boldsymbol{\tau}_m| > \boldsymbol{\tau}_m^{\max},
+		\boldsymbol{\tau}_m, & |\boldsymbol{\tau}_m| \le \boldsymbol{\tau}_m^{\max} \\
+		\boldsymbol{\tau}_m^{\max} \odot \mathrm{sgn}(\boldsymbol{\tau}_m), & |\boldsymbol{\tau}_m| > \boldsymbol{\tau}_m^{\max}
 	\end{cases}
 \end{equation}
 其中 $\odot$ 表示逐元素乘法。从而保证电机侧输出始终处于真实硬件的可执行范围内。
 
 在完成电机侧约束后，利用逆映射关系将裁剪后的电机力矩重新映射回关节空间：
 \begin{equation}
-	\boldsymbol{\tau}_j^{\mathrm{applied}} = (\mathbf G^\top)^{-1} \boldsymbol{\tau}_m^{\mathrm{clip}},
+	\boldsymbol{\tau}_j^{\mathrm{applied}} = (\mathbf G^T)^{-1} \boldsymbol{\tau}_m^{\mathrm{clip}}
 	\label{eq:joint_tau_applied}
 \end{equation}
 并将 $\boldsymbol{\tau}_j^{\mathrm{applied}}$ 作为最终施加于仿真环境中的关节驱动力矩。
 
 上述过程等价于在仿真中显式构建了一个执行器感知的前向驱动模型，其计算流程可概括为
 \begin{equation}
-	\boldsymbol{\tau}_j \rightarrow \boldsymbol{\tau}_m \rightarrow \boldsymbol{\tau}_m^{\mathrm{clip}} \rightarrow \boldsymbol{\tau}_j^{\mathrm{applied}}.
+	\boldsymbol{\tau}_j \rightarrow \boldsymbol{\tau}_m \rightarrow \boldsymbol{\tau}_m^{\mathrm{clip}} \rightarrow \boldsymbol{\tau}_j^{\mathrm{applied}}
 \end{equation}
 
 与传统仅在关节空间对控制输出进行简单裁剪的方法相比，本文方法能够更真实地反映绳驱耦合系统中的实际驱动约束特性。由于电机侧约束在真实物理系统中具有优先性，通过在仿真环境中显式建模电机输出边界，可以有效避免策略生成不可实现的关节指令，从而提升仿真训练与真实部署之间的一致性。
@@ -401,13 +403,53 @@ X02 与 X03 人形机器人平台在机械结构设计上强调轻量化与紧�
 
 进一步来看，非均匀局部缩放策略在一定程度上缓解了人体与机器人之间因肢段长度比例差异所带来的映射偏差，使得全身各关键刚体在空间分布上更加协调；同时，带旋转约束的逆运动学优化不仅提高了关键末端位置的对齐效果，也增强了肢体方向表达的一致性，从而使机器人在整体姿态上更接近人体示范。
 
-需要指出的是，本节验证的重点在于全身动作的运动学重定向效果，即人体姿态到机器人参考姿态的几何映射质量，而不涉及支撑约束、接触稳定性或动力学可执行性分析。实验结果表明，所提出的改进全身运动学重定向方法能够在复杂全身姿态下实现较好的构型重建效果，为后续基于学习的全身动作跟踪与控制提供高质量的参考轨迹。
+
+在此基础上，从关节空间轨迹角度进一步分析重定向结果。选取左侧髋关节俯仰、膝关节、肩关节俯仰及肘关节等典型关节，对目标关节轨迹与机器人实际执行轨迹进行对比，如图~\ref{fig:retarget_joint_tracking} 所示。
+
+\begin{figure}[htbp]
+	\centering
+
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/retarget_traj/left_hip_pitch.eps}
+		\caption{髋关节俯仰}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/retarget_traj/left_knee.eps}
+		\caption{膝关节}
+	\end{subfigure}
+	
+	\vspace{0.8em}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/retarget_traj/left_shoulder_pitch.eps}
+		\caption{肩关节俯仰}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figure/chapter5/retarget_traj/left_elbow.eps}
+		\caption{肘关节}
+	\end{subfigure}
+		\vspace{0.8em}
+	\caption{典型关节重定向轨迹对比}
+	\label{fig:retarget_joint_tracking}
+\end{figure}
+
+从图中可以观察到，在整个动作序列过程中，各关节的目标轨迹整体呈现出良好的连续性与平滑性，未出现明显的高频震荡或突变现象；同时，机器人实际执行轨迹能够较好地跟随目标轨迹的变化趋势，在关节大幅运动及峰值变化阶段仍保持稳定跟踪，未出现明显的滞后或振荡。这表明所生成的参考轨迹在实际系统中具有良好的可执行性。
+
+此外，在个别峰值位置附近存在轻微幅值偏差，这主要来源于执行器响应特性、控制带宽限制以及实际系统中的摩擦与建模误差，但整体误差均控制在较小范围内，未对整体动作表达产生明显影响。
+
+需要指出的是，本节验证的重点在于全身动作的运动学重定向效果，即人体姿态到机器人参考姿态的几何映射质量，而不涉及支撑约束、接触稳定性或动力学可执行性分析。综合实验结果表明，所提出的改进全身运动学重定向方法不仅在姿态层面能够保持良好的空间一致性，在关节轨迹层面同样具备良好的连续性与可执行性，为后续基于学习的全身动作跟踪与控制提供了稳定且高质量的参考轨迹。
 
 
 \subsection{任务操作验证}
 \label{subsec:task_validation}
 
-在完成上肢与全身姿态重定向验证后，本节进一步通过典型操作任务验证所提出改进重定向方法在实际应用场景中的可行性。实验选取四类具有代表性的任务，包括两项单臂操作任务（倒水与物体分类）以及两项双臂协作任务（协作交接与协作搬运），涵盖精细操作与协同搬运等多种应用场景。
+在完成全身姿态重定向验证后，本节进一步通过典型操作任务验证所提出改进重定向方法在实际应用场景中的可行性。实验选取四类具有代表性的任务，包括两项单臂操作任务（倒水与物体分类）以及两项双臂协作任务（协作交接与协作搬运），涵盖精细操作与协同搬运等多种应用场景。
 
 在倒水任务中，机器人抓取水瓶并将水倒入指定杯中，如图~\ref{fig:pouring} 所示。该任务对末端姿态精度和轨迹连续性具有一定要求。实验结果表明，基于重定向得到的关节构型能够支持连续姿态变化，机器人顺利完成抓取、移动、倾倒与放置等动作过程。
 
